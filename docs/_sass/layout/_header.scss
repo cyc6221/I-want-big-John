@@ -1,0 +1,100 @@
+/* _sass/layout/_header.scss */
+
+/* =========================================================
+   Header / Nav (FIXED for Minima)
+   - 固定淺色喜氣 header
+   - 移除漢堡（三條槓）
+   - nav 永遠顯示，手機不足就自動換行
+   ========================================================= */
+.site-header{
+  border-top: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+  background: rgba(255, 247, 243, 0.92) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 5000; /* 更保險，避免被任何區塊蓋住 */
+}
+
+/* header 內 wrapper 只負責排列，不再另外加左右 padding（由 layout/_wrapper.scss 管） */
+.site-header .wrapper{
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: .65rem !important;
+  padding-bottom: .65rem !important;
+}
+
+/* 避免標題在 header 內太大/太高 */
+.site-title,
+.site-title:visited{
+  color: var(--text) !important;
+  letter-spacing: .2px;
+  font-weight: 850;
+  margin: 0 !important;
+  line-height: 1.1;
+  text-decoration: none !important;
+}
+
+/* nav 基本：清掉 minima 手機 dropdown 會加的定位/背景/邊框 */
+.site-nav{
+  margin-top: 0 !important;
+  line-height: 1;
+  position: static !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 移除 Minima 的三條槓（漢堡）與 checkbox trigger */
+.site-nav .menu-icon,
+.site-nav .nav-trigger{
+  display: none !important;
+}
+
+/* 讓導覽列永遠顯示（不靠 trigger 展開）
+   minima 某些狀態會把 .trigger 設為 display:none，這裡鎖死 */
+.site-nav .trigger{
+  display: flex !important;
+  align-items: center;
+  gap: 1.2rem;
+  position: static !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 連結樣式 */
+.site-nav .page-link{
+  color: var(--text) !important;
+  opacity: .85;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.site-nav .page-link:hover{ opacity: 1; }
+
+/* 手機：空間不足就換行，但保持同一條左邊界 */
+@media screen and (max-width: 600px){
+  .site-header .wrapper{
+    flex-wrap: wrap;
+    row-gap: .5rem;
+  }
+
+  .site-nav{
+    width: 100%;
+  }
+
+  .site-nav .trigger{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: .9rem;
+  }
+
+  .site-nav .page-link{
+    padding: .25rem 0 !important;
+  }
+}
