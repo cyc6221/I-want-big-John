@@ -23,9 +23,10 @@ a{
 a:hover{ opacity: .92; }
 
 /* =========================================================
-   Header / Nav (FIXED)
-   - 移除 prefers-color-scheme，改由 html[data-theme] 控制
-   - 強制 wrapper 排版，避免 header 看起來高度/顏色怪
+   Header / Nav (FIXED for Minima)
+   - 固定淺色喜氣 header
+   - 強制 wrapper 排版，避免高度/顏色怪
+   - 兼容 minima 手機版漢堡選單
    ========================================================= */
 .site-header{
   border-top: 0 !important;
@@ -56,11 +57,13 @@ a:hover{ opacity: .92; }
   line-height: 1.1;
 }
 
-/* minima 的 nav 在窄螢幕會有按鈕，先保留其結構 */
+/* Minima nav：桌機 */
 .site-nav{
   margin-top: 0 !important;
+  line-height: 1;
 }
 
+/* 連結樣式 */
 .site-nav .page-link{
   color: var(--text) !important;
   opacity: .85;
@@ -68,9 +71,33 @@ a:hover{ opacity: .92; }
 }
 .site-nav .page-link:hover{ opacity: 1; }
 
-/* Dark header：只有手動切到 dark 才變深 */
-html[data-theme="dark"] .site-header{
-  background: rgba(15, 23, 42, 0.86) !important;
+/* Minima 手機漢堡：避免被你 flex 搞亂 */
+.site-nav .nav-trigger{
+  top: 0; /* 避免怪 offset */
+}
+.site-nav .menu-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 手機展開的下拉選單背景、邊框做成喜氣卡片感 */
+@media screen and (max-width: 600px){
+  .site-nav{
+    position: relative;
+  }
+  .site-nav .trigger{
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+    box-shadow: var(--shadow);
+    padding: .6rem .7rem;
+    margin-top: .6rem;
+  }
+  .site-nav .page-link{
+    display: block;
+    padding: .45rem .25rem;
+  }
 }
 
 /* ===== Typography polish ===== */
@@ -254,34 +281,3 @@ code{
   background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
 }
 .post-link{ font-weight: 750; }
-
-/* =========================================================
-   Theme toggle button (VISIBLE + no prefers-color-scheme)
-   ========================================================= */
-.theme-toggle{
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  border: 1px solid rgba(246,196,83,.50);
-  background: linear-gradient(135deg, rgba(200,30,30,0.18), rgba(245,158,11,0.14));
-  box-shadow: 0 14px 35px rgba(0,0,0,.12);
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-  display: grid;
-  place-items: center;
-  z-index: 99999; /* 保證在最上層 */
-  outline: none;
-}
-
-.theme-toggle:hover{ box-shadow: var(--ring); }
-.theme-toggle:active{ transform: translateY(1px); }
-
-/* Dark toggle style：只有手動切 dark 才用 */
-html[data-theme="dark"] .theme-toggle{
-  border-color: rgba(246,196,83,.35);
-  background: linear-gradient(135deg, rgba(246,196,83,0.10), rgba(255,255,255,0.04));
-}
