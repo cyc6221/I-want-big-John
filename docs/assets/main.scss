@@ -4,4 +4,18 @@
 @import "minima";
 
 @import "tokens";
-@import "components";
+
+/* Base */
+@import "base/base";
+
+/* Layout */
+@import "layout/wrapper";
+@import "layout/header";
+@import "layout/footer";
+
+/* Components */
+@import "components/hero";
+@import "components/cards";
+@import "components/buttons";
+@import "components/balls";
+@import "components/home";
