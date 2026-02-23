@@ -231,3 +231,38 @@ code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liber
   background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
 }
 .post-link{ font-weight: 750; }
+
+/* ===== Theme toggle button ===== */
+.theme-toggle{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(246,196,83,.45);
+  background: linear-gradient(135deg, rgba(200,30,30,0.18), rgba(245,158,11,0.14));
+  box-shadow: 0 14px 35px rgba(0,0,0,.12);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+
+.theme-toggle:hover{
+  box-shadow: var(--ring);
+}
+
+.theme-toggle:active{
+  transform: translateY(1px);
+}
+
+@media (prefers-color-scheme: dark){
+  html[data-theme="dark"] .theme-toggle,
+  html:not([data-theme]) .theme-toggle{
+    border-color: rgba(246,196,83,.35);
+    background: linear-gradient(135deg, rgba(246,196,83,0.10), rgba(255,255,255,0.04));
+  }
+}
