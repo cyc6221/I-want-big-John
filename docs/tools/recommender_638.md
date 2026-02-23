@@ -17,13 +17,13 @@ permalink: /recommender_638/
         </div>
         <button type="button" class="btn" id="clearMust" style="height: fit-content;">清空必選</button>
       </div>
-      <!--  -->
+
       <div id="mustRow" class="ball-row" aria-label="必選號碼球"></div>
-      <!--  -->
-      <!-- 保留 input 以支援手動輸入/顯示 -->
+
       <input id="mustNums" type="text" placeholder="例如：3, 8, 17"
         style="width:100%; padding:.55rem; margin-top:.25rem;">
     </section>
+
     <!-- 排除 -->
     <section>
       <div style="display:flex; align-items:end; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
@@ -33,12 +33,13 @@ permalink: /recommender_638/
         </div>
         <button type="button" class="btn" id="clearExclude" style="height: fit-content;">清空排除</button>
       </div>
-      <!--  -->
+
       <div id="excludeRow" class="ball-row" aria-label="排除號碼球"></div>
-      <!--  -->
+
       <input id="excludeNums" type="text" placeholder="例如：1, 2, 38"
         style="width:100%; padding:.55rem; margin-top:.25rem;">
     </section>
+
     <!-- 連號限制 -->
     <section>
       <h3 style="margin:.2rem 0;">連號限制（最大允許連號長度）</h3>
@@ -54,11 +55,12 @@ permalink: /recommender_638/
         例：最多允許 2 連號 → 允許 7,8 但不允許 7,8,9
       </div>
     </section>
-      <!--  -->
+
     <div style="display:flex; gap:.6rem; flex-wrap:wrap; align-items:center;">
       <button id="drawBtn" class="btn btn--primary">抽一組</button>
       <div id="result" style="font-size:1.25rem; font-weight:700;"></div>
     </div>
+
     <div id="error" style="color:#c00;"></div>
   </div>
 </div>
@@ -109,6 +111,12 @@ permalink: /recommender_638/
   const $clearMust = document.getElementById("clearMust");
   const $clearExclude = document.getElementById("clearExclude");
 
+  // 重要：若抓不到容器，直接報錯（避免默默失敗）
+  if (!$mustRow || !$excludeRow) {
+    if ($error) $error.textContent = "找不到 mustRow / excludeRow，請確認 HTML 有 <div id='mustRow'> 與 <div id='excludeRow'>。";
+    return;
+  }
+
   // ---------- render balls ----------
   function makeBall(n) {
     const b = document.createElement("button");
@@ -120,7 +128,6 @@ permalink: /recommender_638/
     return b;
   }
 
-  // must row balls
   const mustBalls = new Map();
   const excludeBalls = new Map();
 
@@ -131,20 +138,23 @@ permalink: /recommender_638/
     // click: toggle must
     mb.addEventListener("click", () => {
       $error.textContent = "";
-      // 互斥：如果在排除，先移除排除
+
+      // 互斥：若在排除，先移除排除
       if (excludeSet.has(n)) {
         excludeSet.delete(n);
         updateBallState(n);
       }
 
-      if (mustSet.has(n)) mustSet.delete(n);
-      else {
+      if (mustSet.has(n)) {
+        mustSet.delete(n);
+      } else {
         if (mustSet.size >= PICK) {
-          $error.textContent = 必選最多只能 ${PICK} 個。;
+          $error.textContent = `必選最多只能 ${PICK} 個。`;
           return;
         }
         mustSet.add(n);
       }
+
       syncInputs();
       updateBallState(n);
     });
@@ -152,7 +162,8 @@ permalink: /recommender_638/
     // click: toggle exclude
     eb.addEventListener("click", () => {
       $error.textContent = "";
-      // 互斥：如果在必選，先移除必選
+
+      // 互斥：若在必選，先移除必選
       if (mustSet.has(n)) {
         mustSet.delete(n);
         updateBallState(n);
@@ -174,27 +185,20 @@ permalink: /recommender_638/
   function updateBallState(n) {
     const mb = mustBalls.get(n);
     const eb = excludeBalls.get(n);
+    if (!mb || !eb) return;
 
     const isMust = mustSet.has(n);
     const isEx = excludeSet.has(n);
 
-    // must ball style
     mb.classList.toggle("ball--pick", isMust);
-    mb.classList.toggle("ball--red", false); // must區不需要紅
     mb.setAttribute("aria-pressed", String(isMust));
 
-    // exclude ball style
     eb.classList.toggle("ball--red", isEx);
-    eb.classList.toggle("ball--pick", false); // exclude區不需要金
     eb.setAttribute("aria-pressed", String(isEx));
 
-    // 可選：互斥時的視覺（在另一區淡掉）
-    // 若你想更強烈，可加 opacity
-    if (isMust) eb.style.opacity = "0.35";
-    else eb.style.opacity = "1";
-
-    if (isEx) mb.style.opacity = "0.35";
-    else mb.style.opacity = "1";
+    // 互斥視覺：另一區淡掉
+    eb.style.opacity = isMust ? "0.35" : "1";
+    mb.style.opacity = isEx ? "0.35" : "1";
   }
 
   function syncInputs() {
@@ -206,7 +210,7 @@ permalink: /recommender_638/
     for (let n = MIN; n <= MAX; n++) updateBallState(n);
   }
 
-  // 讓 input 也能手動改：失焦時同步回球（並維持互斥）
+  // input 手動改：change 時同步回球（維持互斥 + 必選最多 6）
   $mustInput.addEventListener("change", () => {
     const arr = parseNums($mustInput.value);
     mustSet.clear();
@@ -243,7 +247,6 @@ permalink: /recommender_638/
   function drawWithConstraints({ maxRunAllowed }) {
     if (mustSet.size > PICK) throw new Error(`必選 ${mustSet.size} 個，但只抽 ${PICK} 個`);
 
-    // 可用數量
     const available = [];
     for (let n = MIN; n <= MAX; n++) {
       if (!excludeSet.has(n)) available.push(n);
