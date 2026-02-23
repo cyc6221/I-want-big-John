@@ -1,0 +1,92 @@
+/* _sass/components/_hero.scss */
+
+/* ===== Hero banner (首頁可用 class="hero") ===== */
+.hero{
+  border-radius: calc(var(--radius) + 10px);
+  padding: 1.4rem 1.4rem;
+  margin: 1rem 0 1.25rem 0;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  /* 你 tokens 裡的主視覺漸層 */
+  background: var(--grad-hero);
+  box-shadow: var(--shadow);
+}
+
+/* 金色光暈（右上角） */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: -140px -140px auto auto;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle at 30% 30%, rgba(246,196,83,0.80), transparent 62%);
+  transform: rotate(10deg);
+  opacity: .95;
+}
+
+/* 金粉點點（左下角） */
+.hero::after{
+  content: "";
+  position: absolute;
+  left: -120px;
+  bottom: -140px;
+  width: 360px;
+  height: 360px;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,255,255,0.22), transparent 28%),
+    radial-gradient(circle at 55% 60%, rgba(246,196,83,0.18), transparent 34%),
+    radial-gradient(circle at 75% 35%, rgba(255,255,255,0.14), transparent 30%);
+  filter: blur(2px);
+  opacity: .9;
+}
+
+/* 內容層保持在裝飾上面 */
+.hero > *{
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1,
+.hero h2,
+.hero p{
+  color: #fff;
+  margin-top: 0;
+}
+
+.hero h1{
+  font-weight: 900;
+  letter-spacing: .2px;
+  margin-bottom: .35rem;
+}
+
+.hero p{
+  opacity: .95;
+  max-width: 70ch;
+  margin-bottom: .9rem;
+}
+
+/* hero 裡的按鈕間距好看 */
+.hero .btn{
+  margin-top: .2rem;
+}
+
+/* 小螢幕微調：padding 與圓角縮小，避免擠 */
+@media screen and (max-width: 600px){
+  .hero{
+    padding: 1.1rem 1.1rem;
+    border-radius: calc(var(--radius) + 6px);
+  }
+  .hero::before{
+    width: 260px;
+    height: 260px;
+    inset: -120px -120px auto auto;
+  }
+  .hero::after{
+    width: 280px;
+    height: 280px;
+    left: -100px;
+    bottom: -110px;
+  }
+}
