@@ -1,0 +1,21 @@
+title: 我要中大獎
+description: wo-yao-chung-ta-chiang
+url: "https://cyc6221.github.io"
+baseurl: "/wo-yao-chung-ta-chiang"
+theme: minima
+
+# Author info
+author: CY
+email: s24343162@gmail.com
+github_username: cyc6221
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+header_pages:
+  - index.md
+
+plugins:
+  - jekyll-git-metadata
+  - jekyll-sitemap
