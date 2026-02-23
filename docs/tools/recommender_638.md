@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 威力彩第一區抽號
-permalink: /wo-yao-chung-ta-chiang/tools/recommender_638/
+permalink: /recommender_638/
 ---
 
 <div class="card" style="padding:1rem;">

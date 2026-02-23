@@ -6,7 +6,7 @@ title: 我要中大獎
 <div class="hero">
   <h1>🧧 威力彩 🧧</h1>
   <p>
-    <a class="btn btn--primary" href="/wo-yao-chung-ta-chiang/tools/recommender_638/">抽一組</a>
+    <a class="btn btn--primary" href="/wo-yao-chung-ta-chiang/recommender_638/">抽一組</a>
     <a class="btn btn--gold" href="/wo-yao-chung-ta-chiang/638">研究方法</a>
   </p>
 </div>
