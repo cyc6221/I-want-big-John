@@ -15,8 +15,8 @@ highlighter: rouge
 
 header_pages:
   # - index.md
-  - pages/638.md
   - pages/649.md
+  - pages/638.md
   - pages/539.md
 
 plugins:
