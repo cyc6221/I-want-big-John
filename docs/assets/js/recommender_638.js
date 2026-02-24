@@ -16,14 +16,34 @@
     return Array.from(set).sort((a,b)=>a-b).join(", ");
   }
 
-  function runLengthMax(sortedArr) {
-    if (sortedArr.length === 0) return 0;
-    let best = 1, cur = 1;
-    for (let i = 1; i < sortedArr.length; i++) {
-      if (sortedArr[i] === sortedArr[i-1] + 1) cur++;
-      else cur = 1;
-      if (cur > best) best = cur;
+  function runLengthMax(nums) {
+    // 環狀連號：38 與 1 視為相連
+    // nums 可為排序或未排序都沒差
+    const set = new Set(nums);
+    if (set.size === 0) return 0;
+
+    let best = 1;
+
+    for (const n of set) {
+        const prev = (n === MIN) ? MAX : (n - 1);
+        // 只有「前一個不在集合」才當作一段連號的起點，避免重複計算
+        if (set.has(prev)) continue;
+
+        let cur = n;
+        let len = 1;
+
+        while (true) {
+        const nxt = (cur === MAX) ? MIN : (cur + 1);
+        if (!set.has(nxt)) break;
+        len++;
+        cur = nxt;
+        // 保護：最多不會超過集合大小
+        if (len >= set.size) break;
+        }
+
+        if (len > best) best = len;
     }
+
     return best;
   }
 
@@ -243,9 +263,52 @@
   function drawWithConstraints({ runRules }) {
     if (mustSet.size > PICK) throw new Error(`必選 ${mustSet.size} 個，但只抽 ${PICK} 個`);
 
+    // 如果「一定要 6 連號」，直接生成（環狀）
+    if (runRules[6] === "must") {
+        const candidates = [];
+
+        // 環狀：起點可以是 1..38
+        for (let start = MIN; start <= MAX; start++) {
+        const combo = [];
+        for (let k = 0; k < PICK; k++) {
+            const val = ((start - 1 + k) % MAX) + 1; // wrap
+            combo.push(val);
+        }
+
+        // 必選必須全部包含
+        let ok = true;
+        for (const m of mustSet) {
+            if (!combo.includes(m)) { ok = false; break; }
+        }
+        if (!ok) continue;
+
+        // 排除不得出現
+        for (const x of excludeSet) {
+            if (combo.includes(x)) { ok = false; break; }
+        }
+        if (!ok) continue;
+
+        // 其他 runRules（2~5）也要過
+        if (!passRunRules(combo, runRules)) continue;
+
+        candidates.push(combo);
+        }
+
+        if (candidates.length === 0) {
+        throw new Error("你選了『一定要 6 連號』，但必選/排除/其他連號限制讓它無解（請調整條件）。");
+        }
+
+        // 從可行候選中隨機挑一組
+        const pick = candidates[Math.floor(Math.random() * candidates.length)];
+
+        // 顯示用排序（不影響環狀連號判定，因為 runLengthMax 用 set 算）
+        return pick.slice().sort((a,b)=>a-b);
+    }
+
+    // ---- 其他情況：原本的隨機抽 + 過濾 ----
     const available = [];
     for (let n = MIN; n <= MAX; n++) {
-      if (!excludeSet.has(n)) available.push(n);
+        if (!excludeSet.has(n)) available.push(n);
     }
     if (available.length < PICK) throw new Error(`排除太多：剩下 ${available.length} 個，不足以抽 ${PICK} 個`);
 
@@ -254,16 +317,17 @@
     const MAX_TRIES = 8000;
 
     for (let t = 0; t < MAX_TRIES; t++) {
-      const chosen = new Set(base);
-      while (chosen.size < PICK) {
+        const chosen = new Set(base);
+        while (chosen.size < PICK) {
         const n = pool[Math.floor(Math.random() * pool.length)];
         chosen.add(n);
-      }
-      const combo = Array.from(chosen).sort((a,b)=>a-b);
+        }
+        const combo = Array.from(chosen).sort((a,b)=>a-b);
 
-      if (!passRunRules(combo, runRules)) continue;
-      return combo;
+        if (!passRunRules(combo, runRules)) continue;
+        return combo;
     }
+
     throw new Error("條件太嚴格，抽不到符合規則的組合（放寬連號限制或減少排除/必選）。");
   }
 
