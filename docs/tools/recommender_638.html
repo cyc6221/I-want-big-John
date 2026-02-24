@@ -40,41 +40,69 @@ permalink: /recommender_638/
         style="width:100%; padding:.55rem; margin-top:.25rem;">
     </section>
 
-    <!-- 連號限制 -->
-    <!-- <section>
-      <h3 style="margin:.2rem 0;">連號限制（最大允許連號長度）</h3>
-      <select id="maxRun" style="width:100%; padding:.55rem; margin-top:.25rem;">
-        <option value="6">允許到 6 連號（不限制）</option>
-        <option value="5">不允許 6 連號</option>
-        <option value="4">不允許 5–6 連號</option>
-        <option value="3">不允許 4–6 連號</option>
-        <option value="2">不允許 3–6 連號（最多只允許 2 連號）</option>
-        <option value="1">不允許 2–6 連號（完全不允許連號）</option>
-      </select>
-      <div style="font-size:.9rem; opacity:.8; margin-top:.35rem;">
-        例：最多允許 2 連號 → 允許 7,8 但不允許 7,8,9
-      </div>
-    </section> -->
-        <!-- 連號限制 -->
+    <!-- 連號限制：按鈕版（runGrid） -->
     <section>
-      <h3 style="margin:.2rem 0;">連號限制（最大允許連號長度）</h3>
-      <select id="maxRun" style="width:100%; padding:.55rem; margin-top:.25rem;">
-        <option value="6">允許到 6 連號（不限制）</option>
-        <option value="5">不允許 6 連號</option>
-        <option value="4">不允許 5–6 連號</option>
-        <option value="3">不允許 4–6 連號</option>
-        <option value="2">不允許 3–6 連號（最多只允許 2 連號）</option>
-        <option value="1">不允許 2–6 連號（完全不允許連號）</option>
-      </select>
+      <h3 style="margin:.2rem 0;">連號限制（一定要 / 一定不要）</h3>
+
+      <div class="run-grid" id="runGrid" aria-label="連號限制選項">
+        <!-- 6 -->
+        <div class="run-row" data-run="6">
+          <div class="run-label">6 連號</div>
+          <div class="seg" role="group" aria-label="6連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="run-row" data-run="5">
+          <div class="run-label">5 連號</div>
+          <div class="seg" role="group" aria-label="5連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="run-row" data-run="4">
+          <div class="run-label">4 連號</div>
+          <div class="seg" role="group" aria-label="4連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="run-row" data-run="3">
+          <div class="run-label">3 連號</div>
+          <div class="seg" role="group" aria-label="3連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="run-row" data-run="2">
+          <div class="run-label">2 連號</div>
+          <div class="seg" role="group" aria-label="2連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+      </div>
+
       <div style="font-size:.9rem; opacity:.8; margin-top:.35rem;">
-        例：最多允許 2 連號 → 允許 7,8 但不允許 7,8,9
+        「一定不要 4 連號」＝禁止出現 4 個以上連號；「一定要 3 連號」＝至少要出現一段 3 連號。
       </div>
     </section>
 
-
     <div style="display:flex; gap:.6rem; flex-wrap:wrap; align-items:center;">
       <button id="drawBtn" class="btn btn--primary">抽一組</button>
-      <!-- <div id="result" style="font-size:1.25rem; font-weight:700;"></div> -->
       <div id="result" class="ball-row" aria-label="抽出結果"></div>
     </div>
 
