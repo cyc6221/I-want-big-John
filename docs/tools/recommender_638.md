@@ -58,7 +58,8 @@ permalink: /recommender_638/
 
     <div style="display:flex; gap:.6rem; flex-wrap:wrap; align-items:center;">
       <button id="drawBtn" class="btn btn--primary">抽一組</button>
-      <div id="result" style="font-size:1.25rem; font-weight:700;"></div>
+      <!-- <div id="result" style="font-size:1.25rem; font-weight:700;"></div> -->
+      <div id="result" class="ball-row" aria-label="抽出結果"></div>
     </div>
 
     <div id="error" style="color:#c00;"></div>
@@ -106,7 +107,8 @@ permalink: /recommender_638/
   const $excludeInput = document.getElementById("excludeNums");
   const $maxRun = document.getElementById("maxRun");
   const $btn = document.getElementById("drawBtn");
-  const $result = document.getElementById("result");
+//   const $result = document.getElementById("result");
+  const $resultRow = document.getElementById("result");
   const $error = document.getElementById("error");
   const $clearMust = document.getElementById("clearMust");
   const $clearExclude = document.getElementById("clearExclude");
@@ -270,15 +272,25 @@ permalink: /recommender_638/
     throw new Error("條件太嚴格，抽不到符合規則的組合（放寬連號或減少排除/必選）。");
   }
 
+  function renderResultBalls(nums) {
+    $resultRow.innerHTML = "";
+    for (const n of nums) {
+        const b = document.createElement("span");
+        b.className = "ball";
+        b.textContent = pad2(n);
+        $resultRow.appendChild(b);
+    }
+  }
+
   $btn.addEventListener("click", () => {
     $error.textContent = "";
-    $result.textContent = "";
+    $resultRow.innerHTML = "";
     try {
-      const maxRunAllowed = Number($maxRun.value);
-      const combo = drawWithConstraints({ maxRunAllowed });
-      $result.textContent = "🎲 " + combo.map(pad2).join("  ");
+        const maxRunAllowed = Number($maxRun.value);
+        const combo = drawWithConstraints({ maxRunAllowed });
+        renderResultBalls(combo);
     } catch (e) {
-      $error.textContent = e.message || String(e);
+        $error.textContent = e.message || String(e);
     }
   });
 
