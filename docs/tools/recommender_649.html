@@ -1,0 +1,113 @@
+---
+layout: page
+title: 威力彩隨機抽號
+permalink: /recommender_638/
+---
+
+<div class="card" style="padding:1rem;">
+  <h2 style="margin-top:0;">威力彩第一區：1–38 抽 6</h2>
+
+  <div style="display:grid; gap: .9rem; max-width: 760px;">
+    <!-- 必選 -->
+    <section>
+      <div style="display:flex; align-items:end; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+        <div>
+          <h3 style="margin:.2rem 0;">必選號碼</h3>
+          <div style="opacity:.8; font-size:.9rem;">點球加入/取消必選（最多 6 個）</div>
+        </div>
+        <button type="button" class="btn" id="clearMust" style="height: fit-content;">清空必選</button>
+      </div>
+
+      <div id="mustRow" class="ball-row" aria-label="必選號碼球"></div>
+
+      <input id="mustNums" type="text" placeholder="例如：3, 8, 17"
+        style="width:100%; padding:.55rem; margin-top:.25rem;">
+    </section>
+
+    <!-- 排除 -->
+    <section>
+      <div style="display:flex; align-items:end; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+        <div>
+          <h3 style="margin:.2rem 0;">排除號碼</h3>
+          <div style="opacity:.8; font-size:.9rem;">點球加入/取消排除（與必選互斥）</div>
+        </div>
+        <button type="button" class="btn" id="clearExclude" style="height: fit-content;">清空排除</button>
+      </div>
+
+      <div id="excludeRow" class="ball-row" aria-label="排除號碼球"></div>
+
+      <input id="excludeNums" type="text" placeholder="例如：1, 2, 38"
+        style="width:100%; padding:.55rem; margin-top:.25rem;">
+    </section>
+
+    <!-- 連號限制：按鈕版（runGrid） -->
+    <section>
+      <h3 style="margin:.2rem 0;">連號限制（1與38是為相連）</h3>
+
+      <div class="run-grid" id="runGrid" aria-label="連號限制選項">
+        <!-- 6 -->
+        <div class="run-row" data-run="6">
+          <div class="run-label">6 連號</div>
+          <div class="seg" role="group" aria-label="6連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="run-row" data-run="5">
+          <div class="run-label">5 連號</div>
+          <div class="seg" role="group" aria-label="5連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="run-row" data-run="4">
+          <div class="run-label">4 連號</div>
+          <div class="seg" role="group" aria-label="4連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="run-row" data-run="3">
+          <div class="run-label">3 連號</div>
+          <div class="seg" role="group" aria-label="3連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="run-row" data-run="2">
+          <div class="run-label">2 連號</div>
+          <div class="seg" role="group" aria-label="2連號設定">
+            <button type="button" class="seg-btn is-active" data-mode="any">不限</button>
+            <button type="button" class="seg-btn" data-mode="must">一定要</button>
+            <button type="button" class="seg-btn" data-mode="ban">一定不要</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:.9rem; opacity:.8; margin-top:.35rem;">
+        「一定不要 4 連號」＝禁止出現 4 個以上連號；「一定要 3 連號」＝至少要出現一段 3 連號。
+      </div>
+    </section>
+
+    <div style="display:flex; gap:.6rem; flex-wrap:wrap; align-items:center;">
+      <button id="drawBtn" class="btn btn--primary">抽一組</button>
+      <div id="result" class="ball-row" aria-label="抽出結果"></div>
+    </div>
+
+    <div id="error" style="color:#c00;"></div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/recommender_638.js' | relative_url }}" defer></script>
