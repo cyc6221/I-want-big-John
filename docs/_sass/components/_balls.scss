@@ -108,3 +108,13 @@
 @media (max-width: 520px){
   .run-row{ grid-template-columns: 1fr; }
 }
+
+// ==========
+
+.wish{
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  background: rgba(17,24,39,0.06);
+  border: 1px solid rgba(17,24,39,0.10);
+  font-weight: 900;
+}
