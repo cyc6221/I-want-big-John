@@ -18,6 +18,7 @@ header_pages:
   - pages/638.md # 威力彩
   - pages/649.md # 大樂透
   - pages/539.md # 今彩539
+  - pages/instant.md # 刮刮樂
 
 plugins:
   - jekyll-git-metadata
