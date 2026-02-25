@@ -29,4 +29,32 @@ title: 我要中大John
 
 <div class="card card--couplet">
   <h2>最新更新</h2>
+
+  <div class="post-list">
+    {% assign items = site.articles | sort: "date" | reverse %}
+    {% for post in items limit: 6 %}
+      <article class="post-item">
+        <h3 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <!-- post.date -->
+        {% if post.date %}
+        <div class="post-meta">
+          {{ post.date | date: "%Y-%m-%d" }}
+          {% if post.tags %} · {{ post.tags | join: ", " }}{% endif %}
+        </div>
+        {% endif %}
+        <!-- post.description -->
+        {% if post.description %}
+          <p class="post-excerpt">{{ post.description }}</p>
+        {% else %}
+          <p class="post-excerpt">{{ post.content | strip_html | truncate: 120 }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="post-more">
+    <a href="{{ '/articles/' | relative_url }}">看全部文章 →</a>
+  </div>
 </div>
