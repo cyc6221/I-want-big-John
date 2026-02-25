@@ -28,6 +28,9 @@ collections:
   articles:
     output: true
     permalink: /articles/:path/
+  list:
+    output: true
+    permalink: /list/:path/
 
 defaults:
   - scope:
