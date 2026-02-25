@@ -39,3 +39,10 @@ defaults:
     values:
       layout: page
       toc: false
+
+  - scope:
+      path: ""
+      type: list
+    values:
+      layout: page
+      toc: false
