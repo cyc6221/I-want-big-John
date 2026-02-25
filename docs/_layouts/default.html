@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-TW' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+    </title>
+
+    {%- if page.description -%}
+      <meta name="description" content="{{ page.description | strip_html | strip_newlines | escape }}" />
+    {%- elsif site.description -%}
+      <meta name="description" content="{{ site.description | strip_html | strip_newlines | escape }}" />
+    {%- endif -%}
+
+    <!-- Minima main stylesheet (GitHub Pages / Minima 會提供) -->
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
+
+    <!-- RSS (可有可無) -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />
+  </head>
+
+  <body>
+    <!-- Header (簡化版) -->
+    <header class="site-header" role="banner">
+      <div class="wrapper">
+        <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+        {%- if site.header_pages and site.header_pages.size > 0 -%}
+          <nav class="site-nav">
+            <div class="trigger">
+              {%- for path in site.header_pages -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page and my_page.title -%}
+                  <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title }}</a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </nav>
+        {%- endif -%}
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    <!-- Footer (簡化版) -->
+    <footer class="site-footer">
+      <div class="wrapper">
+        <p style="margin:0.5rem 0;">
+          © {{ site.time | date: "%Y" }} {{ site.author | default: site.title }}
+        </p>
+      </div>
+    </footer>
+
+    <!-- MathJax: 你可以全站開啟，或只在 page.math = true 時載入 -->
+    {% if page.math != false %}
+      {% include mathjax.html %}
+    {% endif %}
+  </body>
+</html>
