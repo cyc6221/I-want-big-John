@@ -23,3 +23,16 @@ header_pages:
 plugins:
   - jekyll-git-metadata
   - jekyll-sitemap
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: page
+      toc: false
