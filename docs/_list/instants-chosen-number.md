@@ -1,7 +1,7 @@
 ---
 title: 刮刮樂選號紀錄
 permalink: /list/instant-chosen-number/
-category: list
+category: instant-list
 date: 2026-02-26
 description: 
 ---

@@ -1,7 +1,7 @@
 ---
 title: 刮刮樂全紀錄
 permalink: /list/instant-all/
-category: list
+category: instant-list
 date: 2026-02-25
 description: 總計花費 700 元，中獎 0 元。
 ---

@@ -40,7 +40,7 @@ toc: false
 
 <div class="post-list">
   {% assign items = site.list
-    | where: "category", "list" %}
+    | where: "category", "instant-list" %}
 
   {% for post in items %}
     <article class="post-item">
