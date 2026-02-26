@@ -1,0 +1,33 @@
+<div style="height:360px;">
+  <canvas id="{{ include.id | default: 'chart-count' }}"></canvas>
+</div>
+
+<script type="application/json" id="{{ include.id | default: 'chart-count' }}-data">
+{{ site.data.chosen_number_stats | jsonify }}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+(function () {
+  const canvasId = '{{ include.id | default: "chart-count" }}';
+  const dataTag = document.getElementById(canvasId + '-data');
+  const canvas = document.getElementById(canvasId);
+  if (!canvas || !dataTag) return;
+
+  const rows = JSON.parse(dataTag.textContent || '[]')
+    .sort((a,b) => Number(a.number) - Number(b.number));
+
+  const labels = rows.map(r => String(r.number));
+  const data = rows.map(r => Number(r.count) || 0);
+
+  new Chart(canvas, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: '次數', data, borderWidth: 1 }] },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true, title: { display: true, text: '次' } } }
+    }
+  });
+})();
+</script>
