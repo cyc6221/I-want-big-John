@@ -10,15 +10,6 @@ description: 從 2026 年 2 月 25 日開始記錄。
 
 ---
 
-<!-- | 選號 | 次數 | 花費 | 中獎 |
-| :-: | :-: | :-: | :-: |
-| 31 | 1 | 500 | 0 |
-| 53 | 1 | 200 | 0 | -->
-
-## 選號次數
-
-{% include instant-chosen-num-freq-chart.html id="chart1" title="號碼 1~100 選號次數" %}
-
 ## 選號統計表格
 
 {% include chosen_number_table.html %}
