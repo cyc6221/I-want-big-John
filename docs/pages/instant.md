@@ -5,7 +5,7 @@ permalink: /instant/
 toc: false
 ---
 
-[台灣彩券刮刮樂玩法](https://www.taiwanlottery.com/instant/info)
+- [台灣彩券刮刮樂玩法](https://www.taiwanlottery.com/instant/info)
 
 ## 最新刮刮樂
 
