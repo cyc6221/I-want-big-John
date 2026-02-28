@@ -23,7 +23,6 @@ toc: false
       {% if post.date %}
       <div class="post-meta">
         {{ post.date | date: "%Y-%m-%d" }}
-        {% if post.tags %} · {{ post.tags | join: ", " }}{% endif %}
       </div>
       {% endif %}
       <!-- post.description -->
