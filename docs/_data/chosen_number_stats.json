@@ -1,4 +1,5 @@
 [
   { "number": 31, "count": 1, "cost": 500, "win": 0 },
-  { "number": 53, "count": 1, "cost": 200, "win": 0 }
+  { "number": 53, "count": 1, "cost": 200, "win": 0 },
+  { "number": 46, "count": 1, "cost": 100, "win": 0 }
 ]
