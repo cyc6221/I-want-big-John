@@ -15,3 +15,4 @@
 ## 資料來源
 
 - [台灣彩券官方網站](https://www.taiwanlottery.com/)
+- [電腦型彩券「BINGO BINGO 賓果賓果」附加玩法發行事宜](https://lotto.ctbcbank.com/news990206.pdf)
