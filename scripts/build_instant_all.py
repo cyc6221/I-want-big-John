@@ -60,11 +60,6 @@ def build_markdown(rows):
     total_prize = sum(r["prize"] for r in rows)
 
     start_date = rows[0]["date"] if rows else ""
-    # permalink / category / title 固定你想要的
-    title = "刮刮樂全紀錄"
-    permalink = "/list/instant-all/"
-    category = "list-instant"
-    page_date = start_date.replace("/", "-") if start_date else datetime.today().strftime("%Y-%m-%d")
 
     description = f"總計花費 {total_spent} 元，中獎 {total_prize} 元。"
     intro = f"從 {start_date} 開始記錄，總計花費 {total_spent} 元，中獎 {total_prize} 元。"
@@ -72,10 +67,10 @@ def build_markdown(rows):
     # 表頭
     lines = []
     lines.append("---")
-    lines.append(f"title: {title}")
-    lines.append(f"permalink: {permalink}")
-    lines.append(f"category: {category}")
-    lines.append(f"date: {page_date}")
+    lines.append(f"title: 刮刮樂全紀錄")
+    lines.append("permalink: /list/instant-per-month/")
+    lines.append("category: list-instant")
+    lines.append(f"date: 2026-02-25")
     lines.append(f"description: {description}")
     lines.append("---")
     lines.append("")
