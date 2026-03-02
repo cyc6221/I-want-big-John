@@ -128,5 +128,13 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
+    <tr>
+      <td style="text-align:center;">2026/03/02</td>
+      <td style="text-align:center;">4</td>
+      <td style="text-align:center;">{% include small-balls.html items="29:miss 42:pick 50:miss 67:pick" %}</td>
+      <td style="text-align:center;">4</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">0</td>
+    </tr>
   </tbody>
 </table>
