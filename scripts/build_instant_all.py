@@ -11,7 +11,7 @@ OUT_MD   = Path("docs/_list/instants-all.md")
 BASEURL = "/I-want-big-John"
 
 # ====== 遊戲代碼 -> 中文名稱 ======
-GAME_NAMES_PATH = Path("raw-data/game_names.json")
+GAME_NAMES_PATH = Path("raw-data/instant-games.json")
 GAME_NAME = json.loads(GAME_NAMES_PATH.read_text(encoding="utf-8"))
 
 def parse_int(x, default=0):
