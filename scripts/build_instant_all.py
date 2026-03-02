@@ -1,0 +1,121 @@
+import csv
+from pathlib import Path
+from datetime import datetime
+
+# ====== PATHS (依你的 repo 結構) ======
+CSV_PATH = Path("raw-data/all-instants.csv")
+OUT_MD   = Path("docs/_list/instants-all.md")
+
+# ====== 你的站台 baseurl（你目前表格連結看起來是這個） ======
+BASEURL = "/I-want-big-John"
+
+# ====== 遊戲代碼 -> 中文名稱（照你目前頁面用的） ======
+GAME_NAME = {
+    "5136": "鑽很大",
+    "5137": "樂刮$2,000",
+    "5135": "財神報到",
+    "5150": "推金幣",
+    "5133": "好運連發",
+    "5132": "獎金樂翻倍",
+}
+
+def parse_int(x, default=0):
+    s = (x or "").strip()
+    if s == "":
+        return default
+    return int(float(s))
+
+def read_rows():
+    rows = []
+    with CSV_PATH.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            date_str = (r.get("date") or "").strip()
+            game = (r.get("game") or "").strip()
+            price = parse_int(r.get("price"))
+            prize = parse_int(r.get("prize"))
+            chosen = (r.get("chosen_num") or "").strip()
+
+            # 允許 date 兩種：2026/03/02 或 2026-03-02
+            # 用於排序
+            dt = None
+            for fmt in ("%Y/%m/%d", "%Y-%m-%d"):
+                try:
+                    dt = datetime.strptime(date_str, fmt)
+                    break
+                except ValueError:
+                    pass
+            if dt is None:
+                raise ValueError(f"Invalid date format: {date_str}")
+
+            rows.append({
+                "date": dt.strftime("%Y/%m/%d"),  # 統一輸出格式
+                "dt": dt,
+                "game": game,
+                "price": price,
+                "prize": prize,
+                "chosen_num": chosen,
+            })
+    # 依日期排序（同日則照原順序）
+    rows.sort(key=lambda x: x["dt"])
+    return rows
+
+def build_markdown(rows):
+    total_spent = sum(r["price"] for r in rows)
+    total_prize = sum(r["prize"] for r in rows)
+
+    start_date = rows[0]["date"] if rows else ""
+    # permalink / category / title 固定你想要的
+    title = "刮刮樂全紀錄"
+    permalink = "/list/instant-all/"
+    category = "list-instant"
+    page_date = start_date.replace("/", "-") if start_date else datetime.today().strftime("%Y-%m-%d")
+
+    description = f"總計花費 {total_spent} 元，中獎 {total_prize} 元。"
+    intro = f"從 {start_date} 開始記錄，總計花費 {total_spent} 元，中獎 {total_prize} 元。"
+
+    # 表頭（維持你原本的）
+    lines = []
+    lines.append("---")
+    lines.append(f"title: {title}")
+    lines.append(f"permalink: {permalink}")
+    lines.append(f"category: {category}")
+    lines.append(f"date: {page_date}")
+    lines.append(f"description: {description}")
+    lines.append("---")
+    lines.append("")
+    lines.append(intro)
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("| i | 日期 | 項目 | 花費 | 中獎 |")
+    lines.append("| :-: | :-: | :-: | :-: | :-: |")
+
+    # 表格內容
+    for i, r in enumerate(rows, start=1):
+        game_id = r["game"]
+        name = GAME_NAME.get(game_id, f"#{game_id}")
+        href = f'{BASEURL}/all-instants/{game_id}/'
+        item_html = f'<a class="btn btn--gold" href="{href}">{name}</a>'
+        lines.append(f"| {i} | {r['date']} | {item_html} | {r['price']} | {r['prize']} |")
+
+    lines.append("")  # EOF newline
+    return "\n".join(lines)
+
+def main():
+    if not CSV_PATH.exists():
+        raise FileNotFoundError(f"CSV not found: {CSV_PATH}")
+
+    rows = read_rows()
+    md = build_markdown(rows)
+
+    OUT_MD.parent.mkdir(parents=True, exist_ok=True)
+    OUT_MD.write_text(md, encoding="utf-8")
+
+    print(f"✅ Updated: {OUT_MD}")
+    print(f"   Records: {len(rows)}")
+    print(f"   Total spent: {sum(r['price'] for r in rows)}")
+    print(f"   Total prize: {sum(r['prize'] for r in rows)}")
+
+if __name__ == "__main__":
+    main()
