@@ -1,23 +1,18 @@
 import csv
+import json
 from pathlib import Path
 from datetime import datetime
 
-# ====== PATHS (依你的 repo 結構) ======
+# ====== PATHS ======
 CSV_PATH = Path("raw-data/all-instants.csv")
 OUT_MD   = Path("docs/_list/instants-all.md")
 
-# ====== 你的站台 baseurl（你目前表格連結看起來是這個） ======
+# ====== 站台 baseurl ======
 BASEURL = "/I-want-big-John"
 
-# ====== 遊戲代碼 -> 中文名稱（照你目前頁面用的） ======
-GAME_NAME = {
-    "5136": "鑽很大",
-    "5137": "樂刮$2,000",
-    "5135": "財神報到",
-    "5150": "推金幣",
-    "5133": "好運連發",
-    "5132": "獎金樂翻倍",
-}
+# ====== 遊戲代碼 -> 中文名稱 ======
+GAME_NAMES_PATH = Path("raw-data/game_names.json")
+GAME_NAME = json.loads(GAME_NAMES_PATH.read_text(encoding="utf-8"))
 
 def parse_int(x, default=0):
     s = (x or "").strip()
@@ -74,7 +69,7 @@ def build_markdown(rows):
     description = f"總計花費 {total_spent} 元，中獎 {total_prize} 元。"
     intro = f"從 {start_date} 開始記錄，總計花費 {total_spent} 元，中獎 {total_prize} 元。"
 
-    # 表頭（維持你原本的）
+    # 表頭
     lines = []
     lines.append("---")
     lines.append(f"title: {title}")
