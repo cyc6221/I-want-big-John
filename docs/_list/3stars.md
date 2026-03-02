@@ -19,7 +19,6 @@ description: 總計花費 800 元，中獎 200 元。
       <th style="text-align:center;">星</th>
       <th style="text-align:center;">選號</th>
       <th style="text-align:center;">倍數</th>
-      <th style="text-align:center;">期數</th>
       <th style="text-align:center;">花費</th>
       <th style="text-align:center;">中獎</th>
     </tr>
@@ -30,7 +29,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="31:miss 48:miss 73:pick" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
@@ -39,7 +37,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="42:pick 48:miss 48:miss" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
@@ -48,7 +45,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="06:miss 11:miss 32:miss" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
@@ -57,7 +53,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="30:pick 45:miss 57:miss" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
@@ -66,7 +61,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="26:pick 31:miss 57:miss" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
@@ -75,7 +69,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="07:pick 23:miss 77:miss" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
@@ -84,7 +77,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="07:pick 23:miss 77:pick" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">200</td>
     </tr>
@@ -93,7 +85,6 @@ description: 總計花費 800 元，中獎 200 元。
       <td style="text-align:center;">3</td>
       <td style="text-align:center;">{% include small-balls.html items="02:miss 11:miss 21:pick" %}</td>
       <td style="text-align:center;">4</td>
-      <td style="text-align:center;">1</td>
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
