@@ -1,6 +1,6 @@
 ---
 title: 刮刮樂全紀錄
-permalink: /list/instant-per-month/
+permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
 description: 總計花費 1500 元，中獎 1200 元。

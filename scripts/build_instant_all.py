@@ -68,7 +68,7 @@ def build_markdown(rows):
     lines = []
     lines.append("---")
     lines.append(f"title: 刮刮樂全紀錄")
-    lines.append("permalink: /list/instant-per-month/")
+    lines.append("permalink: /list/instant-all/")
     lines.append("category: list-instant")
     lines.append(f"date: 2026-02-25")
     lines.append(f"description: {description}")
