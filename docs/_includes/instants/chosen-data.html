@@ -1,0 +1,66 @@
+<script>
+(() => {
+  // 避免重複初始化（如果同頁不小心 include 到兩次）
+  if (window.__instantsChosenReady) return;
+  window.__instantsChosenReady = true;
+
+  const DATA_URL = '{{ "/assets/data/instants-chosen-number.json" | relative_url }}';
+
+  function loadChartJs(){
+    return new Promise((resolve, reject) => {
+      if (window.Chart) return resolve();
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js';
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('Failed to load Chart.js'));
+      document.head.appendChild(s);
+    });
+  }
+
+  // 提供一個 Promise，其他 include 可以等它完成
+  window.__instantsChosenDataPromise = fetch(DATA_URL)
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(async data => {
+      await loadChartJs();
+      window.__instantsChosenData = Array.isArray(data) ? data : [];
+      return window.__instantsChosenData;
+    })
+    .catch(err => {
+      window.__instantsChosenData = [];
+      window.__instantsChosenError = err;
+      console.error(err);
+      return [];
+    });
+
+  // 共用工具
+  window.__instantsChosenUtil = {
+    toNum(x){
+      const n = Number(x);
+      return Number.isFinite(n) ? n : 0;
+    },
+    num(x){
+      const n = Number(x);
+      return Number.isFinite(n) ? n.toLocaleString('zh-Hant-TW') : (x ?? '');
+    },
+    escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, c => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      }[c]));
+    },
+    commonBarOptions(yTitle){
+      return {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: true }, tooltip: { enabled: true } },
+        scales: {
+          x: { ticks: { maxRotation: 60, minRotation: 30 }, grid: { display: false } },
+          y: { beginAtZero: true, title: { display: !!yTitle, text: yTitle || '' } }
+        }
+      };
+    }
+  };
+})();
+</script>

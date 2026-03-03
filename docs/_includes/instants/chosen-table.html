@@ -1,0 +1,49 @@
+<div class="table-wrap">
+  <table class="table table--striped" id="chosenTable">
+    <thead>
+      <tr>
+        <th style="text-align:center;">選號</th>
+        <th style="text-align:center;">次數</th>
+        <th style="text-align:center;">中獎次數</th>
+        <th style="text-align:center;">花費</th>
+        <th style="text-align:center;">中獎金額</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="5" style="text-align:center; opacity:.7;">載入中…</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+(() => {
+  const tbody = document.querySelector('#chosenTable tbody');
+  const U = window.__instantsChosenUtil;
+
+  window.__instantsChosenDataPromise.then(data => {
+    tbody.innerHTML = '';
+
+    if (window.__instantsChosenError) {
+      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#b00;">讀取失敗：${U.escapeHtml(String(window.__instantsChosenError))}</td></tr>`;
+      return;
+    }
+
+    if (!data.length) {
+      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; opacity:.7;">目前沒有資料</td></tr>`;
+      return;
+    }
+
+    for (const it of data) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="text-align:center;">${U.escapeHtml(it.chosen_number ?? '')}</td>
+        <td style="text-align:center;">${U.num(it.times)}</td>
+        <td style="text-align:center;">${U.num(it.win_times)}</td>
+        <td style="text-align:center;">${U.num(it.spent)}</td>
+        <td style="text-align:center;">${U.num(it.prize_amount)}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  });
+})();
+</script>
