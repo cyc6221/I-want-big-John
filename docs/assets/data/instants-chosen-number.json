@@ -1,44 +1,51 @@
 [
   {
-    "chosen_num": "23",
-    "count": 1,
+    "chosen_number": "23",
+    "times": 1,
+    "win_times": 0,
     "spent": 200,
-    "prize": 0
+    "prize_amount": 0
   },
   {
-    "chosen_num": "31",
-    "count": 1,
+    "chosen_number": "31",
+    "times": 1,
+    "win_times": 0,
     "spent": 500,
-    "prize": 0
+    "prize_amount": 0
   },
   {
-    "chosen_num": "46",
-    "count": 1,
+    "chosen_number": "46",
+    "times": 1,
+    "win_times": 0,
     "spent": 100,
-    "prize": 0
+    "prize_amount": 0
   },
   {
-    "chosen_num": "53",
-    "count": 1,
+    "chosen_number": "53",
+    "times": 1,
+    "win_times": 0,
     "spent": 200,
-    "prize": 0
+    "prize_amount": 0
   },
   {
-    "chosen_num": "57",
-    "count": 1,
+    "chosen_number": "57",
+    "times": 1,
+    "win_times": 1,
     "spent": 200,
-    "prize": 1000
+    "prize_amount": 1000
   },
   {
-    "chosen_num": "61",
-    "count": 1,
+    "chosen_number": "61",
+    "times": 1,
+    "win_times": 1,
     "spent": 200,
-    "prize": 200
+    "prize_amount": 200
   },
   {
-    "chosen_num": "71",
-    "count": 1,
+    "chosen_number": "71",
+    "times": 1,
+    "win_times": 0,
     "spent": 100,
-    "prize": 0
+    "prize_amount": 0
   }
 ]
