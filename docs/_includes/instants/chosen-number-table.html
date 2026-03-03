@@ -16,7 +16,7 @@
 
 <script>
 (() => {
-  const DATA_URL = '{{ "/_data/instants-chosen-number.json" | relative_url }}';
+  const DATA_URL = '{{ "/assets/data/instants-chosen-number.json" | relative_url }}';
   const tbody = document.querySelector('#chosenTable tbody');
 
   fetch(DATA_URL)
