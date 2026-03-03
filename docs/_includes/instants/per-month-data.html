@@ -1,0 +1,34 @@
+<script>
+(() => {
+  const DATA_URL = "{{ '/assets/data/instants-per-month.json' | relative_url }}";
+  const EVENT_NAME = "instants:perMonth:ready";
+
+  // 防止同頁多次 include 時重複抓
+  if (window.__instantsPerMonthLoading) return;
+  window.__instantsPerMonthLoading = true;
+
+  async function load(){
+    try{
+      const res = await fetch(DATA_URL, { cache: "no-store" });
+      if(!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      // 存起來，方便其他地方直接用
+      window.instantsPerMonth = Array.isArray(data) ? data : [];
+
+      // 廣播事件
+      window.dispatchEvent(new CustomEvent(EVENT_NAME, {
+        detail: { data: window.instantsPerMonth }
+      }));
+    }catch(err){
+      window.instantsPerMonth = [];
+      window.dispatchEvent(new CustomEvent(EVENT_NAME, {
+        detail: { data: [], error: err }
+      }));
+      console.error("instants-per-month load failed:", err);
+    }
+  }
+
+  load();
+})();
+</script>

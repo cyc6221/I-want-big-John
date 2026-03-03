@@ -1,0 +1,62 @@
+<div class="card" style="padding:1rem;">
+  <h2 style="margin:.2rem 0 .8rem 0;">每月花費與中獎（表格）</h2>
+
+  <div class="table-wrap">
+    <table class="table table--striped" id="instantsMonthTable">
+      <thead>
+        <tr>
+          <th style="text-align:center;">月份</th>
+          <th style="text-align:center;">花費</th>
+          <th style="text-align:center;">中獎</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3" style="text-align:center; opacity:.7;">載入中…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+(() => {
+  const EVENT_NAME = "instants:perMonth:ready";
+  const fmtMonth = (m) => (m || "").replace("-", "/");
+  const fmtNum = (n) => Number(n || 0).toLocaleString("zh-TW");
+
+  function render(data, error){
+    const tbody = document.querySelector("#instantsMonthTable tbody");
+    tbody.innerHTML = "";
+
+    if(error){
+      tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; color:#b00;">載入失敗</td></tr>`;
+      return;
+    }
+
+    if(!data || data.length === 0){
+      tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; opacity:.7;">沒有資料</td></tr>`;
+      return;
+    }
+
+    for(const row of data){
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td style="text-align:center;">${fmtMonth(row.month)}</td>
+        <td style="text-align:center;">${fmtNum(row.spent)}</td>
+        <td style="text-align:center;">${fmtNum(row.prize)}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+
+  // 如果 data.html 已經先載完，直接畫
+  if(Array.isArray(window.instantsPerMonth)){
+    render(window.instantsPerMonth, null);
+    return;
+  }
+
+  // 否則等事件
+  window.addEventListener(EVENT_NAME, (e) => {
+    render(e.detail?.data || [], e.detail?.error || null);
+  }, { once: true });
+})();
+</script>
