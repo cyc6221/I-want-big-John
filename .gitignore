@@ -1,5 +1,8 @@
 .markdownlint.json
 
+__pycache__/
+*.pyc
+
 # old data
 old-instants-all.md
 old-instants-per-month.md
