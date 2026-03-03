@@ -5,8 +5,6 @@ permalink: /instant/
 toc: false
 ---
 
-- [台灣彩券刮刮樂玩法](https://www.taiwanlottery.com/instant/info)
-
 ## 最新刮刮樂
 
 <div class="post-list">
@@ -55,3 +53,10 @@ toc: false
     </article>
   {% endfor %}
 </div>
+
+## 參考資料
+
+- [台灣彩券刮刮樂玩法](https://www.taiwanlottery.com/instant/info)
+- [熱賣中刮刮樂](https://www.taiwanlottery.com/instant/games)
+- [刮刮樂銷售資訊](https://www.taiwanlottery.com/instant/sale)
+- [歷史刮刮樂銷售資訊](https://www.taiwanlottery.com/instant/history)
