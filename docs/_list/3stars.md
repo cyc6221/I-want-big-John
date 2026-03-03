@@ -160,5 +160,45 @@ description: 總計花費 1700 元，中獎 200 元。
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
     </tr>
+    <tr>
+      <td style="text-align:center;">2026/03/03</td>
+      <td style="text-align:center;">3</td>
+      <td style="text-align:center;">{% include small-balls.html items="07:pick 23:miss 77:miss" %}</td>
+      <td style="text-align:center;">4</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">2026/03/03</td>
+      <td style="text-align:center;">3</td>
+      <td style="text-align:center;">{% include small-balls.html items="07:miss 23:miss 77:miss" %}</td>
+      <td style="text-align:center;">4</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">2026/03/03</td>
+      <td style="text-align:center;">3</td>
+      <td style="text-align:center;">{% include small-balls.html items="07:miss 23:miss 77:pick" %}</td>
+      <td style="text-align:center;">4</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">2026/03/03</td>
+      <td style="text-align:center;">3</td>
+      <td style="text-align:center;">{% include small-balls.html items="07:pick 23:miss 77:miss" %}</td>
+      <td style="text-align:center;">4</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">2026/03/03</td>
+      <td style="text-align:center;">3</td>
+      <td style="text-align:center;">{% include small-balls.html items="07:miss 23:miss 77:miss" %}</td>
+      <td style="text-align:center;">4</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">0</td>
+    </tr>
   </tbody>
 </table>
