@@ -225,7 +225,7 @@ description: 總計花費 2200 元，中獎 400 元。
     </tr>
     <tr>
       <td style="text-align:center;">2026/03/03</td>
-      <td style="text-align:center;"></td>
+      <td style="text-align:center;">115012565</td>
       <td style="text-align:center;">4</td>
       <td style="text-align:center;">{% include small-balls.html items="15:miss 18:pick 26:miss 28:pick" %}</td>
       <td style="text-align:center;">4</td>
@@ -234,7 +234,7 @@ description: 總計花費 2200 元，中獎 400 元。
     </tr>
     <tr>
       <td style="text-align:center;">2026/03/03</td>
-      <td style="text-align:center;"></td>
+      <td style="text-align:center;">115012566</td>
       <td style="text-align:center;">4</td>
       <td style="text-align:center;">{% include small-balls.html items="15:miss 18:miss 26:miss 28:miss" %}</td>
       <td style="text-align:center;">4</td>
@@ -243,7 +243,7 @@ description: 總計花費 2200 元，中獎 400 元。
     </tr>
     <tr>
       <td style="text-align:center;">2026/03/03</td>
-      <td style="text-align:center;"></td>
+      <td style="text-align:center;">115012567</td>
       <td style="text-align:center;">4</td>
       <td style="text-align:center;">{% include small-balls.html items="15:miss 18:pick 26:miss 28:miss" %}</td>
       <td style="text-align:center;">4</td>
@@ -252,7 +252,7 @@ description: 總計花費 2200 元，中獎 400 元。
     </tr>
     <tr>
       <td style="text-align:center;">2026/03/03</td>
-      <td style="text-align:center;"></td>
+      <td style="text-align:center;">115012568</td>
       <td style="text-align:center;">4</td>
       <td style="text-align:center;">{% include small-balls.html items="15:miss 18:pick 26:pick 28:miss" %}</td>
       <td style="text-align:center;">4</td>
