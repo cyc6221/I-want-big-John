@@ -1,5 +1,5 @@
 ---
-title: 刮刮樂每月花費紀錄
+title: 刮刮樂每月紀錄
 permalink: /list/instant-per-month/
 category: list-instant
 date: 2026-02-25
