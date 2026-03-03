@@ -6,12 +6,11 @@ date: 2026-02-26
 description: 從 2026 年 2 月 25 日開始記錄。
 ---
 
-從 2026 年 2 月 25 日開始記錄。
-
----
-
 ## 選號統計表格
 
+{% include instants/chosen_number_table.html %}
+
+<!-- 
 {% include chosen_number_table.html %}
 
 ## 選號次數統計圖表
@@ -24,4 +23,4 @@ description: 從 2026 年 2 月 25 日開始記錄。
 
 ## 選號中獎統計圖表
 
-{% include chosen_number_chart_win.html id="win1" %}
+{% include chosen_number_chart_win.html id="win1" %} -->

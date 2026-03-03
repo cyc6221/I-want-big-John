@@ -1,0 +1,62 @@
+<div class="table-wrap">
+  <table class="table table--striped" id="chosenTable">
+    <thead>
+      <tr>
+        <th style="text-align:center;">選號</th>
+        <th style="text-align:center;">次數</th>
+        <th style="text-align:center;">花費</th>
+        <th style="text-align:center;">中獎金額</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="4" style="text-align:center; opacity:.7;">載入中…</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+(() => {
+  const DATA_URL = '{{ "/assets/data/instants-chosen-number.json" | relative_url }}';
+  const tbody = document.querySelector('#chosenTable tbody');
+
+  fetch(DATA_URL)
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(data => {
+      tbody.innerHTML = '';
+
+      // 假設你的 JSON item 長這樣：
+      // { chosen_num: "...", count: 3, spent: 300, prize: 200 }
+      for (const it of data) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="text-align:center;">${escapeHtml(it.chosen_num ?? '')}</td>
+          <td style="text-align:center;">${num(it.count)}</td>
+          <td style="text-align:center;">${num(it.spent)}</td>
+          <td style="text-align:center;">${num(it.prize)}</td>
+        `;
+        tbody.appendChild(tr);
+      }
+
+      if (!data.length) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; opacity:.7;">目前沒有資料</td></tr>`;
+      }
+    })
+    .catch(err => {
+      tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:#b00;">讀取失敗：${escapeHtml(String(err))}</td></tr>`;
+      console.error(err);
+    });
+
+  function num(x){
+    const n = Number(x);
+    return Number.isFinite(n) ? n.toLocaleString('zh-Hant-TW') : (x ?? '');
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+})();
+</script>
