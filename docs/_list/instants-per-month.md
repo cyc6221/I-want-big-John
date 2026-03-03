@@ -8,7 +8,7 @@ description: 從 2026 年 2 月 25 日開始記錄。
 
 從 2026 年 2 月 25 日開始記錄。
 
-![刮刮樂每月花費與中獎](/assets/img/instants/instants-per-month.png)
+![刮刮樂每月花費與中獎]({{ "/assets/img/instants/instants-per-month.png" | relative_url }})
 
 ---
 
