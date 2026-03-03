@@ -8,7 +8,7 @@ description: 從 2026 年 2 月 25 日開始記錄。
 
 ## 選號統計表格
 
-{% include chosen-number-table.html %}
+{% include instants/chosen-number-table.html %}
 
 <!-- 
 {% include chosen_number_table.html %}
