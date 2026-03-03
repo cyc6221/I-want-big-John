@@ -9,7 +9,7 @@ CSV_PATH = Path("raw-data/all-instants.csv")
 OUT_MD   = Path("docs/_list/instants-per-month.md")
 
 OUT_PNG  = Path("docs/assets/img/instants/instants-per-month.png")
-PNG_MD_PATH = "/assets/img/instants/instants-per-month.png"
+PNG_MD_JEKYLL = '{{ "/assets/img/instants/instants-per-month.png" | relative_url }}'
 
 def parse_int(x, default=0):
     s = (x or "").strip()
@@ -103,7 +103,7 @@ def build_markdown(months, month_map):
     lines.append("")
     lines.append("從 2026 年 2 月 25 日開始記錄。")
     lines.append("")
-    lines.append(f"![刮刮樂每月花費與中獎]({PNG_MD_PATH})")
+    lines.append(f"![刮刮樂每月花費與中獎]({PNG_MD_JEKYLL})")
     lines.append("")
     lines.append("---")
     lines.append("")
@@ -120,7 +120,7 @@ def build_markdown(months, month_map):
 
 def main():
     setup_cjk_font()
-    
+
     if not CSV_PATH.exists():
         raise FileNotFoundError(f"CSV not found: {CSV_PATH}")
 
