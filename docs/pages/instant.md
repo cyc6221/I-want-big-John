@@ -33,7 +33,7 @@ toc: false
   {% endfor %}
 
   <div class="post-more">
-    <a href="{{ '/_list/instant-compare/' | relative_url }}">>>> 全部刮刮樂比較 <<<</a>
+    <a href="{{ '/list/instant-compare/' | relative_url }}">>>> 全部刮刮樂比較 <<<</a>
   </div>
 </div>
 
