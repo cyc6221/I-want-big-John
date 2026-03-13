@@ -12,7 +12,7 @@ toc: false
     | where: "category", "all-instants"
     | sort: "published" | reverse %}
 
-  {% for post in items %}
+  {% for post in items limit: 6 %}
     <article class="post-item">
       <h3 class="post-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -31,6 +31,10 @@ toc: false
       {% endif %}
     </article>
   {% endfor %}
+
+  <div class="post-more">
+    <a href="{{ '/_list/instant-compare/' | relative_url }}">>>> 全部刮刮樂比較 <<<</a>
+  </div>
 </div>
 
 ## 本人超無聊紀錄
