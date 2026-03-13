@@ -1,17 +1,30 @@
 /* _sass/components/_hero.scss */
 
-/* ===== Hero banner (首頁可用 class="hero") ===== */
+/* ===== Hero grid wrapper ===== */
+.hero-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 1.5rem;
+  align-items: stretch;
+}
+
+/* ===== Hero card ===== */
 .hero{
   border-radius: calc(var(--radius) + 10px);
-  padding: 1.4rem 1.4rem;
-  margin: 1rem 0 1.25rem 0;
+  padding: 1.35rem 1.25rem;
+  margin: 0; /* 交給 .hero-grid 控制間距 */
   color: #fff;
   position: relative;
   overflow: hidden;
 
-  /* 你 tokens 裡的主視覺漸層 */
   background: var(--grad-hero);
   box-shadow: var(--shadow);
+
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* 金色光暈（右上角） */
@@ -21,7 +34,11 @@
   inset: -140px -140px auto auto;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle at 30% 30%, rgba(246,196,83,0.80), transparent 62%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(246,196,83,0.80),
+    transparent 62%
+  );
   transform: rotate(10deg);
   opacity: .95;
 }
@@ -58,35 +75,225 @@
 .hero h1{
   font-weight: 900;
   letter-spacing: .2px;
-  margin-bottom: .35rem;
+  margin-bottom: .75rem;
+  font-size: clamp(1.9rem, 2vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.hero h2{
+  font-weight: 800;
+  margin-bottom: .7rem;
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  line-height: 1.2;
 }
 
 .hero p{
   opacity: .95;
   max-width: 70ch;
-  margin-bottom: .9rem;
+  margin-bottom: 0;
 }
 
-/* hero 裡的按鈕間距好看 */
+/* 按鈕區塊橫排 */
+.hero p a,
+.hero .hero__actions a{
+  margin-right: .65rem;
+  margin-bottom: .45rem;
+}
+
 .hero .btn{
   margin-top: .2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 小螢幕微調：padding 與圓角縮小，避免擠 */
+/* ===== Tablet ===== */
+@media screen and (max-width: 980px){
+  .hero-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== Mobile ===== */
 @media screen and (max-width: 600px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .hero{
     padding: 1.1rem 1.1rem;
     border-radius: calc(var(--radius) + 6px);
+    min-height: 180px;
   }
+
   .hero::before{
     width: 260px;
     height: 260px;
     inset: -120px -120px auto auto;
   }
+
   .hero::after{
     width: 280px;
     height: 280px;
     left: -100px;
     bottom: -110px;
+  }
+
+  .hero h1{
+    font-size: 1.9rem;
+  }
+
+  .hero h2{
+    font-size: 1.45rem;
+  }
+}/* _sass/components/_hero.scss */
+
+/* ===== Hero grid wrapper ===== */
+.hero-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 1.5rem;
+  align-items: stretch;
+}
+
+/* ===== Hero card ===== */
+.hero{
+  border-radius: calc(var(--radius) + 10px);
+  padding: 1.35rem 1.25rem;
+  margin: 0; /* 交給 .hero-grid 控制間距 */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  background: var(--grad-hero);
+  box-shadow: var(--shadow);
+
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 金色光暈（右上角） */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: -140px -140px auto auto;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(246,196,83,0.80),
+    transparent 62%
+  );
+  transform: rotate(10deg);
+  opacity: .95;
+}
+
+/* 金粉點點（左下角） */
+.hero::after{
+  content: "";
+  position: absolute;
+  left: -120px;
+  bottom: -140px;
+  width: 360px;
+  height: 360px;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,255,255,0.22), transparent 28%),
+    radial-gradient(circle at 55% 60%, rgba(246,196,83,0.18), transparent 34%),
+    radial-gradient(circle at 75% 35%, rgba(255,255,255,0.14), transparent 30%);
+  filter: blur(2px);
+  opacity: .9;
+}
+
+/* 內容層保持在裝飾上面 */
+.hero > *{
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1,
+.hero h2,
+.hero p{
+  color: #fff;
+  margin-top: 0;
+}
+
+.hero h1{
+  font-weight: 900;
+  letter-spacing: .2px;
+  margin-bottom: .75rem;
+  font-size: clamp(1.9rem, 2vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.hero h2{
+  font-weight: 800;
+  margin-bottom: .7rem;
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  line-height: 1.2;
+}
+
+.hero p{
+  opacity: .95;
+  max-width: 70ch;
+  margin-bottom: 0;
+}
+
+/* 按鈕區塊橫排 */
+.hero p a,
+.hero .hero__actions a{
+  margin-right: .65rem;
+  margin-bottom: .45rem;
+}
+
+.hero .btn{
+  margin-top: .2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Tablet ===== */
+@media screen and (max-width: 980px){
+  .hero-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ===== Mobile ===== */
+@media screen and (max-width: 600px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero{
+    padding: 1.1rem 1.1rem;
+    border-radius: calc(var(--radius) + 6px);
+    min-height: 180px;
+  }
+
+  .hero::before{
+    width: 260px;
+    height: 260px;
+    inset: -120px -120px auto auto;
+  }
+
+  .hero::after{
+    width: 280px;
+    height: 280px;
+    left: -100px;
+    bottom: -110px;
+  }
+
+  .hero h1{
+    font-size: 1.9rem;
+  }
+
+  .hero h2{
+    font-size: 1.45rem;
   }
 }
