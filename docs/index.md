@@ -54,6 +54,6 @@ title: 我要中大John
   </div>
 
   <div class="post-more">
-    <a href="{{ '/all-articles/' | relative_url }}">看全部文章 →</a>
+    <a href="{{ '/all-articles/' | relative_url }}">>>> 全部文章 <<<</a>
   </div>
 </div>
