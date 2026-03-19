@@ -33,7 +33,7 @@ description: 當前市面上刮刮樂之比較表
 | 5135 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5135/">財神報到</a> | 11.9985% | 19.9999% | 31.9984% | 100 | 62.9891 | 37.0109 | 62.99% |
 | 5150 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5150/">推金幣</a> | 16.3599% | 13.6356% | 29.9954% | 100 | 60.9902 | 39.0098 | 60.99% |
 | 5136 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5136/">鑽很大</a> | 15.4161% | 24.7200% | 40.1361% | 500 | 342.2 | 157.8 | 68.44% |
-| 5137 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5137/">樂刮$2,000</a> | 8.810866% | 16.291324% | 25.102190% | 200 | 134.1096 | 65.8904 | 67.05% |
+| 5137 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5137/">樂刮$2,000</a> | 8.810866% | 16.2913% | 25.1022% | 200 | 134.1096 | 65.8904 | 67.05% |
 | 5138 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5138/">無敵30倍</a> | 14.2964% | 16.7183% | 31.0147% | 300 | 197.2972 | 102.7028 | 65.77% |
 | 5139 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5139/">釣魚高手</a> | 17.0140% | 15.9993% | 33.0134% | 200 | 129.9384 | 70.0616 | 64.97% |
 | 5141 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5141/">出棋制勝</a> | 17.0671% | 18.9332% | 36.0003% | 200 | 123.9502 | 76.0498 | 61.98% |
