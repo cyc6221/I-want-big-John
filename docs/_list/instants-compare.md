@@ -20,6 +20,7 @@ description: 當前市面上刮刮樂之比較表
 | 5137 | 2026/02/24 | 2026/08/24 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5137/">樂刮$2,000</a> | 200 | 1M | 5 |
 | 5138 | 2026/03/10 | 2026/09/10 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5138/">無敵30倍</a> | 300 | 3M | 3 |
 | 5139 | 2026/03/10 | 2026/09/10 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5139/">釣魚高手</a> | 200 | 2M | 4 |
+| 5140 | 2026/03/19 | 2026/09/24 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5140/">幸運開獎機</a> | 200 | 2M | 5 |
 | 5141 | 2026/03/19 | 2026/09/24 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5141/">出棋制勝</a> | 200 | 2M | 4 |
 
 ## 期望值
@@ -36,4 +37,5 @@ description: 當前市面上刮刮樂之比較表
 | 5137 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5137/">樂刮$2,000</a> | 8.8109% | 16.2913% | 25.1022% | 200 | 134.1096 | 65.8904 | 67.05% |
 | 5138 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5138/">無敵30倍</a> | 14.2964% | 16.7183% | 31.0147% | 300 | 197.2972 | 102.7028 | 65.77% |
 | 5139 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5139/">釣魚高手</a> | 17.0140% | 15.9993% | 33.0134% | 200 | 129.9384 | 70.0616 | 64.97% |
+| 5140 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5140/">幸運開獎機</a> | 14.0386% | 16.0573% | 30.0959% | 200 | 129.9504 | 70.0496 | 64.98% |
 | 5141 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5141/">出棋制勝</a> | 17.0671% | 18.9332% | 36.0003% | 200 | 123.9502 | 76.0498 | 61.98% |
