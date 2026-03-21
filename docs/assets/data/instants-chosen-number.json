@@ -79,9 +79,9 @@
   {
     "chosen_number": "71",
     "times": 2,
-    "win_times": 0,
+    "win_times": 1,
     "spent": 300,
-    "prize_amount": 0
+    "prize_amount": 200
   },
   {
     "chosen_number": "81",
