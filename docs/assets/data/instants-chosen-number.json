@@ -77,6 +77,13 @@
     "prize_amount": 200
   },
   {
+    "chosen_number": "67",
+    "times": 1,
+    "win_times": 0,
+    "spent": 200,
+    "prize_amount": 0
+  },
+  {
     "chosen_number": "71",
     "times": 2,
     "win_times": 1,
