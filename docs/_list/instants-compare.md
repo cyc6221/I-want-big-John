@@ -22,6 +22,10 @@ description: 當前市面上刮刮樂之比較表
 | 5139 | 2026/03/10 | 2026/09/10 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5139/">釣魚高手</a> | 200 | 2M | 4 |
 | 5140 | 2026/03/19 | 2026/09/24 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5140/">幸運開獎機</a> | 200 | 2M | 5 |
 | 5141 | 2026/03/19 | 2026/09/24 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5141/">出棋制勝</a> | 200 | 2M | 4 |
+| 5142 | 2026/04/07 | 2026/10/07 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5142/">幸運拉霸</a> | 200 | 2M | 4 |
+| 5143 | 2026/04/07 | 2026/10/07 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5143/">幸運777</a> | 100 | 700K | 4 |
+| 5144 | 2026/04/07 | 2026/10/21 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5144/">獎金獵人</a> | 200 | 2M | 6 |
+| 5145 | 2026/04/07 | 2026/10/21 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5145/">一觸即發</a> | 200 | 2M | 3 |
 
 ## 期望值
 
@@ -39,3 +43,7 @@ description: 當前市面上刮刮樂之比較表
 | 5139 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5139/">釣魚高手</a> | 17.0140% | 15.9993% | 33.0134% | 200 | 129.9384 | 70.0616 | 64.97% |
 | 5140 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5140/">幸運開獎機</a> | 14.0386% | 16.0573% | 30.0959% | 200 | 129.9504 | 70.0496 | 64.98% |
 | 5141 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5141/">出棋制勝</a> | 17.0671% | 18.9332% | 36.0003% | 200 | 123.9502 | 76.0498 | 61.98% |
+| 5142 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5142/">幸運拉霸</a> | 18.1585% | 18.9332% | 32.9935% | 200 | 125.9794 | 74.0206 | 62.99% |
+| 5143 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5143/">幸運777</a> | 12.6202% | 17.4857% | 30.1059% | 100 | 62.9810 | 37.0190 | 62.98% |
+| 5144 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5144/">獎金獵人</a> | 18.0981% | 11.9994% | 30.1055% | 200 | 130.0558 | 69.9442 | 65.03% |
+| 5145 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5145/">一觸即發</a> | 14.9876% | 19.0118% | 34.0000% | 200 | 123.9677 | 76.0323 | 61.98% |
