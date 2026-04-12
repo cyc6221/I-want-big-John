@@ -3,10 +3,10 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 5100 元，中獎 2200 元。
+description: 總計花費 5300 元，中獎 2200 元。
 ---
 
-從 2026/02/25 開始記錄，總計花費 5100 元，中獎 2200 元。
+從 2026/02/25 開始記錄，總計花費 5300 元，中獎 2200 元。
 
 ---
 
@@ -38,3 +38,4 @@ description: 總計花費 5100 元，中獎 2200 元。
 | 24 | 2026/03/25 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5132/">獎金樂翻倍</a> | 200 | 0 |
 | 25 | 2026/03/26 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5140/">幸運開獎機</a> | 200 | 0 |
 | 26 | 2026/04/05 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5140/">幸運開獎機</a> | 200 | 0 |
+| 27 | 2026/04/10 | <a class="btn btn--gold" href="/I-want-big-John/all-instants/5145/">一觸即發</a> | 200 | 0 |
