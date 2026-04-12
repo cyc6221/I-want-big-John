@@ -22,7 +22,6 @@ header_pages:
   - pages/list.md # 紀錄
 
 plugins:
-  - jekyll-git-metadata
   - jekyll-sitemap
 
 collections:
