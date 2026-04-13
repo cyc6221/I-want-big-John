@@ -7,9 +7,6 @@ from datetime import datetime
 CSV_PATH = Path("raw-data/all-instants.csv")
 OUT_MD   = Path("docs/_list/instants-all.md")
 
-# ====== 站台 baseurl ======
-BASEURL = "/I-want-big-John"
-
 # ====== 遊戲代碼 -> 中文名稱 ======
 GAME_NAMES_PATH = Path("raw-data/instant-games.json")
 GAME_NAME = json.loads(GAME_NAMES_PATH.read_text(encoding="utf-8"))
@@ -85,7 +82,7 @@ def build_markdown(rows):
     for i, r in enumerate(rows, start=1):
         game_id = r["game"]
         name = GAME_NAME.get(game_id, f"#{game_id}")
-        href = f'{BASEURL}/all-instants/{game_id}/'
+        href = f"{{ '/all-instants/{game_id}/' | relative_url }}"
         item_html = f'<a class="btn btn--gold" href="{href}">{name}</a>'
         lines.append(f"| {i} | {r['date']} | {item_html} | {r['price']} | {r['prize']} |")
 
