@@ -7,7 +7,6 @@ from datetime import datetime
 CSV_PATH = Path("raw-data/all-instants.csv")
 OUT_MD   = Path("docs/_list/instants-all.md")
 
-# ====== 站台 baseurl ======
 # ====== 遊戲代碼 -> 中文名稱 ======
 GAME_NAMES_PATH = Path("raw-data/instant-games.json")
 GAME_NAME = json.loads(GAME_NAMES_PATH.read_text(encoding="utf-8"))
