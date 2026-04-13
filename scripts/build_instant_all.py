@@ -82,7 +82,7 @@ def build_markdown(rows):
     for i, r in enumerate(rows, start=1):
         game_id = r["game"]
         name = GAME_NAME.get(game_id, f"#{game_id}")
-        href = f"{{ '/all-instants/{game_id}/' | relative_url }}"
+        href = f"{{{{ '/all-instants/{game_id}/' | relative_url }}}}"
         item_html = f'<a class="btn btn--gold" href="{href}">{name}</a>'
         lines.append(f"| {i} | {r['date']} | {item_html} | {r['price']} | {r['prize']} |")
 
