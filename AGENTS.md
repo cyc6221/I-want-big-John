@@ -7,7 +7,7 @@ This file records repository-specific workflow rules for Codex.
 - Start feature or data work from `main`.
 - Create a new branch for each task, using the `codex/` prefix by default.
 - Prefer draft PRs unless the user explicitly asks for a ready PR.
-- After a PR is merged, clean up both the local branch and the remote branch.
+- After a PR is merged, switch back to local `main`, fast-forward it to the latest `origin/main`, then clean up both the local branch and the remote branch.
 - When a branch has been rebased, use `git push --force-with-lease` to update the PR branch.
 - On Windows, prefer running generation scripts with UTF-8 console output when needed.
 
