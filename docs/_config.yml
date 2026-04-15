@@ -1,5 +1,5 @@
-title: 我要中大John
-description: I want big John
+title: IWBJ
+description: I Want Big John
 url: "https://cyc6221.github.io"
 baseurl: "/I-want-big-John"
 theme: minima
@@ -8,6 +8,7 @@ theme: minima
 author: CY
 email: s24343162@gmail.com
 github_username: cyc6221
+github_repository_url: "https://github.com/cyc6221/I-want-big-John"
 
 # Build settings
 markdown: kramdown
