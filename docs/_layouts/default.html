@@ -50,12 +50,34 @@
       </div>
     </main>
 
-    <!-- Footer (簡化版) -->
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="wrapper">
-        <p style="margin:0.5rem 0;">
-          © {{ site.time | date: "%Y" }} {{ site.author | default: site.title }}
-        </p>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-mark">{{ site.title }}</div>
+            <p class="footer-tagline">{{ site.description }}</p>
+          </div>
+
+          <div class="footer-meta">
+            <div class="footer-block">
+              <h2 class="footer-heading">Contact</h2>
+              <a class="footer-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </div>
+
+            <div class="footer-block">
+              <h2 class="footer-heading">Author</h2>
+              <p class="footer-text">{{ site.author }}</p>
+            </div>
+
+            <div class="footer-block">
+              <h2 class="footer-heading">GitHub</h2>
+              <a class="footer-link" href="{{ site.github_repository_url }}">{{ site.github_username }}</a>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer-copy">&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
       </div>
     </footer>
 

@@ -1,4 +1,4 @@
-# 我要中大John
+# IWBJ
 
 ## I Want Big John
 
