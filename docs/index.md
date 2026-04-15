@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 我要中大John
+title: IWBJ
 ---
 
 <div class="hero-grid">
