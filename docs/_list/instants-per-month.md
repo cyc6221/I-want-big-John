@@ -1,9 +1,9 @@
 ---
-title: 刮刮樂每月紀錄
+title: 刮刮樂每月統計
 permalink: /list/instant-per-month/
 category: list-instant
 date: 2026-02-25
-description: 從 2026 年 2 月 25 日開始記錄。
+description: 2026 年 4 月，總計花費 900 元，中獎 200 元。
 ---
 
 {% include instants/per-month-data.html %}
