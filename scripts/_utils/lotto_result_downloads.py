@@ -8,6 +8,7 @@ import urllib.request
 import uuid
 import zipfile
 from pathlib import Path
+from typing import Optional
 
 
 API_URL = "https://api.taiwanlottery.com/TLCAPIWeB/Lottery/ResultDownload"
@@ -39,7 +40,7 @@ def build_opener(*, insecure: bool = False) -> urllib.request.OpenerDirector:
     return opener
 
 
-def fetch_download_info(year: int, *, insecure: bool = False) -> dict | None:
+def fetch_download_info(year: int, *, insecure: bool = False) -> Optional[dict]:
     opener = build_opener(insecure=insecure)
     query = urllib.parse.urlencode({"year": year})
     url = f"{API_URL}?{query}"
@@ -104,7 +105,7 @@ def open_zipfile(archive_path: Path) -> zipfile.ZipFile:
         return zipfile.ZipFile(archive_path)
 
 
-def validate_member_path(member_name: str, temp_dir: Path) -> Path | None:
+def validate_member_path(member_name: str, temp_dir: Path) -> Optional[Path]:
     normalized = member_name.rstrip("/")
     if not normalized:
         return None
@@ -154,7 +155,13 @@ def extract_archive(archive_path: Path, output_dir: Path) -> bool:
             flatten_root = None
             unique_top_levels = set(top_level_parts)
             if len(unique_top_levels) == 1:
-                flatten_root = next(iter(unique_top_levels))
+                only_root = next(iter(unique_top_levels))
+                has_root_directory = any(
+                    member.is_dir() and member.filename.rstrip("/") == only_root
+                    for member in members
+                )
+                if has_root_directory:
+                    flatten_root = only_root
 
             for member in members:
                 normalized = member.filename.rstrip("/")

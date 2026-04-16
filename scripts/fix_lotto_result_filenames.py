@@ -1,9 +1,16 @@
 import argparse
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
 
 from _utils.lotto_result_downloads import DEFAULT_OUT_DIR, FIRST_AVAILABLE_YEAR
+
+
+SUFFIX_PATTERNS = (
+    re.compile(r"_(\d{4})$"),
+    re.compile(r"_(\d{6})_(\d{6})$"),
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -44,7 +51,7 @@ def normalize_year_dir(year_dir: Path, year: int, dry_run: bool) -> int:
 
     renamed_count = 0
     for csv_path in sorted(year_dir.glob("*.csv")):
-        game_name = csv_path.stem.split("_", 1)[0].strip()
+        game_name = derive_game_name(csv_path.stem)
         if not game_name:
             print(f"[skip] cannot derive game name: {csv_path}")
             continue
@@ -63,6 +70,14 @@ def normalize_year_dir(year_dir: Path, year: int, dry_run: bool) -> int:
         renamed_count += 1
 
     return renamed_count
+
+
+def derive_game_name(stem: str) -> str:
+    for pattern in SUFFIX_PATTERNS:
+        match = pattern.search(stem)
+        if match:
+            return stem[: match.start()].strip()
+    return stem.strip()
 
 
 def main() -> int:
