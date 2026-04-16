@@ -13,6 +13,12 @@ github_repository_url: "https://github.com/cyc6221/I-want-big-John"
 # Build settings
 markdown: kramdown
 highlighter: rouge
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
 
 header_pages:
   # - index.md
