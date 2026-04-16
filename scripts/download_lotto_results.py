@@ -50,6 +50,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="show which files are available without downloading",
     )
+    parser.add_argument(
+        "--insecure",
+        action="store_true",
+        help="disable TLS certificate verification for broken remote certificate chains",
+    )
     return parser.parse_args()
 
 
@@ -65,7 +70,7 @@ def main() -> int:
     archive_dir = args.out_dir / args.archive_dirname
 
     for year in range(args.from_year, args.to_year + 1):
-        info = fetch_download_info(year)
+        info = fetch_download_info(year, insecure=args.insecure)
         if not info:
             continue
 
@@ -77,7 +82,9 @@ def main() -> int:
             print(f"[available] {year}: {archive_url}")
             continue
 
-        if download_archive(archive_url, archive_path, args.overwrite):
+        if download_archive(
+            archive_url, archive_path, args.overwrite, insecure=args.insecure
+        ):
             downloaded_count += 1
 
     if args.dry_run:
