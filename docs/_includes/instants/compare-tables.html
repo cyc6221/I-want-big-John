@@ -1,0 +1,75 @@
+<h2>基本資訊</h2>
+
+<div class="table-wrap">
+  <table class="table table--striped">
+    <thead>
+      <tr>
+        <th>i</th>
+        <th>上市日</th>
+        <th>結束日</th>
+        <th>刮刮樂</th>
+        <th>價格</th>
+        <th>頭獎</th>
+        <th>頭獎張數</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in site.data.instants_compare.games %}
+        {% assign game_id = row.id %}
+        <tr>
+          <td>{{ game_id }}</td>
+          <td>{{ row.launch }}</td>
+          <td>{{ row.end }}</td>
+          <td>
+            <a class="btn btn--gold" href="{{ '/all-instants/' | append: game_id | append: '/' | relative_url }}">
+              {{ row.name }}（第{{ game_id }}期）
+            </a>
+          </td>
+          <td>{{ row.price }}</td>
+          <td>{{ row.jackpot }}</td>
+          <td>{{ row.jackpot_count }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2>期望值</h2>
+
+<div class="table-wrap">
+  <table class="table table--striped">
+    <thead>
+      <tr>
+        <th>i</th>
+        <th>刮刮樂</th>
+        <th>有賺機率 (A)</th>
+        <th>不賠機率 (B)</th>
+        <th>總中獎率 (A+B)</th>
+        <th>價格 (P)</th>
+        <th>期望值 (E)</th>
+        <th>期望損失 (P-E)</th>
+        <th>回本率 (E/P)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in site.data.instants_compare.games %}
+        {% assign game_id = row.id %}
+        <tr>
+          <td>{{ game_id }}</td>
+          <td>
+            <a class="btn btn--gold" href="{{ '/all-instants/' | append: game_id | append: '/' | relative_url }}">
+              {{ row.name }}（第{{ game_id }}期）
+            </a>
+          </td>
+          <td>{{ row.win_rate }}</td>
+          <td>{{ row.break_even_rate }}</td>
+          <td>{{ row.no_loss_rate }}</td>
+          <td>{{ row.price }}</td>
+          <td>{{ row.expected_value }}</td>
+          <td>{{ row.expected_loss }}</td>
+          <td>{{ row.roi }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
