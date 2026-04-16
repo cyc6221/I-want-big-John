@@ -3,6 +3,13 @@
 __pycache__/
 *.pyc
 
+docs/.bundle/
+docs/vendor/
+docs/_site/
+docs/.sass-cache/
+docs/.jekyll-cache/
+docs/.jekyll-metadata
+
 # old data
 old-instants-all.md
 old-instants-chosen-number.md
