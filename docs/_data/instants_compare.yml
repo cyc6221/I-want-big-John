@@ -1,4 +1,17 @@
 games:
+  - id: 5123
+    name: 海底大尋寶
+    launch: 2026/01/06
+    end: 2026/07/06
+    price: 300
+    jackpot: 3M
+    jackpot_count: 5
+    win_rate: 19.5662%
+    break_even_rate: 16.4318%
+    no_loss_rate: 35.9980%
+    expected_value: "200.6533"
+    expected_loss: "99.3467"
+    roi: 66.88%
   - id: 5130
     name: 財源滾滾
     launch: 2026/01/20
