@@ -79,12 +79,22 @@ def download_archive(
 
     opener = build_opener(insecure=insecure)
     destination.parent.mkdir(parents=True, exist_ok=True)
+    temp_destination = destination.with_name(f"{destination.name}.tmp-{uuid.uuid4().hex[:8]}")
 
     try:
-        with opener.open(url, timeout=120) as response, destination.open("wb") as fh:
+        with opener.open(url, timeout=120) as response, temp_destination.open("wb") as fh:
             shutil.copyfileobj(response, fh)
-    except urllib.error.URLError as exc:
-        if isinstance(exc.reason, ssl.SSLCertVerificationError) and not insecure:
+        temp_destination.replace(destination)
+    except (urllib.error.URLError, OSError) as exc:
+        if temp_destination.exists():
+            temp_destination.unlink(missing_ok=True)
+        if destination.exists() and overwrite:
+            destination.unlink(missing_ok=True)
+        if (
+            isinstance(exc, urllib.error.URLError)
+            and isinstance(exc.reason, ssl.SSLCertVerificationError)
+            and not insecure
+        ):
             print(
                 f"[error] failed to download {destination.name}: {exc}. "
                 "Retry with --insecure if the remote certificate chain is broken.",
@@ -192,7 +202,13 @@ def extract_archive(archive_path: Path, output_dir: Path) -> bool:
             output_dir.replace(backup_dir)
         temp_output_dir.replace(output_dir)
         if backup_dir and backup_dir.exists():
-            shutil.rmtree(backup_dir)
+            try:
+                shutil.rmtree(backup_dir)
+            except OSError as exc:
+                print(
+                    f"[warn] extracted {archive_path} but failed to remove backup {backup_dir}: {exc}",
+                    file=sys.stderr,
+                )
     except (zipfile.BadZipFile, OSError, ValueError) as exc:
         if temp_output_dir.exists():
             shutil.rmtree(temp_output_dir, ignore_errors=True)
