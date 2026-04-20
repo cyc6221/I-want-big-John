@@ -1,0 +1,83 @@
+# 刮刮樂文章模板
+
+複製這份檔案並改名為 `{期號}.md`，再把下面的 placeholder 全部換成新刮刮樂資料。
+
+---
+title: 刮刮樂-第{{ISSUE_NUM}}期：{{GAME_NAME}}
+permalink: /all-instants/{{ISSUE_NUM}}/
+category: all-instants
+date: {{RELEASE_DATE_YYYY-MM-DD}}
+published: {{LATEST_TEST_DATE_OR_RELEASE_DATE_YYYY-MM-DD}}
+num: {{ISSUE_NUM}}
+description: 每張{{PRICE}}元，總計{{TOTAL_TICKETS}}張，頭獎NT${{TOP_PRIZE}}，中獎機率{{WIN_RATE}}%
+---
+
+## 基本資料
+
+| 項目 | 資料 |
+| :-: | :-: |
+| 期別 | 第{{ISSUE_NUM}}期 |
+| 名稱 | {{GAME_NAME}} |
+| 售價 | 每張{{PRICE}}元 |
+| 發行張數 | 總計{{TOTAL_TICKETS}}張 |
+| 日期 | 發行：{{RELEASE_DATE_ROC}}（{{RELEASE_WEEKDAY}}）<br>下市：{{END_SALE_DATE_ROC}}（{{END_SALE_WEEKDAY}}）<br>兌獎截止：{{CLAIM_DEADLINE_ROC}}（{{CLAIM_DEADLINE_WEEKDAY}}） |
+| 官方資料 | [台灣彩券公告]({{OFFICIAL_URL}}#{{ISSUE_NUM}}) |
+
+## 獎金結構
+
+| 獎項 | 中獎張數 | 中獎機率 |
+| :-: | :-: | :-: |
+| NT${{PRIZE_1}} | {{COUNT_1}} | {{RATE_1}}% |
+| NT${{PRIZE_2}} | {{COUNT_2}} | {{RATE_2}}% |
+| NT${{PRIZE_3}} | {{COUNT_3}} | {{RATE_3}}% |
+| NT${{PRIZE_4}} | {{COUNT_4}} | {{RATE_4}}% |
+| NT${{PRIZE_5}} | {{COUNT_5}} | {{RATE_5}}% |
+| NT$0 | {{LOSE_COUNT}} | {{LOSE_RATE}}% |
+| **總計** | **{{TOTAL_TICKETS}}** | **100.000000%** |
+
+| 統計 | 張數 | 機率 |
+| :-: | :-: | :-: |
+| 總發行張數 | {{TOTAL_TICKETS}} | |
+| 中獎張數（有賺） | {{PROFIT_TICKETS}} | {{PROFIT_RATE}}% |
+| 中獎張數（沒賠） | {{BREAK_EVEN_TICKETS}} | {{BREAK_EVEN_RATE}}% |
+| 中獎張數（加總） | {{WINNING_TICKETS}} | {{WIN_RATE}}% |
+| 烏龜張數 | {{LOSE_COUNT}} | {{LOSE_RATE}}% |
+
+## 期望值計算
+
+總發行張數 $N={{TOTAL_TICKETS}}$。
+
+### 計算表
+
+| 單張獎金 $x_i$ | 中獎張數 $n_i$ | 機率 $p_i=\frac{n_i}{N}$ | 貢獻值 $x_i p_i$ | 總獎金 $x_i n_i$ |
+| ---: | ---: | ---: | ---: | ---: |
+| {{PRIZE_1}} | {{COUNT_1}} | $\frac{{COUNT_1}}{ {{TOTAL_TICKETS}} }$ | {{CONTRIBUTION_1}} | {{PRIZE_SUM_1}} |
+| {{PRIZE_2}} | {{COUNT_2}} | $\frac{{COUNT_2}}{ {{TOTAL_TICKETS}} }$ | {{CONTRIBUTION_2}} | {{PRIZE_SUM_2}} |
+| {{PRIZE_3}} | {{COUNT_3}} | $\frac{{COUNT_3}}{ {{TOTAL_TICKETS}} }$ | {{CONTRIBUTION_3}} | {{PRIZE_SUM_3}} |
+| {{PRIZE_4}} | {{COUNT_4}} | $\frac{{COUNT_4}}{ {{TOTAL_TICKETS}} }$ | {{CONTRIBUTION_4}} | {{PRIZE_SUM_4}} |
+| {{PRIZE_5}} | {{COUNT_5}} | $\frac{{COUNT_5}}{ {{TOTAL_TICKETS}} }$ | {{CONTRIBUTION_5}} | {{PRIZE_SUM_5}} |
+| 0 | {{LOSE_COUNT}} | $\frac{{LOSE_COUNT}}{ {{TOTAL_TICKETS}} }$ | $0$ | 0 |
+| **總和** | **{{TOTAL_TICKETS}}** | **1** | **{{EXPECTED_VALUE}}** | **{{TOTAL_PRIZE_SUM}}** |
+
+### 結論
+
+- 每張售價：**{{PRICE}} 元**
+- 單張期望值：**{{EXPECTED_VALUE}} 元**
+- 平均虧損：**{{AVERAGE_LOSS}} 元**
+- 期望值回收率：$\frac{{EXPECTED_VALUE}}{ {{PRICE}} }\approx {{RETURN_RATE}}$
+
+## 親自實測
+
+- {{YYYY/MM/DD}}：{{TEST_NOTE_1}}
+- {{YYYY/MM/DD}}：{{TEST_NOTE_2}}
+
+## 填寫提醒
+
+- 若獎項超過 5 種，直接依照同樣格式往下加表格列。
+- front matter 的 `date` 請填「發行日」的西元日期格式，例如 `2026-02-03`。
+- front matter 的 `published` 請填 `親自實測` 區塊最新一筆日期；如果 `親自實測` 沒有資料，就直接等於 `date`。
+- `日期` 欄位可維持目前文章的單格 `<br>` 換行格式；如果之後想拆成三列，也可以改成「發行 / 下市 / 兌獎截止」各一列。
+- `官方資料` 的 URL 在你新增檔案時補上即可，模板已保留 `{{OFFICIAL_URL}}#{{ISSUE_NUM}}` 格式。
+- `回本張數` 指獎金剛好等於票價的張數；若沒有回本獎項，可填 `0`。
+- 建議先從台彩公告整理出「獎項 / 張數 / 機率」，再回填期望值區塊。
+- `親自實測` 如果沒有中獎，統一寫成 `打龜`。
