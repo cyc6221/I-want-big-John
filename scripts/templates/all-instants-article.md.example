@@ -1,7 +1,3 @@
-# 刮刮樂文章模板
-
-複製這份檔案並改名為 `{期號}.md`，再把下面的 placeholder 全部換成新刮刮樂資料。
-
 ---
 title: 刮刮樂-第{{ISSUE_NUM}}期：{{GAME_NAME}}
 permalink: /all-instants/{{ISSUE_NUM}}/
@@ -11,6 +7,10 @@ published: {{LATEST_TEST_DATE_OR_RELEASE_DATE_YYYY-MM-DD}}
 num: {{ISSUE_NUM}}
 description: 每張{{PRICE}}元，總計{{TOTAL_TICKETS}}張，頭獎NT${{TOP_PRIZE}}，中獎機率{{WIN_RATE}}%
 ---
+
+# 刮刮樂文章模板
+
+複製這份檔案並改名為 `{期號}.md`，再把下面的 placeholder 全部換成新刮刮樂資料。
 
 ## 基本資料
 
