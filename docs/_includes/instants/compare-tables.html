@@ -4,7 +4,7 @@
   <table class="table table--striped">
     <thead>
       <tr>
-        <th>i</th>
+        <th>期</th>
         <th>上市日</th>
         <th>結束日</th>
         <th>刮刮樂</th>
@@ -22,7 +22,7 @@
           <td>{{ row.end }}</td>
           <td>
             <a class="btn btn--gold" href="{{ '/all-instants/' | append: game_id | append: '/' | relative_url }}">
-              {{ row.name }}（第{{ game_id }}期）
+              {{ row.name }}
             </a>
           </td>
           <td>{{ row.price }}</td>
@@ -40,7 +40,7 @@
   <table class="table table--striped">
     <thead>
       <tr>
-        <th>i</th>
+        <th>期</th>
         <th>刮刮樂</th>
         <th>有賺機率 (A)</th>
         <th>不賠機率 (B)</th>
@@ -58,7 +58,7 @@
           <td>{{ game_id }}</td>
           <td>
             <a class="btn btn--gold" href="{{ '/all-instants/' | append: game_id | append: '/' | relative_url }}">
-              {{ row.name }}（第{{ game_id }}期）
+              {{ row.name }}
             </a>
           </td>
           <td>{{ row.win_rate }}</td>
