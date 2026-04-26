@@ -23,6 +23,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  min-height: 72px;
   padding-top: .65rem !important;
   padding-bottom: .65rem !important;
 }
@@ -33,6 +34,8 @@
   color: var(--text) !important;
   letter-spacing: .2px;
   font-weight: 850;
+  float: none !important;
+  flex: 0 0 auto;
   margin: 0 !important;
   line-height: 1.1;
   text-decoration: none !important;
@@ -40,6 +43,11 @@
 
 /* nav 基本：清掉 minima 手機 dropdown 會加的定位/背景/邊框 */
 .site-nav{
+  float: none !important;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
   margin-top: 0 !important;
   line-height: 1;
   position: static !important;
@@ -81,11 +89,15 @@
 @media screen and (max-width: 600px){
   .site-header .wrapper{
     flex-wrap: wrap;
+    align-items: flex-start;
     row-gap: .5rem;
+    min-height: 0;
   }
 
   .site-nav{
     width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
   }
 
   .site-nav .trigger{
