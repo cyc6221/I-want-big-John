@@ -62,6 +62,27 @@
   display: none !important;
 }
 
+.site-nav .menu-icon{
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+}
+
+.site-nav .menu-icon span{
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 3px 0;
+  border-radius: 999px;
+  background: var(--text);
+  transition: transform .2s ease, opacity .2s ease;
+}
+
 /* 讓導覽列永遠顯示（不靠 trigger 展開）
    minima 某些狀態會把 .trigger 設為 display:none，這裡鎖死 */
 .site-nav .trigger{
@@ -88,25 +109,67 @@
 /* 手機：空間不足就換行，但保持同一條左邊界 */
 @media screen and (max-width: 600px){
   .site-header .wrapper{
-    flex-wrap: wrap;
-    align-items: flex-start;
-    row-gap: .5rem;
+    align-items: center;
     min-height: 0;
   }
 
   .site-nav{
-    width: 100%;
-    justify-content: flex-start;
-    margin-left: 0;
+    position: relative !important;
+    flex: 0 0 auto;
+    width: auto;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .site-nav .nav-trigger{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .site-nav .menu-icon{
+    display: inline-flex !important;
   }
 
   .site-nav .trigger{
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: .9rem;
+    display: none !important;
+    position: absolute !important;
+    top: calc(100% + .85rem);
+    right: 0;
+    min-width: min(280px, calc(100vw - 48px));
+    flex-direction: column;
+    align-items: stretch;
+    gap: .2rem;
+    padding: .6rem;
+    border: 1px solid var(--border) !important;
+    border-radius: 18px;
+    background: rgba(255, 247, 243, 0.98) !important;
+    box-shadow: 0 20px 40px rgba(28, 20, 14, 0.14) !important;
+  }
+
+  .site-nav .nav-trigger:checked + .menu-icon span:nth-child(1){
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .site-nav .nav-trigger:checked + .menu-icon span:nth-child(2){
+    opacity: 0;
+  }
+
+  .site-nav .nav-trigger:checked + .menu-icon span:nth-child(3){
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  .site-nav .nav-trigger:checked ~ .trigger{
+    display: flex !important;
   }
 
   .site-nav .page-link{
-    padding: .25rem 0 !important;
+    display: block;
+    padding: .7rem .85rem !important;
+    border-radius: 12px;
+  }
+
+  .site-nav .page-link:hover{
+    background: rgba(255, 255, 255, 0.9);
   }
 }
