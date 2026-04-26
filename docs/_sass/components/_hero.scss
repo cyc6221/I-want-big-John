@@ -297,3 +297,32 @@
     font-size: 1.45rem;
   }
 }
+
+.hero-grid--quick-links{
+  margin: .4rem 0 0;
+}
+
+.hero-grid--quick-links .hero{
+  min-height: 160px;
+  padding: 1.05rem 1rem;
+}
+
+.hero-grid--quick-links .hero h1{
+  margin-bottom: .55rem;
+  font-size: clamp(1.45rem, 1.4vw, 1.8rem);
+}
+
+.hero-grid--quick-links .hero .btn{
+  min-height: 2.5rem;
+}
+
+@media screen and (max-width: 600px){
+  .hero-grid--quick-links .hero{
+    min-height: 144px;
+    padding: .95rem;
+  }
+
+  .hero-grid--quick-links .hero h1{
+    font-size: 1.55rem;
+  }
+}
