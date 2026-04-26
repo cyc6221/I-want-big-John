@@ -1,5 +1,12 @@
 [
   {
+    "chosen_number": "3",
+    "times": 1,
+    "win_times": 1,
+    "spent": 200,
+    "prize_amount": 500
+  },
+  {
     "chosen_number": "10",
     "times": 1,
     "win_times": 0,
@@ -81,6 +88,13 @@
     "times": 3,
     "win_times": 0,
     "spent": 400,
+    "prize_amount": 0
+  },
+  {
+    "chosen_number": "43",
+    "times": 1,
+    "win_times": 0,
+    "spent": 200,
     "prize_amount": 0
   },
   {
@@ -166,6 +180,13 @@
     "win_times": 0,
     "spent": 200,
     "prize_amount": 0
+  },
+  {
+    "chosen_number": "89",
+    "times": 1,
+    "win_times": 1,
+    "spent": 100,
+    "prize_amount": 100
   },
   {
     "chosen_number": "91",
