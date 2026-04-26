@@ -1,5 +1,12 @@
 [
   {
+    "chosen_number": "3",
+    "times": 1,
+    "win_times": 1,
+    "spent": 200,
+    "prize_amount": 500
+  },
+  {
     "chosen_number": "10",
     "times": 1,
     "win_times": 0,
