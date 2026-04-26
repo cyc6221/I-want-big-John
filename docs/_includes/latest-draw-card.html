@@ -1,0 +1,31 @@
+{% assign latest_game = site.data.latest_draws.games | where: "key", include.key | first %}
+{% if latest_game %}
+<div class="card card--couplet">
+  <div class="home-section-head">
+    <div>
+      <h2>最新一期開獎結果</h2>
+    </div>
+  </div>
+
+  <section class="latest-draw-card latest-draw-card--{{ latest_game.key }}">
+    <div class="latest-draw-card__top">
+      <div>
+        <p class="latest-draw-card__eyebrow">{{ latest_game.name }}</p>
+        <h3>第 {{ latest_game.issue }} 期</h3>
+      </div>
+      <span class="latest-draw-card__date">{{ latest_game.date }}</span>
+    </div>
+
+    <div class="latest-draw-card__body">
+      <div class="ball-row latest-draw-card__balls">
+        {% for number in latest_game.numbers %}
+          <span class="ball" aria-hidden="true">{{ number }}</span>
+        {% endfor %}
+        {% if latest_game.special_number %}
+          <span class="ball ball--red" aria-hidden="true">{{ latest_game.special_number }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endif %}
