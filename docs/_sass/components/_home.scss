@@ -1,5 +1,96 @@
 /* _sass/components/_home.scss */
 
+.home-section-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.home-section-head h2{
+  margin-bottom: .3rem;
+}
+
+.home-section-head p{
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.latest-draws-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.latest-draw-card{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.1rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid rgba(200, 30, 30, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(246, 196, 83, 0.24), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,245,239,0.98) 100%);
+  box-shadow: 0 12px 28px rgba(31, 41, 55, 0.07);
+}
+
+.latest-draw-card__top{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: .8rem;
+}
+
+.latest-draw-card__top h3{
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.latest-draw-card__eyebrow{
+  margin: 0 0 .2rem;
+  color: var(--brand-red);
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.latest-draw-card__date{
+  display: inline-flex;
+  align-items: center;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  background: rgba(200, 30, 30, 0.08);
+  color: var(--brand-red);
+  font-size: .84rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.latest-draw-card__body{
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+
+.latest-draw-card__balls{
+  margin: 0;
+  align-items: center;
+}
+
+.latest-draw-card__actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: auto;
+}
+
+.latest-draw-card__actions .btn{
+  flex: 1 1 140px;
+  justify-content: center;
+}
+
 /* ===== Home post list (minima) ===== */
 .post-list{
   margin: 0;
@@ -23,7 +114,6 @@
   border-color: color-mix(in srgb, var(--border) 70%, rgba(245,158,11,0.35));
 }
 
-/* 文章標題連結 */
 .post-link{
   font-weight: 800;
   letter-spacing: .1px;
@@ -37,9 +127,23 @@
   opacity: .95;
 }
 
-/* 日期/作者等 meta（minima 會用到） */
 .post-meta{
   color: var(--text-muted);
   font-size: .92rem;
   margin-top: .25rem;
+}
+
+@media screen and (max-width: 640px){
+  .home-section-head{
+    align-items: start;
+  }
+
+  .latest-draw-card{
+    padding: 1rem;
+  }
+
+  .latest-draw-card__top{
+    flex-direction: column;
+    align-items: start;
+  }
 }
