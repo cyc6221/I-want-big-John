@@ -204,9 +204,9 @@
   },
   {
     "chosen_number": "99",
-    "times": 2,
+    "times": 3,
     "win_times": 0,
-    "spent": 300,
+    "spent": 500,
     "prize_amount": 0
   }
 ]
