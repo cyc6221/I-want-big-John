@@ -38,7 +38,8 @@ title: IWBJ
 
   <div class="latest-draws-grid">
     {% for game in site.data.latest_draws.games %}
-      {% assign draw_label = game.name | append: ' 第 ' | append: game.issue | append: ' 期開獎號碼：' | append: game.numbers | join: '、' %}
+      {% assign draw_numbers_label = game.numbers | join: '、' %}
+      {% assign draw_label = game.name | append: ' 第 ' | append: game.issue | append: ' 期開獎號碼：' | append: draw_numbers_label %}
       {% if game.special_number %}
         {% assign draw_label = draw_label | append: '，' | append: game.special_label | append: ' ' | append: game.special_number %}
       {% endif %}

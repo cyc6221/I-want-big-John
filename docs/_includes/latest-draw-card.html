@@ -1,6 +1,7 @@
 {% assign latest_game = site.data.latest_draws.games | where: "key", include.key | first %}
 {% if latest_game %}
-{% assign draw_label = latest_game.name | append: ' 第 ' | append: latest_game.issue | append: ' 期開獎號碼：' | append: latest_game.numbers | join: '、' %}
+{% assign draw_numbers_label = latest_game.numbers | join: '、' %}
+{% assign draw_label = latest_game.name | append: ' 第 ' | append: latest_game.issue | append: ' 期開獎號碼：' | append: draw_numbers_label %}
 {% if latest_game.special_number %}
   {% assign draw_label = draw_label | append: '，' | append: latest_game.special_label | append: ' ' | append: latest_game.special_number %}
 {% endif %}
