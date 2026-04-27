@@ -7,6 +7,7 @@ scripts = [
     "scripts/update_all_instants_articles_from_csv.py",
     "scripts/build_instants_chosen_number_json.py",
     "scripts/build_instants_per_month_json.py",
+    "scripts/build_539_stats_json.py",
 ]
 
 env = dict(os.environ)
