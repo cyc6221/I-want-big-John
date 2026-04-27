@@ -30,7 +30,45 @@ title: IWBJ
 </div>
 
 <div class="card card--couplet">
-  <h2>最新更新</h2>
+  <div class="home-section-head">
+    <div>
+      <h2>最新一期開獎結果</h2>
+    </div>
+  </div>
+
+  <div class="latest-draws-grid">
+    {% for game in site.data.latest_draws.games %}
+      {% assign draw_numbers_label = game.numbers | join: '、' %}
+      {% assign draw_label = game.name | append: ' 第 ' | append: game.issue | append: ' 期開獎號碼：' | append: draw_numbers_label %}
+      {% if game.special_number %}
+        {% assign draw_label = draw_label | append: '，' | append: game.special_label | append: ' ' | append: game.special_number %}
+      {% endif %}
+      <section class="latest-draw-card latest-draw-card--{{ game.key }}">
+        <div class="latest-draw-card__top">
+          <div>
+            <p class="latest-draw-card__eyebrow">{{ game.name }}</p>
+            <h3>第 {{ game.issue }} 期</h3>
+          </div>
+          <span class="latest-draw-card__date">{{ game.date }}</span>
+        </div>
+
+        <div class="latest-draw-card__body">
+          <div class="ball-row latest-draw-card__balls" role="img" aria-label="{{ draw_label }}">
+            {% for number in game.numbers %}
+              <span class="ball" aria-hidden="true">{{ number }}</span>
+            {% endfor %}
+            {% if game.special_number %}
+              <span class="ball ball--red" aria-hidden="true">{{ game.special_number }}</span>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="card card--couplet">
+  <h2>最新文章</h2>
 
   <div class="post-list">
     {% assign items = site.articles | sort: "date" | reverse %}
@@ -39,13 +77,11 @@ title: IWBJ
         <h3 class="post-title">
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </h3>
-        <!-- post.date -->
         {% if post.date %}
         <div class="post-meta">
           {{ post.date | date: "%Y-%m-%d" }}
         </div>
         {% endif %}
-        <!-- post.description -->
         {% if post.description %}
           <p class="post-excerpt">{{ post.description }}</p>
         {% else %}
@@ -56,6 +92,6 @@ title: IWBJ
   </div>
 
   <div class="post-more">
-    <a href="{{ '/all-articles/' | relative_url }}">>>> 全部文章 <<<</a>
+    <a href="{{ '/all-articles/' | relative_url }}">>>> 查看全部文章 <<<</a>
   </div>
 </div>

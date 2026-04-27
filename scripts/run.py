@@ -2,6 +2,7 @@ import os
 import subprocess
 
 scripts = [
+    "scripts/build_latest_draws_data.py",
     "scripts/build_instant_all.py",
     "scripts/build_instants_chosen_number_json.py",
     "scripts/build_instants_per_month_json.py",
