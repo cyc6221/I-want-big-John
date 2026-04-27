@@ -8,6 +8,8 @@ scripts = [
     "scripts/build_instants_chosen_number_json.py",
     "scripts/build_instants_per_month_json.py",
     "scripts/build_539_stats_json.py",
+    "scripts/build_638_stats_json.py",
+    "scripts/build_649_stats_json.py",
 ]
 
 env = dict(os.environ)
