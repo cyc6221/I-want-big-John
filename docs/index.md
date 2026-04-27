@@ -45,7 +45,7 @@ title: IWBJ
 
   <div class="hero-grid hero-grid--quick-links">
     <div class="hero">
-      <h1>🧧 威力彩 🧧</h1>
+      <h3 class="hero__title">🧧 威力彩 🧧</h3>
       <p>
         <a class="btn btn--primary" href="{{ '/recommender_638/' | relative_url }}">抽一組</a>
         <a class="btn btn--gold" href="{{ '/638/' | relative_url }}">研究方法</a>
@@ -53,7 +53,7 @@ title: IWBJ
     </div>
 
     <div class="hero">
-      <h1>🧧 大樂透 🧧</h1>
+      <h3 class="hero__title">🧧 大樂透 🧧</h3>
       <p>
         <a class="btn btn--primary" href="{{ '/recommender_649/' | relative_url }}">抽一組</a>
         <a class="btn btn--gold" href="{{ '/649/' | relative_url }}">研究方法</a>
@@ -61,7 +61,7 @@ title: IWBJ
     </div>
 
     <div class="hero">
-      <h1>🧧 今彩539 🧧</h1>
+      <h3 class="hero__title">🧧 今彩539 🧧</h3>
       <p>
         <a class="btn btn--primary" href="{{ '/recommender_539/' | relative_url }}">抽一組</a>
         <a class="btn btn--gold" href="{{ '/539/' | relative_url }}">研究方法</a>
