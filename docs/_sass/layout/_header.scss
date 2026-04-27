@@ -1,10 +1,10 @@
 /* _sass/layout/_header.scss */
 
 /* =========================================================
-   Header / Nav (FIXED for Minima)
-   - 固定淺色喜氣 header
-   - 移除漢堡（三條槓）
-   - nav 永遠顯示，手機不足就自動換行
+   Header / Nav overrides for the site header
+   - remove Minima's default top border treatment
+   - keep the site title and nav aligned in one row
+   - use a mobile hamburger + dropdown instead of wrapped links
    ========================================================= */
 .site-header{
   border-top: 0 !important;
@@ -14,10 +14,10 @@
   -webkit-backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 5000; /* 更保險，避免被任何區塊蓋住 */
+  z-index: 5000; /* Keep the header above the page content while scrolling. */
 }
 
-/* header 內 wrapper 只負責排列，不再另外加左右 padding（由 layout/_wrapper.scss 管） */
+/* Preserve the wrapper spacing from layout/_wrapper.scss while using flex layout. */
 .site-header .wrapper{
   display: flex !important;
   align-items: center;
@@ -28,7 +28,7 @@
   padding-bottom: .65rem !important;
 }
 
-/* 避免標題在 header 內太大/太高 */
+/* Keep the site title aligned within the custom header layout. */
 .site-title,
 .site-title:visited{
   color: var(--text) !important;
@@ -41,7 +41,7 @@
   text-decoration: none !important;
 }
 
-/* nav 基本：清掉 minima 手機 dropdown 會加的定位/背景/邊框 */
+/* Override Minima nav positioning so the links stay on the right in desktop layout. */
 .site-nav{
   float: none !important;
   flex: 1 1 auto;
@@ -56,7 +56,7 @@
   box-shadow: none !important;
 }
 
-/* 移除 Minima 的三條槓（漢堡）與 checkbox trigger */
+/* Keep Minima's hamburger/checkbox elements hidden on desktop; mobile re-enables them below. */
 .site-nav .menu-icon,
 .site-nav .nav-trigger{
   display: none !important;
@@ -95,8 +95,7 @@
   transition: transform .2s ease, opacity .2s ease;
 }
 
-/* 讓導覽列永遠顯示（不靠 trigger 展開）
-   minima 某些狀態會把 .trigger 設為 display:none，這裡鎖死 */
+/* Force the nav links container visible on desktop because Minima hides `.trigger` by default. */
 .site-nav .trigger{
   display: flex !important;
   align-items: center;
@@ -109,17 +108,19 @@
   margin: 0 !important;
 }
 
-/* 連結樣式 */
+/* Desktop nav remains inline; mobile turns this into a hamburger-triggered dropdown. */
 .site-nav .page-link{
   color: var(--text) !important;
   opacity: .85;
   font-weight: 650;
   white-space: nowrap;
 }
-.site-nav .page-link:hover{ opacity: 1; }
-/* Mobile nav uses a hamburger trigger and dropdown panel rather than wrapping inline links. */
 
-/* 手機：空間不足就換行，但保持同一條左邊界 */
+.site-nav .page-link:hover{
+  opacity: 1;
+}
+
+/* Mobile header keeps the title inline and reveals navigation through the hamburger dropdown. */
 @media screen and (max-width: 600px){
   .site-header .wrapper{
     align-items: center;
@@ -173,15 +174,15 @@
     box-shadow: 0 20px 40px rgba(28, 20, 14, 0.14) !important;
   }
 
-  .site-nav .nav-trigger:checked + .menu-icon .menu-icon__bar:nth-of-type(1){
+  .site-nav .nav-trigger:checked + .menu-icon .menu-icon__bar:nth-child(2){
     transform: translateY(5px) rotate(45deg);
   }
 
-  .site-nav .nav-trigger:checked + .menu-icon .menu-icon__bar:nth-of-type(2){
+  .site-nav .nav-trigger:checked + .menu-icon .menu-icon__bar:nth-child(3){
     opacity: 0;
   }
 
-  .site-nav .nav-trigger:checked + .menu-icon .menu-icon__bar:nth-of-type(3){
+  .site-nav .nav-trigger:checked + .menu-icon .menu-icon__bar:nth-child(4){
     transform: translateY(-5px) rotate(-45deg);
   }
 
