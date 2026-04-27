@@ -1,9 +1,8 @@
-from __future__ import annotations
-
 import csv
 import json
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,7 +15,7 @@ class GameConfig:
     key: str
     filename: str
     display_name: str
-    special_label: str | None
+    special_label: Optional[str]
     details_path: str
     recommender_path: str
 
@@ -49,19 +48,18 @@ GAMES = (
 )
 
 
-def load_latest_row(csv_path: Path) -> dict[str, str]:
+def load_latest_row(csv_path: Path) -> Dict[str, str]:
+    latest_row = None
     with csv_path.open("r", encoding="utf-8-sig", newline="") as handle:
-        rows = [
-            row
-            for row in csv.DictReader(handle)
-            if any((value or "").strip() for value in row.values())
-        ]
-    if not rows:
-        raise ValueError(f"No data rows found in {csv_path}")
-    return rows[-1]
+        for row in csv.DictReader(handle):
+            if any((value or "").strip() for value in row.values()):
+                latest_row = row
+    if latest_row is None:
+        raise ValueError("No data rows found in {0}".format(csv_path))
+    return latest_row
 
 
-def extract_main_numbers(row: dict[str, str]) -> list[str]:
+def extract_main_numbers(row: Dict[str, str]) -> List[str]:
     number_keys = sorted(
         (column for column in row if column.startswith("獎號")),
         key=lambda name: int(name[2:]),
@@ -73,7 +71,7 @@ def extract_main_numbers(row: dict[str, str]) -> list[str]:
     ]
 
 
-def extract_special(row: dict[str, str], configured_label: str | None) -> tuple[str | None, str | None]:
+def extract_special(row: Dict[str, str], configured_label: Optional[str]) -> Tuple[Optional[str], Optional[str]]:
     if not configured_label:
         return None, None
     value = (row.get(configured_label) or "").strip()
@@ -82,8 +80,8 @@ def extract_special(row: dict[str, str], configured_label: str | None) -> tuple[
     return None, None
 
 
-def build_payload() -> dict[str, object]:
-    games: list[dict[str, object]] = []
+def build_payload() -> Dict[str, Any]:
+    games = []
 
     for game in GAMES:
         row = load_latest_row(DERIVED_DIR / game.filename)
@@ -112,7 +110,7 @@ def main() -> None:
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"Wrote {OUTPUT_PATH}")
+    print("Wrote {0}".format(OUTPUT_PATH))
 
 
 if __name__ == "__main__":

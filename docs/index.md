@@ -38,6 +38,10 @@ title: IWBJ
 
   <div class="latest-draws-grid">
     {% for game in site.data.latest_draws.games %}
+      {% assign draw_label = game.name | append: ' 第 ' | append: game.issue | append: ' 期開獎號碼：' | append: game.numbers | join: '、' %}
+      {% if game.special_number %}
+        {% assign draw_label = draw_label | append: '，' | append: game.special_label | append: ' ' | append: game.special_number %}
+      {% endif %}
       <section class="latest-draw-card latest-draw-card--{{ game.key }}">
         <div class="latest-draw-card__top">
           <div>
@@ -48,7 +52,7 @@ title: IWBJ
         </div>
 
         <div class="latest-draw-card__body">
-          <div class="ball-row latest-draw-card__balls">
+          <div class="ball-row latest-draw-card__balls" role="img" aria-label="{{ draw_label }}">
             {% for number in game.numbers %}
               <span class="ball" aria-hidden="true">{{ number }}</span>
             {% endfor %}

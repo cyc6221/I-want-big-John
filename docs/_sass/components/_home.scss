@@ -3,7 +3,7 @@
 .home-section-head{
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   gap: 1rem;
   margin-bottom: 1.1rem;
 }
@@ -40,7 +40,7 @@
 .latest-draw-card__top{
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   gap: .8rem;
 }
 
@@ -77,18 +77,6 @@
 .latest-draw-card__balls{
   margin: 0;
   align-items: center;
-}
-
-.latest-draw-card__actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: .65rem;
-  margin-top: auto;
-}
-
-.latest-draw-card__actions .btn{
-  flex: 1 1 140px;
-  justify-content: center;
 }
 
 /* ===== Home post list (minima) ===== */
@@ -135,7 +123,7 @@
 
 @media screen and (max-width: 640px){
   .home-section-head{
-    align-items: start;
+    align-items: flex-start;
   }
 
   .latest-draw-card{
@@ -144,6 +132,6 @@
 
   .latest-draw-card__top{
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
 }
