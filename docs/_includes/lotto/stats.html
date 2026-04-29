@@ -2,6 +2,7 @@
 {% assign stats_prefix = "stats-" | append: game %}
 {% assign chart_id = "chart-" | append: game | append: "-timeseries" %}
 {% assign data_url = "/assets/data/" | append: game | append: "-stats.json" %}
+{% assign heading_tag = include.heading_tag | default: "h3" %}
 
 <style>
 .lotto-stats {
@@ -55,7 +56,9 @@
   margin-bottom: 0.9rem;
 }
 
-.lotto-stats-head h2 {
+.lotto-stats-head h2,
+.lotto-stats-head h3,
+.lotto-stats-head h4 {
   margin: 0;
   font-size: 1.15rem;
 }
@@ -119,12 +122,6 @@
   width: 100%;
 }
 
-.lotto-stats-window-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 .lotto-stats-window-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -133,6 +130,7 @@
   justify-content: space-between;
 }
 
+.lotto-stats-window-controls,
 .lotto-stats-window-actions {
   display: flex;
   flex-wrap: wrap;
@@ -173,7 +171,7 @@
 
   <div class="lotto-stats-panel">
     <div class="lotto-stats-head">
-      <h2 id="{{ stats_prefix }}-chart-title">銷售總額走勢</h2>
+      <{{ heading_tag }} id="{{ stats_prefix }}-chart-title">銷售總額走勢</{{ heading_tag }}>
       <div class="lotto-stats-controls" id="{{ stats_prefix }}-periods">
         <button class="lotto-stats-pill is-active" data-period="yearly" type="button">年</button>
         <button class="lotto-stats-pill" data-period="monthly" type="button">月</button>
@@ -204,26 +202,26 @@
           <button class="lotto-stats-pill" data-window-size="all" type="button">全部</button>
         </div>
         <div class="lotto-stats-window-actions">
-          <button class="lotto-stats-pill" id="{{ stats_prefix }}-zoom-out" type="button">-</button>
-          <button class="lotto-stats-pill" id="{{ stats_prefix }}-zoom-in" type="button">+</button>
-          <button class="lotto-stats-pill" id="{{ stats_prefix }}-window-prev" type="button">&lt;&lt;</button>
-          <button class="lotto-stats-pill" id="{{ stats_prefix }}-window-next" type="button">&gt;&gt;</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-zoom-out" type="button" aria-label="縮小顯示筆數">-</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-zoom-in" type="button" aria-label="放大顯示筆數">+</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-window-prev" type="button" aria-label="顯示前一段資料">&lt;&lt;</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-window-next" type="button" aria-label="顯示後一段資料">&gt;&gt;</button>
         </div>
       </div>
       <div class="lotto-stats-window-head">
         <span>顯示區間</span>
         <span id="{{ stats_prefix }}-window-label"></span>
       </div>
-      <input id="{{ stats_prefix }}-window-range" type="range" min="0" max="0" step="1" value="0">
+      <input id="{{ stats_prefix }}-window-range" type="range" min="0" max="0" step="1" value="0" aria-label="統計圖表資料區間">
       <div class="lotto-stats-date-range">
         <div class="lotto-stats-window-head">
           <span>自訂日期區間</span>
           <span id="{{ stats_prefix }}-date-label"></span>
         </div>
         <div class="lotto-stats-date-fields">
-          <input id="{{ stats_prefix }}-date-start" type="date">
+          <input id="{{ stats_prefix }}-date-start" type="date" aria-label="起始日期">
           <span>至</span>
-          <input id="{{ stats_prefix }}-date-end" type="date">
+          <input id="{{ stats_prefix }}-date-end" type="date" aria-label="結束日期">
           <button class="lotto-stats-pill" id="{{ stats_prefix }}-date-apply" type="button">套用</button>
           <button class="lotto-stats-pill" id="{{ stats_prefix }}-date-reset" type="button">重設</button>
         </div>
@@ -236,36 +234,37 @@
 
 <script>
 (() => {
-  const GAME = '{{ game }}';
-  const PREFIX = '{{ stats_prefix }}';
-  const CHART_ID = '{{ chart_id }}';
+  const GAME = "{{ game }}";
+  const PREFIX = "{{ stats_prefix }}";
+  const CHART_ID = "{{ chart_id }}";
   const INIT_KEY = `__lotto${GAME}StatsInit`;
 
   if (window[INIT_KEY]) return;
   window[INIT_KEY] = true;
 
-  const DATA_URL = '{{ data_url | relative_url }}';
+  const DATA_URL = "{{ data_url | relative_url }}";
+  const CHART_JS_URL = "{{ '/assets/vendor/chart.umd.min.js' | relative_url }}";
   const metricConfig = {
-    sales: { label: '銷售總額', unit: '元', axisUnit: '億元', color: '#b45309', axisDivisor: 100000000 },
-    bets: { label: '銷售注數', unit: '注', axisUnit: '萬注', color: '#2563eb', axisDivisor: 10000 },
-    prize: { label: '總獎金', unit: '元', axisUnit: '億元', color: '#0f766e', axisDivisor: 100000000 }
+    sales: { label: "銷售總額", unit: "元", axisUnit: "億元", color: "#b45309", axisDivisor: 100000000 },
+    bets: { label: "銷售注數", unit: "注", axisUnit: "萬注", color: "#2563eb", axisDivisor: 10000 },
+    prize: { label: "總獎金", unit: "元", axisUnit: "億元", color: "#0f766e", axisDivisor: 100000000 }
   };
   const periodConfig = {
-    daily: { label: '日' },
-    weekly: { label: '週' },
-    monthly: { label: '月' },
-    yearly: { label: '年' }
+    daily: { label: "日" },
+    weekly: { label: "週" },
+    monthly: { label: "月" },
+    yearly: { label: "年" }
   };
 
   let chart;
   let payload;
-  let currentPeriod = 'yearly';
-  let currentMetric = 'sales';
+  let currentPeriod = "yearly";
+  let currentMetric = "sales";
   let visiblePoints = 100;
   let currentWindowStart = 0;
-  let customDateStart = '';
-  let customDateEnd = '';
-  const windowSizeOptions = [50, 100, 200, 300, 500, 1000, 'all'];
+  let customDateStart = "";
+  let customDateEnd = "";
+  const windowSizeOptions = [50, 100, 200, 300, 500, 1000, "all"];
 
   function el(name) {
     return document.getElementById(`${PREFIX}-${name}`);
@@ -274,29 +273,26 @@
   function loadChartJs() {
     return new Promise((resolve, reject) => {
       if (window.Chart) return resolve();
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js';
+      const script = document.createElement("script");
+      script.src = CHART_JS_URL;
       script.onload = () => resolve();
-      script.onerror = () => reject(new Error('Failed to load Chart.js'));
+      script.onerror = () => reject(new Error("Failed to load Chart.js"));
       document.head.appendChild(script);
     });
   }
 
   function formatNumber(value) {
-    return Number(value || 0).toLocaleString('zh-Hant-TW');
+    return Number(value || 0).toLocaleString("zh-Hant-TW");
   }
 
   function formatRate(value) {
     return `${(Number(value || 0) * 100).toFixed(2)}%`;
   }
 
-  function formatAxisValue(value, metricInfo) {
-    if (metricInfo.axisDivisor) {
-      return Number(value || 0).toLocaleString('zh-Hant-TW', {
-        maximumFractionDigits: 1
-      });
-    }
-    return formatNumber(value);
+  function formatAxisValue(value) {
+    return Number(value || 0).toLocaleString("zh-Hant-TW", {
+      maximumFractionDigits: 1
+    });
   }
 
   function getSummaryValue(summary, key) {
@@ -304,19 +300,19 @@
   }
 
   function renderSummary(summary) {
-    const root = el('summary');
+    const root = el("summary");
     if (!root) return;
 
-    const startDate = summary?.date_start || '';
-    const endDate = summary?.date_end || '';
-    const dateRange = startDate && endDate ? `${startDate} 至 ${endDate}` : '無資料';
+    const startDate = summary?.date_start || "";
+    const endDate = summary?.date_end || "";
+    const dateRange = startDate && endDate ? `${startDate} 至 ${endDate}` : "無資料";
     const cards = [
-      { label: '資料區間', value: dateRange },
-      { label: '開獎期數', value: formatNumber(getSummaryValue(summary, 'total_draws')) },
-      { label: '平均每期銷售總額', value: `${formatNumber(getSummaryValue(summary, 'avg_sales'))} 元` },
-      { label: '平均每期銷售注數', value: `${formatNumber(getSummaryValue(summary, 'avg_bets'))} 注` },
-      { label: '平均每期總獎金', value: `${formatNumber(getSummaryValue(summary, 'avg_prize'))} 元` },
-      { label: '整體獎金率', value: formatRate(summary?.overall_prize_rate) }
+      { label: "資料區間", value: dateRange },
+      { label: "開獎期數", value: formatNumber(getSummaryValue(summary, "total_draws")) },
+      { label: "平均每期銷售總額", value: `${formatNumber(getSummaryValue(summary, "avg_sales"))} 元` },
+      { label: "平均每期銷售注數", value: `${formatNumber(getSummaryValue(summary, "avg_bets"))} 注` },
+      { label: "平均每期總獎金", value: `${formatNumber(getSummaryValue(summary, "avg_prize"))} 元` },
+      { label: "整體獎金率", value: formatRate(summary?.overall_prize_rate) }
     ];
 
     root.innerHTML = cards.map((card) => `
@@ -324,19 +320,19 @@
         <span class="lotto-stats-label">${card.label}</span>
         <strong>${card.value}</strong>
       </div>
-    `).join('');
+    `).join("");
   }
 
   function setActive(containerSuffix, attrName, dataKey, activeValue) {
     const root = el(containerSuffix);
     if (!root) return;
     root.querySelectorAll(`[data-${attrName}]`).forEach((node) => {
-      node.classList.toggle('is-active', node.dataset[dataKey] === activeValue);
+      node.classList.toggle("is-active", node.dataset[dataKey] === activeValue);
     });
   }
 
   function getWindowSize(totalCount) {
-    if (visiblePoints === 'all') return totalCount;
+    if (visiblePoints === "all") return totalCount;
     return Math.max(1, Math.min(Number(visiblePoints || 100), totalCount));
   }
 
@@ -353,7 +349,7 @@
     if (!customDateStart && !customDateEnd) return series;
 
     return series.filter((item) => {
-      const date = item.date || item.label || '';
+      const date = item.date || item.label || "";
       if (customDateStart && date < customDateStart) return false;
       if (customDateEnd && date > customDateEnd) return false;
       return true;
@@ -371,13 +367,13 @@
   }
 
   function syncDateInputs(series) {
-    const startInput = el('date-start');
-    const endInput = el('date-end');
-    const label = el('date-label');
+    const startInput = el("date-start");
+    const endInput = el("date-end");
+    const label = el("date-label");
     if (!startInput || !endInput || !label) return;
 
-    const firstDate = series[0]?.date || '';
-    const lastDate = series[series.length - 1]?.date || '';
+    const firstDate = series[0]?.date || "";
+    const lastDate = series[series.length - 1]?.date || "";
 
     startInput.min = firstDate;
     startInput.max = lastDate;
@@ -387,16 +383,16 @@
     endInput.disabled = !lastDate;
 
     if (!firstDate || !lastDate) {
-      startInput.value = '';
-      endInput.value = '';
-      label.textContent = '無資料';
+      startInput.value = "";
+      endInput.value = "";
+      label.textContent = "無資料";
       return;
     }
 
     if (!customDateStart && !customDateEnd) {
       startInput.value = firstDate;
       endInput.value = lastDate;
-      label.textContent = '全部資料';
+      label.textContent = "全部資料";
       return;
     }
 
@@ -409,11 +405,11 @@
     const summary = payload?.summary || {};
     const latest = series[series.length - 1];
     const metricInfo = metricConfig[metric];
-    const caption = el('caption');
+    const caption = el("caption");
     if (!caption) return;
 
     if (!latest) {
-      caption.textContent = '目前沒有可顯示的資料。';
+      caption.textContent = "目前沒有可顯示的資料。";
       return;
     }
 
@@ -425,38 +421,37 @@
   }
 
   function updateWindowControls(series) {
-    const wrap = el('window-wrap');
-    const range = el('window-range');
-    const label = el('window-label');
-    const prev = el('window-prev');
-    const next = el('window-next');
-    const zoomOut = el('zoom-out');
-    const zoomIn = el('zoom-in');
+    const wrap = el("window-wrap");
+    const range = el("window-range");
+    const label = el("window-label");
+    const prev = el("window-prev");
+    const next = el("window-next");
+    const zoomOut = el("zoom-out");
+    const zoomIn = el("zoom-in");
     if (!wrap || !range || !label) return;
 
     const windowSize = getWindowSize(series.length);
     const maxStart = Math.max(0, series.length - windowSize);
     currentWindowStart = Math.min(Math.max(0, currentWindowStart), maxStart);
 
-    range.min = '0';
+    range.min = "0";
     range.max = String(maxStart);
     range.value = String(currentWindowStart);
     range.disabled = maxStart === 0;
-    setActive('window-size', 'window-size', 'windowSize', String(visiblePoints));
+    setActive("window-size", "window-size", "windowSize", String(visiblePoints));
 
     if (!series.length) {
       wrap.hidden = true;
-      label.textContent = '0 - 0 / 0';
+      label.textContent = "0 - 0 / 0";
       return;
     }
 
+    wrap.hidden = false;
     if (series.length <= windowSize) {
-      wrap.hidden = false;
       label.textContent = `1 - ${series.length} / ${series.length}`;
       if (prev) prev.disabled = true;
       if (next) next.disabled = true;
     } else {
-      wrap.hidden = false;
       const end = Math.min(series.length, currentWindowStart + windowSize);
       label.textContent = `${currentWindowStart + 1} - ${end} / ${series.length}`;
       if (prev) prev.disabled = currentWindowStart <= 0;
@@ -471,11 +466,11 @@
   function renderChart() {
     const fullSeries = getFilteredSeries();
     const metricInfo = metricConfig[currentMetric];
-    const title = el('chart-title');
+    const title = el("chart-title");
 
     if (title) title.textContent = `${metricInfo.label}走勢`;
-    setActive('periods', 'period', 'period', currentPeriod);
-    setActive('metrics', 'metric', 'metric', currentMetric);
+    setActive("periods", "period", "period", currentPeriod);
+    setActive("metrics", "metric", "metric", currentMetric);
     syncDateInputs(getAllSeries());
     updateWindowControls(fullSeries);
 
@@ -484,10 +479,7 @@
     updateCaption(series, currentMetric);
 
     const labels = series.map((item) => item.label);
-    const values = series.map((item) => {
-      const rawValue = Number(item[currentMetric] || 0);
-      return metricInfo.axisDivisor ? rawValue / metricInfo.axisDivisor : rawValue;
-    });
+    const values = series.map((item) => Number(item[currentMetric] || 0) / metricConfig[currentMetric].axisDivisor);
     const canvas = document.getElementById(CHART_ID);
     if (!canvas) return;
 
@@ -504,17 +496,17 @@
       maintainAspectRatio: false,
       animation: {
         duration: 380,
-        easing: 'easeOutCubic'
+        easing: "easeOutCubic"
       },
       interaction: {
-        mode: 'index',
+        mode: "index",
         intersect: false
       },
       plugins: {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            title: (items) => items[0]?.label || '',
+            title: (items) => items[0]?.label || "",
             label: (ctx) => `${metricInfo.label}: ${formatNumber(series[ctx.dataIndex]?.[currentMetric])} ${metricInfo.unit}`
           }
         }
@@ -531,11 +523,11 @@
           beginAtZero: false,
           title: {
             display: true,
-            text: metricInfo.axisUnit || metricInfo.unit
+            text: metricInfo.axisUnit
           },
           ticks: {
             maxTicksLimit: 6,
-            callback: (value) => formatAxisValue(value, metricInfo)
+            callback: (value) => formatAxisValue(value)
           }
         }
       }
@@ -543,15 +535,15 @@
 
     if (!chart) {
       chart = new Chart(canvas, {
-        type: 'line',
+        type: "line",
         data: {
           labels,
           datasets: [{
             label: metricInfo.label,
             data: values,
             borderColor: metricInfo.color,
-            backgroundColor: metricInfo.color + '22',
-            pointRadius: currentPeriod === 'daily' ? 0 : 2,
+            backgroundColor: `${metricInfo.color}22`,
+            pointRadius: currentPeriod === "daily" ? 0 : 2,
             pointHoverRadius: 4,
             borderWidth: 2,
             tension: 0.2,
@@ -567,41 +559,41 @@
     chart.data.datasets[0].label = metricInfo.label;
     chart.data.datasets[0].data = values;
     chart.data.datasets[0].borderColor = metricInfo.color;
-    chart.data.datasets[0].backgroundColor = metricInfo.color + '22';
-    chart.data.datasets[0].pointRadius = currentPeriod === 'daily' ? 0 : 2;
+    chart.data.datasets[0].backgroundColor = `${metricInfo.color}22`;
+    chart.data.datasets[0].pointRadius = currentPeriod === "daily" ? 0 : 2;
     chart.options = chartOptions;
     chart.update();
   }
 
   function bindControls() {
-    const periodRoot = el('periods');
-    const metricRoot = el('metrics');
-    const range = el('window-range');
-    const windowSizeRoot = el('window-size');
-    const prev = el('window-prev');
-    const next = el('window-next');
-    const zoomOut = el('zoom-out');
-    const zoomIn = el('zoom-in');
-    const applyDate = el('date-apply');
-    const resetDate = el('date-reset');
-    const startInput = el('date-start');
-    const endInput = el('date-end');
+    const periodRoot = el("periods");
+    const metricRoot = el("metrics");
+    const range = el("window-range");
+    const windowSizeRoot = el("window-size");
+    const prev = el("window-prev");
+    const next = el("window-next");
+    const zoomOut = el("zoom-out");
+    const zoomIn = el("zoom-in");
+    const applyDate = el("date-apply");
+    const resetDate = el("date-reset");
+    const startInput = el("date-start");
+    const endInput = el("date-end");
 
     if (periodRoot) {
-      periodRoot.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-period]');
+      periodRoot.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-period]");
         if (!button) return;
         currentPeriod = button.dataset.period;
-        customDateStart = '';
-        customDateEnd = '';
+        customDateStart = "";
+        customDateEnd = "";
         resetWindowToLatest(getFilteredSeries());
         renderChart();
       });
     }
 
     if (metricRoot) {
-      metricRoot.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-metric]');
+      metricRoot.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-metric]");
         if (!button) return;
         currentMetric = button.dataset.metric;
         renderChart();
@@ -609,22 +601,22 @@
     }
 
     if (range) {
-      range.addEventListener('input', (event) => {
+      range.addEventListener("input", (event) => {
         currentWindowStart = Number(event.target.value || 0);
         renderChart();
       });
     }
 
     if (windowSizeRoot) {
-      windowSizeRoot.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-window-size]');
+      windowSizeRoot.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-window-size]");
         if (!button) return;
-        setWindowSize(button.dataset.windowSize === 'all' ? 'all' : Number(button.dataset.windowSize));
+        setWindowSize(button.dataset.windowSize === "all" ? "all" : Number(button.dataset.windowSize));
       });
     }
 
     if (prev) {
-      prev.addEventListener('click', () => {
+      prev.addEventListener("click", () => {
         const series = getFilteredSeries();
         currentWindowStart = Math.max(0, currentWindowStart - getWindowStep(series.length));
         renderChart();
@@ -632,7 +624,7 @@
     }
 
     if (next) {
-      next.addEventListener('click', () => {
+      next.addEventListener("click", () => {
         const series = getFilteredSeries();
         const maxStart = Math.max(0, series.length - getWindowSize(series.length));
         currentWindowStart = Math.min(maxStart, currentWindowStart + getWindowStep(series.length));
@@ -641,23 +633,23 @@
     }
 
     if (zoomOut) {
-      zoomOut.addEventListener('click', () => {
+      zoomOut.addEventListener("click", () => {
         const currentIndex = windowSizeOptions.findIndex((item) => String(item) === String(visiblePoints));
         if (currentIndex > 0) setWindowSize(windowSizeOptions[currentIndex - 1]);
       });
     }
 
     if (zoomIn) {
-      zoomIn.addEventListener('click', () => {
+      zoomIn.addEventListener("click", () => {
         const currentIndex = windowSizeOptions.findIndex((item) => String(item) === String(visiblePoints));
         if (currentIndex < windowSizeOptions.length - 1) setWindowSize(windowSizeOptions[currentIndex + 1]);
       });
     }
 
     if (applyDate && startInput && endInput) {
-      applyDate.addEventListener('click', () => {
-        const start = startInput.value || '';
-        const end = endInput.value || '';
+      applyDate.addEventListener("click", () => {
+        const start = startInput.value || "";
+        const end = endInput.value || "";
         if (start && end && start > end) return;
         customDateStart = start;
         customDateEnd = end;
@@ -667,9 +659,9 @@
     }
 
     if (resetDate) {
-      resetDate.addEventListener('click', () => {
-        customDateStart = '';
-        customDateEnd = '';
+      resetDate.addEventListener("click", () => {
+        customDateStart = "";
+        customDateEnd = "";
         resetWindowToLatest(getFilteredSeries());
         renderChart();
       });
@@ -678,7 +670,7 @@
 
   async function init() {
     try {
-      const response = await fetch(DATA_URL, { cache: 'no-store' });
+      const response = await fetch(DATA_URL);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       payload = await response.json();
@@ -690,7 +682,7 @@
       renderChart();
     } catch (error) {
       console.error(`${GAME} stats load failed:`, error);
-      const root = el('root');
+      const root = el("root");
       if (root) root.innerHTML = `<p>${GAME} 統計資料載入失敗。</p>`;
     }
   }
