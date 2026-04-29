@@ -113,7 +113,8 @@ def update_article(path: Path, rows_by_game: DefaultDict[str, List[ManualTestRow
     if updated == original:
         return False
 
-    path.write_text(updated, encoding="utf-8", newline="")
+    with path.open("w", encoding="utf-8", newline="") as file_obj:
+        file_obj.write(updated)
     return True
 
 
