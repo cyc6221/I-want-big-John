@@ -35,3 +35,13 @@ When practical, keep commits separated by change type.
 - Put manual source/data edits in one commit.
 - Put generated output updates in a separate commit when that separation stays clear.
 - Put script or workflow fixes in their own commit instead of mixing them into data-only changes.
+
+## PR Review Workflow
+
+When addressing GitHub PR review comments:
+
+1. Make the requested code or content changes locally.
+2. Commit the fix.
+3. Push the updated branch.
+4. Reply on the review thread with the fix summary and commit reference.
+5. If the thread is fully addressed, mark it as resolved after replying.
