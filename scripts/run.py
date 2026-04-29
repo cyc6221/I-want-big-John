@@ -7,10 +7,15 @@ scripts = [
     "scripts/update_all_instants_articles_from_csv.py",
     "scripts/build_instants_chosen_number_json.py",
     "scripts/build_instants_per_month_json.py",
+    "scripts/build_539_stats_json.py",
+    "scripts/build_638_stats_json.py",
+    "scripts/build_649_stats_json.py",
 ]
 
 env = dict(os.environ)
 env["PYTHONIOENCODING"] = "utf-8"
+
+failed = False
 
 for s in scripts:
     print(f"Running {s} ...")
@@ -18,3 +23,7 @@ for s in scripts:
         subprocess.run(["python", s], check=True, env=env)
     except subprocess.CalledProcessError as e:
         print(f"Failed: {s} (exit code: {e.returncode})")
+        failed = True
+
+if failed:
+    raise SystemExit(1)
