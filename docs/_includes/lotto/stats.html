@@ -4,55 +4,49 @@
 {% assign data_url = "/assets/data/" | append: game | append: "-stats.json" %}
 
 <style>
-.stats-539 {
+.lotto-stats {
   display: grid;
   gap: 1rem;
   margin-top: 1.25rem;
 }
 
-.stats-539-grid {
+.lotto-stats-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-.stats-539-card,
-.stats-539-panel {
+.lotto-stats-card,
+.lotto-stats-panel {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
   background: linear-gradient(180deg, #ffffff 0%, #f7f8fc 100%);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
-.stats-539-card {
+.lotto-stats-card {
   padding: 1rem;
 }
 
-.stats-539-card strong {
+.lotto-stats-card strong {
   display: block;
   font-size: 1.35rem;
   line-height: 1.2;
   color: #132238;
 }
 
-.stats-539-label {
+.lotto-stats-label {
   display: block;
   margin-bottom: 0.35rem;
   font-size: 0.9rem;
   color: #5d6b82;
 }
 
-.stats-539-meta {
-  margin-top: 0.35rem;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-.stats-539-panel {
+.lotto-stats-panel {
   padding: 1rem;
 }
 
-.stats-539-head {
+.lotto-stats-head {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
@@ -61,18 +55,18 @@
   margin-bottom: 0.9rem;
 }
 
-.stats-539-head h2 {
+.lotto-stats-head h2 {
   margin: 0;
   font-size: 1.15rem;
 }
 
-.stats-539-controls {
+.lotto-stats-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.stats-539-pill {
+.lotto-stats-pill {
   border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: 999px;
   background: #fff;
@@ -83,31 +77,36 @@
   cursor: pointer;
 }
 
-.stats-539-pill.is-active {
+.lotto-stats-pill.is-active {
   background: #132238;
   border-color: #132238;
   color: #fff;
 }
 
-.stats-539-chart-box {
+.lotto-stats-pill:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.lotto-stats-chart-box {
   position: relative;
   width: 100%;
   height: 400px;
 }
 
-.stats-539-caption {
+.lotto-stats-caption {
   margin: 0.75rem 0 0;
   color: #64748b;
   font-size: 0.9rem;
 }
 
-.stats-539-window {
+.lotto-stats-window {
   display: grid;
   gap: 0.45rem;
   margin-top: 0.9rem;
 }
 
-.stats-539-window-head {
+.lotto-stats-window-head {
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
@@ -116,17 +115,17 @@
   color: #64748b;
 }
 
-.stats-539-window input[type="range"] {
+.lotto-stats-window input[type="range"] {
   width: 100%;
 }
 
-.stats-539-window-controls {
+.lotto-stats-window-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.stats-539-window-toolbar {
+.lotto-stats-window-toolbar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -134,26 +133,26 @@
   justify-content: space-between;
 }
 
-.stats-539-window-actions {
+.lotto-stats-window-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.stats-539-date-range {
+.lotto-stats-date-range {
   display: grid;
   gap: 0.5rem;
   margin-top: 0.75rem;
 }
 
-.stats-539-date-fields {
+.lotto-stats-date-fields {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
 }
 
-.stats-539-date-fields input[type="date"] {
+.lotto-stats-date-fields input[type="date"] {
   padding: 0.45rem 0.6rem;
   border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: 10px;
@@ -163,75 +162,75 @@
 }
 
 @media screen and (max-width: 640px) {
-  .stats-539-chart-box {
+  .lotto-stats-chart-box {
     height: 320px;
   }
 }
 </style>
 
-<section class="stats-539" id="{{ stats_prefix }}-root">
-  <div class="stats-539-grid" id="{{ stats_prefix }}-summary"></div>
+<section class="lotto-stats" id="{{ stats_prefix }}-root">
+  <div class="lotto-stats-grid" id="{{ stats_prefix }}-summary"></div>
 
-  <div class="stats-539-panel">
-    <div class="stats-539-head">
+  <div class="lotto-stats-panel">
+    <div class="lotto-stats-head">
       <h2 id="{{ stats_prefix }}-chart-title">銷售總額走勢</h2>
-      <div class="stats-539-controls" id="{{ stats_prefix }}-periods">
-        <button class="stats-539-pill is-active" data-period="yearly" type="button">年</button>
-        <button class="stats-539-pill" data-period="monthly" type="button">月</button>
-        <button class="stats-539-pill" data-period="weekly" type="button">週</button>
-        <button class="stats-539-pill" data-period="daily" type="button">日</button>
+      <div class="lotto-stats-controls" id="{{ stats_prefix }}-periods">
+        <button class="lotto-stats-pill is-active" data-period="yearly" type="button">年</button>
+        <button class="lotto-stats-pill" data-period="monthly" type="button">月</button>
+        <button class="lotto-stats-pill" data-period="weekly" type="button">週</button>
+        <button class="lotto-stats-pill" data-period="daily" type="button">日</button>
       </div>
     </div>
 
-    <div class="stats-539-controls" id="{{ stats_prefix }}-metrics" style="margin-bottom:0.9rem;">
-      <button class="stats-539-pill is-active" data-metric="sales" type="button">銷售總額</button>
-      <button class="stats-539-pill" data-metric="bets" type="button">銷售注數</button>
-      <button class="stats-539-pill" data-metric="prize" type="button">總獎金</button>
+    <div class="lotto-stats-controls" id="{{ stats_prefix }}-metrics" style="margin-bottom: 0.9rem;">
+      <button class="lotto-stats-pill is-active" data-metric="sales" type="button">銷售總額</button>
+      <button class="lotto-stats-pill" data-metric="bets" type="button">銷售注數</button>
+      <button class="lotto-stats-pill" data-metric="prize" type="button">總獎金</button>
     </div>
 
-    <div class="stats-539-chart-box">
+    <div class="lotto-stats-chart-box">
       <canvas id="{{ chart_id }}"></canvas>
     </div>
 
-    <div class="stats-539-window" id="{{ stats_prefix }}-window-wrap" hidden>
-      <div class="stats-539-window-toolbar">
-        <div class="stats-539-window-controls" id="{{ stats_prefix }}-window-size">
-          <button class="stats-539-pill" data-window-size="50" type="button">50 筆</button>
-          <button class="stats-539-pill is-active" data-window-size="100" type="button">100 筆</button>
-          <button class="stats-539-pill" data-window-size="200" type="button">200 筆</button>
-          <button class="stats-539-pill" data-window-size="300" type="button">300 筆</button>
-          <button class="stats-539-pill" data-window-size="500" type="button">500 筆</button>
-          <button class="stats-539-pill" data-window-size="1000" type="button">1000 筆</button>
-          <button class="stats-539-pill" data-window-size="all" type="button">全部</button>
+    <div class="lotto-stats-window" id="{{ stats_prefix }}-window-wrap" hidden>
+      <div class="lotto-stats-window-toolbar">
+        <div class="lotto-stats-window-controls" id="{{ stats_prefix }}-window-size">
+          <button class="lotto-stats-pill" data-window-size="50" type="button">50 筆</button>
+          <button class="lotto-stats-pill is-active" data-window-size="100" type="button">100 筆</button>
+          <button class="lotto-stats-pill" data-window-size="200" type="button">200 筆</button>
+          <button class="lotto-stats-pill" data-window-size="300" type="button">300 筆</button>
+          <button class="lotto-stats-pill" data-window-size="500" type="button">500 筆</button>
+          <button class="lotto-stats-pill" data-window-size="1000" type="button">1000 筆</button>
+          <button class="lotto-stats-pill" data-window-size="all" type="button">全部</button>
         </div>
-        <div class="stats-539-window-actions">
-          <button class="stats-539-pill" id="{{ stats_prefix }}-zoom-out" type="button">-</button>
-          <button class="stats-539-pill" id="{{ stats_prefix }}-zoom-in" type="button">+</button>
-          <button class="stats-539-pill" id="{{ stats_prefix }}-window-prev" type="button">&lt;&lt;</button>
-          <button class="stats-539-pill" id="{{ stats_prefix }}-window-next" type="button">&gt;&gt;</button>
+        <div class="lotto-stats-window-actions">
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-zoom-out" type="button">-</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-zoom-in" type="button">+</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-window-prev" type="button">&lt;&lt;</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-window-next" type="button">&gt;&gt;</button>
         </div>
       </div>
-      <div class="stats-539-window-head">
+      <div class="lotto-stats-window-head">
         <span>顯示區間</span>
         <span id="{{ stats_prefix }}-window-label"></span>
       </div>
       <input id="{{ stats_prefix }}-window-range" type="range" min="0" max="0" step="1" value="0">
-      <div class="stats-539-date-range">
-        <div class="stats-539-window-head">
+      <div class="lotto-stats-date-range">
+        <div class="lotto-stats-window-head">
           <span>自訂日期區間</span>
           <span id="{{ stats_prefix }}-date-label"></span>
         </div>
-        <div class="stats-539-date-fields">
+        <div class="lotto-stats-date-fields">
           <input id="{{ stats_prefix }}-date-start" type="date">
-          <span>到</span>
+          <span>至</span>
           <input id="{{ stats_prefix }}-date-end" type="date">
-          <button class="stats-539-pill" id="{{ stats_prefix }}-date-apply" type="button">套用</button>
-          <button class="stats-539-pill" id="{{ stats_prefix }}-date-reset" type="button">重設</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-date-apply" type="button">套用</button>
+          <button class="lotto-stats-pill" id="{{ stats_prefix }}-date-reset" type="button">重設</button>
         </div>
       </div>
     </div>
 
-    <p class="stats-539-caption" id="{{ stats_prefix }}-caption"></p>
+    <p class="lotto-stats-caption" id="{{ stats_prefix }}-caption"></p>
   </div>
 </section>
 
@@ -293,29 +292,36 @@
 
   function formatAxisValue(value, metricInfo) {
     if (metricInfo.axisDivisor) {
-      return `${(Number(value || 0) / metricInfo.axisDivisor).toLocaleString('zh-Hant-TW', {
+      return Number(value || 0).toLocaleString('zh-Hant-TW', {
         maximumFractionDigits: 1
-      })}`;
+      });
     }
     return formatNumber(value);
   }
 
+  function getSummaryValue(summary, key) {
+    return Number(summary?.[key] || 0);
+  }
+
   function renderSummary(summary) {
     const root = el('summary');
-    if (!root || !summary) return;
+    if (!root) return;
 
+    const startDate = summary?.date_start || '';
+    const endDate = summary?.date_end || '';
+    const dateRange = startDate && endDate ? `${startDate} 至 ${endDate}` : '無資料';
     const cards = [
-      { label: '資料期間', value: `${summary.date_start} 至 ${summary.date_end}` },
-      { label: '總期數', value: formatNumber(summary.total_draws) },
-      { label: '平均單期銷售總額', value: `${formatNumber(summary.avg_sales)} 元` },
-      { label: '平均單期銷售注數', value: `${formatNumber(summary.avg_bets)} 注` },
-      { label: '平均單期總獎金', value: `${formatNumber(summary.avg_prize)} 元` },
-      { label: '整體獎金率', value: formatRate(summary.overall_prize_rate) }
+      { label: '資料區間', value: dateRange },
+      { label: '開獎期數', value: formatNumber(getSummaryValue(summary, 'total_draws')) },
+      { label: '平均每期銷售總額', value: `${formatNumber(getSummaryValue(summary, 'avg_sales'))} 元` },
+      { label: '平均每期銷售注數', value: `${formatNumber(getSummaryValue(summary, 'avg_bets'))} 注` },
+      { label: '平均每期總獎金', value: `${formatNumber(getSummaryValue(summary, 'avg_prize'))} 元` },
+      { label: '整體獎金率', value: formatRate(summary?.overall_prize_rate) }
     ];
 
     root.innerHTML = cards.map((card) => `
-      <div class="stats-539-card">
-        <span class="stats-539-label">${card.label}</span>
+      <div class="lotto-stats-card">
+        <span class="lotto-stats-label">${card.label}</span>
         <strong>${card.value}</strong>
       </div>
     `).join('');
@@ -324,7 +330,7 @@
   function setActive(containerSuffix, attrName, dataKey, activeValue) {
     const root = el(containerSuffix);
     if (!root) return;
-    root.querySelectorAll('[data-' + attrName + ']').forEach((node) => {
+    root.querySelectorAll(`[data-${attrName}]`).forEach((node) => {
       node.classList.toggle('is-active', node.dataset[dataKey] === activeValue);
     });
   }
@@ -338,23 +344,30 @@
     return Math.max(1, Math.floor(getWindowSize(totalCount) * 0.5));
   }
 
-  function setWindowSize(nextSize) {
-    visiblePoints = nextSize;
-    const series = getFilteredSeries();
-    currentWindowStart = Math.max(0, series.length - getWindowSize(series.length));
-    renderChart();
+  function getAllSeries() {
+    return (((payload || {}).series || {})[currentPeriod] || []).slice();
   }
 
   function getFilteredSeries() {
-    const series = (((payload || {}).series || {})[currentPeriod] || []).slice();
+    const series = getAllSeries();
     if (!customDateStart && !customDateEnd) return series;
 
     return series.filter((item) => {
-      const date = item.date || item.label;
+      const date = item.date || item.label || '';
       if (customDateStart && date < customDateStart) return false;
       if (customDateEnd && date > customDateEnd) return false;
       return true;
     });
+  }
+
+  function resetWindowToLatest(series) {
+    currentWindowStart = Math.max(0, series.length - getWindowSize(series.length));
+  }
+
+  function setWindowSize(nextSize) {
+    visiblePoints = nextSize;
+    resetWindowToLatest(getFilteredSeries());
+    renderChart();
   }
 
   function syncDateInputs(series) {
@@ -370,34 +383,45 @@
     startInput.max = lastDate;
     endInput.min = firstDate;
     endInput.max = lastDate;
+    startInput.disabled = !firstDate;
+    endInput.disabled = !lastDate;
+
+    if (!firstDate || !lastDate) {
+      startInput.value = '';
+      endInput.value = '';
+      label.textContent = '無資料';
+      return;
+    }
 
     if (!customDateStart && !customDateEnd) {
-      label.textContent = '全期間';
       startInput.value = firstDate;
       endInput.value = lastDate;
-    } else {
-      label.textContent = `${customDateStart || firstDate} 到 ${customDateEnd || lastDate}`;
-      startInput.value = customDateStart || firstDate;
-      endInput.value = customDateEnd || lastDate;
+      label.textContent = '全部資料';
+      return;
     }
+
+    startInput.value = customDateStart || firstDate;
+    endInput.value = customDateEnd || lastDate;
+    label.textContent = `${customDateStart || firstDate} 至 ${customDateEnd || lastDate}`;
   }
 
   function updateCaption(series, metric) {
-    const summary = payload.summary || {};
+    const summary = payload?.summary || {};
     const latest = series[series.length - 1];
     const metricInfo = metricConfig[metric];
     const caption = el('caption');
     if (!caption) return;
+
     if (!latest) {
-      caption.textContent = '目前區間沒有資料。';
+      caption.textContent = '目前沒有可顯示的資料。';
       return;
     }
 
+    const recentAverage = Number(summary?.recent_30_avg?.[metric] || 0);
     caption.textContent =
-      `目前顯示 ${periodConfig[currentPeriod].label} 資料，最新區間 ${latest.label}，` +
+      `目前視窗為${periodConfig[currentPeriod].label}資料，最新區間 ${latest.label}，` +
       `${metricInfo.label} ${formatNumber(latest[metric])} ${metricInfo.unit}。` +
-      `最近 30 期平均：${formatNumber((summary.recent_30_avg || {})[metric])} ${metricInfo.unit}。` +
-      `${metricInfo.axisUnit ? ` 縱軸以${metricInfo.axisUnit}顯示。` : ''}`;
+      `近 30 期平均 ${formatNumber(recentAverage)} ${metricInfo.unit}，縱軸以${metricInfo.axisUnit}顯示。`;
   }
 
   function updateWindowControls(series) {
@@ -413,22 +437,32 @@
     const windowSize = getWindowSize(series.length);
     const maxStart = Math.max(0, series.length - windowSize);
     currentWindowStart = Math.min(Math.max(0, currentWindowStart), maxStart);
+
     range.min = '0';
     range.max = String(maxStart);
     range.value = String(currentWindowStart);
+    range.disabled = maxStart === 0;
     setActive('window-size', 'window-size', 'windowSize', String(visiblePoints));
 
-    if (series.length <= windowSize) {
+    if (!series.length) {
       wrap.hidden = true;
-      label.textContent = `1 - ${series.length}`;
+      label.textContent = '0 - 0 / 0';
       return;
     }
 
-    wrap.hidden = false;
-    const end = Math.min(series.length, currentWindowStart + windowSize);
-    label.textContent = `${currentWindowStart + 1} - ${end} / ${series.length}`;
-    if (prev) prev.disabled = currentWindowStart <= 0;
-    if (next) next.disabled = currentWindowStart >= maxStart;
+    if (series.length <= windowSize) {
+      wrap.hidden = false;
+      label.textContent = `1 - ${series.length} / ${series.length}`;
+      if (prev) prev.disabled = true;
+      if (next) next.disabled = true;
+    } else {
+      wrap.hidden = false;
+      const end = Math.min(series.length, currentWindowStart + windowSize);
+      label.textContent = `${currentWindowStart + 1} - ${end} / ${series.length}`;
+      if (prev) prev.disabled = currentWindowStart <= 0;
+      if (next) next.disabled = currentWindowStart >= maxStart;
+    }
+
     const sizeIndex = windowSizeOptions.findIndex((item) => String(item) === String(visiblePoints));
     if (zoomOut) zoomOut.disabled = sizeIndex <= 0;
     if (zoomIn) zoomIn.disabled = sizeIndex >= windowSizeOptions.length - 1;
@@ -442,7 +476,7 @@
     if (title) title.textContent = `${metricInfo.label}走勢`;
     setActive('periods', 'period', 'period', currentPeriod);
     setActive('metrics', 'metric', 'metric', currentMetric);
-    syncDateInputs((((payload || {}).series || {})[currentPeriod] || []));
+    syncDateInputs(getAllSeries());
     updateWindowControls(fullSeries);
 
     const windowSize = getWindowSize(fullSeries.length);
@@ -450,7 +484,10 @@
     updateCaption(series, currentMetric);
 
     const labels = series.map((item) => item.label);
-    const values = series.map((item) => Number(item[currentMetric] || 0));
+    const values = series.map((item) => {
+      const rawValue = Number(item[currentMetric] || 0);
+      return metricInfo.axisDivisor ? rawValue / metricInfo.axisDivisor : rawValue;
+    });
     const canvas = document.getElementById(CHART_ID);
     if (!canvas) return;
 
@@ -478,7 +515,7 @@
         tooltip: {
           callbacks: {
             title: (items) => items[0]?.label || '',
-            label: (ctx) => `${metricInfo.label}: ${formatNumber(ctx.raw)} ${metricInfo.unit}`
+            label: (ctx) => `${metricInfo.label}: ${formatNumber(series[ctx.dataIndex]?.[currentMetric])} ${metricInfo.unit}`
           }
         }
       },
@@ -557,8 +594,7 @@
         currentPeriod = button.dataset.period;
         customDateStart = '';
         customDateEnd = '';
-        const series = getFilteredSeries();
-        currentWindowStart = Math.max(0, series.length - getWindowSize(series.length));
+        resetWindowToLatest(getFilteredSeries());
         renderChart();
       });
     }
@@ -625,8 +661,7 @@
         if (start && end && start > end) return;
         customDateStart = start;
         customDateEnd = end;
-        const series = getFilteredSeries();
-        currentWindowStart = Math.max(0, series.length - getWindowSize(series.length));
+        resetWindowToLatest(getFilteredSeries());
         renderChart();
       });
     }
@@ -635,8 +670,7 @@
       resetDate.addEventListener('click', () => {
         customDateStart = '';
         customDateEnd = '';
-        const series = getFilteredSeries();
-        currentWindowStart = Math.max(0, series.length - getWindowSize(series.length));
+        resetWindowToLatest(getFilteredSeries());
         renderChart();
       });
     }
@@ -651,8 +685,7 @@
       await loadChartJs();
 
       renderSummary(payload.summary);
-      const initialSeries = (payload.series || {})[currentPeriod] || [];
-      currentWindowStart = Math.max(0, initialSeries.length - getWindowSize(initialSeries.length));
+      resetWindowToLatest(getAllSeries());
       bindControls();
       renderChart();
     } catch (error) {

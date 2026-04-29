@@ -15,9 +15,15 @@ scripts = [
 env = dict(os.environ)
 env["PYTHONIOENCODING"] = "utf-8"
 
+failed = False
+
 for s in scripts:
     print(f"Running {s} ...")
     try:
         subprocess.run(["python", s], check=True, env=env)
     except subprocess.CalledProcessError as e:
         print(f"Failed: {s} (exit code: {e.returncode})")
+        failed = True
+
+if failed:
+    raise SystemExit(1)
