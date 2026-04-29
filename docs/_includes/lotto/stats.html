@@ -2,7 +2,11 @@
 {% assign stats_prefix = "stats-" | append: game %}
 {% assign chart_id = "chart-" | append: game | append: "-timeseries" %}
 {% assign data_url = "/assets/data/" | append: game | append: "-stats.json" %}
-{% assign heading_tag = include.heading_tag | default: "h3" %}
+{% assign requested_heading_tag = include.heading_tag | default: "h3" | downcase %}
+{% assign heading_tag = "h3" %}
+{% if requested_heading_tag == "h2" or requested_heading_tag == "h3" or requested_heading_tag == "h4" %}
+  {% assign heading_tag = requested_heading_tag %}
+{% endif %}
 
 <style>
 .lotto-stats {
