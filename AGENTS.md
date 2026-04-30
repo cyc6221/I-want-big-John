@@ -20,7 +20,7 @@ This file records repository-specific workflow rules for Codex.
 - Codex can read and write Chinese in this repo, but file reads must explicitly use UTF-8. Do not treat garbled PowerShell output as proof that the file contents are broken.
 - `chcp 65001` and UTF-8 console output do not fix a bad read-decoding step by themselves. If text still looks corrupted, verify the file bytes before editing.
 - If terminal output looks garbled, confirm the file encoding before rewriting content. Avoid retyping whole files just because the shell display is wrong.
-- In this Codex environment, writes under `.git` such as `git switch -c`, `git add`, `git commit`, and `git push` may require escalated execution because of sandbox restrictions. If Git reports lock or permission errors under `.git`, retry with escalation instead of assuming the repository is broken.
+- In this Codex environment, writes under `.git` such as `git switch -c`, `git add`, `git commit`, and `git push` may need to be rerun with elevation in the Codex tool because of sandbox restrictions. If Git reports lock or permission errors under `.git`, retry with elevation instead of assuming the repository is broken.
 - In this environment, `gh` is currently available as a shim on `PATH` and can be used directly.
 - If `gh` is ever not recognized again, first check `where.exe gh`, then verify `C:\Program Files\GitHub CLI\gh.exe` exists before assuming GitHub CLI is missing.
 - If `gh` exists but GitHub operations fail, run `gh auth status` to verify the saved login and token are still valid.
