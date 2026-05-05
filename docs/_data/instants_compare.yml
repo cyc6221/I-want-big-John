@@ -233,3 +233,16 @@ games:
     expected_value: "200.9330"
     expected_loss: "99.0670"
     roi: 66.98%
+  - id: 5147
+    name: 金鑽999
+    launch: 2026/05/05
+    end: 2026/11/05
+    price: 200
+    jackpot: 2M
+    jackpot_count: 3
+    win_rate: 12.1622%
+    break_even_rate: 15.3880%
+    no_loss_rate: 27.5501%
+    expected_value: "127.8945"
+    expected_loss: "72.1055"
+    roi: 63.95%
