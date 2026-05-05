@@ -220,3 +220,16 @@ games:
     expected_value: "123.9677"
     expected_loss: "76.0323"
     roi: 61.98%
+  - id: 5146
+    name: 麻將大賓果
+    launch: 2026/05/05
+    end: 2026/11/05
+    price: 300
+    jackpot: 3M
+    jackpot_count: 6
+    win_rate: 19.3630%
+    break_even_rate: 16.6395%
+    no_loss_rate: 36.0025%
+    expected_value: "200.9330"
+    expected_loss: "99.0670"
+    roi: 66.98%
