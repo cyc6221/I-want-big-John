@@ -47,12 +47,29 @@ This script normalizes filenames to `{Game}_{Year}.csv`, for example changing `3
 如果只想先預覽，不要真的改名，可以加上 `--dry-run`。  
 If you only want to preview changes, add `--dry-run`.
 
+## Run Tasks
+
+`python scripts/run.py` 目前會依序呼叫的腳本，已整理到 `scripts/run_tasks/`。  
+The scripts currently orchestrated by `python scripts/run.py` are now grouped under `scripts/run_tasks/`.
+
+如果你不確定某支 build script 能不能單獨跑，優先直接執行：
+
+```bash
+python scripts/run.py
+```
+
+更完整的清單與說明可看：
+
+```text
+scripts/run_tasks/README.md
+```
+
 ## Instant Data Scripts
 
 ### 5. Build instants all markdown
 
 ```bash
-python scripts/build_instant_all.py
+python scripts/run_tasks/build_instant_all.py
 ```
 
 這支腳本會根據 `raw-data/all-instants.csv` 產生 `docs/_list/instants-all.md`。  
@@ -61,7 +78,7 @@ This script generates `docs/_list/instants-all.md` from `raw-data/all-instants.c
 ### 6. Build instants per-month JSON
 
 ```bash
-python scripts/build_instants_per_month_json.py
+python scripts/run_tasks/build_instants_per_month_json.py
 ```
 
 這支腳本會產生 `docs/assets/data/instants-per-month.json`。  
@@ -70,7 +87,7 @@ This script generates `docs/assets/data/instants-per-month.json`.
 ### 7. Build instants chosen-number JSON
 
 ```bash
-python scripts/build_instants_chosen_number_json.py
+python scripts/run_tasks/build_instants_chosen_number_json.py
 ```
 
 這支腳本會產生 `docs/assets/data/instants-chosen-number.json`。  
