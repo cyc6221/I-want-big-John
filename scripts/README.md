@@ -1,7 +1,7 @@
-# Scripts Notes
+# Scripts README
 
-這份文件整理 `scripts/` 內目前可用的腳本與用途。  
-This document lists the currently available scripts in `scripts/` and what each one does.
+這份文件整理 `scripts/` 目錄內目前可用的腳本、用途與建議使用方式。  
+This document describes the scripts under `scripts/`, what they do, and how they are expected to be used.
 
 ## Lotto Result Download Workflow
 
