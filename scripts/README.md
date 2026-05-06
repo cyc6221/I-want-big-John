@@ -3,6 +3,18 @@
 這份文件整理 `scripts/` 目錄內目前可用的腳本、用途與建議使用方式。  
 This document describes the scripts under `scripts/`, what they do, and how they are expected to be used.
 
+## Subfolders
+
+- `run_tasks/`
+  收納 `python scripts/run.py` 目前會依序執行的腳本；細節可看 `scripts/run_tasks/README.md`。
+- `templates/`
+  放手動建立內容時可複製的模板；細節可看 `scripts/templates/README.md`。
+- `_utils/`
+  放共用 Python helper module，通常不是直接執行的入口；細節可看 `scripts/_utils/README.md`。
+
+`__pycache__/` 是 Python 自動產生的快取資料夾，不需要額外文件。  
+`__pycache__/` is a Python-generated cache folder and does not need separate documentation.
+
 ## Lotto Result Download Workflow
 
 建議的順序是先下載、再解壓、最後視需要補修檔名或路徑。  

@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RUN_TASKS_DIR = ROOT / "scripts" / "run_tasks"
 
-scripts = [
+TASKS = [
     RUN_TASKS_DIR / "build_latest_draws_data.py",
     RUN_TASKS_DIR / "build_instant_all.py",
     RUN_TASKS_DIR / "update_all_instants_articles_from_csv.py",
@@ -18,19 +18,28 @@ scripts = [
     RUN_TASKS_DIR / "build_649_stats_json.py",
 ]
 
-env = dict(os.environ)
-env["PYTHONIOENCODING"] = "utf-8"
+def build_env() -> dict[str, str]:
+    env = dict(os.environ)
+    env["PYTHONIOENCODING"] = "utf-8"
+    return env
 
-failed = False
 
-for script_path in scripts:
-    script_label = script_path.relative_to(ROOT).as_posix()
-    print(f"Running {script_label} ...")
-    try:
-        subprocess.run([sys.executable, str(script_path)], check=True, env=env, cwd=ROOT)
-    except subprocess.CalledProcessError as exc:
-        print(f"Failed: {script_label} (exit code: {exc.returncode})")
-        failed = True
+def main() -> None:
+    env = build_env()
+    failed = False
 
-if failed:
-    raise SystemExit(1)
+    for script_path in TASKS:
+        script_label = script_path.relative_to(ROOT).as_posix()
+        print(f"Running {script_label} ...")
+        try:
+            subprocess.run([sys.executable, str(script_path)], check=True, env=env, cwd=ROOT)
+        except subprocess.CalledProcessError as exc:
+            print(f"Failed: {script_label} (exit code: {exc.returncode})")
+            failed = True
+
+    if failed:
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()
