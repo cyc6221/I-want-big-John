@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DERIVED_DIR = ROOT / "research" / "derived"
 OUTPUT_PATH = ROOT / "docs" / "_data" / "latest_draws.json"
 
