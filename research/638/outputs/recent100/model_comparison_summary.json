@@ -48,7 +48,7 @@
           "sum_gap_large": 48
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\uniform_random_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/uniform_random_v1_recent100_details.csv"
     },
     "historical_frequency_v1": {
       "meta": {
@@ -94,7 +94,7 @@
           "sum_gap_large": 49
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\historical_frequency_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/historical_frequency_v1_recent100_details.csv"
     },
     "bayesian_smoothing_v1": {
       "meta": {
@@ -140,7 +140,7 @@
           "sum_gap_large": 49
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\bayesian_smoothing_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/bayesian_smoothing_v1_recent100_details.csv"
     },
     "recent_window_v1": {
       "meta": {
@@ -155,7 +155,7 @@
         "prediction_count_per_draw": 6,
         "attempts_per_model": 4000,
         "top1_avg_main_hits": 0.96,
-        "best6_avg_main_hits": 1.38,
+        "best6_avg_main_hits": 1.37,
         "top1_second_hit_rate": 0.16,
         "any6_second_hit_rate": 0.16,
         "top1_at_least_3_main_rate": 0.04,
@@ -168,8 +168,8 @@
         },
         "best6_main_hit_distribution": {
           "0": 14,
-          "1": 42,
-          "2": 36,
+          "1": 43,
+          "2": 35,
           "3": 8
         },
         "failure_tag_counts": {
@@ -185,7 +185,7 @@
           "sum_gap_large": 54
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\recent_window_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/recent_window_v1_recent100_details.csv"
     },
     "time_decay_v1": {
       "meta": {
@@ -231,7 +231,7 @@
           "sum_gap_large": 51
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\time_decay_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/time_decay_v1_recent100_details.csv"
     },
     "markov_transition_v1": {
       "meta": {
@@ -250,7 +250,7 @@
         "top1_second_hit_rate": 0.2,
         "any6_second_hit_rate": 0.2,
         "top1_at_least_3_main_rate": 0.03,
-        "any6_at_least_3_main_rate": 0.1,
+        "any6_at_least_3_main_rate": 0.11,
         "top1_main_hit_distribution": {
           "0": 28,
           "1": 49,
@@ -259,9 +259,9 @@
         },
         "best6_main_hit_distribution": {
           "0": 15,
-          "1": 42,
-          "2": 33,
-          "3": 8,
+          "1": 43,
+          "2": 31,
+          "3": 9,
           "4": 2
         },
         "failure_tag_counts": {
@@ -277,7 +277,7 @@
           "sum_gap_large": 48
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\markov_transition_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/markov_transition_v1_recent100_details.csv"
     },
     "gap_only_v1": {
       "meta": {
@@ -322,7 +322,7 @@
           "sum_gap_large": 53
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\gap_only_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/gap_only_v1_recent100_details.csv"
     },
     "deficit_only_v1": {
       "meta": {
@@ -368,7 +368,7 @@
           "sum_gap_large": 38
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\deficit_only_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/deficit_only_v1_recent100_details.csv"
     },
     "gap_deficit_lr_v1": {
       "meta": {
@@ -382,39 +382,39 @@
         "recent_draw_count": 100,
         "prediction_count_per_draw": 6,
         "attempts_per_model": 4000,
-        "top1_avg_main_hits": 1.02,
-        "best6_avg_main_hits": 1.35,
+        "top1_avg_main_hits": 0.97,
+        "best6_avg_main_hits": 1.4,
         "top1_second_hit_rate": 0.18,
         "any6_second_hit_rate": 0.18,
         "top1_at_least_3_main_rate": 0.04,
         "any6_at_least_3_main_rate": 0.08,
         "top1_main_hit_distribution": {
-          "0": 30,
-          "1": 42,
+          "0": 35,
+          "1": 37,
           "2": 24,
           "3": 4
         },
         "best6_main_hit_distribution": {
-          "0": 16,
-          "1": 42,
-          "2": 34,
-          "3": 7,
-          "4": 1
+          "0": 15,
+          "1": 40,
+          "2": 37,
+          "3": 6,
+          "4": 2
         },
         "failure_tag_counts": {
-          "low_high_bias": 28,
+          "low_high_bias": 24,
           "main_good_hit": 4,
-          "main_one_hit": 42,
-          "main_zero_hit": 30,
-          "odd_even_bias": 46,
-          "run_pattern_mismatch": 55,
+          "main_one_hit": 37,
+          "main_zero_hit": 35,
+          "odd_even_bias": 40,
+          "run_pattern_mismatch": 56,
           "second_hit": 18,
           "second_miss": 82,
-          "spread_gap_large": 29,
-          "sum_gap_large": 48
+          "spread_gap_large": 21,
+          "sum_gap_large": 49
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\gap_deficit_lr_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/gap_deficit_lr_v1_recent100_details.csv"
     },
     "gap_deficit_recent_lr_v1": {
       "meta": {
@@ -428,39 +428,39 @@
         "recent_draw_count": 100,
         "prediction_count_per_draw": 6,
         "attempts_per_model": 4000,
-        "top1_avg_main_hits": 1.02,
-        "best6_avg_main_hits": 1.43,
+        "top1_avg_main_hits": 1.03,
+        "best6_avg_main_hits": 1.46,
         "top1_second_hit_rate": 0.18,
         "any6_second_hit_rate": 0.18,
         "top1_at_least_3_main_rate": 0.04,
-        "any6_at_least_3_main_rate": 0.11,
+        "any6_at_least_3_main_rate": 0.1,
         "top1_main_hit_distribution": {
-          "0": 30,
-          "1": 42,
-          "2": 24,
+          "0": 28,
+          "1": 45,
+          "2": 23,
           "3": 4
         },
         "best6_main_hit_distribution": {
-          "0": 15,
+          "0": 13,
           "1": 40,
-          "2": 34,
-          "3": 9,
+          "2": 37,
+          "3": 8,
           "4": 2
         },
         "failure_tag_counts": {
-          "low_high_bias": 27,
+          "low_high_bias": 31,
           "main_good_hit": 4,
-          "main_one_hit": 42,
-          "main_zero_hit": 30,
-          "odd_even_bias": 48,
-          "run_pattern_mismatch": 55,
+          "main_one_hit": 45,
+          "main_zero_hit": 28,
+          "odd_even_bias": 51,
+          "run_pattern_mismatch": 59,
           "second_hit": 18,
           "second_miss": 82,
-          "spread_gap_large": 29,
-          "sum_gap_large": 48
+          "spread_gap_large": 27,
+          "sum_gap_large": 51
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\gap_deficit_recent_lr_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/gap_deficit_recent_lr_v1_recent100_details.csv"
     },
     "gap_deficit_recent_time_lr_v2": {
       "meta": {
@@ -475,38 +475,38 @@
         "prediction_count_per_draw": 6,
         "attempts_per_model": 4000,
         "top1_avg_main_hits": 1.02,
-        "best6_avg_main_hits": 1.44,
+        "best6_avg_main_hits": 1.45,
         "top1_second_hit_rate": 0.18,
         "any6_second_hit_rate": 0.18,
         "top1_at_least_3_main_rate": 0.04,
-        "any6_at_least_3_main_rate": 0.11,
+        "any6_at_least_3_main_rate": 0.1,
         "top1_main_hit_distribution": {
-          "0": 30,
-          "1": 42,
-          "2": 24,
+          "0": 28,
+          "1": 46,
+          "2": 22,
           "3": 4
         },
         "best6_main_hit_distribution": {
           "0": 14,
-          "1": 41,
-          "2": 34,
-          "3": 9,
+          "1": 39,
+          "2": 37,
+          "3": 8,
           "4": 2
         },
         "failure_tag_counts": {
-          "low_high_bias": 27,
+          "low_high_bias": 28,
           "main_good_hit": 4,
-          "main_one_hit": 42,
-          "main_zero_hit": 30,
-          "odd_even_bias": 48,
-          "run_pattern_mismatch": 55,
+          "main_one_hit": 46,
+          "main_zero_hit": 28,
+          "odd_even_bias": 50,
+          "run_pattern_mismatch": 61,
           "second_hit": 18,
           "second_miss": 82,
-          "spread_gap_large": 29,
-          "sum_gap_large": 48
+          "spread_gap_large": 26,
+          "sum_gap_large": 49
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\gap_deficit_recent_time_lr_v2_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/gap_deficit_recent_time_lr_v2_recent100_details.csv"
     },
     "basic_heuristic_v1": {
       "meta": {
@@ -552,7 +552,7 @@
           "sum_gap_large": 51
         }
       },
-      "detail_csv": "C:\\Users\\LENOVO\\Desktop\\I-want-big-John\\research\\638\\outputs\\recent100\\details\\basic_heuristic_v1_recent100_details.csv"
+      "detail_csv": "outputs/recent100/details/basic_heuristic_v1_recent100_details.csv"
     }
   }
 }

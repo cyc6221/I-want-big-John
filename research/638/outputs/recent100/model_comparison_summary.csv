@@ -2,12 +2,12 @@
 uniform_random_v1,Uniform Random V1,baseline,100,1.12,1.97,0.14,0.63,0.05,0.17
 historical_frequency_v1,Historical Frequency V1,statistical,100,0.9,1.35,0.18,0.18,0.02,0.08
 bayesian_smoothing_v1,Bayesian Smoothing V1,statistical,100,0.9,1.35,0.18,0.18,0.02,0.08
-recent_window_v1,Recent Window V1,statistical,100,0.96,1.38,0.16,0.16,0.04,0.08
+recent_window_v1,Recent Window V1,statistical,100,0.96,1.37,0.16,0.16,0.04,0.08
 time_decay_v1,Time Decay V1,statistical,100,0.96,1.41,0.16,0.16,0.04,0.12
-markov_transition_v1,Markov Transition V1,statistical,100,0.98,1.4,0.2,0.2,0.03,0.1
+markov_transition_v1,Markov Transition V1,statistical,100,0.98,1.4,0.2,0.2,0.03,0.11
 gap_only_v1,Gap Only V1,mean_reversion,100,0.87,1.25,0.18,0.18,0.01,0.05
 deficit_only_v1,Deficit Only V1,mean_reversion,100,1.02,1.44,0.18,0.18,0.05,0.12
-gap_deficit_lr_v1,Gap Deficit LR V1,mean_reversion,100,1.02,1.35,0.18,0.18,0.04,0.08
-gap_deficit_recent_lr_v1,Gap Deficit Recent LR V1,mean_reversion,100,1.02,1.43,0.18,0.18,0.04,0.11
-gap_deficit_recent_time_lr_v2,Gap Deficit Recent Time LR V2,mean_reversion,100,1.02,1.44,0.18,0.18,0.04,0.11
+gap_deficit_lr_v1,Gap Deficit LR V1,mean_reversion,100,0.97,1.4,0.18,0.18,0.04,0.08
+gap_deficit_recent_lr_v1,Gap Deficit Recent LR V1,mean_reversion,100,1.03,1.46,0.18,0.18,0.04,0.1
+gap_deficit_recent_time_lr_v2,Gap Deficit Recent Time LR V2,mean_reversion,100,1.02,1.45,0.18,0.18,0.04,0.1
 basic_heuristic_v1,Basic Heuristic V1,heuristic,100,0.87,1.55,0.18,0.39,0.02,0.1

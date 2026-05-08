@@ -15,6 +15,7 @@ def top_predictions_from_scores(payload: dict, main_scores: dict[int, float], se
     rules = payload["rules"]
     history_main = set(payload["history_main_combos"])
     history_draw = set(payload["history_draw_combos"])
+    max_run_allowed = rules["max_circular_run_allowed"]
     main_rank = sorted(main_scores.items(), key=lambda item: (-item[1], item[0]))
     second_rank = sorted(second_scores.items(), key=lambda item: (-item[1], item[0]))
     predictions = []
@@ -24,9 +25,9 @@ def top_predictions_from_scores(payload: dict, main_scores: dict[int, float], se
     candidate_main_sets = []
 
     for combo in combinations(candidate_numbers, rules["main_numbers"]):
-        numbers = list(combo)
+        numbers = sorted(combo)
         numbers_key = key_of(numbers)
-        if circular_run_max(numbers, rules["number_min"], rules["number_max"]) >= 3:
+        if circular_run_max(numbers, rules["number_min"], rules["number_max"]) > max_run_allowed:
             continue
         if numbers_key in history_main:
             continue

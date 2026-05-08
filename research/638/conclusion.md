@@ -70,7 +70,7 @@
 
 完整表格可見：
 
-- [model_comparison_summary.md](/c:/Users/LENOVO/Desktop/I-want-big-John/research/638/outputs/recent100/model_comparison_summary.md)
+- [model_comparison_summary.md](./outputs/recent100/model_comparison_summary.md)
 
 ---
 

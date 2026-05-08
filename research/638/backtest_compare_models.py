@@ -222,6 +222,10 @@ def write_model_catalog() -> None:
     MODEL_CATALOG_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
+def to_repo_relative(path: Path) -> str:
+    return path.relative_to(RESEARCH_638_DIR).as_posix()
+
+
 def write_summary_outputs(summary_rows: list[dict], summary_payload: dict) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -313,7 +317,7 @@ def main() -> None:
         summary_payload["models"][model["id"]] = {
             "meta": model,
             "summary": summary,
-            "detail_csv": str(detail_path),
+            "detail_csv": to_repo_relative(detail_path),
         }
         print(f"{model['id']}: Top1 avg main hits={summary['top1_avg_main_hits']}, Best6 avg main hits={summary['best6_avg_main_hits']}")
 
