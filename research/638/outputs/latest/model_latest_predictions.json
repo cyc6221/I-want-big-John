@@ -1,0 +1,1411 @@
+{
+  "summary": {
+    "draw_count": 1898,
+    "date_start": "2008/01/24",
+    "date_end": "2026/03/30",
+    "latest_period": "115000026",
+    "latest_numbers": [
+      2,
+      13,
+      21,
+      22,
+      29,
+      34
+    ],
+    "latest_second_zone": 1
+  },
+  "models": {
+    "uniform_random_v1": {
+      "meta": {
+        "id": "uniform_random_v1",
+        "label": "Uniform Random V1",
+        "family": "baseline",
+        "description": "均勻隨機抽號，作為理論隨機基準；遵守不重複歷史整組與禁止3連號以上。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            6,
+            8,
+            20,
+            22,
+            28,
+            38
+          ],
+          "second_zone": 2,
+          "score": 0.0,
+          "max_run": 1,
+          "top_signals": []
+        },
+        {
+          "main_numbers": [
+            3,
+            6,
+            9,
+            10,
+            30,
+            32
+          ],
+          "second_zone": 5,
+          "score": 0.0,
+          "max_run": 2,
+          "top_signals": []
+        },
+        {
+          "main_numbers": [
+            12,
+            16,
+            17,
+            20,
+            22,
+            35
+          ],
+          "second_zone": 3,
+          "score": 0.0,
+          "max_run": 2,
+          "top_signals": []
+        },
+        {
+          "main_numbers": [
+            3,
+            6,
+            19,
+            24,
+            33,
+            35
+          ],
+          "second_zone": 8,
+          "score": 0.0,
+          "max_run": 1,
+          "top_signals": []
+        },
+        {
+          "main_numbers": [
+            4,
+            7,
+            15,
+            21,
+            26,
+            31
+          ],
+          "second_zone": 1,
+          "score": 0.0,
+          "max_run": 1,
+          "top_signals": []
+        },
+        {
+          "main_numbers": [
+            6,
+            16,
+            17,
+            26,
+            28,
+            33
+          ],
+          "second_zone": 3,
+          "score": 0.0,
+          "max_run": 2,
+          "top_signals": []
+        }
+      ]
+    },
+    "historical_frequency_v1": {
+      "meta": {
+        "id": "historical_frequency_v1",
+        "label": "Historical Frequency V1",
+        "family": "statistical",
+        "description": "使用全歷史出現次數作為機率分數，直接取 Top-6。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            15
+          ],
+          "second_zone": 2,
+          "score": 2203.0,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            7
+          ],
+          "second_zone": 2,
+          "score": 2201.0,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            15,
+            7
+          ],
+          "second_zone": 2,
+          "score": 2200.0,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            22
+          ],
+          "second_zone": 2,
+          "score": 2199.0,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            16
+          ],
+          "second_zone": 2,
+          "score": 2198.0,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            15,
+            22
+          ],
+          "second_zone": 2,
+          "score": 2198.0,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        }
+      ]
+    },
+    "bayesian_smoothing_v1": {
+      "meta": {
+        "id": "bayesian_smoothing_v1",
+        "label": "Bayesian Smoothing V1",
+        "family": "statistical",
+        "description": "在歷史頻率上加入 Laplace smoothing，避免極端估計。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            15
+          ],
+          "second_zone": 2,
+          "score": 1.1603875956035543,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            7
+          ],
+          "second_zone": 2,
+          "score": 1.1593373593003862,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            15,
+            7
+          ],
+          "second_zone": 2,
+          "score": 1.158812241148802,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            22
+          ],
+          "second_zone": 2,
+          "score": 1.158287122997218,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            4,
+            16
+          ],
+          "second_zone": 2,
+          "score": 1.1577620048456339,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            24,
+            3,
+            38,
+            14,
+            15,
+            22
+          ],
+          "second_zone": 2,
+          "score": 1.1577620048456339,
+          "max_run": 2,
+          "top_signals": [
+            "24",
+            "03",
+            "38"
+          ]
+        }
+      ]
+    },
+    "recent_window_v1": {
+      "meta": {
+        "id": "recent_window_v1",
+        "label": "Recent Window V1",
+        "family": "statistical",
+        "description": "使用最近 30 期窗口頻率作為分數，較重視短期活躍度。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            14,
+            34,
+            38,
+            25,
+            32,
+            9
+          ],
+          "second_zone": 5,
+          "score": 55.0,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "34",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            38,
+            25,
+            32,
+            11
+          ],
+          "second_zone": 5,
+          "score": 55.0,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "34",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            38,
+            25,
+            32,
+            22
+          ],
+          "second_zone": 5,
+          "score": 55.0,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "34",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            38,
+            25,
+            32,
+            29
+          ],
+          "second_zone": 5,
+          "score": 55.0,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "34",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            38,
+            25,
+            32,
+            31
+          ],
+          "second_zone": 5,
+          "score": 55.0,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "34",
+            "38"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            38,
+            25,
+            32,
+            35
+          ],
+          "second_zone": 5,
+          "score": 55.0,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "34",
+            "38"
+          ]
+        }
+      ]
+    },
+    "time_decay_v1": {
+      "meta": {
+        "id": "time_decay_v1",
+        "label": "Time Decay V1",
+        "family": "statistical",
+        "description": "對較近期資料給較高權重的指數衰減模型。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            14,
+            34,
+            9,
+            32,
+            11,
+            38
+          ],
+          "second_zone": 5,
+          "score": 55.65147881044953,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "34",
+            "09"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            9,
+            32,
+            11,
+            31
+          ],
+          "second_zone": 5,
+          "score": 55.01492607631255,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "34",
+            "09"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            9,
+            32,
+            38,
+            31
+          ],
+          "second_zone": 5,
+          "score": 55.009407233749066,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "34",
+            "09"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            9,
+            32,
+            11,
+            35
+          ],
+          "second_zone": 5,
+          "score": 54.83388267977665,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "34",
+            "09"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            9,
+            32,
+            38,
+            35
+          ],
+          "second_zone": 5,
+          "score": 54.828363837213175,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "34",
+            "09"
+          ]
+        },
+        {
+          "main_numbers": [
+            14,
+            34,
+            9,
+            11,
+            38,
+            31
+          ],
+          "second_zone": 5,
+          "score": 54.78277693722017,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "34",
+            "09"
+          ]
+        }
+      ]
+    },
+    "markov_transition_v1": {
+      "meta": {
+        "id": "markov_transition_v1",
+        "label": "Markov Transition V1",
+        "family": "statistical",
+        "description": "估計上一期號碼到下一期號碼的轉移強度，並以轉移分數排序。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            38,
+            19,
+            3,
+            35,
+            26,
+            29
+          ],
+          "second_zone": 2,
+          "score": 1867.4000000000003,
+          "max_run": 1,
+          "top_signals": [
+            "38",
+            "19",
+            "03"
+          ]
+        },
+        {
+          "main_numbers": [
+            38,
+            19,
+            3,
+            35,
+            26,
+            14
+          ],
+          "second_zone": 2,
+          "score": 1864.4000000000003,
+          "max_run": 1,
+          "top_signals": [
+            "38",
+            "19",
+            "03"
+          ]
+        },
+        {
+          "main_numbers": [
+            38,
+            19,
+            3,
+            35,
+            29,
+            14
+          ],
+          "second_zone": 2,
+          "score": 1864.4000000000003,
+          "max_run": 1,
+          "top_signals": [
+            "38",
+            "19",
+            "03"
+          ]
+        },
+        {
+          "main_numbers": [
+            38,
+            19,
+            3,
+            26,
+            29,
+            14
+          ],
+          "second_zone": 2,
+          "score": 1862.4000000000003,
+          "max_run": 1,
+          "top_signals": [
+            "38",
+            "19",
+            "03"
+          ]
+        },
+        {
+          "main_numbers": [
+            38,
+            19,
+            35,
+            26,
+            29,
+            14
+          ],
+          "second_zone": 2,
+          "score": 1860.4000000000003,
+          "max_run": 1,
+          "top_signals": [
+            "38",
+            "19",
+            "35"
+          ]
+        },
+        {
+          "main_numbers": [
+            38,
+            3,
+            35,
+            26,
+            29,
+            14
+          ],
+          "second_zone": 2,
+          "score": 1858.4000000000003,
+          "max_run": 1,
+          "top_signals": [
+            "38",
+            "03",
+            "35"
+          ]
+        }
+      ]
+    },
+    "gap_only_v1": {
+      "meta": {
+        "id": "gap_only_v1",
+        "label": "Gap Only V1",
+        "family": "mean_reversion",
+        "description": "只使用 gap = 距離上次出現多久，gap 越大分數越高。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            20,
+            8,
+            5,
+            16,
+            6,
+            12
+          ],
+          "second_zone": 2,
+          "score": 284.55719667546424,
+          "max_run": 2,
+          "top_signals": [
+            "20",
+            "08",
+            "05"
+          ]
+        },
+        {
+          "main_numbers": [
+            20,
+            8,
+            5,
+            16,
+            6,
+            10
+          ],
+          "second_zone": 2,
+          "score": 284.47018529847463,
+          "max_run": 2,
+          "top_signals": [
+            "20",
+            "08",
+            "05"
+          ]
+        },
+        {
+          "main_numbers": [
+            20,
+            8,
+            5,
+            16,
+            6,
+            24
+          ],
+          "second_zone": 2,
+          "score": 284.47018529847463,
+          "max_run": 2,
+          "top_signals": [
+            "20",
+            "08",
+            "05"
+          ]
+        },
+        {
+          "main_numbers": [
+            20,
+            8,
+            5,
+            16,
+            12,
+            10
+          ],
+          "second_zone": 2,
+          "score": 284.47018529847463,
+          "max_run": 1,
+          "top_signals": [
+            "20",
+            "08",
+            "05"
+          ]
+        },
+        {
+          "main_numbers": [
+            20,
+            8,
+            5,
+            16,
+            12,
+            24
+          ],
+          "second_zone": 2,
+          "score": 284.47018529847463,
+          "max_run": 1,
+          "top_signals": [
+            "20",
+            "08",
+            "05"
+          ]
+        },
+        {
+          "main_numbers": [
+            20,
+            8,
+            5,
+            16,
+            10,
+            24
+          ],
+          "second_zone": 2,
+          "score": 284.38317392148497,
+          "max_run": 1,
+          "top_signals": [
+            "20",
+            "08",
+            "05"
+          ]
+        }
+      ]
+    },
+    "deficit_only_v1": {
+      "meta": {
+        "id": "deficit_only_v1",
+        "label": "Deficit Only V1",
+        "family": "mean_reversion",
+        "description": "只使用標準化 deficit，越低於理論平均的號碼分數越高。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            9,
+            5,
+            34,
+            32,
+            2,
+            30
+          ],
+          "second_zone": 2,
+          "score": 277.763632247507,
+          "max_run": 1,
+          "top_signals": [
+            "09",
+            "05",
+            "34"
+          ]
+        },
+        {
+          "main_numbers": [
+            9,
+            5,
+            34,
+            32,
+            2,
+            28
+          ],
+          "second_zone": 2,
+          "score": 277.6377353946379,
+          "max_run": 1,
+          "top_signals": [
+            "09",
+            "05",
+            "34"
+          ]
+        },
+        {
+          "main_numbers": [
+            9,
+            5,
+            34,
+            32,
+            2,
+            21
+          ],
+          "second_zone": 2,
+          "score": 277.57478696820334,
+          "max_run": 1,
+          "top_signals": [
+            "09",
+            "05",
+            "34"
+          ]
+        },
+        {
+          "main_numbers": [
+            9,
+            5,
+            34,
+            2,
+            33,
+            30
+          ],
+          "second_zone": 2,
+          "score": 277.3859416888997,
+          "max_run": 2,
+          "top_signals": [
+            "09",
+            "05",
+            "34"
+          ]
+        },
+        {
+          "main_numbers": [
+            9,
+            5,
+            34,
+            32,
+            2,
+            13
+          ],
+          "second_zone": 2,
+          "score": 277.3859416888997,
+          "max_run": 1,
+          "top_signals": [
+            "09",
+            "05",
+            "34"
+          ]
+        },
+        {
+          "main_numbers": [
+            9,
+            5,
+            34,
+            32,
+            2,
+            18
+          ],
+          "second_zone": 2,
+          "score": 277.3859416888997,
+          "max_run": 1,
+          "top_signals": [
+            "09",
+            "05",
+            "34"
+          ]
+        }
+      ]
+    },
+    "gap_deficit_lr_v1": {
+      "meta": {
+        "id": "gap_deficit_lr_v1",
+        "label": "Gap Deficit LR V1",
+        "family": "mean_reversion",
+        "description": "用 gap、標準化 deficit 做輕量 logistic regression。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            34,
+            2,
+            21,
+            13,
+            29,
+            22
+          ],
+          "second_zone": 2,
+          "score": 270.78909063582364,
+          "max_run": 2,
+          "top_signals": [
+            "34",
+            "02",
+            "21"
+          ]
+        },
+        {
+          "main_numbers": [
+            34,
+            2,
+            21,
+            13,
+            29,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.7556218835075,
+          "max_run": 2,
+          "top_signals": [
+            "34",
+            "02",
+            "21"
+          ]
+        },
+        {
+          "main_numbers": [
+            34,
+            2,
+            21,
+            13,
+            22,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.7555722715084,
+          "max_run": 2,
+          "top_signals": [
+            "34",
+            "02",
+            "21"
+          ]
+        },
+        {
+          "main_numbers": [
+            34,
+            2,
+            21,
+            13,
+            29,
+            35
+          ],
+          "second_zone": 2,
+          "score": 270.75552405375436,
+          "max_run": 2,
+          "top_signals": [
+            "34",
+            "02",
+            "21"
+          ]
+        },
+        {
+          "main_numbers": [
+            34,
+            2,
+            21,
+            13,
+            22,
+            35
+          ],
+          "second_zone": 2,
+          "score": 270.75547444175527,
+          "max_run": 2,
+          "top_signals": [
+            "34",
+            "02",
+            "21"
+          ]
+        },
+        {
+          "main_numbers": [
+            34,
+            2,
+            21,
+            29,
+            22,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.7554035854908,
+          "max_run": 2,
+          "top_signals": [
+            "34",
+            "02",
+            "21"
+          ]
+        }
+      ]
+    },
+    "gap_deficit_recent_lr_v1": {
+      "meta": {
+        "id": "gap_deficit_recent_lr_v1",
+        "label": "Gap Deficit Recent LR V1",
+        "family": "mean_reversion",
+        "description": "用 gap、標準化 deficit、近期頻率做輕量 logistic regression。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            22,
+            34
+          ],
+          "second_zone": 2,
+          "score": 270.78317203755046,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            22,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.75013526635985,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            34,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.74993061734284,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            22,
+            34,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.7498826215489,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            22,
+            35
+          ],
+          "second_zone": 2,
+          "score": 270.7498566984577,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            34,
+            35
+          ],
+          "second_zone": 2,
+          "score": 270.74965204944067,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        }
+      ]
+    },
+    "gap_deficit_recent_time_lr_v2": {
+      "meta": {
+        "id": "gap_deficit_recent_time_lr_v2",
+        "label": "Gap Deficit Recent Time LR V2",
+        "family": "mean_reversion",
+        "description": "在 gap、deficit、近期頻率之外，再加入月份、星期、年內期數位置的時間特徵。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            22,
+            34
+          ],
+          "second_zone": 2,
+          "score": 270.781964063697,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            22,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.74894294589234,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            34,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.7487492001704,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            22,
+            34,
+            28
+          ],
+          "second_zone": 2,
+          "score": 270.74869191079927,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            22,
+            35
+          ],
+          "second_zone": 2,
+          "score": 270.74864302624803,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        },
+        {
+          "main_numbers": [
+            2,
+            21,
+            13,
+            29,
+            34,
+            35
+          ],
+          "second_zone": 2,
+          "score": 270.7484492805261,
+          "max_run": 2,
+          "top_signals": [
+            "02",
+            "21",
+            "13"
+          ]
+        }
+      ]
+    },
+    "basic_heuristic_v1": {
+      "meta": {
+        "id": "basic_heuristic_v1",
+        "label": "Basic Heuristic V1",
+        "family": "heuristic",
+        "description": "歷史頻率 + 近30/60期熱度 + 遺漏期數加權，並加上形狀分數。"
+      },
+      "predictions": [
+        {
+          "main_numbers": [
+            3,
+            7,
+            14,
+            20,
+            24,
+            38
+          ],
+          "second_zone": 2,
+          "score": 4.842362472493767,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "20",
+            "03"
+          ]
+        },
+        {
+          "main_numbers": [
+            3,
+            11,
+            14,
+            16,
+            24,
+            37
+          ],
+          "second_zone": 5,
+          "score": 4.654817521697523,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "16",
+            "03"
+          ]
+        },
+        {
+          "main_numbers": [
+            3,
+            6,
+            14,
+            16,
+            19,
+            20
+          ],
+          "second_zone": 2,
+          "score": 4.570690705739828,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "16",
+            "20"
+          ]
+        },
+        {
+          "main_numbers": [
+            3,
+            6,
+            10,
+            14,
+            16,
+            20
+          ],
+          "second_zone": 2,
+          "score": 4.519765865448872,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "16",
+            "20"
+          ]
+        },
+        {
+          "main_numbers": [
+            11,
+            14,
+            16,
+            24,
+            37,
+            38
+          ],
+          "second_zone": 4,
+          "score": 4.510445404395523,
+          "max_run": 2,
+          "top_signals": [
+            "14",
+            "16",
+            "24"
+          ]
+        },
+        {
+          "main_numbers": [
+            8,
+            11,
+            14,
+            16,
+            20,
+            38
+          ],
+          "second_zone": 8,
+          "score": 4.502728202582109,
+          "max_run": 1,
+          "top_signals": [
+            "14",
+            "16",
+            "08"
+          ]
+        }
+      ]
+    }
+  }
+}
