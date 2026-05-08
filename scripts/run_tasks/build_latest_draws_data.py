@@ -1,11 +1,18 @@
 import csv
 import json
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 
 ROOT = Path(__file__).resolve().parents[2]
+SCRIPTS_DIR = ROOT / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from _utils.lotto_results import load_result_rows
+
 DERIVED_DIR = ROOT / "research" / "derived"
 OUTPUT_PATH = ROOT / "docs" / "_data" / "latest_draws.json"
 
@@ -59,6 +66,13 @@ def load_latest_row(csv_path: Path) -> Dict[str, str]:
     return latest_row
 
 
+def load_latest_game_row(game_key: str, csv_path: Path) -> Dict[str, str]:
+    rows = load_result_rows(game_key, include_manual=True, require_financial=False)
+    if not rows:
+        return load_latest_row(csv_path)
+    return rows[-1]
+
+
 def extract_main_numbers(row: Dict[str, str]) -> List[str]:
     number_keys = sorted(
         (column for column in row if column.startswith("獎號")),
@@ -84,7 +98,7 @@ def build_payload() -> Dict[str, Any]:
     games = []
 
     for game in GAMES:
-        row = load_latest_row(DERIVED_DIR / game.filename)
+        row = load_latest_game_row(game.key, DERIVED_DIR / game.filename)
         special_label, special_number = extract_special(row, game.special_label)
         games.append(
             {
