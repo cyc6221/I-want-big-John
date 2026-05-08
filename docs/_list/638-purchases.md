@@ -2,7 +2,7 @@
 title: 威力彩購買紀錄
 permalink: /list/638-purchases/
 category: list-638
-date: 2026-05-08
+date: 2026-05-07
 description: 總計花費 100 元，已結算中獎 800 元。
 ---
 

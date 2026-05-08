@@ -22,7 +22,6 @@ OUT_MD = Path("docs/_list/638-purchases.md")
 
 GAME_KEY = "638"
 GAME_TITLE = "威力彩"
-PAGE_DATE = "2026-05-08"
 
 PRIZE_RULES = {
     (6, True): {"rank": "頭獎", "prize": None, "variable": True},
@@ -78,13 +77,31 @@ def parse_money(raw: str, *, field: str, line_number: int, required: bool) -> in
             raise ValueError(f"Missing {field} at line {line_number}")
         return None
 
-    try:
-        parsed = int(float(value))
-    except ValueError as exc:
-        raise ValueError(f"Invalid {field} at line {line_number}: {raw!r}") from exc
+    if not value.isdecimal():
+        raise ValueError(f"Invalid {field} at line {line_number}: {raw!r}")
 
+    parsed = int(value)
     if parsed < 0:
         raise ValueError(f"{field} cannot be negative at line {line_number}: {raw!r}")
+    return parsed
+
+
+def parse_required_text(raw: str, *, field: str, line_number: int) -> str:
+    value = (raw or "").strip()
+    if not value:
+        raise ValueError(f"Missing {field} at line {line_number}")
+    return value
+
+
+def parse_positive_int(raw: str, *, field: str, line_number: int) -> int:
+    value = (raw or "").strip()
+    if not value:
+        raise ValueError(f"Missing {field} at line {line_number}")
+    if not value.isdecimal():
+        raise ValueError(f"Invalid {field} at line {line_number}: {raw!r}")
+    parsed = int(value)
+    if parsed <= 0:
+        raise ValueError(f"{field} must be positive at line {line_number}: {raw!r}")
     return parsed
 
 
@@ -154,12 +171,11 @@ def resolve_prize(primary_hits: int, special_hit: bool, result_known: bool) -> d
     }
 
 
-def load_draw_results() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+def load_draw_results() -> dict[str, dict[str, Any]]:
     by_draw_no: dict[str, dict[str, Any]] = {}
-    by_draw_date: dict[str, dict[str, Any]] = {}
 
     if not RESULTS_PATH.exists():
-        return by_draw_no, by_draw_date
+        return by_draw_no
 
     for row in load_result_rows("638", include_manual=True, require_financial=False):
         draw_no = (row.get("期別") or "").strip()
@@ -177,16 +193,11 @@ def load_draw_results() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, 
         }
         if draw_no:
             by_draw_no[draw_no] = result
-        if draw_date:
-            by_draw_date[draw_date.strftime("%Y-%m-%d")] = result
 
-    return by_draw_no, by_draw_date
+    return by_draw_no
 
 
-def read_purchase_rows(
-    results_by_draw_no: dict[str, dict[str, Any]],
-    results_by_draw_date: dict[str, dict[str, Any]],
-) -> list[dict[str, Any]]:
+def read_purchase_rows(results_by_draw_no: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     if not CSV_PATH.exists():
         raise FileNotFoundError(f"CSV not found: {CSV_PATH}")
 
@@ -203,7 +214,8 @@ def read_purchase_rows(
                 continue
 
             purchase_date = parse_date(row["purchase_date"], field="purchase_date", line_number=line_number)
-            draw_no = row["draw_no"]
+            draw_no = parse_required_text(row["draw_no"], field="draw_no", line_number=line_number)
+            line_no_sort = parse_positive_int(row["line_no"], field="line_no", line_number=line_number)
             price = parse_money(row["price"], field="price", line_number=line_number, required=True)
             numbers = [
                 parse_ball(row[f"number{i}"], field=f"number{i}", line_number=line_number, low=1, high=38)
@@ -230,6 +242,7 @@ def read_purchase_rows(
                     "purchase_date": format_date(purchase_date),
                     "draw_no": draw_no,
                     "line_no": row["line_no"],
+                    "line_no_sort": line_no_sort,
                     "price": price,
                     "prize": prize_result["prize"],
                     "prize_rank": prize_result["rank"],
@@ -251,7 +264,7 @@ def read_purchase_rows(
                 }
             )
 
-    rows.sort(key=lambda item: (item["purchase_date"], item["draw_no"], item["line_no"], item["index"]))
+    rows.sort(key=lambda item: (item["purchase_date"], item["draw_no"], item["line_no_sort"], item["index"]))
     return rows
 
 
@@ -305,6 +318,13 @@ def build_description(summary: dict[str, Any]) -> str:
     return description
 
 
+def front_matter_date(rows: list[dict[str, Any]]) -> str:
+    if not rows:
+        return datetime.now().strftime("%Y-%m-%d")
+    latest = max(parse_date(row["purchase_date"], field="purchase_date", line_number=0) for row in rows)
+    return latest.strftime("%Y-%m-%d")
+
+
 def ball_items(values: list[str], row: dict[str, Any], *, special: bool = False) -> str:
     if not row["result_known"]:
         return " ".join(f"{value}:pending" for value in values)
@@ -331,7 +351,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
         "title: 威力彩購買紀錄",
         "permalink: /list/638-purchases/",
         "category: list-638",
-        f"date: {PAGE_DATE}",
+        f"date: {front_matter_date(rows)}",
         f"description: {description}",
         "---",
         "",
@@ -411,7 +431,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
 def build_payload(rows: list[dict[str, Any]], summary: dict[str, Any]) -> dict[str, Any]:
     records = []
     for row in rows:
-        records.append({key: value for key, value in row.items() if key != "index"})
+        records.append({key: value for key, value in row.items() if key not in {"index", "line_no_sort"}})
 
     return {
         "game": GAME_KEY,
@@ -423,8 +443,8 @@ def build_payload(rows: list[dict[str, Any]], summary: dict[str, Any]) -> dict[s
 
 
 def main() -> None:
-    results_by_draw_no, results_by_draw_date = load_draw_results()
-    rows = read_purchase_rows(results_by_draw_no, results_by_draw_date)
+    results_by_draw_no = load_draw_results()
+    rows = read_purchase_rows(results_by_draw_no)
     summary = build_summary(rows)
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
