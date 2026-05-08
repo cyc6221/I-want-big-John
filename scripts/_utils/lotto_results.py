@@ -22,6 +22,11 @@ MANUAL_COLUMNS = [
     "number6",
     "special",
 ]
+SOURCE_PATH_COLUMN = "__source_path"
+SOURCE_LINE_COLUMN = "__source_line"
+SOURCE_KIND_COLUMN = "__source_kind"
+SOURCE_META_COLUMNS = [SOURCE_PATH_COLUMN, SOURCE_LINE_COLUMN, SOURCE_KIND_COLUMN]
+
 
 
 @dataclass(frozen=True)
@@ -158,7 +163,15 @@ def read_official_rows(config: LottoGameConfig) -> list[dict[str, str]]:
         for raw in reader:
             if not any((value or "").strip() for value in raw.values()):
                 continue
-            rows.append({column: (raw.get(column) or "").strip() for column in config.columns})
+            record = {column: (raw.get(column) or "").strip() for column in config.columns}
+            record.update(
+                {
+                    SOURCE_PATH_COLUMN: config.derived_path.as_posix(),
+                    SOURCE_LINE_COLUMN: str(reader.line_num),
+                    SOURCE_KIND_COLUMN: "official",
+                }
+            )
+            rows.append(record)
     return rows
 
 
@@ -189,6 +202,9 @@ def manual_row_to_official(config: LottoGameConfig, raw: dict[str, str], line_nu
         "銷售總額": "",
         "銷售注數": "",
         "總獎金": "",
+        SOURCE_PATH_COLUMN: source.as_posix(),
+        SOURCE_LINE_COLUMN: str(line_number),
+        SOURCE_KIND_COLUMN: "manual",
     }
 
     for index, value in enumerate(sorted(numbers), start=1):
@@ -232,6 +248,35 @@ def read_manual_rows(config: LottoGameConfig) -> list[dict[str, str]]:
     return rows
 
 
+def row_source_line(row: dict[str, str], fallback: int) -> int:
+    value = (row.get(SOURCE_LINE_COLUMN) or "").strip()
+    if not value:
+        return fallback
+    try:
+        return int(value)
+    except ValueError:
+        return fallback
+
+
+def row_source_path(row: dict[str, str], fallback: Path) -> Path:
+    value = (row.get(SOURCE_PATH_COLUMN) or "").strip()
+    return Path(value) if value else fallback
+
+
+def result_sort_key(row: dict[str, str], config: LottoGameConfig) -> tuple[datetime, str]:
+    source = row_source_path(row, config.derived_path)
+    line_number = row_source_line(row, 0)
+    draw_no = (row.get("期別") or "<missing>").strip() or "<missing>"
+    try:
+        draw_date = parse_date(row["開獎日期"], field="開獎日期", source=source, line_number=line_number)
+    except ValueError as exc:
+        raise ValueError(
+            f"Invalid 開獎日期 for {config.key} draw_no={draw_no} at {source}:{line_number}: "
+            f"{row.get('開獎日期')!r}"
+        ) from exc
+    return draw_date, draw_no
+
+
 def merge_rows(official_rows: list[dict[str, str]], manual_rows: list[dict[str, str]], config: LottoGameConfig) -> list[dict[str, str]]:
     rows_by_draw_no = {row["期別"]: dict(row) for row in official_rows}
 
@@ -245,10 +290,12 @@ def merge_rows(official_rows: list[dict[str, str]], manual_rows: list[dict[str, 
                 merged[column] = manual_value
             elif column not in merged:
                 merged[column] = ""
+        for column in SOURCE_META_COLUMNS:
+            merged[column] = manual.get(column, "")
         rows_by_draw_no[draw_no] = merged
 
     rows = list(rows_by_draw_no.values())
-    rows.sort(key=lambda row: (parse_date(row["開獎日期"], field="開獎日期", source=config.derived_path, line_number=0), row["期別"]))
+    rows.sort(key=lambda row: result_sort_key(row, config))
     return rows
 
 

@@ -22,6 +22,8 @@ OUT_MD = Path("docs/_list/638-purchases.md")
 
 GAME_KEY = "638"
 GAME_TITLE = "威力彩"
+RESULT_SOURCE_PATH_COLUMN = "__source_path"
+RESULT_SOURCE_LINE_COLUMN = "__source_line"
 
 PRIZE_RULES = {
     (6, True): {"rank": "頭獎", "prize": None, "variable": True},
@@ -135,6 +137,42 @@ def is_blank_row(row: dict[str, str]) -> bool:
     return all((row.get(key) or "").strip() == "" for key in EXPECTED_HEADERS)
 
 
+def result_source_line(row: dict[str, str], fallback: int) -> int:
+    value = (row.get(RESULT_SOURCE_LINE_COLUMN) or "").strip()
+    if not value:
+        return fallback
+    try:
+        return int(value)
+    except ValueError:
+        return fallback
+
+
+def result_source_label(row: dict[str, str], fallback: int) -> tuple[str, int]:
+    source = (row.get(RESULT_SOURCE_PATH_COLUMN) or "").strip() or RESULTS_PATH.as_posix()
+    line_number = result_source_line(row, fallback)
+    return source, line_number
+
+
+def parse_result_date(row: dict[str, str], *, field: str, fallback: int) -> datetime:
+    source, line_number = result_source_label(row, fallback)
+    draw_no = (row.get("期別") or "<missing>").strip() or "<missing>"
+    try:
+        parsed = parse_date(row.get(field) or "", field=field, line_number=line_number)
+    except ValueError as exc:
+        raise ValueError(f"Invalid 638 draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
+    if parsed is None:
+        raise ValueError(f"Missing 638 draw result {field} at {source}:{line_number} draw_no={draw_no}")
+    return parsed
+
+
+def parse_result_ball(row: dict[str, str], *, field: str, fallback: int, low: int, high: int) -> int:
+    source, line_number = result_source_label(row, fallback)
+    draw_no = (row.get("期別") or "<missing>").strip() or "<missing>"
+    try:
+        return parse_ball(row.get(field) or "", field=field, line_number=line_number, low=low, high=high)
+    except ValueError as exc:
+        raise ValueError(f"Invalid 638 draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
+
 def resolve_prize(primary_hits: int, special_hit: bool, result_known: bool) -> dict[str, Any]:
     if not result_known:
         return {
@@ -177,18 +215,18 @@ def load_draw_results() -> dict[str, dict[str, Any]]:
     if not RESULTS_PATH.exists():
         return by_draw_no
 
-    for row in load_result_rows("638", include_manual=True, require_financial=False):
+    for index, row in enumerate(load_result_rows("638", include_manual=True, require_financial=False), start=1):
         draw_no = (row.get("期別") or "").strip()
-        draw_date = parse_date(row.get("開獎日期") or "", field="開獎日期", line_number=1)
+        draw_date = parse_result_date(row, field="開獎日期", fallback=index)
         numbers = [
-            parse_ball(row.get(f"獎號{i}") or "", field=f"獎號{i}", line_number=1, low=1, high=38)
+            parse_result_ball(row, field=f"獎號{i}", fallback=index, low=1, high=38)
             for i in range(1, 7)
         ]
         result = {
             "draw_no": draw_no,
             "draw_date": format_date(draw_date),
             "numbers": [ball_label(number) for number in numbers],
-            "special": ball_label(parse_ball(row.get("第二區") or "", field="第二區", line_number=1, low=1, high=8)),
+            "special": ball_label(parse_result_ball(row, field="第二區", fallback=index, low=1, high=8)),
             "number_set": set(numbers),
         }
         if draw_no:
