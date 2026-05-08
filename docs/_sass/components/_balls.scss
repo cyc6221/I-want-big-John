@@ -169,3 +169,13 @@
   border: 1px solid rgba(100,116,139,0.55);
   box-shadow: 0 10px 25px rgba(2,6,23,0.18);
 }
+
+/* ===== small-ball: pending (未開獎 / 未比對) ===== */
+.small-ball--pending{
+  color: #475569;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.86), rgba(255,255,255,0.0) 36%),
+    linear-gradient(135deg, rgba(241,245,249,0.98), rgba(203,213,225,0.92));
+  border: 1px solid rgba(148,163,184,0.75);
+  box-shadow: 0 10px 25px rgba(15,23,42,0.10);
+}

@@ -41,6 +41,38 @@ Generated files commonly include:
 - `docs/assets/data/instants-per-month.json`
 - `docs/_list/instants-per-month.md`
 
+## Lotto Purchase Update Workflow
+
+Use this workflow when adding or correcting draw-game purchase records such as Power Lottery (`638`). Keep these records separate from scratch-ticket (`instants`) data.
+
+1. Create a new branch from `main`.
+2. For Power Lottery (`638`), update `raw-data/lotto-purchases/638.csv`.
+3. Do not add draw-game purchase records to `raw-data/all-instants.csv`.
+4. Run `python scripts/run.py`.
+5. Review the generated changes.
+
+The `638` purchase CSV stores only the purchase basics:
+
+`purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,number6,special`
+
+Prize rank and fixed prize amount are generated from draw results.
+
+Generated files commonly include:
+- `docs/_list/638-purchases.md`
+- `docs/assets/data/638-purchases.json`
+
+## Manual Lotto Result Workflow
+
+Use this workflow when Taiwan Lottery official monthly result downloads have not yet caught up, but a draw result is known.
+
+1. Keep official monthly downloaded files under `raw-data/lotto-result-downloads/` unchanged.
+2. Add or correct manual draw results in `raw-data/manual-lotto-results.csv`.
+3. For manual records, use `game` values `638`, `649`, or `539`.
+4. Run `python scripts/run.py`.
+5. Review generated latest-draw, purchase-record, and stats changes.
+
+Manual draw records are merged over official rows by `draw_no`. Manual records only store draw numbers, so they do not override official financial values and are excluded from sales statistics until official data is downloaded.
+
 ## Commit Style
 
 When practical, keep commits separated by change type.
