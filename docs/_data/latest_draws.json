@@ -3,18 +3,18 @@
     {
       "key": "638",
       "name": "威力彩",
-      "issue": "115000026",
-      "date": "2026/03/30",
+      "issue": "115000037",
+      "date": "2026/05/07",
       "numbers": [
-        "02",
-        "13",
-        "21",
-        "22",
-        "29",
-        "34"
+        "03",
+        "14",
+        "15",
+        "24",
+        "34",
+        "38"
       ],
       "special_label": "第二區",
-      "special_number": "01",
+      "special_number": "03",
       "details_path": "/638/",
       "recommender_path": "/recommender_638/"
     },
