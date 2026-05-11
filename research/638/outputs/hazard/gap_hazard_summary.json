@@ -5,197 +5,197 @@
   "binned_rows": [
     {
       "gap_bin": "0",
-      "observations": 11382,
-      "hits": 1772,
-      "empirical_hazard": 0.155684,
-      "smoothed_hazard": 0.155689,
-      "delta_vs_base": -0.00221
+      "observations": 11436,
+      "hits": 1780,
+      "empirical_hazard": 0.155649,
+      "smoothed_hazard": 0.155654,
+      "delta_vs_base": -0.002246
     },
     {
       "gap_bin": "1",
-      "observations": 9638,
-      "hits": 1530,
-      "empirical_hazard": 0.158747,
-      "smoothed_hazard": 0.158744,
-      "delta_vs_base": 0.000852
+      "observations": 9683,
+      "hits": 1536,
+      "empirical_hazard": 0.158629,
+      "smoothed_hazard": 0.158627,
+      "delta_vs_base": 0.000734
     },
     {
       "gap_bin": "2",
-      "observations": 8104,
-      "hits": 1325,
-      "empirical_hazard": 0.1635,
-      "smoothed_hazard": 0.163482,
-      "delta_vs_base": 0.005605
+      "observations": 8143,
+      "hits": 1337,
+      "empirical_hazard": 0.16419,
+      "smoothed_hazard": 0.164171,
+      "delta_vs_base": 0.006295
     },
     {
       "gap_bin": "3",
-      "observations": 6778,
-      "hits": 1133,
-      "empirical_hazard": 0.167158,
-      "smoothed_hazard": 0.167124,
-      "delta_vs_base": 0.009264
+      "observations": 6803,
+      "hits": 1137,
+      "empirical_hazard": 0.167132,
+      "smoothed_hazard": 0.167098,
+      "delta_vs_base": 0.009237
     },
     {
       "gap_bin": "4-5",
-      "observations": 10434,
-      "hits": 1578,
-      "empirical_hazard": 0.151236,
-      "smoothed_hazard": 0.151252,
-      "delta_vs_base": -0.006658
+      "observations": 10477,
+      "hits": 1583,
+      "empirical_hazard": 0.151093,
+      "smoothed_hazard": 0.151109,
+      "delta_vs_base": -0.006802
     },
     {
       "gap_bin": "6-8",
-      "observations": 10391,
-      "hits": 1572,
-      "empirical_hazard": 0.151285,
-      "smoothed_hazard": 0.151301,
-      "delta_vs_base": -0.00661
+      "observations": 10439,
+      "hits": 1578,
+      "empirical_hazard": 0.151164,
+      "smoothed_hazard": 0.15118,
+      "delta_vs_base": -0.006731
     },
     {
       "gap_bin": "9-12",
-      "observations": 7791,
-      "hits": 1241,
-      "empirical_hazard": 0.159286,
-      "smoothed_hazard": 0.159282,
-      "delta_vs_base": 0.001392
+      "observations": 7842,
+      "hits": 1246,
+      "empirical_hazard": 0.158888,
+      "smoothed_hazard": 0.158885,
+      "delta_vs_base": 0.000993
     },
     {
       "gap_bin": "13-20",
-      "observations": 5740,
-      "hits": 933,
-      "empirical_hazard": 0.162544,
-      "smoothed_hazard": 0.162523,
-      "delta_vs_base": 0.004649
+      "observations": 5769,
+      "hits": 941,
+      "empirical_hazard": 0.163113,
+      "smoothed_hazard": 0.163091,
+      "delta_vs_base": 0.005218
     },
     {
       "gap_bin": "21+",
-      "observations": 1828,
+      "observations": 1836,
       "hits": 298,
-      "empirical_hazard": 0.16302,
-      "smoothed_hazard": 0.162951,
-      "delta_vs_base": 0.005125
+      "empirical_hazard": 0.162309,
+      "smoothed_hazard": 0.16225,
+      "delta_vs_base": 0.004415
     }
   ],
   "fine_binned_rows": [
     {
       "gap_bin": "0",
-      "observations": 11382,
-      "hits": 1772,
-      "empirical_hazard": 0.155684,
-      "smoothed_hazard": 0.155689,
-      "delta_vs_base": -0.00221
+      "observations": 11436,
+      "hits": 1780,
+      "empirical_hazard": 0.155649,
+      "smoothed_hazard": 0.155654,
+      "delta_vs_base": -0.002246
     },
     {
       "gap_bin": "1",
-      "observations": 9638,
-      "hits": 1530,
-      "empirical_hazard": 0.158747,
-      "smoothed_hazard": 0.158744,
-      "delta_vs_base": 0.000852
+      "observations": 9683,
+      "hits": 1536,
+      "empirical_hazard": 0.158629,
+      "smoothed_hazard": 0.158627,
+      "delta_vs_base": 0.000734
     },
     {
       "gap_bin": "2",
-      "observations": 8104,
-      "hits": 1325,
-      "empirical_hazard": 0.1635,
-      "smoothed_hazard": 0.163482,
-      "delta_vs_base": 0.005605
+      "observations": 8143,
+      "hits": 1337,
+      "empirical_hazard": 0.16419,
+      "smoothed_hazard": 0.164171,
+      "delta_vs_base": 0.006295
     },
     {
       "gap_bin": "3",
-      "observations": 6778,
-      "hits": 1133,
-      "empirical_hazard": 0.167158,
-      "smoothed_hazard": 0.167124,
-      "delta_vs_base": 0.009264
+      "observations": 6803,
+      "hits": 1137,
+      "empirical_hazard": 0.167132,
+      "smoothed_hazard": 0.167098,
+      "delta_vs_base": 0.009237
     },
     {
       "gap_bin": "4",
-      "observations": 5643,
-      "hits": 848,
-      "empirical_hazard": 0.150275,
-      "smoothed_hazard": 0.150308,
-      "delta_vs_base": -0.00762
+      "observations": 5664,
+      "hits": 849,
+      "empirical_hazard": 0.149894,
+      "smoothed_hazard": 0.149929,
+      "delta_vs_base": -0.008001
     },
     {
       "gap_bin": "5",
-      "observations": 4791,
-      "hits": 730,
-      "empirical_hazard": 0.152369,
-      "smoothed_hazard": 0.152398,
-      "delta_vs_base": -0.005526
+      "observations": 4813,
+      "hits": 734,
+      "empirical_hazard": 0.152504,
+      "smoothed_hazard": 0.152531,
+      "delta_vs_base": -0.005391
     },
     {
       "gap_bin": "6",
-      "observations": 4059,
-      "hits": 644,
-      "empirical_hazard": 0.15866,
-      "smoothed_hazard": 0.158655,
-      "delta_vs_base": 0.000765
+      "observations": 4077,
+      "hits": 646,
+      "empirical_hazard": 0.15845,
+      "smoothed_hazard": 0.158446,
+      "delta_vs_base": 0.000555
     },
     {
       "gap_bin": "7",
-      "observations": 3413,
-      "hits": 493,
-      "empirical_hazard": 0.144448,
-      "smoothed_hazard": 0.144545,
-      "delta_vs_base": -0.013447
+      "observations": 3430,
+      "hits": 495,
+      "empirical_hazard": 0.144315,
+      "smoothed_hazard": 0.144413,
+      "delta_vs_base": -0.01358
     },
     {
       "gap_bin": "8",
-      "observations": 2919,
-      "hits": 435,
-      "empirical_hazard": 0.149024,
-      "smoothed_hazard": 0.149099,
-      "delta_vs_base": -0.008871
+      "observations": 2932,
+      "hits": 437,
+      "empirical_hazard": 0.149045,
+      "smoothed_hazard": 0.14912,
+      "delta_vs_base": -0.00885
     },
     {
       "gap_bin": "9",
-      "observations": 2480,
-      "hits": 408,
-      "empirical_hazard": 0.164516,
-      "smoothed_hazard": 0.16445,
-      "delta_vs_base": 0.006621
+      "observations": 2493,
+      "hits": 409,
+      "empirical_hazard": 0.164059,
+      "smoothed_hazard": 0.163998,
+      "delta_vs_base": 0.006165
     },
     {
       "gap_bin": "10",
-      "observations": 2070,
-      "hits": 317,
-      "empirical_hazard": 0.15314,
-      "smoothed_hazard": 0.153197,
-      "delta_vs_base": -0.004755
+      "observations": 2083,
+      "hits": 318,
+      "empirical_hazard": 0.152664,
+      "smoothed_hazard": 0.152726,
+      "delta_vs_base": -0.00523
     },
     {
       "gap_bin": "11-12",
-      "observations": 3241,
-      "hits": 516,
-      "empirical_hazard": 0.15921,
-      "smoothed_hazard": 0.1592,
-      "delta_vs_base": 0.001315
+      "observations": 3266,
+      "hits": 519,
+      "empirical_hazard": 0.15891,
+      "smoothed_hazard": 0.158902,
+      "delta_vs_base": 0.001015
     },
     {
       "gap_bin": "13-15",
-      "observations": 3132,
-      "hits": 518,
-      "empirical_hazard": 0.16539,
-      "smoothed_hazard": 0.16533,
-      "delta_vs_base": 0.007495
+      "observations": 3148,
+      "hits": 522,
+      "empirical_hazard": 0.16582,
+      "smoothed_hazard": 0.165757,
+      "delta_vs_base": 0.007925
     },
     {
       "gap_bin": "16-20",
-      "observations": 2608,
-      "hits": 415,
-      "empirical_hazard": 0.159126,
-      "smoothed_hazard": 0.159114,
-      "delta_vs_base": 0.001231
+      "observations": 2621,
+      "hits": 419,
+      "empirical_hazard": 0.159863,
+      "smoothed_hazard": 0.159844,
+      "delta_vs_base": 0.001968
     },
     {
       "gap_bin": "21-30",
-      "observations": 1531,
+      "observations": 1539,
       "hits": 243,
-      "empirical_hazard": 0.15872,
-      "smoothed_hazard": 0.158707,
-      "delta_vs_base": 0.000825
+      "empirical_hazard": 0.157895,
+      "smoothed_hazard": 0.157895,
+      "delta_vs_base": 0.0
     },
     {
       "gap_bin": "31-50",
@@ -214,7 +214,7 @@
       "delta_vs_base": -0.157895
     }
   ],
-  "increasing_pairs": 7,
+  "increasing_pairs": 6,
   "comparable_pairs": 8,
   "supports_monotonic_gap_hypothesis": false
 }
