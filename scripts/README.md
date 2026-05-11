@@ -76,6 +76,43 @@ python scripts/run.py
 scripts/run_tasks/README.md
 ```
 
+## Manual Lotto Result Updates
+
+如果台灣彩券官方下載檔還沒更新，但已經知道某一期開獎號碼，可以先補在：
+
+```text
+raw-data/manual-lotto-results.csv
+```
+
+欄位格式：
+
+```text
+game,draw_no,draw_date,number1,number2,number3,number4,number5,number6,special
+```
+
+`game` 使用 `638`、`649`、`539`。這個檔案只補開獎號碼，用來更新最新開獎與購買紀錄比對；銷售統計仍等官方下載檔更新後才納入。
+
+## 638 Purchase Prize Rules
+
+`raw-data/lotto-purchases/638.csv` 只保留購買紀錄必要欄位：
+
+```text
+purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,number6,special
+```
+
+只要對應期別已有開獎結果，`scripts/run_tasks/build_638_purchases.py` 會依威力彩固定獎項自動計算獎別與獎金：
+
+- 參獎：第一區 5 個 + 第二區，150,000 元
+- 肆獎：第一區 5 個，20,000 元
+- 伍獎：第一區 4 個 + 第二區，4,000 元
+- 陸獎：第一區 4 個，800 元
+- 柒獎：第一區 3 個 + 第二區，400 元
+- 捌獎：第一區 2 個 + 第二區，200 元
+- 玖獎：第一區 3 個，100 元
+- 普獎：第一區 1 個 + 第二區，100 元
+
+頭獎與貳獎是浮動獎金；如果命中這兩種，產出會顯示待填獎金。
+
 ## Instant Data Scripts
 
 ### 5. Build instants all markdown

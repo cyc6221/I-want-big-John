@@ -1,0 +1,57 @@
+{
+  "game": "638",
+  "title": "威力彩",
+  "source": "raw-data/lotto-purchases/638.csv",
+  "summary": {
+    "game": "638",
+    "title": "威力彩",
+    "total_records": 1,
+    "settled_records": 1,
+    "pending_records": 0,
+    "winning_records": 1,
+    "total_spent": 100,
+    "settled_spent": 100,
+    "pending_spent": 0,
+    "known_prize": 800,
+    "known_net": 700,
+    "date_start": "2026/05/07",
+    "date_end": "2026/05/07"
+  },
+  "records": [
+    {
+      "purchase_date": "2026/05/07",
+      "draw_no": "115000037",
+      "line_no": "1",
+      "price": 100,
+      "prize": 800,
+      "prize_rank": "陸獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "03",
+        "07",
+        "08",
+        "14",
+        "24",
+        "38"
+      ],
+      "special": "02",
+      "primary_hits": 4,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000037",
+        "draw_date": "2026/05/07",
+        "numbers": [
+          "03",
+          "14",
+          "15",
+          "24",
+          "34",
+          "38"
+        ],
+        "special": "03"
+      }
+    }
+  ]
+}

@@ -3,6 +3,8 @@ import json
 from datetime import datetime, timedelta
 from pathlib import Path
 
+from _utils.lotto_results import load_result_rows_for_path
+
 
 def parse_int(value, default=0):
     text = str(value or "").strip().replace(",", "")
@@ -147,17 +149,15 @@ def build_stats(rows):
 
 def load_rows(csv_path: Path):
     rows = []
-    with csv_path.open("r", encoding="utf-8-sig", newline="") as handle:
-        reader = csv.DictReader(handle)
-        for raw in reader:
-            rows.append(
-                {
-                    "date": parse_date(raw.get("開獎日期", "")),
-                    "sales": parse_int(raw.get("銷售總額")),
-                    "bets": parse_int(raw.get("銷售注數")),
-                    "prize": parse_int(raw.get("總獎金")),
-                }
-            )
+    for raw in load_result_rows_for_path(csv_path, include_manual=True, require_financial=True):
+        rows.append(
+            {
+                "date": parse_date(raw.get("開獎日期", "")),
+                "sales": parse_int(raw.get("銷售總額")),
+                "bets": parse_int(raw.get("銷售注數")),
+                "prize": parse_int(raw.get("總獎金")),
+            }
+        )
     return rows
 
 
