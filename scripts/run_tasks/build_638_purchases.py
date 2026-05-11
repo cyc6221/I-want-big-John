@@ -215,7 +215,7 @@ def load_draw_results() -> dict[str, dict[str, Any]]:
     if not RESULTS_PATH.exists():
         return by_draw_no
 
-    for index, row in enumerate(load_result_rows("638", include_manual=True, require_financial=False), start=1):
+    for index, row in enumerate(load_result_rows(GAME_KEY, include_manual=True, require_financial=False), start=1):
         draw_no = (row.get("期別") or "").strip()
         draw_date = parse_result_date(row, field="開獎日期", fallback=index)
         numbers = [
