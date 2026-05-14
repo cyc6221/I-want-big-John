@@ -5,17 +5,17 @@
   "summary": {
     "game": "638",
     "title": "威力彩",
-    "total_records": 2,
-    "settled_records": 2,
+    "total_records": 3,
+    "settled_records": 3,
     "pending_records": 0,
     "winning_records": 1,
-    "total_spent": 200,
-    "settled_spent": 200,
+    "total_spent": 300,
+    "settled_spent": 300,
     "pending_spent": 0,
     "known_prize": 800,
-    "known_net": 600,
+    "known_net": 500,
     "date_start": "2026/05/07",
-    "date_end": "2026/05/11"
+    "date_end": "2026/05/14"
   },
   "records": [
     {
@@ -86,6 +86,41 @@
           "38"
         ],
         "special": "05"
+      }
+    },
+    {
+      "purchase_date": "2026/05/14",
+      "draw_no": "115000039",
+      "line_no": "1",
+      "price": 100,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "07",
+        "11",
+        "14",
+        "20",
+        "25",
+        "38"
+      ],
+      "special": "02",
+      "primary_hits": 0,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000039",
+        "draw_date": "2026/05/14",
+        "numbers": [
+          "06",
+          "08",
+          "09",
+          "17",
+          "21",
+          "29"
+        ],
+        "special": "08"
       }
     }
   ]
