@@ -259,3 +259,16 @@ games:
     expected_value: "129.9865"
     expected_loss: "70.0135"
     roi: 64.99%
+  - id: 5149
+    name: 點球成金
+    launch: 2026/05/19
+    end: 2026/11/19
+    price: 200
+    jackpot: 2M
+    jackpot_count: 4
+    win_rate: 18.2528%
+    break_even_rate: 13.7500%
+    no_loss_rate: 32.0028%
+    expected_value: "123.9824"
+    expected_loss: "76.0176"
+    roi: 61.99%
