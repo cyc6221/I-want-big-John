@@ -285,3 +285,16 @@ games:
     expected_value: "374.9920"
     expected_loss: "125.0080"
     roi: 75.00%
+  - id: 5152
+    name: 好運發發
+    launch: 2026/06/02
+    end: 2026/12/02
+    price: 200
+    jackpot: 88K
+    jackpot_count: 88
+    win_rate: 15.0246%
+    break_even_rate: 16.9703%
+    no_loss_rate: 31.9949%
+    expected_value: "123.9339"
+    expected_loss: "76.0661"
+    roi: 61.97%
