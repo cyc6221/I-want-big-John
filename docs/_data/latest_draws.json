@@ -21,32 +21,32 @@
     {
       "key": "649",
       "name": "大樂透",
-      "issue": "115000048",
-      "date": "2026/04/28",
+      "issue": "115000057",
+      "date": "2026/05/29",
       "numbers": [
-        "06",
-        "10",
-        "14",
-        "25",
+        "20",
         "26",
-        "32"
+        "29",
+        "31",
+        "37",
+        "49"
       ],
       "special_label": "特別號",
-      "special_number": "07",
+      "special_number": "30",
       "details_path": "/649/",
       "recommender_path": "/recommender_649/"
     },
     {
       "key": "539",
       "name": "今彩539",
-      "issue": "115000106",
-      "date": "2026/04/30",
+      "issue": "115000132",
+      "date": "2026/05/30",
       "numbers": [
-        "06",
-        "15",
-        "27",
-        "30",
-        "31"
+        "02",
+        "03",
+        "04",
+        "13",
+        "39"
       ],
       "special_label": null,
       "special_number": null,
