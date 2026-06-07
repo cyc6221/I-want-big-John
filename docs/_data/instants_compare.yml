@@ -272,3 +272,16 @@ games:
     expected_value: "123.9824"
     expected_loss: "76.0176"
     roi: 61.99%
+  - id: 5151
+    name: 樂刮$5,000
+    launch: 2026/06/02
+    end: 2026/12/02
+    price: 500
+    jackpot: 3M
+    jackpot_count: 2
+    win_rate: 6.7260%
+    break_even_rate: 28.0000%
+    no_loss_rate: 34.7260%
+    expected_value: "374.9920"
+    expected_loss: "125.0080"
+    roi: 75.00%
