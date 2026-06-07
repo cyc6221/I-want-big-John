@@ -246,3 +246,16 @@ games:
     expected_value: "127.8945"
     expected_loss: "72.1055"
     roi: 63.95%
+  - id: 5148
+    name: 獎金倍倍樂
+    launch: 2026/05/19
+    end: 2026/11/19
+    price: 200
+    jackpot: 2M
+    jackpot_count: 3
+    win_rate: 15.0032%
+    break_even_rate: 16.0013%
+    no_loss_rate: 31.0045%
+    expected_value: "129.9865"
+    expected_loss: "70.0135"
+    roi: 64.99%
