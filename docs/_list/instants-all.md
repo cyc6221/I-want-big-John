@@ -3,10 +3,10 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 12400 元，中獎 7200 元。
+description: 總計花費 13100 元，中獎 7900 元。
 ---
 
-從 2026/02/25 開始記錄，總計花費 12400 元，中獎 7200 元。
+從 2026/02/25 開始記錄，總計花費 13100 元，中獎 7900 元。
 
 ---
 
@@ -71,3 +71,5 @@ description: 總計花費 12400 元，中獎 7200 元。
 | 57 | 2026/05/28 | <a class="btn btn--gold" href="{{ '/all-instants/5140/' | relative_url }}">幸運開獎機</a> | 200 | 0 |
 | 58 | 2026/06/06 | <a class="btn btn--gold" href="{{ '/all-instants/5149/' | relative_url }}">點球成金</a> | 200 | 0 |
 | 59 | 2026/06/06 | <a class="btn btn--gold" href="{{ '/all-instants/5149/' | relative_url }}">點球成金</a> | 200 | 1000 |
+| 60 | 2026/06/13 | <a class="btn btn--gold" href="{{ '/all-instants/5151/' | relative_url }}">樂刮$5,000</a> | 500 | 500 |
+| 61 | 2026/06/13 | <a class="btn btn--gold" href="{{ '/all-instants/5147/' | relative_url }}">金鑽999</a> | 200 | 200 |
