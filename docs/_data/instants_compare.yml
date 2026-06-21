@@ -298,3 +298,29 @@ games:
     expected_value: "123.9339"
     expected_loss: "76.0661"
     roi: 61.97%
+  - id: 5153
+    name: 財運高升
+    launch: 2026/06/15
+    end: 2026/12/15
+    price: 200
+    jackpot: 2M
+    jackpot_count: 4
+    win_rate: 17.0033%
+    break_even_rate: 13.9989%
+    no_loss_rate: 31.0022%
+    expected_value: "123.9510"
+    expected_loss: "76.0490"
+    roi: 61.98%
+  - id: 5154
+    name: 嗨刮123
+    launch: 2026/06/15
+    end: 2026/12/15
+    price: 100
+    jackpot: 300K
+    jackpot_count: 4
+    win_rate: 10.2874%
+    break_even_rate: 22.7178%
+    no_loss_rate: 33.0052%
+    expected_value: "60.9885"
+    expected_loss: "39.0115"
+    roi: 60.99%
