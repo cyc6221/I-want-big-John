@@ -1,0 +1,124 @@
+{
+  "game": "649",
+  "title": "大樂透",
+  "source": "raw-data/lotto-purchases/649.csv",
+  "summary": {
+    "game": "649",
+    "title": "大樂透",
+    "total_records": 3,
+    "settled_records": 3,
+    "pending_records": 0,
+    "winning_records": 0,
+    "total_spent": 150,
+    "settled_spent": 150,
+    "pending_spent": 0,
+    "known_prize": 0,
+    "known_net": -150,
+    "date_start": "2026/03/03",
+    "date_end": "2026/03/03"
+  },
+  "records": [
+    {
+      "purchase_date": "2026/03/03",
+      "draw_no": "115000032",
+      "line_no": "1",
+      "price": 50,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "01",
+        "12",
+        "19",
+        "26",
+        "47",
+        "48"
+      ],
+      "primary_hits": 1,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000032",
+        "draw_date": "2026/03/03",
+        "numbers": [
+          "05",
+          "26",
+          "27",
+          "35",
+          "45",
+          "46"
+        ],
+        "special": "37"
+      }
+    },
+    {
+      "purchase_date": "2026/03/03",
+      "draw_no": "115000032",
+      "line_no": "2",
+      "price": 50,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "04",
+        "06",
+        "09",
+        "14",
+        "18",
+        "34"
+      ],
+      "primary_hits": 0,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000032",
+        "draw_date": "2026/03/03",
+        "numbers": [
+          "05",
+          "26",
+          "27",
+          "35",
+          "45",
+          "46"
+        ],
+        "special": "37"
+      }
+    },
+    {
+      "purchase_date": "2026/03/03",
+      "draw_no": "115000032",
+      "line_no": "3",
+      "price": 50,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "04",
+        "14",
+        "17",
+        "24",
+        "25",
+        "34"
+      ],
+      "primary_hits": 0,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000032",
+        "draw_date": "2026/03/03",
+        "numbers": [
+          "05",
+          "26",
+          "27",
+          "35",
+          "45",
+          "46"
+        ],
+        "special": "37"
+      }
+    }
+  ]
+}

@@ -113,6 +113,23 @@ purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,numb
 
 頭獎與貳獎是浮動獎金；如果命中這兩種，產出會顯示待填獎金。
 
+## 649 Purchase Prize Rules
+
+`raw-data/lotto-purchases/649.csv` 只保留購買紀錄必要欄位：
+
+```text
+purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,number6
+```
+
+只要對應期別已有開獎結果，`scripts/run_tasks/build_649_purchases.py` 會依大樂透固定獎項自動計算獎別與獎金：
+
+- 伍獎：任 4 個主號，2,000 元
+- 陸獎：任 3 個主號 + 特別號，1,000 元
+- 柒獎：任 2 個主號 + 特別號，400 元
+- 普獎：任 3 個主號，400 元
+
+頭獎、貳獎、參獎與肆獎是浮動獎金；如果命中這些獎項，產出會顯示待填獎金。
+
 ## Instant Data Scripts
 
 ### 5. Build instants all markdown
