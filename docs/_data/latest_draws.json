@@ -21,18 +21,18 @@
     {
       "key": "649",
       "name": "大樂透",
-      "issue": "115000057",
-      "date": "2026/05/29",
+      "issue": "115000063",
+      "date": "2026/06/19",
       "numbers": [
-        "20",
-        "26",
+        "04",
+        "12",
+        "28",
         "29",
-        "31",
-        "37",
-        "49"
+        "35",
+        "48"
       ],
       "special_label": "特別號",
-      "special_number": "30",
+      "special_number": "38",
       "details_path": "/649/",
       "recommender_path": "/recommender_649/"
     },
