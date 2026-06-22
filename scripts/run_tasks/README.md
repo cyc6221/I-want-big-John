@@ -7,6 +7,7 @@ This folder contains the scripts currently executed by `scripts/run.py`.
 
 - `build_latest_draws_data.py`
 - `build_638_purchases.py`
+- `build_649_purchases.py`
 - `build_instant_all.py`
 - `update_all_instants_articles_from_csv.py`
 - `build_instants_chosen_number_json.py`
@@ -30,6 +31,7 @@ This runs the current instant / lotto build tasks in the expected order.
 
 ```bash
 python scripts/run_tasks/build_638_purchases.py
+python scripts/run_tasks/build_649_purchases.py
 python scripts/run_tasks/build_instant_all.py
 python scripts/run_tasks/update_all_instants_articles_from_csv.py
 ```

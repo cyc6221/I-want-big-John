@@ -47,9 +47,10 @@ Use this workflow when adding or correcting draw-game purchase records such as P
 
 1. Create a new branch from `main`.
 2. For Power Lottery (`638`), update `raw-data/lotto-purchases/638.csv`.
-3. Do not add draw-game purchase records to `raw-data/all-instants.csv`.
-4. Run `python scripts/run.py`.
-5. Review the generated changes.
+3. For Big Lotto (`649`), update `raw-data/lotto-purchases/649.csv`.
+4. Do not add draw-game purchase records to `raw-data/all-instants.csv`.
+5. Run `python scripts/run.py`.
+6. Review the generated changes.
 
 The `638` purchase CSV stores only the purchase basics:
 
@@ -57,9 +58,17 @@ The `638` purchase CSV stores only the purchase basics:
 
 Prize rank and fixed prize amount are generated from draw results.
 
+The `649` purchase CSV stores only the purchase basics:
+
+`purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,number6`
+
+Prize rank and fixed prize amount are generated from draw results.
+
 Generated files commonly include:
 - `docs/_list/638-purchases.md`
 - `docs/assets/data/638-purchases.json`
+- `docs/_list/649-purchases.md`
+- `docs/assets/data/649-purchases.json`
 
 ## Manual Lotto Result Workflow
 
