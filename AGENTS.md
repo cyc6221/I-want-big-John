@@ -75,8 +75,8 @@ Generated files commonly include:
 Use this workflow when Taiwan Lottery official monthly result downloads have not yet caught up, but a draw result is known.
 
 1. Keep official monthly downloaded files under `raw-data/lotto-result-downloads/` unchanged.
-2. Add or correct manual draw results in `raw-data/manual-lotto-results.csv`.
-3. For manual records, use `game` values `638`, `649`, or `539`.
+2. Add or correct manual draw results in `raw-data/manual-lotto-results/{game}.csv`, for example `raw-data/manual-lotto-results/638.csv` or `raw-data/manual-lotto-results/649.csv`.
+3. Keep manual records separated by game. Do not mix `638` and `649` rows in one file.
 4. Run `python scripts/run.py`.
 5. Review generated latest-draw, purchase-record, and stats changes.
 
