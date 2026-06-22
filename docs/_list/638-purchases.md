@@ -2,11 +2,11 @@
 title: 威力彩購買紀錄
 permalink: /list/638-purchases/
 category: list-638
-date: 2026-06-08
-description: 總計花費 700 元，已結算中獎 800 元。
+date: 2026-06-18
+description: 總計花費 900 元，已結算中獎 1,000 元。
 ---
 
-從 2026/05/07 開始記錄，總計花費 700 元，已結算 7 筆，已結算中獎 800 元，已結算淨額 100 元。
+從 2026/05/07 開始記錄，總計花費 900 元，已結算 9 筆，已結算中獎 1,000 元，已結算淨額 100 元。
 
 <table class="buy-table">
   <thead>
@@ -99,6 +99,28 @@ description: 總計花費 700 元，已結算中獎 800 元。
       <td style="text-align:center;">100</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">8</td>
+      <td style="text-align:center;">2026/06/18</td>
+      <td style="text-align:center;">115000049</td>
+      <td style="text-align:center;">{% include small-balls.html items="03:miss 07:miss 09:pick 12:miss 26:miss 28:miss" label="威力彩第一區選號" %}</td>
+      <td style="text-align:center;">{% include small-balls.html items="03:miss" label="威力彩第二區選號" %}</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 1 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">9</td>
+      <td style="text-align:center;">2026/06/18</td>
+      <td style="text-align:center;">115000049</td>
+      <td style="text-align:center;">{% include small-balls.html items="04:miss 07:miss 09:pick 13:miss 19:miss 23:pick" label="威力彩第一區選號" %}</td>
+      <td style="text-align:center;">{% include small-balls.html items="04:pick" label="威力彩第二區選號" %}</td>
+      <td style="text-align:center;">捌獎</td>
+      <td style="text-align:center;">100</td>
+      <td style="text-align:center;">200</td>
+      <td style="text-align:center;">第 2 注</td>
     </tr>
   </tbody>
 </table>
