@@ -6,7 +6,7 @@ This file records repository-specific workflow rules for Codex.
 
 - Start feature or data work from `main`.
 - Create a new branch for each task.
-- In this repository, use the `codex-` prefix for Codex branches by default. Do not use `codex/` here, because the local Git ref layout rejects that branch naming pattern.
+- Use the `codex/{description}` prefix for Codex branches by default.
 - Prefer draft PRs unless the user explicitly asks for a ready PR.
 - After a PR is merged, switch back to local `main`, fast-forward it to the latest `origin/main`, then clean up both the local branch and the remote branch.
 - When a branch has been rebased, use `git push --force-with-lease` to update the PR branch.
