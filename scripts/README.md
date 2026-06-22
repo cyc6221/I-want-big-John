@@ -81,16 +81,18 @@ scripts/run_tasks/README.md
 如果台灣彩券官方下載檔還沒更新，但已經知道某一期開獎號碼，可以先補在：
 
 ```text
-raw-data/manual-lotto-results.csv
+raw-data/manual-lotto-results/{game}.csv
 ```
+
+例如 `raw-data/manual-lotto-results/638.csv` 或 `raw-data/manual-lotto-results/649.csv`。不同遊戲的手動開獎資料分開存放，不要混在同一份 CSV。
 
 欄位格式：
 
 ```text
-game,draw_no,draw_date,number1,number2,number3,number4,number5,number6,special
+draw_no,draw_date,number1,number2,number3,number4,number5,number6,special
 ```
 
-`game` 使用 `638`、`649`、`539`。這個檔案只補開獎號碼，用來更新最新開獎與購買紀錄比對；銷售統計仍等官方下載檔更新後才納入。
+這個檔案只補開獎號碼，用來更新最新開獎與購買紀錄比對；銷售統計仍等官方下載檔更新後才納入。
 
 ## 638 Purchase Prize Rules
 

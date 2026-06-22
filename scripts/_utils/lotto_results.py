@@ -7,11 +7,10 @@ from typing import Iterable
 
 ROOT = Path(__file__).resolve().parents[2]
 DERIVED_DIR = ROOT / "research" / "derived"
-MANUAL_RESULTS_PATH = ROOT / "raw-data" / "manual-lotto-results.csv"
+MANUAL_RESULTS_DIR = ROOT / "raw-data" / "manual-lotto-results"
 
 BASE_COLUMNS = ["遊戲名稱", "期別", "開獎日期", "銷售總額", "銷售注數", "總獎金"]
 MANUAL_COLUMNS = [
-    "game",
     "draw_no",
     "draw_date",
     "number1",
@@ -152,6 +151,10 @@ def is_blank_manual_row(row: dict[str, str]) -> bool:
     return all((row.get(column) or "").strip() == "" for column in MANUAL_COLUMNS)
 
 
+def manual_results_path(config: LottoGameConfig) -> Path:
+    return MANUAL_RESULTS_DIR / f"{config.key}.csv"
+
+
 def read_official_rows(config: LottoGameConfig) -> list[dict[str, str]]:
     if not config.derived_path.exists():
         raise FileNotFoundError(f"CSV not found: {config.derived_path}")
@@ -176,7 +179,7 @@ def read_official_rows(config: LottoGameConfig) -> list[dict[str, str]]:
 
 
 def manual_row_to_official(config: LottoGameConfig, raw: dict[str, str], line_number: int) -> dict[str, str]:
-    source = MANUAL_RESULTS_PATH
+    source = manual_results_path(config)
     draw_no = (raw.get("draw_no") or "").strip()
     if not draw_no:
         raise ValueError(f"Missing draw_no at {source}:{line_number}")
@@ -224,25 +227,24 @@ def manual_row_to_official(config: LottoGameConfig, raw: dict[str, str], line_nu
 
 
 def read_manual_rows(config: LottoGameConfig) -> list[dict[str, str]]:
-    if not MANUAL_RESULTS_PATH.exists():
+    source = manual_results_path(config)
+    if not source.exists():
         return []
 
     rows = []
     seen_draws = set()
-    with MANUAL_RESULTS_PATH.open("r", encoding="utf-8", newline="") as handle:
+    with source.open("r", encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
-        normalize_headers(reader.fieldnames, MANUAL_COLUMNS, MANUAL_RESULTS_PATH)
+        normalize_headers(reader.fieldnames, MANUAL_COLUMNS, source)
         for index, raw in enumerate(reader, start=2):
             row = {column: (raw.get(column) or "").strip() for column in MANUAL_COLUMNS}
             if is_blank_manual_row(row):
-                continue
-            if normalize_game_key(row.get("game") or "") != config.key:
                 continue
 
             converted = manual_row_to_official(config, row, index)
             draw_no = converted["期別"]
             if draw_no in seen_draws:
-                raise ValueError(f"Duplicate manual draw_no for {config.key} at {MANUAL_RESULTS_PATH}:{index}: {draw_no}")
+                raise ValueError(f"Duplicate manual draw_no for {config.key} at {source}:{index}: {draw_no}")
             seen_draws.add(draw_no)
             rows.append(converted)
     return rows
