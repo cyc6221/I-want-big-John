@@ -152,7 +152,7 @@ def is_blank_manual_row(row: dict[str, str]) -> bool:
 
 
 def manual_results_path(config: LottoGameConfig) -> Path:
-    return MANUAL_RESULTS_DIR / f"{config.key}.csv"
+    return MANUAL_RESULTS_DIR / f"{config.key}-manual-results.csv"
 
 
 def read_official_rows(config: LottoGameConfig) -> list[dict[str, str]]:

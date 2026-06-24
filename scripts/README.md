@@ -81,10 +81,10 @@ scripts/run_tasks/README.md
 如果台灣彩券官方下載檔還沒更新，但已經知道某一期開獎號碼，可以先補在：
 
 ```text
-raw-data/manual-lotto-results/{game}.csv
+raw-data/manual-lotto-results/{game}-manual-results.csv
 ```
 
-例如 `raw-data/manual-lotto-results/638.csv` 或 `raw-data/manual-lotto-results/649.csv`。不同遊戲的手動開獎資料分開存放，不要混在同一份 CSV。
+例如 `raw-data/manual-lotto-results/638-manual-results.csv` 或 `raw-data/manual-lotto-results/649-manual-results.csv`。不同遊戲的手動開獎資料分開存放，不要混在同一份 CSV。
 
 欄位格式：
 
@@ -96,7 +96,7 @@ draw_no,draw_date,number1,number2,number3,number4,number5,number6,special
 
 ## 638 Purchase Prize Rules
 
-`raw-data/lotto-purchases/638.csv` 只保留購買紀錄必要欄位：
+`raw-data/lotto-purchases/638-purchases.csv` 只保留購買紀錄必要欄位：
 
 ```text
 purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,number6,special
@@ -117,7 +117,7 @@ purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,numb
 
 ## 649 Purchase Prize Rules
 
-`raw-data/lotto-purchases/649.csv` 只保留購買紀錄必要欄位：
+`raw-data/lotto-purchases/649-purchases.csv` 只保留購買紀錄必要欄位：
 
 ```text
 purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,number6
