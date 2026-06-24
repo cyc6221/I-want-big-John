@@ -15,7 +15,7 @@ if str(SCRIPTS_DIR) not in sys.path:
 from _utils.lotto_results import load_result_rows
 
 
-CSV_PATH = Path("raw-data/lotto-purchases/638.csv")
+CSV_PATH = Path("raw-data/lotto-purchases/638-purchases.csv")
 RESULTS_PATH = Path("research/derived/638_all_years.csv")
 OUT_JSON = Path("docs/assets/data/638-purchases.json")
 OUT_MD = Path("docs/_list/638-purchases.md")

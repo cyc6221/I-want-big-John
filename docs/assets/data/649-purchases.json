@@ -1,7 +1,7 @@
 {
   "game": "649",
   "title": "大樂透",
-  "source": "raw-data/lotto-purchases/649.csv",
+  "source": "raw-data/lotto-purchases/649-purchases.csv",
   "summary": {
     "game": "649",
     "title": "大樂透",

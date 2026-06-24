@@ -46,8 +46,8 @@ Generated files commonly include:
 Use this workflow when adding or correcting draw-game purchase records such as Power Lottery (`638`). Keep these records separate from scratch-ticket (`instants`) data.
 
 1. Create a new branch from `main`.
-2. For Power Lottery (`638`), update `raw-data/lotto-purchases/638.csv`.
-3. For Big Lotto (`649`), update `raw-data/lotto-purchases/649.csv`.
+2. For Power Lottery (`638`), update `raw-data/lotto-purchases/638-purchases.csv`.
+3. For Big Lotto (`649`), update `raw-data/lotto-purchases/649-purchases.csv`.
 4. Do not add draw-game purchase records to `raw-data/all-instants.csv`.
 5. Run `python scripts/run.py`.
 6. Review the generated changes.
@@ -75,7 +75,7 @@ Generated files commonly include:
 Use this workflow when Taiwan Lottery official monthly result downloads have not yet caught up, but a draw result is known.
 
 1. Keep official monthly downloaded files under `raw-data/lotto-result-downloads/` unchanged.
-2. Add or correct manual draw results in `raw-data/manual-lotto-results/{game}.csv`, for example `raw-data/manual-lotto-results/638.csv` or `raw-data/manual-lotto-results/649.csv`.
+2. Add or correct manual draw results in `raw-data/manual-lotto-results/{game}-manual-results.csv`, for example `raw-data/manual-lotto-results/638-manual-results.csv` or `raw-data/manual-lotto-results/649-manual-results.csv`.
 3. Keep manual records separated by game. Do not mix `638` and `649` rows in one file.
 4. Run `python scripts/run.py`.
 5. Review generated latest-draw, purchase-record, and stats changes.
