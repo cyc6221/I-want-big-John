@@ -324,3 +324,29 @@ games:
     expected_value: "60.9885"
     expected_loss: "39.0115"
     roi: 60.99%
+  - id: 5155
+    name: 無敵777
+    launch: 2026/07/02
+    end: 2027/01/04
+    price: 300
+    jackpot: 3M
+    jackpot_count: 5
+    win_rate: 16.6790%
+    break_even_rate: 19.3339%
+    no_loss_rate: 36.0129%
+    expected_value: "200.9607"
+    expected_loss: "99.0393"
+    roi: 66.99%
+  - id: 5156
+    name: 狂刮10萬
+    launch: 2026/07/02
+    end: 2027/01/04
+    price: 200
+    jackpot: 100K
+    jackpot_count: 800
+    win_rate: 10.6557%
+    break_even_rate: 19.4382%
+    no_loss_rate: 30.0939%
+    expected_value: "131.6471"
+    expected_loss: "68.3529"
+    roi: 65.82%
