@@ -41,6 +41,16 @@ Generated files commonly include:
 - `docs/assets/data/instants-per-month.json`
 - `docs/_list/instants-per-month.md`
 
+## Instant Article Update Workflow
+
+Use this workflow when adding or correcting scratch-ticket article pages without adding a manual purchase record.
+
+1. Create a new branch from `main`.
+2. Add or update the article under `docs/_articles/all-instants/`.
+3. Update `docs/_data/instants_compare.yml` so `docs/_list/instants-compare.md` includes the game.
+4. Run `bundle exec jekyll build` from `docs/`.
+5. Review the article and comparison-list changes.
+
 ## Lotto Purchase Update Workflow
 
 Use this workflow when adding or correcting draw-game purchase records such as Power Lottery (`638`). Keep these records separate from scratch-ticket (`instants`) data.
