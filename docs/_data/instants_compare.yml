@@ -87,9 +87,9 @@ games:
     win_rate: 16.3599%
     break_even_rate: 13.6356%
     no_loss_rate: 29.9954%
-    expected_value: "60.9902"
-    expected_loss: "39.0098"
-    roi: 60.99%
+    expected_value: "61.9911"
+    expected_loss: "38.0089"
+    roi: 61.99%
   - id: 5136
     name: 鑽很大
     launch: 2026/02/24

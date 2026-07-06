@@ -1,0 +1,81 @@
+{
+  "issue": 5155,
+  "name": "無敵777",
+  "price": 300,
+  "tickets_per_book": 100,
+  "total_tickets": 6616400,
+  "dates": {
+    "launch": {
+      "iso": "2026-07-02",
+      "roc": "115年7月2日",
+      "weekday": "星期四"
+    },
+    "off_sale": {
+      "iso": "2027-01-04",
+      "roc": "116年1月4日",
+      "weekday": "星期一"
+    },
+    "claim_deadline": {
+      "iso": "2027-04-07",
+      "roc": "116年4月7日",
+      "weekday": "星期三"
+    }
+  },
+  "announced_win_rate_percent": "36.01",
+  "prize_tiers": [
+    {
+      "prize": 3000000,
+      "count": 5
+    },
+    {
+      "prize": 70000,
+      "count": 72
+    },
+    {
+      "prize": 14000,
+      "count": 327
+    },
+    {
+      "prize": 5000,
+      "count": 373
+    },
+    {
+      "prize": 4200,
+      "count": 1592
+    },
+    {
+      "prize": 3500,
+      "count": 4483
+    },
+    {
+      "prize": 2100,
+      "count": 158700
+    },
+    {
+      "prize": 1400,
+      "count": 47345
+    },
+    {
+      "prize": 1000,
+      "count": 87345
+    },
+    {
+      "prize": 700,
+      "count": 42313
+    },
+    {
+      "prize": 500,
+      "count": 760994
+    },
+    {
+      "prize": 300,
+      "count": 1279209
+    }
+  ],
+  "source": {
+    "news_id": "3fc9978dce574a3da1d2806f3d420d76",
+    "official_url": "https://www.taiwanlottery.com/news/news/3fc9978dce574a3da1d2806f3d420d76",
+    "scratch_id": "6a26038fbdd3449f93d6cef10f2eb83a",
+    "fetched_at": "2026-07-07T04:08:40+08:00"
+  }
+}
