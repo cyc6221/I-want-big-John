@@ -1,0 +1,37 @@
+name: Data Validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate derived files
+        run: python scripts/run.py
+
+      - name: Verify generated files match raw-data
+        run: |
+          git add -A
+          if ! git diff --cached --exit-code; then
+            echo "::error::Generated files are out of date. Run 'python scripts/run.py' and commit the results; do not hand-edit generated files."
+            exit 1
+          fi
+
+      - name: Validate lotto stats assets
+        run: python scripts/validate_lotto_stats.py
