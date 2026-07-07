@@ -132,6 +132,30 @@ purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,numb
 
 頭獎、貳獎、參獎與肆獎是浮動獎金；如果命中這些獎項，產出會顯示待填獎金。
 
+## New Instant Article Generator
+
+```bash
+python scripts/new_instant_article.py 5157
+```
+
+這支腳本從台灣彩券官方 API 抓上市公告與遊戲資料，由程式計算全部期望值數學，一次產出：
+
+- `docs/_articles/all-instants/{期別}.md`（文章，格式同 5155/5156）
+- `raw-data/instant-prize-structures/{期別}.json`（獎金結構資料源，可重生文章）
+- `docs/_data/instants_compare.yml`（自動新增/更新該期條目）
+- `raw-data/instant-games.json`（自動加入期別對照）
+
+獎金結構與期望值一律由這支腳本取得與計算，不要手抄官網數字或自己手算。官網是 JS SPA，直接抓公告網址只會拿到空殼；腳本走的是官網背後的 JSON API（`Instant/List`、`Instant/Detail`、`News/List`、`News/Detail/{newsId}`），並用 `Instant/Detail` 交叉驗證售價、張數、日期與中獎率。
+
+常用參數：
+
+- `--news-url {公告網址}`：自動搜尋找不到公告時，直接指定上市公告網址。
+- `--from-json {路徑}`：跳過網路抓取，用（人工修正過的）JSON 重新產出。公告解析失敗時，腳本會把原始內容存成 `raw-data/instant-prize-structures/{期別}.draft.json` 供整理後重跑。
+- `--output {路徑}`：只把文章寫到指定路徑，不動 repo 其他檔案（驗證比對用）。
+- `--force`：覆寫既有文章。
+
+產完後記得跑 `python scripts/run.py`，讓 `親自實測` 與 `published` 從 `raw-data/all-instants.csv` 回填。
+
 ## Instant Data Scripts
 
 ### 5. Build instants all markdown

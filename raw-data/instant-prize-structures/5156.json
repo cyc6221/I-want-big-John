@@ -1,0 +1,57 @@
+{
+  "issue": 5156,
+  "name": "狂刮10萬",
+  "price": 200,
+  "tickets_per_book": 100,
+  "total_tickets": 4590000,
+  "dates": {
+    "launch": {
+      "iso": "2026-07-02",
+      "roc": "115年7月2日",
+      "weekday": "星期四"
+    },
+    "off_sale": {
+      "iso": "2027-01-04",
+      "roc": "116年1月4日",
+      "weekday": "星期一"
+    },
+    "claim_deadline": {
+      "iso": "2027-04-07",
+      "roc": "116年4月7日",
+      "weekday": "星期三"
+    }
+  },
+  "announced_win_rate_percent": "30.09",
+  "prize_tiers": [
+    {
+      "prize": 100000,
+      "count": 800
+    },
+    {
+      "prize": 10000,
+      "count": 100
+    },
+    {
+      "prize": 1200,
+      "count": 28316
+    },
+    {
+      "prize": 1000,
+      "count": 211476
+    },
+    {
+      "prize": 400,
+      "count": 248405
+    },
+    {
+      "prize": 200,
+      "count": 892214
+    }
+  ],
+  "source": {
+    "news_id": "3fc9978dce574a3da1d2806f3d420d76",
+    "official_url": "https://www.taiwanlottery.com/news/news/3fc9978dce574a3da1d2806f3d420d76",
+    "scratch_id": "f7eafdff45544312b58df5d273e46294",
+    "fetched_at": "2026-07-07T04:08:39+08:00"
+  }
+}

@@ -46,8 +46,12 @@ Generated files commonly include:
 Use this workflow when adding or correcting scratch-ticket article pages without adding a manual purchase record.
 
 1. Create a new branch from `main`.
-2. Add or update the article under `docs/_articles/all-instants/`.
-3. Update `docs/_data/instants_compare.yml` so `docs/_list/instants-compare.md` includes the game.
+2. Run `python scripts/new_instant_article.py {期別}`, for example `python scripts/new_instant_article.py 5157`.
+   - The script fetches the official launch announcement and game data from the Taiwan Lottery API, computes all prize/expected-value math in Python, and writes the article, `raw-data/instant-prize-structures/{期別}.json`, `docs/_data/instants_compare.yml`, and `raw-data/instant-games.json`.
+   - Do NOT hand-copy prize numbers from the web or compute the math yourself (as an agent or human); the prize structure and expected values must always come from this script. The official site is a JS SPA, so fetching the announcement URL directly returns an empty shell — the script uses the JSON API behind it instead.
+   - If the announcement cannot be found automatically, pass `--news-url {公告網址}`. If parsing fails, the script saves a draft JSON under `raw-data/instant-prize-structures/`; fix it manually and rerun with `--from-json`.
+   - To correct data in an existing article, rerun the script with `--force` (then `python scripts/run.py`). `--force` rewrites the whole file from official data, so custom prose outside the generated sections is not preserved — re-apply such edits manually afterwards.
+3. Run `python scripts/run.py` (fills in `親自實測` / `published` from `raw-data/all-instants.csv`).
 4. Run `bundle exec jekyll build` from `docs/`.
 5. Review the article and comparison-list changes.
 

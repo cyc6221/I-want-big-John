@@ -10,7 +10,9 @@ description: 每張{{PRICE}}元，總計{{TOTAL_TICKETS}}張，頭獎NT${{TOP_PR
 
 # 刮刮樂文章模板
 
-複製這份檔案並改名為 `{期號}.md`，再把下面的 placeholder 全部換成新刮刮樂資料。
+**正常流程請直接用 `python scripts/new_instant_article.py {期號}` 產生文章**（格式以產生器輸出為準）；
+這份模板只是官方 API 完全無法使用時的手動備援。複製這份檔案並改名為 `{期號}.md`，
+再把下面的 placeholder 全部換成新刮刮樂資料。
 
 ## 基本資料
 
@@ -18,7 +20,7 @@ description: 每張{{PRICE}}元，總計{{TOTAL_TICKETS}}張，頭獎NT${{TOP_PR
 | :-: | :-: |
 | 期別 | 第{{ISSUE_NUM}}期 |
 | 名稱 | {{GAME_NAME}} |
-| 售價 | 每張{{PRICE}}元 |
+| 售價 | 每張{{PRICE}}元，每本{{TICKETS_PER_BOOK}}張 |
 | 發行張數 | 總計{{TOTAL_TICKETS}}張 |
 | 日期 | 發行：{{RELEASE_DATE_ROC}}（{{RELEASE_WEEKDAY}}）<br>下巿：{{END_SALE_DATE_ROC}}（{{END_SALE_WEEKDAY}}）<br>兌獎截止：{{CLAIM_DEADLINE_ROC}}（{{CLAIM_DEADLINE_WEEKDAY}}） |
 | 官方資料 | [台灣彩券公告]({{OFFICIAL_URL}}#{{ISSUE_NUM}}) |
@@ -63,8 +65,8 @@ description: 每張{{PRICE}}元，總計{{TOTAL_TICKETS}}張，頭獎NT${{TOP_PR
 
 - 每張售價：**{{PRICE}} 元**
 - 單張期望值：**{{EXPECTED_VALUE}} 元**
-- 平均虧損：**{{AVERAGE_LOSS}} 元**
-- 期望值回收率：$\frac{{EXPECTED_VALUE}}{ {{PRICE}} }\approx {{RETURN_RATE}}$
+- 平均虧損：**{{PRICE}} - {{EXPECTED_VALUE}} = {{AVERAGE_LOSS}} 元**
+- 期望值回收率：$\frac{{EXPECTED_VALUE}}{ {{PRICE}} }\approx$ **{{RETURN_RATE}}%**
 
 ## 親自實測
 

@@ -1,0 +1,73 @@
+{
+  "issue": 5142,
+  "name": "幸運拉霸",
+  "price": 200,
+  "tickets_per_book": 100,
+  "total_tickets": 4080000,
+  "dates": {
+    "launch": {
+      "iso": "2026-04-07",
+      "roc": "115年4月7日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2026-10-07",
+      "roc": "115年10月7日",
+      "weekday": "星期三"
+    },
+    "claim_deadline": {
+      "iso": "2027-01-07",
+      "roc": "116年1月7日",
+      "weekday": "星期四"
+    }
+  },
+  "announced_win_rate_percent": "32.99",
+  "prize_tiers": [
+    {
+      "prize": 2000000,
+      "count": 4
+    },
+    {
+      "prize": 100000,
+      "count": 64
+    },
+    {
+      "prize": 10000,
+      "count": 159
+    },
+    {
+      "prize": 5000,
+      "count": 1316
+    },
+    {
+      "prize": 3000,
+      "count": 5257
+    },
+    {
+      "prize": 2000,
+      "count": 10622
+    },
+    {
+      "prize": 1000,
+      "count": 147218
+    },
+    {
+      "prize": 500,
+      "count": 65276
+    },
+    {
+      "prize": 300,
+      "count": 510889
+    },
+    {
+      "prize": 200,
+      "count": 605328
+    }
+  ],
+  "source": {
+    "news_id": "626a7981e0684035b739c391c3d5c523",
+    "official_url": "https://www.taiwanlottery.com/news/news/626a7981e0684035b739c391c3d5c523",
+    "scratch_id": "1f214aefa67d45d0b0991d1f47ce05b3",
+    "fetched_at": "2026-07-07T15:42:18+08:00"
+  }
+}
