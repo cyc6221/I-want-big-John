@@ -1,0 +1,85 @@
+{
+  "issue": 5138,
+  "name": "無敵30倍",
+  "price": 300,
+  "tickets_per_book": 100,
+  "total_tickets": 6120000,
+  "dates": {
+    "launch": {
+      "iso": "2026-03-10",
+      "roc": "115年3月10日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2026-09-10",
+      "roc": "115年9月10日",
+      "weekday": "星期四"
+    },
+    "claim_deadline": {
+      "iso": "2026-12-10",
+      "roc": "115年12月10日",
+      "weekday": "星期四"
+    }
+  },
+  "announced_win_rate_percent": "31.00",
+  "prize_tiers": [
+    {
+      "prize": 3000000,
+      "count": 3
+    },
+    {
+      "prize": 100000,
+      "count": 15
+    },
+    {
+      "prize": 30000,
+      "count": 100
+    },
+    {
+      "prize": 15000,
+      "count": 611
+    },
+    {
+      "prize": 9000,
+      "count": 1027
+    },
+    {
+      "prize": 5000,
+      "count": 2428
+    },
+    {
+      "prize": 3000,
+      "count": 4903
+    },
+    {
+      "prize": 2000,
+      "count": 4909
+    },
+    {
+      "prize": 1500,
+      "count": 358482
+    },
+    {
+      "prize": 1000,
+      "count": 45360
+    },
+    {
+      "prize": 600,
+      "count": 62403
+    },
+    {
+      "prize": 500,
+      "count": 394056
+    },
+    {
+      "prize": 300,
+      "count": 1023160
+    }
+  ],
+  "source": {
+    "news_id": "9475f61b15d548978de6c632f25f430a",
+    "official_url": "https://www.taiwanlottery.com/news/news/9475f61b15d548978de6c632f25f430a",
+    "scratch_id": "f949fe535177433cab2bb54b702b6ad7",
+    "fetched_at": "2026-07-07T15:42:17+08:00"
+  }
+}
