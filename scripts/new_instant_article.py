@@ -78,8 +78,9 @@ def fetch_news_detail(news_id: str) -> dict:
 
 
 def find_announcement(issue: int) -> tuple[str, dict]:
-    """Search News/List for the 上市公告 that contains the issue anchor."""
-    anchor = f'id="{issue}"'
+    """Search News/List for the 上市公告 that covers the issue."""
+    # 舊公告不一定有 <a id="{期數}"> 錨點，改以「期數：{期數}」為主要依據。
+    issue_re = re.compile(rf'(?:id="{issue}"|期數：\s*{issue}\b)')
     for page in range(1, NEWS_SEARCH_MAX_PAGES + 1):
         listing = fetch_api(f"News/List?PageNo={page}&PageSize={NEWS_SEARCH_PAGE_SIZE}")
         for item in listing.get("newsListRes", []):
@@ -87,7 +88,7 @@ def find_announcement(issue: int) -> tuple[str, dict]:
             if "上市公告" not in title:
                 continue
             detail = fetch_news_detail(item["newsId"])
-            if anchor in (detail.get("content") or ""):
+            if issue_re.search(detail.get("content") or ""):
                 return item["newsId"], detail
         if page >= int(listing.get("totalPages") or 1):
             break
@@ -201,8 +202,13 @@ def parse_issue_block(html: str, issue: int) -> dict:
             continue
         if len(cells) != 2:
             raise ParseError(f"獎金結構表格應有 2 欄，實際 {len(cells)} 欄")
-        prizes = [item.strip() for item in re.findall(r"<li>([\s\S]*?)</li>", cells[0])]
-        counts = [item.strip() for item in re.findall(r"<li>([\s\S]*?)</li>", cells[1])]
+        def list_items(cell: str) -> list[str]:
+            # 部分公告用 &nbsp; 的空 <li> 對齊兩欄，過濾掉再配對。
+            items = [strip_tags(item).strip() for item in re.findall(r"<li[^>]*>([\s\S]*?)</li>", cell)]
+            return [item for item in items if item]
+
+        prizes = list_items(cells[0])
+        counts = list_items(cells[1])
         if len(prizes) != len(counts) or not prizes:
             raise ParseError(f"獎項與張數數量不符：{prizes!r} / {counts!r}")
         for prize_label, count_label in zip(prizes, counts):
