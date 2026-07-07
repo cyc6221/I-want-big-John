@@ -9,6 +9,7 @@ This file records repository-specific workflow rules for Codex.
 - Use the `codex/{description}` prefix for Codex branches by default.
 - Prefer draft PRs unless the user explicitly asks for a ready PR.
 - After a PR is merged, switch back to local `main`, fast-forward it to the latest `origin/main`, then clean up both the local branch and the remote branch.
+- Fetch and pull with `--prune` (or ensure `git config fetch.prune true` is set) so deleted remote branches do not linger as stale remote-tracking refs.
 - When a branch has been rebased, use `git push --force-with-lease` to update the PR branch.
 - On Windows, prefer running generation scripts with UTF-8 console output when needed.
 - Do not run dependent commands in parallel. If one command relies on the result of another, run them sequentially. For example, finish `git add` before running `git commit`, and finish `git commit` before `git push`.
