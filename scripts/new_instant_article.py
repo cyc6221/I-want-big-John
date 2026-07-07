@@ -138,6 +138,12 @@ def parse_int(raw: str) -> int:
     return int(raw.replace(",", ""))
 
 
+def parse_list_items(cell: str) -> list[str]:
+    """<ul><li> 內容轉純文字；部分公告用 &nbsp; 的空 <li> 對齊兩欄，過濾掉再配對。"""
+    items = [strip_tags(item).strip() for item in re.findall(r"<li[^>]*>([\s\S]*?)</li>", cell)]
+    return [item for item in items if item]
+
+
 def parse_roc_date(text: str) -> dict:
     match = ROC_DATE_RE.search(text)
     if not match:
@@ -163,6 +169,9 @@ def pick_dated_line(lines: list[str], name: str) -> str:
     for line in dated:
         if f"「{name}」" in line:
             return line
+    unique_dates = {ROC_DATE_RE.search(line).group(0) for line in dated}
+    if len(unique_dates) > 1:
+        raise ParseError(f"段落中有多個日期但找不到「{name}」的那一筆：{dated!r}")
     return dated[0]
 
 
@@ -202,22 +211,17 @@ def parse_issue_block(html: str, issue: int) -> dict:
             continue
         if len(cells) != 2:
             raise ParseError(f"獎金結構表格應有 2 欄，實際 {len(cells)} 欄")
-        def list_items(cell: str) -> list[str]:
-            # 部分公告用 &nbsp; 的空 <li> 對齊兩欄，過濾掉再配對。
-            items = [strip_tags(item).strip() for item in re.findall(r"<li[^>]*>([\s\S]*?)</li>", cell)]
-            return [item for item in items if item]
-
-        prizes = list_items(cells[0])
-        counts = list_items(cells[1])
+        prizes = parse_list_items(cells[0])
+        counts = parse_list_items(cells[1])
         if len(prizes) != len(counts) or not prizes:
             raise ParseError(f"獎項與張數數量不符：{prizes!r} / {counts!r}")
         for prize_label, count_label in zip(prizes, counts):
-            prize_match = re.fullmatch(r"NT\$([\d,]+)", strip_tags(prize_label).strip())
+            prize_match = re.fullmatch(r"NT\$([\d,]+)", prize_label)
             if not prize_match:
                 raise ParseError(f"無法解析獎項金額：{prize_label!r}")
             tiers.append({
                 "prize": parse_int(prize_match.group(1)),
-                "count": parse_int(strip_tags(count_label).strip()),
+                "count": parse_int(count_label),
             })
 
     if not tiers:
@@ -304,7 +308,7 @@ def cross_validate_with_api(data: dict) -> None:
     if detail.get("money") != data["price"]:
         problems.append(f"售價：公告 {data['price']} vs API {detail.get('money')}")
     if detail.get("issuedCount") != data["total_tickets"]:
-        problems.append(f"發行張數：公告 {data['total_tickets']:,} vs API {detail.get('issuedCount'):,}")
+        problems.append(f"發行張數：公告 {data['total_tickets']:,} vs API {detail.get('issuedCount')}")
     for key, field in (
         ("launch", "listingDate"),
         ("off_sale", "downDate"),
@@ -314,8 +318,13 @@ def cross_validate_with_api(data: dict) -> None:
         if api_date != data["dates"][key]["iso"]:
             problems.append(f"{field}：公告 {data['dates'][key]['iso']} vs API {api_date}")
     api_odds = (detail.get("oddsOfWinning") or "").strip()
-    if api_odds and Decimal(api_odds) != Decimal(data["announced_win_rate_percent"]):
-        problems.append(f"中獎率：公告 {data['announced_win_rate_percent']}% vs API {api_odds}%")
+    if api_odds:
+        try:
+            odds_mismatch = Decimal(api_odds) != Decimal(data["announced_win_rate_percent"])
+        except ArithmeticError:
+            odds_mismatch = True
+        if odds_mismatch:
+            problems.append(f"中獎率：公告 {data['announced_win_rate_percent']}% vs API {api_odds!r}")
     if problems:
         raise RuntimeError("公告與官方 API 資料不一致：\n  - " + "\n  - ".join(problems))
     print("[ok] Instant/Detail 交叉驗證通過（售價、張數、日期、中獎率）。")
@@ -340,11 +349,14 @@ def compute_stats(data: dict) -> dict:
     if lose_count < 0:
         raise ParseError(f"中獎張數總和 ({win_count:,}) 超過發行張數 ({total:,})")
 
-    def pct6(count: int) -> Decimal:
-        return quantize(Decimal(count) * 100 / n, "0.000001")
+    def pct(count: int, exp: str = "0.000001") -> Decimal:
+        return quantize(Decimal(count) * 100 / n, exp)
 
+    pct6 = pct
     profit_count = sum(t["count"] for t in tiers if t["prize"] > price)
     break_even_count = sum(t["count"] for t in tiers if t["prize"] == price)
+    # 中獎但獎金低於票價（倒虧）；目前的遊戲沒有這種獎項，但公告出現時要能正確分類。
+    loss_winner_count = win_count - profit_count - break_even_count
 
     total_prize_sum = sum(t["prize"] * t["count"] for t in tiers)
     expected_value = quantize(Decimal(total_prize_sum) / n, "0.0001")
@@ -352,7 +364,7 @@ def compute_stats(data: dict) -> dict:
     return_rate = quantize(expected_value * 100 / Decimal(price), "0.01")
     win_rate_2dp = quantize(Decimal(win_count) * 100 / n, "0.01")
 
-    announced = Decimal(data["announced_win_rate_percent"])
+    announced = quantize(Decimal(data["announced_win_rate_percent"]), "0.01")
     if win_rate_2dp != announced:
         raise ParseError(
             f"計算中獎率 {win_rate_2dp}% 與公告 {announced}% 不符，獎金結構資料可能有誤"
@@ -377,20 +389,30 @@ def compute_stats(data: dict) -> dict:
         "profit_pct6": pct6(profit_count),
         "break_even_count": break_even_count,
         "break_even_pct6": pct6(break_even_count),
+        "loss_winner_count": loss_winner_count,
+        "loss_winner_pct6": pct6(loss_winner_count),
         "total_prize_sum": total_prize_sum,
         "expected_value": expected_value,
         "average_loss": average_loss,
         "return_rate": return_rate,
         "win_rate_2dp": win_rate_2dp,
-        "win_rate_4dp": quantize(Decimal(profit_count) * 100 / n, "0.0001"),
-        "break_even_rate_4dp": quantize(Decimal(break_even_count) * 100 / n, "0.0001"),
-        "no_loss_rate_4dp": quantize(Decimal(win_count) * 100 / n, "0.0001"),
+        "profit_rate_4dp": pct(profit_count, "0.0001"),
+        "break_even_rate_4dp": pct(break_even_count, "0.0001"),
+        # compare 表的「總中獎率 (A+B)」欄位＝有賺+沒賠，不含倒虧的中獎張數。
+        "no_loss_rate_4dp": pct(profit_count + break_even_count, "0.0001"),
     }
 
 
 # ---------------------------------------------------------------------------
 # Rendering (格式基準：docs/_articles/all-instants/5155.md、5156.md)
 # ---------------------------------------------------------------------------
+
+def yaml_scalar(value: str) -> str:
+    """值含 YAML 特殊字元時改用引號形式，避免破壞 front matter 與 data 檔。"""
+    if re.search(r"(?:^[\-?:#&*!|>%@`\"'{\[\],}]|: |\s#)", value) or value.strip() != value:
+        return json.dumps(value, ensure_ascii=False)
+    return value
+
 
 def render_article(data: dict, stats: dict) -> str:
     issue = data["issue"]
@@ -400,17 +422,21 @@ def render_article(data: dict, stats: dict) -> str:
     dates = data["dates"]
     top = stats["tiers"][0]
     url = f"{data['source']['official_url']}#{issue}"
+    title = f"刮刮樂-第{issue}期：{name}"
+    description = (
+        f"每張{price}元，總計{total:,}張，頭獎NT${top['prize']:,}"
+        f"，中獎機率{stats['win_rate_2dp']:.2f}%"
+    )
 
     lines = [
         "---",
-        f"title: 刮刮樂-第{issue}期：{name}",
+        f"title: {yaml_scalar(title)}",
         f"permalink: /all-instants/{issue}/",
         "category: all-instants",
         f"date: {dates['launch']['iso']}",
         f"published: {dates['launch']['iso']}",
         f"num: {issue}",
-        f"description: 每張{price}元，總計{total:,}張，頭獎NT${top['prize']:,}"
-        f"，中獎機率{stats['win_rate_2dp']:.2f}%",
+        f"description: {yaml_scalar(description)}",
         "---",
         "",
         "## 基本資料",
@@ -442,6 +468,11 @@ def render_article(data: dict, stats: dict) -> str:
         f"| 總發行張數 | {total:,} | |",
         f"| 中獎張數（有賺） | {stats['profit_count']:,} | {stats['profit_pct6']:.6f}% |",
         f"| 中獎張數（沒賠） | {stats['break_even_count']:,} | {stats['break_even_pct6']:.6f}% |",
+        *(
+            [f"| 中獎張數（倒虧） | {stats['loss_winner_count']:,} | {stats['loss_winner_pct6']:.6f}% |"]
+            if stats["loss_winner_count"]
+            else []
+        ),
         f"| 中獎張數（加總） | {stats['win_count']:,} | {stats['win_pct6']:.6f}% |",
         f"| 烏龜張數 | {stats['lose_count']:,} | {stats['lose_pct6']:.6f}% |",
         "",
@@ -482,9 +513,11 @@ def render_article(data: dict, stats: dict) -> str:
 
 
 def format_jackpot(prize: int) -> str:
-    if prize >= 1_000_000:
-        return f"{prize / 1_000_000:g}M"
-    return f"{prize / 1_000:g}K"
+    for unit, suffix in ((1_000_000, "M"), (1_000, "K")):
+        if prize >= unit:
+            value = (Decimal(prize) / unit).normalize()
+            return f"{value:f}{suffix}"
+    return str(prize)
 
 
 def render_compare_entry(data: dict, stats: dict) -> str:
@@ -493,13 +526,13 @@ def render_compare_entry(data: dict, stats: dict) -> str:
     end = data["dates"]["off_sale"]["iso"].replace("-", "/")
     lines = [
         f"  - id: {data['issue']}",
-        f"    name: {data['name']}",
+        f"    name: {yaml_scalar(data['name'])}",
         f"    launch: {launch}",
         f"    end: {end}",
         f"    price: {data['price']}",
         f"    jackpot: {format_jackpot(top['prize'])}",
         f"    jackpot_count: {top['count']}",
-        f"    win_rate: {stats['win_rate_4dp']:.4f}%",
+        f"    win_rate: {stats['profit_rate_4dp']:.4f}%",
         f"    break_even_rate: {stats['break_even_rate_4dp']:.4f}%",
         f"    no_loss_rate: {stats['no_loss_rate_4dp']:.4f}%",
         f"    expected_value: \"{stats['expected_value']:.4f}\"",
@@ -526,14 +559,15 @@ def read_text(path: Path) -> str:
 
 def update_compare_yml(data: dict, stats: dict) -> str:
     text = read_text(COMPARE_YML)
+    if not text.endswith("\n"):
+        # 少了結尾換行會讓 block regex 漏抓最後一行，先補上再處理。
+        text += "\n"
     entry = render_compare_entry(data, stats)
     block_re = re.compile(rf"(?m)^  - id: {data['issue']}\n(?:    .*\n)*")
     if block_re.search(text):
         text = block_re.sub(entry, text, count=1)
         action = "updated"
     else:
-        if not text.endswith("\n"):
-            text += "\n"
         text += entry
         action = "added"
     write_text(COMPARE_YML, text.rstrip("\n") + "\n")
