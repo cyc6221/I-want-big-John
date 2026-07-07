@@ -3,10 +3,10 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 14400 元，中獎 8300 元。
+description: 總計花費 15200 元，中獎 9000 元。
 ---
 
-從 2026/02/25 開始記錄，總計花費 14400 元，中獎 8300 元。
+從 2026/02/25 開始記錄，總計花費 15200 元，中獎 9000 元。
 
 ---
 
@@ -78,3 +78,7 @@ description: 總計花費 14400 元，中獎 8300 元。
 | 64 | 2026/06/19 | <a class="btn btn--gold" href="{{ '/all-instants/5151/' | relative_url }}">樂刮$5,000</a> | 500 | 0 |
 | 65 | 2026/06/19 | <a class="btn btn--gold" href="{{ '/all-instants/5149/' | relative_url }}">點球成金</a> | 200 | 0 |
 | 66 | 2026/06/21 | <a class="btn btn--gold" href="{{ '/all-instants/5148/' | relative_url }}">獎金倍倍樂</a> | 200 | 0 |
+| 67 | 2026/07/02 | <a class="btn btn--gold" href="{{ '/all-instants/5154/' | relative_url }}">嗨刮123</a> | 100 | 0 |
+| 68 | 2026/07/02 | <a class="btn btn--gold" href="{{ '/all-instants/5156/' | relative_url }}">狂刮10萬</a> | 200 | 200 |
+| 69 | 2026/07/02 | <a class="btn btn--gold" href="{{ '/all-instants/5155/' | relative_url }}">無敵777</a> | 300 | 500 |
+| 70 | 2026/07/05 | <a class="btn btn--gold" href="{{ '/all-instants/5156/' | relative_url }}">狂刮10萬</a> | 200 | 0 |
