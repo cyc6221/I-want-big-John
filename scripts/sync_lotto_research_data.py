@@ -30,6 +30,13 @@ GAME_SOURCES = {
 # games aggregated into research/derived/{game}_all_years.csv
 DERIVED_GAMES = ["539", "638", "649"]
 
+# Games that must have at least one source CSV in the requested year range.
+# A missing source here means the download/extract step failed (or the
+# official filename changed); failing loudly prevents run.py from quietly
+# publishing stale draw data. 649-extra only exists in years with 加碼活動,
+# so it stays optional.
+REQUIRED_GAMES = {"539", "638", "649"}
+
 BASE_COLUMNS = ["遊戲名稱", "期別", "開獎日期", "銷售總額", "銷售注數", "總獎金"]
 
 
@@ -125,12 +132,27 @@ def main() -> int:
 
     years = list(range(args.from_year, args.to_year + 1))
 
+    missing_required = []
     for game in GAME_SOURCES:
         synced = sync_by_game(game, years)
         if synced:
             print(f"[synced] by-game/{game}: {synced[0]}-{synced[-1]} ({len(synced)} year files)")
+        elif game in REQUIRED_GAMES:
+            missing_required.append(game)
         else:
             print(f"[skip] by-game/{game}: no download files in range")
+
+    if missing_required:
+        for game in missing_required:
+            source_stem = GAME_SOURCES[game]
+            print(
+                f"[error] no source CSV for required game {game} "
+                f"({source_stem}_{{year}}.csv) in {args.from_year}-{args.to_year}; "
+                "check download_lotto_results.py / extract_lotto_results.py output",
+                file=sys.stderr,
+            )
+        print("[error] aborting before rebuilding research/derived", file=sys.stderr)
+        return 1
 
     for game in DERIVED_GAMES:
         target = rebuild_derived(game)
