@@ -47,6 +47,15 @@ python scripts/fix_lotto_result_paths.py --from-year 2007 --to-year 2026
 這支腳本只修正目錄結構，適合處理像 `2007/96/` 或 `2024/2024/` 這種多包一層的舊資料。  
 This script only fixes directory structure, which is useful for older extracted data such as `2007/96/` or `2024/2024/`.
 
+### 3.5 Sync research data from downloads
+
+```bash
+python scripts/sync_lotto_research_data.py
+```
+
+這支腳本會把 `raw-data/lotto-result-downloads/{Year}/` 的官方 CSV 同步到 `research/by-game/{game}/{game}_{Year}.csv`（獎號補零成兩位數），並重建 `research/derived/{game}_all_years.csv`。`scripts/run.py` 的統計、購買紀錄與最新開獎都是讀 `research/derived/`，所以每月更新下載檔後、跑 `run.py` 之前要先跑這一步。預設只同步當年度；歷史年度通常不需要重寫。
+This script syncs the official CSVs under `raw-data/lotto-result-downloads/{Year}/` into `research/by-game/{game}/{game}_{Year}.csv` (zero-padding ball numbers) and rebuilds `research/derived/{game}_all_years.csv`. Since `scripts/run.py` reads `research/derived/` for stats, purchase records, and latest draws, run this after updating downloads and before `run.py`. It defaults to the current year only; historical years normally stay untouched.
+
 ### 4. Normalize filenames to `{Game}_{Year}.csv`
 
 ```bash
