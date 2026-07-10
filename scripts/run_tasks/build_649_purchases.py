@@ -370,7 +370,16 @@ def ball_items(values: list[str], row: dict[str, Any]) -> str:
 
     result_numbers = set(row["result"]["numbers"])
     special = row["result"]["special"]
-    return " ".join(f"{value}:{'pick' if value in result_numbers or value == special else 'miss'}" for value in values)
+    items = []
+    for value in values:
+        if value in result_numbers:
+            variant = "pick"
+        elif value == special:
+            variant = "special"
+        else:
+            variant = "miss"
+        items.append(f"{value}:{variant}")
+    return " ".join(items)
 
 
 def small_balls_include(items: str, label: str) -> str:

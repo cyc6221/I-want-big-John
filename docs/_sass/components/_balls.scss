@@ -159,6 +159,17 @@
   box-shadow: 0 10px 25px rgba(249,115,22,0.18);
 }
 
+/* ===== small-ball: special (特別號命中) ===== */
+.small-ball--special{
+  color: #fff;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.70), rgba(255,255,255,0.0) 36%),
+    radial-gradient(circle at 70% 72%, rgba(0,0,0,0.18), transparent 44%),
+    linear-gradient(135deg, rgba(79,70,229,0.98), rgba(14,165,233,0.92));
+  border: 1px solid rgba(79,70,229,0.55);
+  box-shadow: 0 10px 25px rgba(14,165,233,0.18);
+}
+
 /* ===== small-ball: miss (灰色) ===== */
 .small-ball--miss{
   color: rgba(255,255,255,0.92);
