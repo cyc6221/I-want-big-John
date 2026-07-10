@@ -185,7 +185,7 @@ description: 總計 17 注，花費 850 元，已結算中獎 0 元。
       <td style="text-align:center;">15</td>
       <td style="text-align:center;">2026/07/07</td>
       <td style="text-align:center;">115000068</td>
-      <td style="text-align:center;">{% include small-balls.html items="09:miss 12:miss 21:miss 28:miss 37:pick 46:miss" label="大樂透選號" %}</td>
+      <td style="text-align:center;">{% include small-balls.html items="09:miss 12:miss 21:miss 28:miss 37:special 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;">0 個主號 + 特別號</td>
       <td style="text-align:center;">未中獎</td>
       <td style="text-align:center;">50</td>
