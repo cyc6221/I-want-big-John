@@ -2,13 +2,13 @@
 title: 大樂透購買紀錄
 permalink: /list/649-purchases/
 category: list-649
-date: 2026-06-30
-description: 總計 13 注，花費 650 元，已結算中獎 0 元。
+date: 2026-07-07
+description: 總計 17 注，花費 850 元，已結算中獎 0 元。
 ---
 
-從 2026/03/03 開始記錄，總計 13 注，總計花費 650 元，已結算 13 筆，已結算中獎 0 元，已結算淨額 -650 元。
+從 2026/03/03 開始記錄，總計 17 注，總計花費 850 元，已結算 17 筆，已結算中獎 0 元，已結算淨額 -850 元。
 
-已比對 4 期開獎結果。
+已比對 5 期開獎結果。
 
 ## 購買紀錄
 
@@ -165,6 +165,50 @@ description: 總計 13 注，花費 650 元，已結算中獎 0 元。
       <td style="text-align:center;">115000066</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 09:miss 19:miss 24:miss 36:pick 49:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;">1 個主號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 4 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">14</td>
+      <td style="text-align:center;">2026/07/07</td>
+      <td style="text-align:center;">115000068</td>
+      <td style="text-align:center;">{% include small-balls.html items="03:miss 07:miss 18:pick 26:miss 34:miss 42:pick" label="大樂透選號" %}</td>
+      <td style="text-align:center;">2 個主號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 1 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">15</td>
+      <td style="text-align:center;">2026/07/07</td>
+      <td style="text-align:center;">115000068</td>
+      <td style="text-align:center;">{% include small-balls.html items="09:miss 12:miss 21:miss 28:miss 37:pick 46:miss" label="大樂透選號" %}</td>
+      <td style="text-align:center;">0 個主號 + 特別號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 2 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">16</td>
+      <td style="text-align:center;">2026/07/07</td>
+      <td style="text-align:center;">115000068</td>
+      <td style="text-align:center;">{% include small-balls.html items="01:miss 07:miss 19:pick 27:miss 35:miss 43:miss" label="大樂透選號" %}</td>
+      <td style="text-align:center;">1 個主號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 3 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">17</td>
+      <td style="text-align:center;">2026/07/07</td>
+      <td style="text-align:center;">115000068</td>
+      <td style="text-align:center;">{% include small-balls.html items="06:miss 14:miss 22:miss 31:miss 38:miss 49:miss" label="大樂透選號" %}</td>
+      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
       <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
