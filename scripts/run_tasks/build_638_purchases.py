@@ -1,5 +1,6 @@
 import csv
 import json
+import re
 import sys
 from datetime import datetime
 from html import escape
@@ -356,9 +357,19 @@ def build_description(summary: dict[str, Any]) -> str:
     return description
 
 
+def existing_front_matter_date() -> str | None:
+    if not OUT_MD.exists():
+        return None
+    match = re.search(r"^date:\s*(\S+)\s*$", OUT_MD.read_text(encoding="utf-8"), re.MULTILINE)
+    if match:
+        return match.group(1)
+    print(f"Warning: could not find existing front-matter date in {OUT_MD}; using today's date")
+    return None
+
+
 def front_matter_date(rows: list[dict[str, Any]]) -> str:
     if not rows:
-        return datetime.now().strftime("%Y-%m-%d")
+        return existing_front_matter_date() or datetime.now().strftime("%Y-%m-%d")
     latest = max(parse_date(row["purchase_date"], field="purchase_date", line_number=0) for row in rows)
     return latest.strftime("%Y-%m-%d")
 

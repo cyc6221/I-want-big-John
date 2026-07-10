@@ -152,9 +152,9 @@ def parse_result_date(row: dict[str, str], *, field: str, fallback: int) -> date
     try:
         parsed = parse_date(row.get(field) or "", field=field, line_number=line_number)
     except ValueError as exc:
-        raise ValueError(f"Invalid 539 draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
+        raise ValueError(f"Invalid {GAME_KEY} draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
     if parsed is None:
-        raise ValueError(f"Missing 539 draw result {field} at {source}:{line_number} draw_no={draw_no}")
+        raise ValueError(f"Missing {GAME_KEY} draw result {field} at {source}:{line_number} draw_no={draw_no}")
     return parsed
 
 
@@ -164,7 +164,7 @@ def parse_result_ball(row: dict[str, str], *, field: str, fallback: int, low: in
     try:
         return parse_ball(row.get(field) or "", field=field, line_number=line_number, low=low, high=high)
     except ValueError as exc:
-        raise ValueError(f"Invalid 539 draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
+        raise ValueError(f"Invalid {GAME_KEY} draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
 
 
 def resolve_prize(primary_hits: int, result_known: bool) -> dict[str, Any]:
@@ -303,16 +303,31 @@ def build_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
     settled_records = len(rows) - pending_records
     winning_records = sum(1 for row in rows if row["settled"] and (row["prize"] or 0) > 0)
 
+    # A row can be unsettled either because the draw hasn't happened yet
+    # (result_known is False) or because it hit a variable/capped-jackpot
+    # tier whose exact payout isn't knowable from the draw numbers alone
+    # (result_known is True but settled is False). Track these separately
+    # so the generated summary doesn't conflate "still waiting on a draw"
+    # with "won the jackpot, official payout not yet filled in".
+    unresolved_records = sum(1 for row in rows if not row["result_known"])
+    unsettled_win_records = pending_records - unresolved_records
+    unresolved_spent = sum(int(row["price"] or 0) for row in rows if not row["result_known"])
+    unsettled_win_spent = pending_spent - unresolved_spent
+
     return {
         "game": GAME_KEY,
         "title": GAME_TITLE,
         "total_records": len(rows),
         "settled_records": settled_records,
         "pending_records": pending_records,
+        "unresolved_records": unresolved_records,
+        "unsettled_win_records": unsettled_win_records,
         "winning_records": winning_records,
         "total_spent": total_spent,
         "settled_spent": settled_spent,
         "pending_spent": pending_spent,
+        "unresolved_spent": unresolved_spent,
+        "unsettled_win_spent": unsettled_win_spent,
         "known_prize": total_prize,
         "known_net": total_prize - settled_spent,
         "date_start": rows[0]["purchase_date"] if rows else "",
@@ -342,8 +357,10 @@ def build_description(summary: dict[str, Any]) -> str:
         f"總計 {summary['total_records']:,} 注，花費 {summary['total_spent']:,} 元，"
         f"已結算中獎 {summary['known_prize']:,} 元。"
     )
-    if summary["pending_records"]:
-        description += f" 待開獎或未填獎金 {summary['pending_records']:,} 筆。"
+    if summary["unresolved_records"]:
+        description += f" 待開獎 {summary['unresolved_records']:,} 筆。"
+    if summary["unsettled_win_records"]:
+        description += f" 中頭獎待官方公布實際派彩金額 {summary['unsettled_win_records']:,} 筆。"
     return description
 
 
@@ -351,7 +368,10 @@ def existing_front_matter_date() -> str | None:
     if not OUT_MD.exists():
         return None
     match = re.search(r"^date:\s*(\S+)\s*$", OUT_MD.read_text(encoding="utf-8"), re.MULTILINE)
-    return match.group(1) if match else None
+    if match:
+        return match.group(1)
+    print(f"Warning: could not find existing front-matter date in {OUT_MD}; using today's date")
+    return None
 
 
 def front_matter_date(rows: list[dict[str, Any]]) -> str:
@@ -398,6 +418,8 @@ def table_cell(value: object) -> str:
 
 
 def hit_summary(row: dict[str, Any]) -> str:
+    if not row["result_known"]:
+        return "待開獎"
     return f"{row['primary_hits']} 個號碼"
 
 
@@ -451,10 +473,20 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             "",
         ]
     )
-    if summary["pending_records"]:
+    if summary["unresolved_records"]:
         lines.extend(
             [
-                f"另有 {summary['pending_records']:,} 筆待開獎或尚未填入中獎金額，花費 {summary['pending_spent']:,} 元。",
+                f"另有 {summary['unresolved_records']:,} 筆待開獎，花費 {summary['unresolved_spent']:,} 元。",
+                "",
+            ]
+        )
+    if summary["unsettled_win_records"]:
+        lines.extend(
+            [
+                (
+                    f"另有 {summary['unsettled_win_records']:,} 筆中頭獎，"
+                    f"花費 {summary['unsettled_win_spent']:,} 元，待官方公布實際派彩金額。"
+                ),
                 "",
             ]
         )
