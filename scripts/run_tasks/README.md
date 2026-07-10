@@ -6,6 +6,7 @@ This folder contains the scripts currently executed by `scripts/run.py`.
 ## Included Scripts
 
 - `build_latest_draws_data.py`
+- `build_539_purchases.py`
 - `build_638_purchases.py`
 - `build_649_purchases.py`
 - `build_instant_all.py`
@@ -30,6 +31,7 @@ This runs the current instant / lotto build tasks in the expected order.
 如果真的要單獨執行，也請用這個資料夾底下的新路徑，例如：
 
 ```bash
+python scripts/run_tasks/build_539_purchases.py
 python scripts/run_tasks/build_638_purchases.py
 python scripts/run_tasks/build_649_purchases.py
 python scripts/run_tasks/build_instant_all.py

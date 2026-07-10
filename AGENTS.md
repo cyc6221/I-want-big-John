@@ -61,11 +61,18 @@ Use this workflow when adding or correcting scratch-ticket article pages without
 Use this workflow when adding or correcting draw-game purchase records such as Power Lottery (`638`). Keep these records separate from scratch-ticket (`instants`) data.
 
 1. Create a new branch from `main`.
-2. For Power Lottery (`638`), update `raw-data/lotto-purchases/638-purchases.csv`.
-3. For Big Lotto (`649`), update `raw-data/lotto-purchases/649-purchases.csv`.
-4. Do not add draw-game purchase records to `raw-data/all-instants.csv`.
-5. Run `python scripts/run.py`.
-6. Review the generated changes.
+2. For Daily Cash (`539`), update `raw-data/lotto-purchases/539-purchases.csv`.
+3. For Power Lottery (`638`), update `raw-data/lotto-purchases/638-purchases.csv`.
+4. For Big Lotto (`649`), update `raw-data/lotto-purchases/649-purchases.csv`.
+5. Do not add draw-game purchase records to `raw-data/all-instants.csv`.
+6. Run `python scripts/run.py`.
+7. Review the generated changes.
+
+The `539` purchase CSV stores only the purchase basics:
+
+`purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5`
+
+Prize rank and fixed prize amount are generated from draw results. 539 has no special/bonus number.
 
 The `638` purchase CSV stores only the purchase basics:
 
@@ -80,6 +87,8 @@ The `649` purchase CSV stores only the purchase basics:
 Prize rank and fixed prize amount are generated from draw results.
 
 Generated files commonly include:
+- `docs/_list/539-purchases.md`
+- `docs/assets/data/539-purchases.json`
 - `docs/_list/638-purchases.md`
 - `docs/assets/data/638-purchases.json`
 - `docs/_list/649-purchases.md`
@@ -90,8 +99,8 @@ Generated files commonly include:
 Use this workflow when Taiwan Lottery official monthly result downloads have not yet caught up, but a draw result is known.
 
 1. Keep official monthly downloaded files under `raw-data/lotto-result-downloads/` unchanged.
-2. Add or correct manual draw results in `raw-data/manual-lotto-results/{game}-manual-results.csv`, for example `raw-data/manual-lotto-results/638-manual-results.csv` or `raw-data/manual-lotto-results/649-manual-results.csv`.
-3. Keep manual records separated by game. Do not mix `638` and `649` rows in one file.
+2. Add or correct manual draw results in `raw-data/manual-lotto-results/{game}-manual-results.csv`, for example `raw-data/manual-lotto-results/539-manual-results.csv`, `raw-data/manual-lotto-results/638-manual-results.csv`, or `raw-data/manual-lotto-results/649-manual-results.csv`.
+3. Keep manual records separated by game. Do not mix `539`, `638`, and `649` rows in one file. For `539`, leave the `special` column blank since it has no bonus number.
 4. Run `python scripts/run.py`.
 5. Review generated latest-draw, purchase-record, and stats changes.
 
