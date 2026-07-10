@@ -233,7 +233,7 @@ def read_manual_rows(config: LottoGameConfig) -> list[dict[str, str]]:
 
     rows = []
     seen_draws = set()
-    with source.open("r", encoding="utf-8", newline="") as handle:
+    with source.open("r", encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
         normalize_headers(reader.fieldnames, MANUAL_COLUMNS, source)
         for index, raw in enumerate(reader, start=2):
