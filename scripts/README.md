@@ -141,6 +141,22 @@ purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5,numb
 
 頭獎、貳獎、參獎與肆獎是浮動獎金；如果命中這些獎項，產出會顯示待填獎金。
 
+## 539 Purchase Prize Rules
+
+`raw-data/lotto-purchases/539-purchases.csv` 只保留購買紀錄必要欄位：
+
+```text
+purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5
+```
+
+今彩539沒有特別號，只要對應期別已有開獎結果，`scripts/run_tasks/build_539_purchases.py` 會依今彩539固定獎項自動計算獎別與獎金：
+
+- 貳獎：對中 4 個號碼，20,000 元
+- 參獎：對中 3 個號碼，300 元
+- 肆獎：對中 2 個號碼，50 元
+
+頭獎（對中 5 個號碼）單注上限雖是 8,000,000 元，但每期頭獎總獎金上限為 24,000,000 元；當同期頭獎得主超過 3 人時，實際派彩會等比例調降。因此頭獎視為浮動獎金，產出會顯示待填獎金，需以官方派彩結果人工填入。
+
 ## New Instant Article Generator
 
 ```bash

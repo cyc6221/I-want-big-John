@@ -9,6 +9,7 @@ RUN_TASKS_DIR = ROOT / "scripts" / "run_tasks"
 
 TASKS = [
     RUN_TASKS_DIR / "build_latest_draws_data.py",
+    RUN_TASKS_DIR / "build_539_purchases.py",
     RUN_TASKS_DIR / "build_638_purchases.py",
     RUN_TASKS_DIR / "build_649_purchases.py",
     RUN_TASKS_DIR / "build_instant_all.py",

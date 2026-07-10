@@ -16,26 +16,21 @@ if str(SCRIPTS_DIR) not in sys.path:
 from _utils.lotto_results import load_result_rows
 
 
-CSV_PATH = Path("raw-data/lotto-purchases/649-purchases.csv")
-RESULTS_PATH = Path("research/derived/649_all_years.csv")
-OUT_JSON = Path("docs/assets/data/649-purchases.json")
-OUT_MD = Path("docs/_list/649-purchases.md")
+CSV_PATH = Path("raw-data/lotto-purchases/539-purchases.csv")
+RESULTS_PATH = Path("research/derived/539_all_years.csv")
+OUT_JSON = Path("docs/assets/data/539-purchases.json")
+OUT_MD = Path("docs/_list/539-purchases.md")
 
-GAME_KEY = "649"
-GAME_TITLE = "大樂透"
+GAME_KEY = "539"
+GAME_TITLE = "今彩539"
 RESULT_SOURCE_PATH_COLUMN = "__source_path"
 RESULT_SOURCE_LINE_COLUMN = "__source_line"
 
 PRIZE_RULES = {
-    (6, True): {"rank": "頭獎", "prize": None, "variable": True},
-    (6, False): {"rank": "頭獎", "prize": None, "variable": True},
-    (5, True): {"rank": "貳獎", "prize": None, "variable": True},
-    (5, False): {"rank": "參獎", "prize": None, "variable": True},
-    (4, True): {"rank": "肆獎", "prize": None, "variable": True},
-    (4, False): {"rank": "伍獎", "prize": 2000, "variable": False},
-    (3, True): {"rank": "陸獎", "prize": 1000, "variable": False},
-    (2, True): {"rank": "柒獎", "prize": 400, "variable": False},
-    (3, False): {"rank": "普獎", "prize": 400, "variable": False},
+    5: {"rank": "頭獎", "prize": None, "variable": True},
+    4: {"rank": "貳獎", "prize": 20000, "variable": False},
+    3: {"rank": "參獎", "prize": 300, "variable": False},
+    2: {"rank": "肆獎", "prize": 50, "variable": False},
 }
 
 EXPECTED_HEADERS = [
@@ -48,7 +43,6 @@ EXPECTED_HEADERS = [
     "number3",
     "number4",
     "number5",
-    "number6",
 ]
 
 
@@ -158,9 +152,9 @@ def parse_result_date(row: dict[str, str], *, field: str, fallback: int) -> date
     try:
         parsed = parse_date(row.get(field) or "", field=field, line_number=line_number)
     except ValueError as exc:
-        raise ValueError(f"Invalid 649 draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
+        raise ValueError(f"Invalid {GAME_KEY} draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
     if parsed is None:
-        raise ValueError(f"Missing 649 draw result {field} at {source}:{line_number} draw_no={draw_no}")
+        raise ValueError(f"Missing {GAME_KEY} draw result {field} at {source}:{line_number} draw_no={draw_no}")
     return parsed
 
 
@@ -170,10 +164,10 @@ def parse_result_ball(row: dict[str, str], *, field: str, fallback: int, low: in
     try:
         return parse_ball(row.get(field) or "", field=field, line_number=line_number, low=low, high=high)
     except ValueError as exc:
-        raise ValueError(f"Invalid 649 draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
+        raise ValueError(f"Invalid {GAME_KEY} draw result at {source}:{line_number} draw_no={draw_no}: {exc}") from exc
 
 
-def resolve_prize(primary_hits: int, special_hit: bool, result_known: bool) -> dict[str, Any]:
+def resolve_prize(primary_hits: int, result_known: bool) -> dict[str, Any]:
     if not result_known:
         return {
             "rank": "待開獎",
@@ -182,7 +176,7 @@ def resolve_prize(primary_hits: int, special_hit: bool, result_known: bool) -> d
             "settled": False,
         }
 
-    rule = PRIZE_RULES.get((primary_hits, special_hit))
+    rule = PRIZE_RULES.get(primary_hits)
     rank = rule["rank"] if rule else "未中獎"
 
     if rule is None:
@@ -219,14 +213,13 @@ def load_draw_results() -> dict[str, dict[str, Any]]:
         draw_no = (row.get("期別") or "").strip()
         draw_date = parse_result_date(row, field="開獎日期", fallback=index)
         numbers = [
-            parse_result_ball(row, field=f"獎號{i}", fallback=index, low=1, high=49)
-            for i in range(1, 7)
+            parse_result_ball(row, field=f"獎號{i}", fallback=index, low=1, high=39)
+            for i in range(1, 6)
         ]
         result = {
             "draw_no": draw_no,
             "draw_date": format_date(draw_date),
             "numbers": [ball_label(number) for number in numbers],
-            "special": ball_label(parse_result_ball(row, field="特別號", fallback=index, low=1, high=49)),
             "number_set": set(numbers),
         }
         if draw_no:
@@ -256,11 +249,11 @@ def read_purchase_rows(results_by_draw_no: dict[str, dict[str, Any]]) -> list[di
             line_no_sort = parse_positive_int(row["line_no"], field="line_no", line_number=line_number)
             price = parse_money(row["price"], field="price", line_number=line_number, required=True)
             numbers = [
-                parse_ball(row[f"number{i}"], field=f"number{i}", line_number=line_number, low=1, high=49)
-                for i in range(1, 7)
+                parse_ball(row[f"number{i}"], field=f"number{i}", line_number=line_number, low=1, high=39)
+                for i in range(1, 6)
             ]
 
-            if len(set(numbers)) != 6:
+            if len(set(numbers)) != 5:
                 raise ValueError(f"Duplicate numbers at line {line_number}")
 
             numbers = sorted(numbers)
@@ -268,11 +261,9 @@ def read_purchase_rows(results_by_draw_no: dict[str, dict[str, Any]]) -> list[di
             result = results_by_draw_no.get(draw_no)
 
             primary_hits = 0
-            special_hit = False
             if result is not None:
                 primary_hits = sum(1 for number in numbers if number in result["number_set"])
-                special_hit = result["special"] in number_labels
-            prize_result = resolve_prize(primary_hits, special_hit, result is not None)
+            prize_result = resolve_prize(primary_hits, result is not None)
 
             rows.append(
                 {
@@ -288,13 +279,11 @@ def read_purchase_rows(results_by_draw_no: dict[str, dict[str, Any]]) -> list[di
                     "settled": prize_result["settled"],
                     "numbers": number_labels,
                     "primary_hits": primary_hits,
-                    "special_hit": special_hit,
                     "result_known": result is not None,
                     "result": {
                         "draw_no": result["draw_no"],
                         "draw_date": result["draw_date"],
                         "numbers": result["numbers"],
-                        "special": result["special"],
                     }
                     if result is not None
                     else None,
@@ -314,16 +303,31 @@ def build_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
     settled_records = len(rows) - pending_records
     winning_records = sum(1 for row in rows if row["settled"] and (row["prize"] or 0) > 0)
 
+    # A row can be unsettled either because the draw hasn't happened yet
+    # (result_known is False) or because it hit a variable/capped-jackpot
+    # tier whose exact payout isn't knowable from the draw numbers alone
+    # (result_known is True but settled is False). Track these separately
+    # so the generated summary doesn't conflate "still waiting on a draw"
+    # with "won the jackpot, official payout not yet filled in".
+    unresolved_records = sum(1 for row in rows if not row["result_known"])
+    unsettled_win_records = pending_records - unresolved_records
+    unresolved_spent = sum(int(row["price"] or 0) for row in rows if not row["result_known"])
+    unsettled_win_spent = pending_spent - unresolved_spent
+
     return {
         "game": GAME_KEY,
         "title": GAME_TITLE,
         "total_records": len(rows),
         "settled_records": settled_records,
         "pending_records": pending_records,
+        "unresolved_records": unresolved_records,
+        "unsettled_win_records": unsettled_win_records,
         "winning_records": winning_records,
         "total_spent": total_spent,
         "settled_spent": settled_spent,
         "pending_spent": pending_spent,
+        "unresolved_spent": unresolved_spent,
+        "unsettled_win_spent": unsettled_win_spent,
         "known_prize": total_prize,
         "known_net": total_prize - settled_spent,
         "date_start": rows[0]["purchase_date"] if rows else "",
@@ -347,14 +351,16 @@ def format_prize_amount(row: dict[str, Any]) -> str:
 
 def build_description(summary: dict[str, Any]) -> str:
     if summary["total_records"] == 0:
-        return "尚無大樂透購買紀錄。"
+        return "尚無今彩539購買紀錄。"
 
     description = (
         f"總計 {summary['total_records']:,} 注，花費 {summary['total_spent']:,} 元，"
         f"已結算中獎 {summary['known_prize']:,} 元。"
     )
-    if summary["pending_records"]:
-        description += f" 待開獎或未填獎金 {summary['pending_records']:,} 筆。"
+    if summary["unresolved_records"]:
+        description += f" 待開獎 {summary['unresolved_records']:,} 筆。"
+    if summary["unsettled_win_records"]:
+        description += f" 中頭獎待官方公布實際派彩金額 {summary['unsettled_win_records']:,} 筆。"
     return description
 
 
@@ -380,29 +386,11 @@ def ball_items(values: list[str], row: dict[str, Any]) -> str:
         return " ".join(f"{value}:pending" for value in values)
 
     result_numbers = set(row["result"]["numbers"])
-    special = row["result"]["special"]
-    items = []
-    for value in values:
-        if value in result_numbers:
-            variant = "pick"
-        elif value == special:
-            variant = "special"
-        else:
-            variant = "miss"
-        items.append(f"{value}:{variant}")
-    return " ".join(items)
+    return " ".join(f"{value}:{'pick' if value in result_numbers else 'miss'}" for value in values)
 
 
 def small_balls_include(items: str, label: str) -> str:
     return "{% include small-balls.html items=\"" + items + "\" label=\"" + label + "\" %}"
-
-
-def small_balls_span(values: list[str], label: str) -> str:
-    balls = "".join(
-        f'<span class="small-ball small-ball--pick">{escape(value)}</span>'
-        for value in values
-    )
-    return f'<span class="small-balls" aria-label="{escape(label)}">{balls}</span>'
 
 
 def draw_result_details(row: dict[str, Any]) -> str:
@@ -410,21 +398,16 @@ def draw_result_details(row: dict[str, Any]) -> str:
         return '<span class="draw-result-status">待開獎</span>'
 
     result = row["result"]
-    draw_label = f"大樂透第 {result['draw_no']} 期開獎號碼"
+    draw_label = f"今彩539第 {result['draw_no']} 期開獎號碼"
     main_numbers = small_balls_include(
         " ".join(f"{value}:pick" for value in result["numbers"]),
         draw_label,
-    )
-    special = small_balls_include(
-        f"{result['special']}:pick",
-        f"大樂透第 {result['draw_no']} 期特別號",
     )
     return (
         '<details class="draw-result-toggle">'
         '<summary>開獎號碼</summary>'
         '<div class="draw-result-toggle__body">'
         f'<div class="draw-result-toggle__line">{main_numbers}</div>'
-        f'<div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{special}</div>'
         "</div>"
         "</details>"
     )
@@ -435,10 +418,9 @@ def table_cell(value: object) -> str:
 
 
 def hit_summary(row: dict[str, Any]) -> str:
-    parts = [f"{row['primary_hits']} 個主號"]
-    if row["special_hit"]:
-        parts.append("特別號")
-    return " + ".join(parts)
+    if not row["result_known"]:
+        return "待開獎"
+    return f"{row['primary_hits']} 個號碼"
 
 
 def known_results(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -457,15 +439,9 @@ def build_result_note(rows: list[dict[str, Any]]) -> list[str]:
 
     if len(results) == 1:
         result = results[0]
-        result_label = f"大樂透第 {result['draw_no']} 期開獎號碼"
-        return [
-            (
-                f"第 {result['draw_no']} 期開獎號碼為 "
-                f"{small_balls_span(result['numbers'], result_label)}，"
-                f"特別號 {table_cell(result['special'])}。"
-            ),
-            "",
-        ]
+        result_label = f"今彩539第 {result['draw_no']} 期開獎號碼"
+        balls = small_balls_include(" ".join(f"{value}:pick" for value in result["numbers"]), result_label)
+        return [f"第 {result['draw_no']} 期開獎號碼為 {balls}。", ""]
 
     return [f"已比對 {len(results):,} 期開獎結果。", ""]
 
@@ -474,9 +450,9 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
     description = build_description(summary)
     lines = [
         "---",
-        "title: 大樂透購買紀錄",
-        "permalink: /list/649-purchases/",
-        "category: list-649",
+        "title: 今彩539購買紀錄",
+        "permalink: /list/539-purchases/",
+        "category: list-539",
         f"date: {front_matter_date(rows)}",
         f"description: {description}",
         "---",
@@ -484,7 +460,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
     ]
 
     if not rows:
-        lines.extend(["尚無大樂透購買紀錄。", ""])
+        lines.extend(["尚無今彩539購買紀錄。", ""])
         return "\n".join(lines)
 
     lines.extend(
@@ -497,10 +473,20 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             "",
         ]
     )
-    if summary["pending_records"]:
+    if summary["unresolved_records"]:
         lines.extend(
             [
-                f"另有 {summary['pending_records']:,} 筆待開獎或尚未填入中獎金額，花費 {summary['pending_spent']:,} 元。",
+                f"另有 {summary['unresolved_records']:,} 筆待開獎，花費 {summary['unresolved_spent']:,} 元。",
+                "",
+            ]
+        )
+    if summary["unsettled_win_records"]:
+        lines.extend(
+            [
+                (
+                    f"另有 {summary['unsettled_win_records']:,} 筆中頭獎，"
+                    f"花費 {summary['unsettled_win_spent']:,} 元，待官方公布實際派彩金額。"
+                ),
                 "",
             ]
         )
@@ -508,8 +494,6 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
 
     lines.extend(
         [
-            "## 購買紀錄",
-            "",
             '<table class="buy-table">',
             "  <thead>",
             "    <tr>",
@@ -534,7 +518,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
         if row["line_no"]:
             note_parts.append(f"第 {row['line_no']} 注")
         note = " / ".join(note_parts)
-        numbers = small_balls_include(ball_items(row["numbers"], row), "大樂透選號")
+        numbers = small_balls_include(ball_items(row["numbers"], row), "今彩539選號")
         result_details = draw_result_details(row)
 
         lines.extend(
