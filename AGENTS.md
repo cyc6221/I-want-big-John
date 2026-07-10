@@ -72,7 +72,7 @@ The `539` purchase CSV stores only the purchase basics:
 
 `purchase_date,draw_no,line_no,price,number1,number2,number3,number4,number5`
 
-Prize rank and fixed prize amount are generated from draw results. 539 has no special/bonus number.
+Prize rank and fixed prize amount are generated from draw results. 539 has no special/bonus number. Its top prize (5 hits) is treated as variable/pending rather than a flat amount, since the per-draw jackpot pool is capped and gets prorated down when more than 3 tickets hit it in the same draw.
 
 The `638` purchase CSV stores only the purchase basics:
 

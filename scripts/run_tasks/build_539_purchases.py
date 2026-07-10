@@ -1,5 +1,6 @@
 import csv
 import json
+import re
 import sys
 from datetime import datetime
 from html import escape
@@ -26,10 +27,10 @@ RESULT_SOURCE_PATH_COLUMN = "__source_path"
 RESULT_SOURCE_LINE_COLUMN = "__source_line"
 
 PRIZE_RULES = {
-    5: {"rank": "頭獎", "prize": 8000000},
-    4: {"rank": "貳獎", "prize": 20000},
-    3: {"rank": "參獎", "prize": 300},
-    2: {"rank": "肆獎", "prize": 50},
+    5: {"rank": "頭獎", "prize": None, "variable": True},
+    4: {"rank": "貳獎", "prize": 20000, "variable": False},
+    3: {"rank": "參獎", "prize": 300, "variable": False},
+    2: {"rank": "肆獎", "prize": 50, "variable": False},
 }
 
 EXPECTED_HEADERS = [
@@ -186,6 +187,14 @@ def resolve_prize(primary_hits: int, result_known: bool) -> dict[str, Any]:
             "settled": True,
         }
 
+    if rule["variable"]:
+        return {
+            "rank": rank,
+            "prize": None,
+            "source": "variable",
+            "settled": False,
+        }
+
     return {
         "rank": rank,
         "prize": rule["prize"],
@@ -320,6 +329,8 @@ def format_amount(value: int | None) -> str:
 def format_prize_amount(row: dict[str, Any]) -> str:
     if row["prize"] is not None:
         return format_amount(row["prize"])
+    if row["prize_source"] == "variable":
+        return "待填獎金"
     return "待開獎"
 
 
@@ -332,13 +343,20 @@ def build_description(summary: dict[str, Any]) -> str:
         f"已結算中獎 {summary['known_prize']:,} 元。"
     )
     if summary["pending_records"]:
-        description += f" 待開獎 {summary['pending_records']:,} 筆。"
+        description += f" 待開獎或未填獎金 {summary['pending_records']:,} 筆。"
     return description
+
+
+def existing_front_matter_date() -> str | None:
+    if not OUT_MD.exists():
+        return None
+    match = re.search(r"^date:\s*(\S+)\s*$", OUT_MD.read_text(encoding="utf-8"), re.MULTILINE)
+    return match.group(1) if match else None
 
 
 def front_matter_date(rows: list[dict[str, Any]]) -> str:
     if not rows:
-        return datetime.now().strftime("%Y-%m-%d")
+        return existing_front_matter_date() or datetime.now().strftime("%Y-%m-%d")
     latest = max(parse_date(row["purchase_date"], field="purchase_date", line_number=0) for row in rows)
     return latest.strftime("%Y-%m-%d")
 
@@ -436,7 +454,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
     if summary["pending_records"]:
         lines.extend(
             [
-                f"另有 {summary['pending_records']:,} 筆待開獎，花費 {summary['pending_spent']:,} 元。",
+                f"另有 {summary['pending_records']:,} 筆待開獎或尚未填入中獎金額，花費 {summary['pending_spent']:,} 元。",
                 "",
             ]
         )
