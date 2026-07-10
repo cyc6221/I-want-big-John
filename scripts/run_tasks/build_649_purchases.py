@@ -394,6 +394,31 @@ def small_balls_span(values: list[str], label: str) -> str:
     return f'<span class="small-balls" aria-label="{escape(label)}">{balls}</span>'
 
 
+def draw_result_details(row: dict[str, Any]) -> str:
+    if not row["result_known"]:
+        return '<span class="draw-result-status">待開獎</span>'
+
+    result = row["result"]
+    draw_label = f"大樂透第 {result['draw_no']} 期開獎號碼"
+    main_numbers = small_balls_include(
+        " ".join(f"{value}:pick" for value in result["numbers"]),
+        draw_label,
+    )
+    special = small_balls_include(
+        f"{result['special']}:pick",
+        f"大樂透第 {result['draw_no']} 期特別號",
+    )
+    return (
+        '<details class="draw-result-toggle">'
+        '<summary>開獎號碼</summary>'
+        '<div class="draw-result-toggle__body">'
+        f'<div class="draw-result-toggle__line">{main_numbers}</div>'
+        f'<div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{special}</div>'
+        "</div>"
+        "</details>"
+    )
+
+
 def table_cell(value: object) -> str:
     return escape(str(value or ""))
 
@@ -481,6 +506,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             '      <th style="text-align:center;">購買日</th>',
             '      <th style="text-align:center;">期別</th>',
             '      <th style="text-align:center;">選號</th>',
+            '      <th style="text-align:center;">開獎號碼</th>',
             '      <th style="text-align:center;">命中</th>',
             '      <th style="text-align:center;">獎別</th>',
             '      <th style="text-align:center;">花費</th>',
@@ -498,6 +524,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             note_parts.append(f"第 {row['line_no']} 注")
         note = " / ".join(note_parts)
         numbers = small_balls_include(ball_items(row["numbers"], row), "大樂透選號")
+        result_details = draw_result_details(row)
 
         lines.extend(
             [
@@ -506,6 +533,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
                 f'      <td style="text-align:center;">{table_cell(row["purchase_date"])}</td>',
                 f'      <td style="text-align:center;">{table_cell(row["draw_no"])}</td>',
                 f'      <td style="text-align:center;">{numbers}</td>',
+                f'      <td style="text-align:center;">{result_details}</td>',
                 f'      <td style="text-align:center;">{table_cell(hit_summary(row))}</td>',
                 f'      <td style="text-align:center;">{table_cell(row["prize_rank"])}</td>',
                 f'      <td style="text-align:center;">{format_amount(row["price"])}</td>',
