@@ -5,17 +5,17 @@
   "summary": {
     "game": "649",
     "title": "大樂透",
-    "total_records": 17,
-    "settled_records": 17,
+    "total_records": 21,
+    "settled_records": 21,
     "pending_records": 0,
     "winning_records": 0,
-    "total_spent": 850,
-    "settled_spent": 850,
+    "total_spent": 1050,
+    "settled_spent": 1050,
     "pending_spent": 0,
     "known_prize": 0,
-    "known_net": -850,
+    "known_net": -1050,
     "date_start": "2026/03/03",
-    "date_end": "2026/07/07"
+    "date_end": "2026/07/10"
   },
   "records": [
     {
@@ -594,6 +594,142 @@
           "42"
         ],
         "special": "37"
+      }
+    },
+    {
+      "purchase_date": "2026/07/10",
+      "draw_no": "115000069",
+      "line_no": "1",
+      "price": 50,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "05",
+        "12",
+        "21",
+        "26",
+        "34",
+        "43"
+      ],
+      "primary_hits": 0,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000069",
+        "draw_date": "2026/07/10",
+        "numbers": [
+          "03",
+          "04",
+          "15",
+          "18",
+          "29",
+          "49"
+        ],
+        "special": "13"
+      }
+    },
+    {
+      "purchase_date": "2026/07/10",
+      "draw_no": "115000069",
+      "line_no": "2",
+      "price": 50,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "03",
+        "19",
+        "24",
+        "32",
+        "38",
+        "46"
+      ],
+      "primary_hits": 1,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000069",
+        "draw_date": "2026/07/10",
+        "numbers": [
+          "03",
+          "04",
+          "15",
+          "18",
+          "29",
+          "49"
+        ],
+        "special": "13"
+      }
+    },
+    {
+      "purchase_date": "2026/07/10",
+      "draw_no": "115000069",
+      "line_no": "3",
+      "price": 50,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "01",
+        "14",
+        "19",
+        "27",
+        "36",
+        "44"
+      ],
+      "primary_hits": 0,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000069",
+        "draw_date": "2026/07/10",
+        "numbers": [
+          "03",
+          "04",
+          "15",
+          "18",
+          "29",
+          "49"
+        ],
+        "special": "13"
+      }
+    },
+    {
+      "purchase_date": "2026/07/10",
+      "draw_no": "115000069",
+      "line_no": "4",
+      "price": 50,
+      "prize": 0,
+      "prize_rank": "未中獎",
+      "prize_source": "auto",
+      "settled": true,
+      "numbers": [
+        "07",
+        "10",
+        "23",
+        "29",
+        "41",
+        "42"
+      ],
+      "primary_hits": 1,
+      "special_hit": false,
+      "result_known": true,
+      "result": {
+        "draw_no": "115000069",
+        "draw_date": "2026/07/10",
+        "numbers": [
+          "03",
+          "04",
+          "15",
+          "18",
+          "29",
+          "49"
+        ],
+        "special": "13"
       }
     }
   ]
