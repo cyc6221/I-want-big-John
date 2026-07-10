@@ -148,6 +148,66 @@
   vertical-align: middle;
 }
 
+.draw-result-toggle{
+  display: inline-block;
+  min-width: 6.5rem;
+}
+
+.draw-result-toggle summary{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(200,30,30,0.24);
+  background: linear-gradient(135deg, rgba(200,30,30,0.10), rgba(245,158,11,0.08));
+  color: var(--text);
+  font-size: .88rem;
+  font-weight: 800;
+  line-height: 1.1;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.draw-result-toggle summary::-webkit-details-marker{
+  display: none;
+}
+
+.draw-result-toggle[open] summary{
+  color: #fff;
+  background: linear-gradient(135deg, rgba(200,30,30,0.96), rgba(225,29,72,0.90));
+  border-color: rgba(200,30,30,0.36);
+}
+
+.draw-result-toggle__body{
+  display: grid;
+  gap: .45rem;
+  justify-items: center;
+  margin-top: .55rem;
+}
+
+.draw-result-toggle__line{
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  white-space: nowrap;
+}
+
+.draw-result-toggle__label{
+  color: var(--text-muted);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.draw-result-status{
+  color: var(--text-muted);
+  font-size: .9rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 /* ===== small-ball: pick (橘紅色) ===== */
 .small-ball--pick{
   color: #fff;
