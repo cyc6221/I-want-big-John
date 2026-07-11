@@ -11,10 +11,13 @@ ARTICLES_DIR = Path("docs/_articles/all-instants")
 
 PUBLISHED_RE = re.compile(r"^published:\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
 DATE_RE = re.compile(r"^date:\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
-MANUAL_TEST_RE = re.compile(r"^(?:<!--.*-->\n)?## 親自實測\s*\n(?:.*\n?)*\Z", re.MULTILINE)
 MANUAL_TEST_COMMENT = (
     "<!-- 以下由 scripts/run_tasks/update_all_instants_articles_from_csv.py "
     "依 raw-data/all-instants.csv 自動回填，請勿手改 -->"
+)
+MANUAL_TEST_RE = re.compile(
+    rf"^(?:{re.escape(MANUAL_TEST_COMMENT)}\n)?## 親自實測\s*\n(?:.*\n?)*\Z",
+    re.MULTILINE,
 )
 
 
