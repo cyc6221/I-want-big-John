@@ -6,6 +6,8 @@ date: 2026-06-18
 description: 總計花費 900 元，已結算中獎 1,000 元。
 ---
 
+<!-- 此檔由 scripts/run_tasks/build_638_purchases.py 自動產生，請勿手改；如需修改請改 raw-data/lotto-purchases/638-purchases.csv 後執行 python scripts/run.py -->
+
 從 2026/05/07 開始記錄，總計花費 900 元，已結算 9 筆，已結算中獎 1,000 元，已結算淨額 100 元。
 
 <table class="buy-table">

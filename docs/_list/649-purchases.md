@@ -6,6 +6,8 @@ date: 2026-07-10
 description: 總計 21 注，花費 1,050 元，已結算中獎 0 元。
 ---
 
+<!-- 此檔由 scripts/run_tasks/build_649_purchases.py 自動產生，請勿手改；如需修改請改 raw-data/lotto-purchases/649-purchases.csv 後執行 python scripts/run.py -->
+
 從 2026/03/03 開始記錄，總計 21 注，總計花費 1,050 元，已結算 21 筆，已結算中獎 0 元，已結算淨額 -1,050 元。
 
 已比對 6 期開獎結果。
