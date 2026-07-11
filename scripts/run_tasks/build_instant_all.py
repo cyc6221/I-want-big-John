@@ -71,6 +71,8 @@ def build_markdown(rows):
     lines.append(f"description: {description}")
     lines.append("---")
     lines.append("")
+    lines.append("<!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->")
+    lines.append("")
     lines.append(intro)
     lines.append("")
     lines.append("---")

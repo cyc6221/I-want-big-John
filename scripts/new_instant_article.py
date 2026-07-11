@@ -506,6 +506,8 @@ def render_article(data: dict, stats: dict) -> str:
         rf"- 期望值回收率：$\frac{{{stats['expected_value']:.4f}}}{{{price}}}\approx$"
         f" **{stats['return_rate']:.2f}%**",
         "",
+        "<!-- 以下由 scripts/run_tasks/update_all_instants_articles_from_csv.py "
+        "依 raw-data/all-instants.csv 自動回填，請勿手改 -->",
         "## 親自實測",
         "",
     ]
