@@ -9,8 +9,3 @@ docs/_site/
 docs/.sass-cache/
 docs/.jekyll-cache/
 docs/.jekyll-metadata
-
-# old data
-old-instants-all.md
-old-instants-chosen-number.md
-old-instants-per-month.md

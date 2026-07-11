@@ -52,6 +52,9 @@ Data flows one way: `raw-data/` (sources of truth) → `scripts/run.py` → gene
 
 New instants articles start from the template `scripts/templates/all-instants-article.md.example`, named by issue number (e.g. `docs/_articles/all-instants/5156.md`).
 
+- `todo` (repo root) — the live, actionable task list. Keep it short; delete items once done rather than leaving checked-off history in it.
+- `notes/{date}-{topic}.md` — dated, point-in-time project snapshots (e.g. a full architecture/status summary). Frozen when written; not updated as the code changes. `todo` links back here for historical context instead of duplicating it.
+
 ## Windows / encoding gotchas
 
 All content files are UTF-8 (mostly without BOM) containing Chinese text. In Windows PowerShell 5.1, always read with explicit UTF-8 (`Get-Content -Encoding utf8`); garbled console output means a bad read decoding, not a corrupted file — verify bytes before rewriting anything. Run generation scripts with UTF-8 console output when needed (`run.py` already sets `PYTHONIOENCODING=utf-8` for its subprocesses).
