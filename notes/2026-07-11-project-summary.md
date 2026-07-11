@@ -23,8 +23,9 @@
   頁需要的檔案都齊全。
 - `docs/`：Jekyll 網站本體。`pages/` 是 5 個主要頁面（638/649/539/instant/list），
   `_articles/`（30 篇：638 研究 2 篇、649 研究 1 篇、刮刮樂逐期文章 27 篇）、`_list/`
-  （產生的購買/選號紀錄頁，多數由 script 產生，也有少數是手動維護的靜態表格如
-  638/649-purchases）、`_includes/`（可重用元件：`lotto/stats.html` 銷售統計圖表、
+  （產生的購買/選號紀錄頁；`{539,638,649}-purchases.md` 也是由對應的
+  `build_{game}_purchases.py` 產生，禁止手改——`3stars/` 底下的紀錄才是手動維護，因為
+  沒有任何 script 產生它）、`_includes/`（可重用元件：`lotto/stats.html` 銷售統計圖表、
   `instants/*` 刮刮樂選號/月統計圖表、`small-balls.html` 球號渲染）、`assets/data/`
   （前端 fetch 的 JSON）、`assets/js/recommender_{game}.js` + `tools/recommender_*.html`
   （選號推薦工具）。
