@@ -2,6 +2,5 @@
 
 - [ ] 研究成果上網站：`research/638` 的結論（「隨機基準最強」）只存在 repo 內，638 頁的「威力彩研究」區塊目前只有兩篇文章，沒有連結到這個結論。
 - [ ] 確認 `docs/assets/data/{539,638,649}-purchases.json` 是否為死碼：這三個 JSON 由 pipeline 產生，但前端目前沒有任何頁面引用（購買紀錄頁 `_list/*-purchases.md` 是靜態表格）。確認後決定接上前端（改成 JSON-driven 頁面，統一展示方式）或從 `run.py` pipeline 移除。
-- [ ] 統一 Chart.js 載入來源：`lotto/stats.html` 用本地 vendor 檔（`assets/vendor/chart.umd.min.js`），但 `instants/*` 系列改用 jsDelivr CDN，兩套圖表系統來源不一致。
 
 （歷史紀錄與完整專案現況快照見 `notes/`，例如 `notes/2026-07-11-project-summary.md`）
