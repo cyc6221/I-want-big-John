@@ -53,10 +53,9 @@
   檢查「gap 越大，下一期越容易開」是否真的有資料支持。
 - `parameter_search_mean_reversion.py`
   對 mean-reversion 類模型測不同 `window` 與標準化設定。
-- `build_predictor_data.py`
-  建立早期單模型流程使用的中介資料 `638-predictor.json`。
-- `predict_next_draw.py`
-  早期基本模型的單獨預測腳本，現在可視為 legacy helper。
+
+`638-predictor.json` 由 `generate_model_predictions.py` 產生（早期單模型流程
+`build_predictor_data.py`/`predict_next_draw.py` 已確認無其他腳本依賴，已刪除）。
 
 ## 常用指令
 
@@ -65,13 +64,6 @@ python research/638/generate_model_predictions.py
 python research/638/backtest_compare_models.py
 python research/638/hazard_gap_diagnostic.py
 python research/638/parameter_search_mean_reversion.py
-```
-
-如果要更新早期單模型資料：
-
-```bash
-python research/638/build_predictor_data.py
-python research/638/predict_next_draw.py
 ```
 
 ## 輸出怎麼看
