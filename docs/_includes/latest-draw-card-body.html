@@ -1,0 +1,25 @@
+{% assign draw_numbers_label = include.game.numbers | join: '、' %}
+{% assign draw_label = include.game.name | append: ' 第 ' | append: include.game.issue | append: ' 期開獎號碼：' | append: draw_numbers_label %}
+{% if include.game.special_number %}
+  {% assign draw_label = draw_label | append: '，' | append: include.game.special_label | append: ' ' | append: include.game.special_number %}
+{% endif %}
+<section class="latest-draw-card latest-draw-card--{{ include.game.key }}">
+  <div class="latest-draw-card__top">
+    <div>
+      <p class="latest-draw-card__eyebrow">{{ include.game.name }}</p>
+      <h3>第 {{ include.game.issue }} 期</h3>
+    </div>
+    <span class="latest-draw-card__date">{{ include.game.date }}</span>
+  </div>
+
+  <div class="latest-draw-card__body">
+    <div class="ball-row latest-draw-card__balls" role="img" aria-label="{{ draw_label }}">
+      {% for number in include.game.numbers %}
+        <span class="ball" aria-hidden="true">{{ number }}</span>
+      {% endfor %}
+      {% if include.game.special_number %}
+        <span class="ball ball--red" aria-hidden="true">{{ include.game.special_number }}</span>
+      {% endif %}
+    </div>
+  </div>
+</section>
