@@ -68,6 +68,7 @@ description: 每張{{PRICE}}元，總計{{TOTAL_TICKETS}}張，頭獎NT${{TOP_PR
 - 平均虧損：**{{PRICE}} - {{EXPECTED_VALUE}} = {{AVERAGE_LOSS}} 元**
 - 期望值回收率：$\frac{{EXPECTED_VALUE}}{ {{PRICE}} }\approx$ **{{RETURN_RATE}}%**
 
+<!-- 以下由 scripts/run_tasks/update_all_instants_articles_from_csv.py 依 raw-data/all-instants.csv 自動回填，請勿手改 -->
 ## 親自實測
 
 - {{YYYY/MM/DD}}: {{TEST_NOTE_1}}

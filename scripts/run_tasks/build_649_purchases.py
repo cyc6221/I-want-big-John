@@ -481,6 +481,8 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
         f"description: {description}",
         "---",
         "",
+        "<!-- 此檔由 scripts/run_tasks/build_649_purchases.py 自動產生，請勿手改；如需修改請改 raw-data/lotto-purchases/649-purchases.csv 後執行 python scripts/run.py -->",
+        "",
     ]
 
     if not rows:
