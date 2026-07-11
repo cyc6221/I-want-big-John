@@ -68,12 +68,8 @@ python research/638/hazard_gap_diagnostic.py
 python research/638/parameter_search_mean_reversion.py
 ```
 
-legacy 單模型流程：
-
-```bash
-python research/638/build_predictor_data.py
-python research/638/predict_next_draw.py
-```
+（早期單模型流程 `build_predictor_data.py`/`predict_next_draw.py` 已確認無其他腳本依賴，
+已刪除；`638-predictor.json` 由 `generate_model_predictions.py` 產生。）
 
 ## Performance Notes
 
