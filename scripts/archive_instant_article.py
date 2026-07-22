@@ -57,17 +57,23 @@ def save_archived_ids(ids: list) -> None:
     write_text(ARCHIVED_LIST_JSON, json.dumps(ordered, ensure_ascii=False, indent=4) + "\n")
 
 
-def move_article(issue: str) -> bool:
+def validate_article(issue: str) -> Path | None:
+    """檢查文章是否存在且格式符合預期，不做任何寫入。"""
     src = ARTICLES_DIR / f"{issue}.md"
     if not src.exists():
         print(f"[skip] 找不到文章：{src}")
-        return False
+        return None
 
     text = read_text(src)
     if not PERMALINK_RE.search(text) or not CATEGORY_RE.search(text):
         print(f"[warn] {src} 的 permalink/category 格式不是預期的樣子，請確認後手動處理")
-        return False
+        return None
 
+    return src
+
+
+def move_article(issue: str, src: Path) -> None:
+    text = read_text(src)
     text = PERMALINK_RE.sub(r"permalink: /all-instants-archive/\1/", text, count=1)
     text = CATEGORY_RE.sub("category: all-instants-archive", text, count=1)
 
@@ -75,7 +81,6 @@ def move_article(issue: str) -> bool:
     write_text(dest, text)
     src.unlink()
     print(f"[ok] 文章搬移：{src.relative_to(ROOT)} -> {dest.relative_to(ROOT)}")
-    return True
 
 
 def remove_from_compare_yml(issue: str) -> bool:
@@ -97,11 +102,17 @@ def archive_issue(issue: str, archived_ids: list) -> None:
         print(f"[skip] 期別 {issue} 已在存檔清單中")
         return
 
-    moved = move_article(issue)
-    removed = remove_from_compare_yml(issue)
+    # 先驗證前置條件，通過才進行任何寫入，避免文章沒搬成功卻已經記錄成
+    # 存檔狀態（compare.yml 移除了、archived-instants.json 也加了 id），
+    # 導致之後 build_instant_all.py 產生指向不存在頁面的連結。
+    src = validate_article(issue)
+    if src is None:
+        print(f"[skip] 期別 {issue} 未通過前置檢查，不做任何變更")
+        return
 
-    if moved or removed:
-        archived_ids.append(issue)
+    move_article(issue, src)
+    remove_from_compare_yml(issue)
+    archived_ids.append(issue)
 
 
 def main() -> None:
