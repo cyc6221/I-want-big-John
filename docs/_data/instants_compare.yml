@@ -350,3 +350,29 @@ games:
     expected_value: "131.6471"
     expected_loss: "68.3529"
     roi: 65.82%
+  - id: 5157
+    name: 刮刮金樂透
+    launch: 2026/07/16
+    end: 2027/01/18
+    price: 200
+    jackpot: 2M
+    jackpot_count: 8
+    win_rate: 13.8762%
+    break_even_rate: 17.7200%
+    no_loss_rate: 31.5962%
+    expected_value: "133.9325"
+    expected_loss: "66.0675"
+    roi: 66.97%
+  - id: 5158
+    name: 財富密碼
+    launch: 2026/07/16
+    end: 2027/01/18
+    price: 200
+    jackpot: 2M
+    jackpot_count: 3
+    win_rate: 17.3658%
+    break_even_rate: 14.6377%
+    no_loss_rate: 32.0034%
+    expected_value: "125.9137"
+    expected_loss: "74.0863"
+    roi: 62.96%
