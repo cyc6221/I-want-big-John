@@ -2,15 +2,15 @@
 title: 大樂透購買紀錄
 permalink: /list/649-purchases/
 category: list-649
-date: 2026-07-10
-description: 總計 21 注，花費 1,050 元，已結算中獎 0 元。
+date: 2026-07-14
+description: 總計 25 注，花費 1,250 元，已結算中獎 0 元。
 ---
 
 <!-- 此檔由 scripts/run_tasks/build_649_purchases.py 自動產生，請勿手改；如需修改請改 raw-data/lotto-purchases/649-purchases.csv 後執行 python scripts/run.py -->
 
-從 2026/03/03 開始記錄，總計 21 注，總計花費 1,050 元，已結算 21 筆，已結算中獎 0 元，已結算淨額 -1,050 元。
+從 2026/03/03 開始記錄，總計 25 注，總計花費 1,250 元，已結算 25 筆，已結算中獎 0 元，已結算淨額 -1,250 元。
 
-已比對 6 期開獎結果。
+已比對 7 期開獎結果。
 
 ## 購買紀錄
 
@@ -276,6 +276,54 @@ description: 總計 21 注，花費 1,050 元，已結算中獎 0 元。
       <td style="text-align:center;">115000069</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 10:miss 23:miss 29:pick 41:miss 42:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 04:pick 15:pick 18:pick 29:pick 49:pick" label="大樂透第 115000069 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="13:pick" label="大樂透第 115000069 期特別號" %}</div></div></details></td>
+      <td style="text-align:center;">1 個主號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 4 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">22</td>
+      <td style="text-align:center;">2026/07/14</td>
+      <td style="text-align:center;">115000070</td>
+      <td style="text-align:center;">{% include small-balls.html items="07:special 14:miss 26:miss 31:miss 38:miss 45:pick" label="大樂透選號" %}</td>
+      <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
+      <td style="text-align:center;">1 個主號 + 特別號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 1 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">23</td>
+      <td style="text-align:center;">2026/07/14</td>
+      <td style="text-align:center;">115000070</td>
+      <td style="text-align:center;">{% include small-balls.html items="05:miss 19:miss 24:miss 32:miss 41:miss 48:miss" label="大樂透選號" %}</td>
+      <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
+      <td style="text-align:center;">0 個主號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 2 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">24</td>
+      <td style="text-align:center;">2026/07/14</td>
+      <td style="text-align:center;">115000070</td>
+      <td style="text-align:center;">{% include small-balls.html items="07:special 12:miss 21:miss 26:miss 39:miss 44:miss" label="大樂透選號" %}</td>
+      <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
+      <td style="text-align:center;">0 個主號 + 特別號</td>
+      <td style="text-align:center;">未中獎</td>
+      <td style="text-align:center;">50</td>
+      <td style="text-align:center;">0</td>
+      <td style="text-align:center;">第 3 注</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;">25</td>
+      <td style="text-align:center;">2026/07/14</td>
+      <td style="text-align:center;">115000070</td>
+      <td style="text-align:center;">{% include small-balls.html items="01:miss 10:pick 19:miss 24:miss 31:miss 42:miss" label="大樂透選號" %}</td>
+      <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
       <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
       <td style="text-align:center;">50</td>
