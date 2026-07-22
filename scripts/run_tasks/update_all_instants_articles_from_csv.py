@@ -7,7 +7,10 @@ from typing import DefaultDict, List, TypedDict
 
 
 CSV_PATH = Path("raw-data/all-instants.csv")
-ARTICLES_DIR = Path("docs/_articles/all-instants")
+ARTICLES_DIRS = [
+    Path("docs/_articles/all-instants"),
+    Path("docs/_articles/all-instants-archive"),
+]
 
 PUBLISHED_RE = re.compile(r"^published:\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
 DATE_RE = re.compile(r"^date:\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
@@ -129,7 +132,8 @@ def main() -> None:
     rows_by_game = load_rows_by_game()
     updated_paths: List[Path] = []
 
-    for path in sorted(ARTICLES_DIR.glob("*.md")):
+    paths = [p for d in ARTICLES_DIRS if d.exists() for p in d.glob("*.md")]
+    for path in sorted(paths):
         if update_article(path, rows_by_game):
             updated_paths.append(path)
 

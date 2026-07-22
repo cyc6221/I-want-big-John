@@ -11,6 +11,10 @@ OUT_MD   = Path("docs/_list/instants-all.md")
 GAME_NAMES_PATH = Path("raw-data/instant-games.json")
 GAME_NAME = json.loads(GAME_NAMES_PATH.read_text(encoding="utf-8"))
 
+# ====== 已下巿並存檔的期別 ======
+ARCHIVED_IDS_PATH = Path("raw-data/archived-instants.json")
+ARCHIVED_IDS = set(json.loads(ARCHIVED_IDS_PATH.read_text(encoding="utf-8"))) if ARCHIVED_IDS_PATH.exists() else set()
+
 def parse_int(x, default=0):
     s = (x or "").strip()
     if s == "":
@@ -84,7 +88,8 @@ def build_markdown(rows):
     for i, r in enumerate(rows, start=1):
         game_id = r["game"]
         name = GAME_NAME.get(game_id, f"#{game_id}")
-        href = f"{{{{ '/all-instants/{game_id}/' | relative_url }}}}"
+        path = f"all-instants-archive/{game_id}" if game_id in ARCHIVED_IDS else f"all-instants/{game_id}"
+        href = f"{{{{ '/{path}/' | relative_url }}}}"
         item_html = f'<a class="btn btn--gold" href="{href}">{name}</a>'
         lines.append(f"| {i} | {r['date']} | {item_html} | {r['price']} | {r['prize']} |")
 
