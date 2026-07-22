@@ -25,8 +25,8 @@ description: 總計花費 15900 元，中獎 9000 元。
 | 9 | 2026/03/13 | <a class="btn btn--gold" href="{{ '/all-instants/5139/' | relative_url }}">釣魚高手</a> | 200 | 200 |
 | 10 | 2026/03/15 | <a class="btn btn--gold" href="{{ '/all-instants/5150/' | relative_url }}">推金幣</a> | 100 | 0 |
 | 11 | 2026/03/15 | <a class="btn btn--gold" href="{{ '/all-instants/5132/' | relative_url }}">獎金樂翻倍</a> | 200 | 0 |
-| 12 | 2026/03/15 | <a class="btn btn--gold" href="{{ '/all-instants/5130/' | relative_url }}">財源滾滾</a> | 100 | 0 |
-| 13 | 2026/03/16 | <a class="btn btn--gold" href="{{ '/all-instants/5130/' | relative_url }}">財源滾滾</a> | 100 | 0 |
+| 12 | 2026/03/15 | <a class="btn btn--gold" href="{{ '/all-instants-archive/5130/' | relative_url }}">財源滾滾</a> | 100 | 0 |
+| 13 | 2026/03/16 | <a class="btn btn--gold" href="{{ '/all-instants-archive/5130/' | relative_url }}">財源滾滾</a> | 100 | 0 |
 | 14 | 2026/03/17 | <a class="btn btn--gold" href="{{ '/all-instants/5132/' | relative_url }}">獎金樂翻倍</a> | 200 | 0 |
 | 15 | 2026/03/19 | <a class="btn btn--gold" href="{{ '/all-instants/5141/' | relative_url }}">出棋制勝</a> | 200 | 0 |
 | 16 | 2026/03/19 | <a class="btn btn--gold" href="{{ '/all-instants/5141/' | relative_url }}">出棋制勝</a> | 200 | 0 |
@@ -47,7 +47,7 @@ description: 總計花費 15900 元，中獎 9000 元。
 | 31 | 2026/04/15 | <a class="btn btn--gold" href="{{ '/all-instants/5142/' | relative_url }}">幸運拉霸</a> | 200 | 0 |
 | 32 | 2026/04/16 | <a class="btn btn--gold" href="{{ '/all-instants/5143/' | relative_url }}">幸運777</a> | 100 | 0 |
 | 33 | 2026/04/16 | <a class="btn btn--gold" href="{{ '/all-instants/5144/' | relative_url }}">獎金獵人</a> | 200 | 0 |
-| 34 | 2026/04/17 | <a class="btn btn--gold" href="{{ '/all-instants/5123/' | relative_url }}">海底大尋寶</a> | 300 | 0 |
+| 34 | 2026/04/17 | <a class="btn btn--gold" href="{{ '/all-instants-archive/5123/' | relative_url }}">海底大尋寶</a> | 300 | 0 |
 | 35 | 2026/04/21 | <a class="btn btn--gold" href="{{ '/all-instants/5140/' | relative_url }}">幸運開獎機</a> | 200 | 0 |
 | 36 | 2026/04/25 | <a class="btn btn--gold" href="{{ '/all-instants/5144/' | relative_url }}">獎金獵人</a> | 200 | 500 |
 | 37 | 2026/04/25 | <a class="btn btn--gold" href="{{ '/all-instants/5142/' | relative_url }}">幸運拉霸</a> | 200 | 0 |
