@@ -3,36 +3,36 @@
     {
       "key": "638",
       "name": "威力彩",
-      "issue": "115000058",
-      "date": "2026/07/20",
+      "issue": "115000059",
+      "date": "2026/07/23",
       "numbers": [
-        "06",
-        "12",
+        "08",
+        "10",
         "13",
-        "23",
+        "21",
         "29",
         "31"
       ],
       "special_label": "第二區",
-      "special_number": "02",
+      "special_number": "07",
       "details_path": "/638/",
       "recommender_path": "/recommender_638/"
     },
     {
       "key": "649",
       "name": "大樂透",
-      "issue": "115000072",
-      "date": "2026/07/21",
+      "issue": "115000073",
+      "date": "2026/07/24",
       "numbers": [
-        "02",
-        "08",
+        "03",
         "15",
-        "26",
+        "27",
+        "34",
         "35",
-        "46"
+        "44"
       ],
       "special_label": "特別號",
-      "special_number": "11",
+      "special_number": "40",
       "details_path": "/649/",
       "recommender_path": "/recommender_649/"
     },
