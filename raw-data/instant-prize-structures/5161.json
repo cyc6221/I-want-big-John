@@ -1,0 +1,73 @@
+{
+  "issue": 5161,
+  "name": "金五吉",
+  "price": 200,
+  "tickets_per_book": 100,
+  "total_tickets": 6081400,
+  "dates": {
+    "launch": {
+      "iso": "2026-08-18",
+      "roc": "115年8月18日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2027-02-18",
+      "roc": "116年2月18日",
+      "weekday": "星期四"
+    },
+    "claim_deadline": {
+      "iso": "2027-05-18",
+      "roc": "116年5月18日",
+      "weekday": "星期二"
+    }
+  },
+  "announced_win_rate_percent": "32.00",
+  "prize_tiers": [
+    {
+      "prize": 2000000,
+      "count": 5
+    },
+    {
+      "prize": 100000,
+      "count": 36
+    },
+    {
+      "prize": 10000,
+      "count": 243
+    },
+    {
+      "prize": 5000,
+      "count": 979
+    },
+    {
+      "prize": 3000,
+      "count": 1955
+    },
+    {
+      "prize": 2000,
+      "count": 12178
+    },
+    {
+      "prize": 1000,
+      "count": 228574
+    },
+    {
+      "prize": 500,
+      "count": 279779
+    },
+    {
+      "prize": 300,
+      "count": 498008
+    },
+    {
+      "prize": 200,
+      "count": 924284
+    }
+  ],
+  "source": {
+    "news_id": "7970cdfd23114adcaec48edf3f514433",
+    "official_url": "https://www.taiwanlottery.com/news/news/7970cdfd23114adcaec48edf3f514433",
+    "scratch_id": "97c26524bef240648609986bb01fcda3",
+    "fetched_at": "2026-08-31T20:36:25+08:00"
+  }
+}
