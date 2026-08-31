@@ -285,3 +285,55 @@ games:
     expected_value: "125.9137"
     expected_loss: "74.0863"
     roi: 62.96%
+  - id: 5159
+    name: 大麻將
+    launch: 2026/08/04
+    end: 2027/02/11
+    price: 1000
+    jackpot: 10M
+    jackpot_count: 3
+    win_rate: 22.7634%
+    break_even_rate: 13.7760%
+    no_loss_rate: 36.5394%
+    expected_value: "740.9600"
+    expected_loss: "259.0400"
+    roi: 74.10%
+  - id: 5160
+    name: 獎金對決
+    launch: 2026/08/04
+    end: 2027/02/11
+    price: 200
+    jackpot: 2M
+    jackpot_count: 5
+    win_rate: 16.1620%
+    break_even_rate: 16.8413%
+    no_loss_rate: 33.0033%
+    expected_value: "124.0381"
+    expected_loss: "75.9619"
+    roi: 62.02%
+  - id: 5161
+    name: 金五吉
+    launch: 2026/08/18
+    end: 2027/02/18
+    price: 200
+    jackpot: 2M
+    jackpot_count: 5
+    win_rate: 16.8013%
+    break_even_rate: 15.1985%
+    no_loss_rate: 31.9999%
+    expected_value: "123.9630"
+    expected_loss: "76.0370"
+    roi: 61.98%
+  - id: 5162
+    name: 錢進888
+    launch: 2026/08/18
+    end: 2027/02/18
+    price: 100
+    jackpot: 800K
+    jackpot_count: 4
+    win_rate: 12.4895%
+    break_even_rate: 17.6099%
+    no_loss_rate: 30.0994%
+    expected_value: "60.0021"
+    expected_loss: "39.9979"
+    roi: 60.00%
