@@ -3,12 +3,12 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 16700 元，中獎 10000 元。
+description: 總計花費 17100 元，中獎 10000 元。
 ---
 
 <!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->
 
-從 2026/02/25 開始記錄，總計花費 16700 元，中獎 10000 元。
+從 2026/02/25 開始記錄，總計花費 17100 元，中獎 10000 元。
 
 ---
 
@@ -90,3 +90,5 @@ description: 總計花費 16700 元，中獎 10000 元。
 | 74 | 2026/07/23 | <a class="btn btn--gold" href="{{ '/all-instants/5158/' | relative_url }}">財富密碼</a> | 200 | 0 |
 | 75 | 2026/07/27 | <a class="btn btn--gold" href="{{ '/all-instants/5157/' | relative_url }}">刮刮金樂透</a> | 200 | 500 |
 | 76 | 2026/07/27 | <a class="btn btn--gold" href="{{ '/all-instants/5157/' | relative_url }}">刮刮金樂透</a> | 200 | 0 |
+| 77 | 2026/08/30 | <a class="btn btn--gold" href="{{ '/all-instants/5161/' | relative_url }}">金五吉</a> | 200 | 0 |
+| 78 | 2026/08/30 | <a class="btn btn--gold" href="{{ '/all-instants/5149/' | relative_url }}">點球成金</a> | 200 | 0 |
