@@ -1,30 +1,4 @@
 games:
-  - id: 5136
-    name: 鑽很大
-    launch: 2026/02/24
-    end: 2026/08/24
-    price: 500
-    jackpot: 5M
-    jackpot_count: 4
-    win_rate: 15.4161%
-    break_even_rate: 24.7200%
-    no_loss_rate: 40.1361%
-    expected_value: "342.2000"
-    expected_loss: "157.8000"
-    roi: 68.44%
-  - id: 5137
-    name: 樂刮$2,000
-    launch: 2026/02/24
-    end: 2026/08/24
-    price: 200
-    jackpot: 1M
-    jackpot_count: 5
-    win_rate: 8.8109%
-    break_even_rate: 16.2913%
-    no_loss_rate: 25.1022%
-    expected_value: "134.1096"
-    expected_loss: "65.8904"
-    roi: 67.05%
   - id: 5138
     name: 無敵30倍
     launch: 2026/03/10
