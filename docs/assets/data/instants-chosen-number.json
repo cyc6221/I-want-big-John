@@ -176,10 +176,10 @@
   },
   {
     "chosen_number": "44",
-    "times": 3,
-    "win_times": 2,
-    "spent": 600,
-    "prize_amount": 600
+    "times": 4,
+    "win_times": 3,
+    "spent": 800,
+    "prize_amount": 1100
   },
   {
     "chosen_number": "45",
