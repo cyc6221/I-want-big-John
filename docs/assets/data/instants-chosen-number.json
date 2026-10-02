@@ -63,7 +63,21 @@
     "prize_amount": 0
   },
   {
+    "chosen_number": "17",
+    "times": 1,
+    "win_times": 1,
+    "spent": 1000,
+    "prize_amount": 1000
+  },
+  {
     "chosen_number": "18",
+    "times": 1,
+    "win_times": 0,
+    "spent": 300,
+    "prize_amount": 0
+  },
+  {
+    "chosen_number": "19",
     "times": 1,
     "win_times": 0,
     "spent": 300,
@@ -78,10 +92,10 @@
   },
   {
     "chosen_number": "23",
-    "times": 1,
-    "win_times": 0,
-    "spent": 200,
-    "prize_amount": 0
+    "times": 2,
+    "win_times": 1,
+    "spent": 500,
+    "prize_amount": 1000
   },
   {
     "chosen_number": "25",
@@ -169,17 +183,17 @@
   },
   {
     "chosen_number": "43",
-    "times": 1,
-    "win_times": 0,
-    "spent": 200,
-    "prize_amount": 0
+    "times": 2,
+    "win_times": 1,
+    "spent": 500,
+    "prize_amount": 300
   },
   {
     "chosen_number": "44",
-    "times": 5,
-    "win_times": 3,
-    "spent": 1000,
-    "prize_amount": 1100
+    "times": 6,
+    "win_times": 4,
+    "spent": 1300,
+    "prize_amount": 1400
   },
   {
     "chosen_number": "45",
@@ -299,6 +313,13 @@
     "win_times": 0,
     "spent": 200,
     "prize_amount": 0
+  },
+  {
+    "chosen_number": "74",
+    "times": 1,
+    "win_times": 1,
+    "spent": 300,
+    "prize_amount": 300
   },
   {
     "chosen_number": "76",
