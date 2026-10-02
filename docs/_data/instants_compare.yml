@@ -311,3 +311,55 @@ games:
     expected_value: "60.0021"
     expected_loss: "39.9979"
     roi: 60.00%
+  - id: 5163
+    name: 無敵開獎機
+    launch: 2026/09/01
+    end: 2027/03/02
+    price: 300
+    jackpot: 3M
+    jackpot_count: 4
+    win_rate: 19.2521%
+    break_even_rate: 18.7564%
+    no_loss_rate: 38.0086%
+    expected_value: "200.9611"
+    expected_loss: "99.0389"
+    roi: 66.99%
+  - id: 5164
+    name: 好運樂加倍
+    launch: 2026/09/01
+    end: 2027/03/02
+    price: 200
+    jackpot: 2M
+    jackpot_count: 5
+    win_rate: 15.1757%
+    break_even_rate: 15.8221%
+    no_loss_rate: 30.9979%
+    expected_value: "123.9738"
+    expected_loss: "76.0262"
+    roi: 61.99%
+  - id: 5165
+    name: 獎金大作戰
+    launch: 2026/09/15
+    end: 2027/03/15
+    price: 200
+    jackpot: 2M
+    jackpot_count: 6
+    win_rate: 17.0747%
+    break_even_rate: 15.9210%
+    no_loss_rate: 32.9957%
+    expected_value: "124.0327"
+    expected_loss: "75.9673"
+    roi: 62.02%
+  - id: 5166
+    name: 金磚疊疊樂
+    launch: 2026/09/15
+    end: 2027/03/15
+    price: 200
+    jackpot: 2M
+    jackpot_count: 5
+    win_rate: 17.4200%
+    break_even_rate: 17.5792%
+    no_loss_rate: 34.9993%
+    expected_value: "131.9492"
+    expected_loss: "68.0508"
+    roi: 65.97%

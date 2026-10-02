@@ -1,0 +1,85 @@
+{
+  "issue": 5164,
+  "name": "好運樂加倍",
+  "price": 200,
+  "tickets_per_book": 100,
+  "total_tickets": 6046600,
+  "dates": {
+    "launch": {
+      "iso": "2026-09-01",
+      "roc": "115年9月1日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2027-03-02",
+      "roc": "116年3月2日",
+      "weekday": "星期二"
+    },
+    "claim_deadline": {
+      "iso": "2027-06-02",
+      "roc": "116年6月2日",
+      "weekday": "星期三"
+    }
+  },
+  "announced_win_rate_percent": "31.00",
+  "prize_tiers": [
+    {
+      "prize": 2000000,
+      "count": 5
+    },
+    {
+      "prize": 50000,
+      "count": 54
+    },
+    {
+      "prize": 10000,
+      "count": 119
+    },
+    {
+      "prize": 5000,
+      "count": 1933
+    },
+    {
+      "prize": 3000,
+      "count": 3192
+    },
+    {
+      "prize": 2500,
+      "count": 6021
+    },
+    {
+      "prize": 2000,
+      "count": 7311
+    },
+    {
+      "prize": 1500,
+      "count": 48299
+    },
+    {
+      "prize": 1000,
+      "count": 174879
+    },
+    {
+      "prize": 600,
+      "count": 123307
+    },
+    {
+      "prize": 500,
+      "count": 42069
+    },
+    {
+      "prize": 300,
+      "count": 510427
+    },
+    {
+      "prize": 200,
+      "count": 956700
+    }
+  ],
+  "source": {
+    "news_id": "131abf621d07419b8b1f48545f0ff42f",
+    "official_url": "https://www.taiwanlottery.com/news/news/131abf621d07419b8b1f48545f0ff42f",
+    "scratch_id": "5551ee394c3342cba556f25a4577f13c",
+    "fetched_at": "2026-10-02T16:02:29+08:00"
+  }
+}
