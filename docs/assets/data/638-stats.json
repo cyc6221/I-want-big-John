@@ -1,25 +1,25 @@
 {
   "summary": {
-    "total_draws": 1933,
+    "total_draws": 1942,
     "date_start": "2008-01-24",
-    "date_end": "2026-07-30",
-    "total_sales": 237934924800,
-    "total_bets": 2379349248,
-    "total_prize": 780251286751,
-    "avg_sales": 123091011,
-    "avg_bets": 1230910,
-    "avg_prize": 403647846,
-    "overall_prize_rate": 3.2793,
+    "date_end": "2026-08-31",
+    "total_sales": 238505027100,
+    "total_bets": 2385050271,
+    "total_prize": 783000020348,
+    "avg_sales": 122814123,
+    "avg_bets": 1228141,
+    "avg_prize": 403192595,
+    "overall_prize_rate": 3.2829,
     "latest_draw": {
-      "date": "2026-07-30",
-      "sales": 50776400,
-      "bets": 507764,
-      "prize": 215436222
+      "date": "2026-08-31",
+      "sales": 76124300,
+      "bets": 761243,
+      "prize": 384569487
     },
     "recent_30_avg": {
-      "sales": 109129637,
-      "bets": 1091296,
-      "prize": 425596211
+      "sales": 98592213,
+      "bets": 985922,
+      "prize": 392758043
     }
   },
   "series": {
@@ -23219,6 +23219,114 @@
         "avg_bets": 507764,
         "avg_prize": 215436222,
         "prize_rate": 4.2428
+      },
+      {
+        "label": "2026-08-03",
+        "date": "2026-08-03",
+        "draws": 1,
+        "sales": 55456500,
+        "bets": 554565,
+        "prize": 224004349,
+        "avg_sales": 55456500,
+        "avg_bets": 554565,
+        "avg_prize": 224004349,
+        "prize_rate": 4.0393
+      },
+      {
+        "label": "2026-08-06",
+        "date": "2026-08-06",
+        "draws": 1,
+        "sales": 56156600,
+        "bets": 561566,
+        "prize": 244171978,
+        "avg_sales": 56156600,
+        "avg_bets": 561566,
+        "avg_prize": 244171978,
+        "prize_rate": 4.3481
+      },
+      {
+        "label": "2026-08-10",
+        "date": "2026-08-10",
+        "draws": 1,
+        "sales": 59897500,
+        "bets": 598975,
+        "prize": 265270702,
+        "avg_sales": 59897500,
+        "avg_bets": 598975,
+        "avg_prize": 265270702,
+        "prize_rate": 4.4287
+      },
+      {
+        "label": "2026-08-13",
+        "date": "2026-08-13",
+        "draws": 1,
+        "sales": 61051500,
+        "bets": 610515,
+        "prize": 286438226,
+        "avg_sales": 61051500,
+        "avg_bets": 610515,
+        "avg_prize": 286438226,
+        "prize_rate": 4.6917
+      },
+      {
+        "label": "2026-08-17",
+        "date": "2026-08-17",
+        "draws": 1,
+        "sales": 65466300,
+        "bets": 654663,
+        "prize": 309116790,
+        "avg_sales": 65466300,
+        "avg_bets": 654663,
+        "avg_prize": 309116790,
+        "prize_rate": 4.7218
+      },
+      {
+        "label": "2026-08-20",
+        "date": "2026-08-20",
+        "draws": 1,
+        "sales": 61434300,
+        "bets": 614343,
+        "prize": 327625054,
+        "avg_sales": 61434300,
+        "avg_bets": 614343,
+        "avg_prize": 327625054,
+        "prize_rate": 5.3329
+      },
+      {
+        "label": "2026-08-24",
+        "date": "2026-08-24",
+        "draws": 1,
+        "sales": 63481700,
+        "bets": 634817,
+        "prize": 348665788,
+        "avg_sales": 63481700,
+        "avg_bets": 634817,
+        "avg_prize": 348665788,
+        "prize_rate": 5.4924
+      },
+      {
+        "label": "2026-08-27",
+        "date": "2026-08-27",
+        "draws": 1,
+        "sales": 71033600,
+        "bets": 710336,
+        "prize": 358871223,
+        "avg_sales": 71033600,
+        "avg_bets": 710336,
+        "avg_prize": 358871223,
+        "prize_rate": 5.0521
+      },
+      {
+        "label": "2026-08-31",
+        "date": "2026-08-31",
+        "draws": 1,
+        "sales": 76124300,
+        "bets": 761243,
+        "prize": 384569487,
+        "avg_sales": 76124300,
+        "avg_bets": 761243,
+        "avg_prize": 384569487,
+        "prize_rate": 5.0519
       }
     ],
     "weekly": [
@@ -34825,6 +34933,66 @@
         "avg_bets": 505742,
         "avg_prize": 206179562,
         "prize_rate": 4.0768
+      },
+      {
+        "label": "2026-08-03 週",
+        "date": "2026-08-03",
+        "draws": 2,
+        "sales": 111613100,
+        "bets": 1116131,
+        "prize": 468176327,
+        "avg_sales": 55806550,
+        "avg_bets": 558066,
+        "avg_prize": 234088164,
+        "prize_rate": 4.1946
+      },
+      {
+        "label": "2026-08-10 週",
+        "date": "2026-08-10",
+        "draws": 2,
+        "sales": 120949000,
+        "bets": 1209490,
+        "prize": 551708928,
+        "avg_sales": 60474500,
+        "avg_bets": 604745,
+        "avg_prize": 275854464,
+        "prize_rate": 4.5615
+      },
+      {
+        "label": "2026-08-17 週",
+        "date": "2026-08-17",
+        "draws": 2,
+        "sales": 126900600,
+        "bets": 1269006,
+        "prize": 636741844,
+        "avg_sales": 63450300,
+        "avg_bets": 634503,
+        "avg_prize": 318370922,
+        "prize_rate": 5.0176
+      },
+      {
+        "label": "2026-08-24 週",
+        "date": "2026-08-24",
+        "draws": 2,
+        "sales": 134515300,
+        "bets": 1345153,
+        "prize": 707537011,
+        "avg_sales": 67257650,
+        "avg_bets": 672576,
+        "avg_prize": 353768506,
+        "prize_rate": 5.2599
+      },
+      {
+        "label": "2026-08-31 週",
+        "date": "2026-08-31",
+        "draws": 1,
+        "sales": 76124300,
+        "bets": 761243,
+        "prize": 384569487,
+        "avg_sales": 76124300,
+        "avg_bets": 761243,
+        "avg_prize": 384569487,
+        "prize_rate": 5.0519
       }
     ],
     "monthly": [
@@ -37503,6 +37671,18 @@
         "avg_bets": 515006,
         "avg_prize": 149233579,
         "prize_rate": 2.8977
+      },
+      {
+        "label": "2026-08",
+        "date": "2026-08-01",
+        "draws": 9,
+        "sales": 570102300,
+        "bets": 5701023,
+        "prize": 2748733597,
+        "avg_sales": 63344700,
+        "avg_bets": 633447,
+        "avg_prize": 305414844,
+        "prize_rate": 4.8215
       }
     ],
     "yearly": [
@@ -37725,14 +37905,14 @@
       {
         "label": "2026",
         "date": "2026-01-01",
-        "draws": 61,
-        "sales": 8015275700,
-        "bets": 80152757,
-        "prize": 26066575300,
-        "avg_sales": 131397962,
-        "avg_bets": 1313980,
-        "avg_prize": 427320907,
-        "prize_rate": 3.2521
+        "draws": 70,
+        "sales": 8585378000,
+        "bets": 85853780,
+        "prize": 28815308897,
+        "avg_sales": 122648257,
+        "avg_bets": 1226483,
+        "avg_prize": 411647270,
+        "prize_rate": 3.3563
       }
     ]
   }
