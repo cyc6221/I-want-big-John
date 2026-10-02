@@ -3,12 +3,12 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 18900 元，中獎 12300 元。
+description: 總計花費 19800 元，中獎 12900 元。
 ---
 
 <!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->
 
-從 2026/02/25 開始記錄，總計花費 18900 元，中獎 12300 元。
+從 2026/02/25 開始記錄，總計花費 19800 元，中獎 12900 元。
 
 ---
 
@@ -96,3 +96,6 @@ description: 總計花費 18900 元，中獎 12300 元。
 | 80 | 2026/09/05 | <a class="btn btn--gold" href="{{ '/all-instants/5163/' | relative_url }}">無敵開獎機</a> | 300 | 1000 |
 | 81 | 2026/09/05 | <a class="btn btn--gold" href="{{ '/all-instants/5146/' | relative_url }}">麻將大賓果</a> | 300 | 300 |
 | 82 | 2026/09/05 | <a class="btn btn--gold" href="{{ '/all-instants/5159/' | relative_url }}">大麻將</a> | 1000 | 1000 |
+| 83 | 2026/09/19 | <a class="btn btn--gold" href="{{ '/all-instants/5163/' | relative_url }}">無敵開獎機</a> | 300 | 0 |
+| 84 | 2026/09/19 | <a class="btn btn--gold" href="{{ '/all-instants/5163/' | relative_url }}">無敵開獎機</a> | 300 | 300 |
+| 85 | 2026/09/19 | <a class="btn btn--gold" href="{{ '/all-instants/5163/' | relative_url }}">無敵開獎機</a> | 300 | 300 |
