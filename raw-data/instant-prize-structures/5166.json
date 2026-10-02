@@ -1,0 +1,73 @@
+{
+  "issue": 5166,
+  "name": "金磚疊疊樂",
+  "price": 200,
+  "tickets_per_book": 100,
+  "total_tickets": 6079300,
+  "dates": {
+    "launch": {
+      "iso": "2026-09-15",
+      "roc": "115年9月15日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2027-03-15",
+      "roc": "116年3月15日",
+      "weekday": "星期一"
+    },
+    "claim_deadline": {
+      "iso": "2027-06-15",
+      "roc": "116年6月15日",
+      "weekday": "星期二"
+    }
+  },
+  "announced_win_rate_percent": "35.00",
+  "prize_tiers": [
+    {
+      "prize": 2000000,
+      "count": 5
+    },
+    {
+      "prize": 100000,
+      "count": 147
+    },
+    {
+      "prize": 10000,
+      "count": 486
+    },
+    {
+      "prize": 5000,
+      "count": 2443
+    },
+    {
+      "prize": 3000,
+      "count": 4859
+    },
+    {
+      "prize": 2000,
+      "count": 12131
+    },
+    {
+      "prize": 1000,
+      "count": 231520
+    },
+    {
+      "prize": 500,
+      "count": 170293
+    },
+    {
+      "prize": 300,
+      "count": 637132
+    },
+    {
+      "prize": 200,
+      "count": 1068694
+    }
+  ],
+  "source": {
+    "news_id": "3cfba7d1e2214ca9a0161359ebfc6bfa",
+    "official_url": "https://www.taiwanlottery.com/news/news/3cfba7d1e2214ca9a0161359ebfc6bfa",
+    "scratch_id": "8e3bcdc59b2b420db230b76890a81bfe",
+    "fetched_at": "2026-10-02T16:02:32+08:00"
+  }
+}

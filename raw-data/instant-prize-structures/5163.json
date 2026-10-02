@@ -1,0 +1,73 @@
+{
+  "issue": 5163,
+  "name": "無敵開獎機",
+  "price": 300,
+  "tickets_per_book": 100,
+  "total_tickets": 6603400,
+  "dates": {
+    "launch": {
+      "iso": "2026-09-01",
+      "roc": "115年9月1日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2027-03-02",
+      "roc": "116年3月2日",
+      "weekday": "星期二"
+    },
+    "claim_deadline": {
+      "iso": "2027-06-02",
+      "roc": "116年6月2日",
+      "weekday": "星期三"
+    }
+  },
+  "announced_win_rate_percent": "38.01",
+  "prize_tiers": [
+    {
+      "prize": 3000000,
+      "count": 4
+    },
+    {
+      "prize": 100000,
+      "count": 39
+    },
+    {
+      "prize": 10000,
+      "count": 136
+    },
+    {
+      "prize": 5000,
+      "count": 1860
+    },
+    {
+      "prize": 2000,
+      "count": 9534
+    },
+    {
+      "prize": 1500,
+      "count": 56775
+    },
+    {
+      "prize": 1000,
+      "count": 348662
+    },
+    {
+      "prize": 800,
+      "count": 162875
+    },
+    {
+      "prize": 500,
+      "count": 691410
+    },
+    {
+      "prize": 300,
+      "count": 1238563
+    }
+  ],
+  "source": {
+    "news_id": "131abf621d07419b8b1f48545f0ff42f",
+    "official_url": "https://www.taiwanlottery.com/news/news/131abf621d07419b8b1f48545f0ff42f",
+    "scratch_id": "bb758d63a2b94a058a8cd00c14b902b7",
+    "fetched_at": "2026-10-02T16:02:28+08:00"
+  }
+}
