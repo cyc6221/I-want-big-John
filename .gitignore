@@ -9,6 +9,3 @@ docs/_site/
 docs/.sass-cache/
 docs/.jekyll-cache/
 docs/.jekyll-metadata
-
-# BINGO data snapshot copied from the bingo-data branch at Pages build time
-docs/assets/data/bingo/
