@@ -311,3 +311,29 @@ games:
     expected_value: "131.9492"
     expected_loss: "68.0508"
     roi: 65.97%
+  - id: 5167
+    name: 10來添金
+    launch: 2026/10/05
+    end: 2027/04/07
+    price: 500
+    jackpot: 5M
+    jackpot_count: 4
+    win_rate: 13.7103%
+    break_even_rate: 27.2920%
+    no_loss_rate: 41.0023%
+    expected_value: "339.9760"
+    expected_loss: "160.0240"
+    roi: 68.00%
+  - id: 5168
+    name: 喜從天降
+    launch: 2026/10/05
+    end: 2027/04/07
+    price: 200
+    jackpot: 2M
+    jackpot_count: 6
+    win_rate: 14.5004%
+    break_even_rate: 15.8998%
+    no_loss_rate: 30.4002%
+    expected_value: "123.9655"
+    expected_loss: "76.0345"
+    roi: 61.98%
