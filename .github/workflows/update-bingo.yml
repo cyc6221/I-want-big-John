@@ -1,0 +1,66 @@
+name: Update BINGO
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      backfill_days:
+        description: "Also fetch this many extra days of history (0 = just today and yesterday)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-bingo
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main (crawler scripts)
+        uses: actions/checkout@v5
+
+      - name: Check that the bingo-data branch exists
+        run: |
+          if ! git ls-remote --exit-code --heads origin bingo-data >/dev/null; then
+            echo "::error::Branch 'bingo-data' does not exist. Create it first (see scripts/bingo/README.md)."
+            exit 1
+          fi
+
+      - name: Checkout bingo-data
+        uses: actions/checkout@v5
+        with:
+          ref: bingo-data
+          path: bingo-data
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch new BINGO draws
+        id: update
+        env:
+          BACKFILL_DAYS: ${{ inputs.backfill_days || '0' }}
+        run: python scripts/bingo/update_bingo.py --data-dir bingo-data --backfill-days "$BACKFILL_DAYS"
+
+      - name: Commit and push to bingo-data
+        if: steps.update.outputs.changed == 'true'
+        working-directory: bingo-data
+        env:
+          DRAW_NO: ${{ steps.update.outputs.draw_no }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bingo
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "data(bingo): update draw ${DRAW_NO}"
+          git push origin HEAD:bingo-data

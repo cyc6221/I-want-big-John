@@ -23,6 +23,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      # BINGO data lives on the bingo-data branch (updated by update-bingo.yml) and
+      # is never merged into main. Copy a snapshot into the site; a missing branch
+      # must not block deploying the rest of the site.
+      - name: Checkout bingo-data
+        continue-on-error: true
+        uses: actions/checkout@v5
+        with:
+          ref: bingo-data
+          path: bingo-data
+
+      - name: Copy BINGO data into site
+        run: |
+          if [ -d bingo-data/data/bingo ]; then
+            mkdir -p docs/assets/data/bingo
+            cp bingo-data/data/bingo/latest.json bingo-data/data/bingo/history.json bingo-data/data/bingo/stats.json docs/assets/data/bingo/
+            echo "Included bingo-data@$(git -C bingo-data rev-parse --short HEAD)"
+          else
+            echo "::warning::bingo-data branch or data/bingo not found; building without BINGO data."
+          fi
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
