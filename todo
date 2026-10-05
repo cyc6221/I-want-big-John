@@ -2,5 +2,9 @@
 
 - [ ] 研究成果上網站：`research/638` 的結論（「隨機基準最強」）只存在 repo 內，638 頁的「威力彩研究」區塊目前只有兩篇文章，沒有連結到這個結論。
 - [ ] 確認 `docs/assets/data/{539,638,649}-purchases.json` 是否為死碼：這三個 JSON 由 pipeline 產生，但前端目前沒有任何頁面引用（購買紀錄頁 `_list/*-purchases.md` 是靜態表格）。確認後決定接上前端（改成 JSON-driven 頁面，統一展示方式）或從 `run.py` pipeline 移除。
+- [ ] BINGO 前端頁 `/bingo/`：用 JavaScript 直接 fetch `https://raw.githubusercontent.com/cyc6221/I-want-big-John/bingo-data/data/bingo/{latest,stats,history}.json`（不經 Pages 重建）。資料格式與限制見 `scripts/bingo/README.md`。
+- [ ] BINGO 回補歷史：目前 `bingo-data` 只有 2026-10-04 起的資料，stats 的樣本很少。決定要補多久（台彩 API 約只有近三年），再用 `gh workflow run update-bingo.yml -f backfill_days=N` 手動回補。
+- [ ] 觀察 `Update BINGO` 排程幾天：確認實際執行間隔、有無失敗（例如台彩 API 擋 runner IP）、`bingo-data` commit 數成長是否需要定期 squash；公開 repo 若 60 天沒活動，排程會被停用。
+- [ ] 升級 Node 20 的 actions：`actions/setup-python@v5`（`update-bingo.yml`、`data-validation.yml`）、`actions/configure-pages@v5`、`actions/deploy-pages@v4`（`pages.yml`）。先確認各自是否已有 node24 新大版再升；目前只是警告、不影響執行。
 
 （歷史紀錄與完整專案現況快照見 `notes/`，例如 `notes/2026-07-11-project-summary.md`）
