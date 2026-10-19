@@ -1,7 +1,11 @@
 ---
 ---
 
-@import "minima";
+/* Styles carried over from Minima (no longer a theme dependency) */
+@import "legacy/vars";
+@import "legacy/base";
+@import "legacy/layout";
+@import "legacy/syntax-highlighting";
 
 @import "tokens";
 
