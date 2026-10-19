@@ -41,6 +41,11 @@
   color: #fff;
 }
 
+/* Links inside table cells (game-name chips) stay on one line; the table scrolls instead. */
+td .btn{
+  white-space: nowrap;
+}
+
 /* Soft red chip. Name is historical: the generated instants list emits `btn--gold`. */
 .btn--gold{
   border-color: var(--accent-border);
