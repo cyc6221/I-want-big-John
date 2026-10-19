@@ -27,8 +27,7 @@
 /* Keep running text readable; tables, cards and charts still use the full width. */
 .post-content > p,
 .post-content > ul,
-.post-content > ol,
-.post-content > blockquote{
+.post-content > ol{
   max-width: 46rem;
 }
 
