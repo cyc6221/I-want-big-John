@@ -43,7 +43,9 @@
                 {%- assign current = false -%}
                 {%- assign prefix = page.url | slice: 0, item.url.size -%}
                 {%- if prefix == item.url -%}{%- assign current = true -%}{%- endif -%}
-                {%- if item.exclude and page.url contains item.exclude -%}{%- assign current = false -%}{%- endif -%}
+                {%- for fragment in item.exclude -%}
+                  {%- if page.url contains fragment -%}{%- assign current = false -%}{%- endif -%}
+                {%- endfor -%}
                 {%- for child in item.children -%}
                   {%- if page.url == child.url -%}{%- assign current = true -%}{%- endif -%}
                 {%- endfor -%}
