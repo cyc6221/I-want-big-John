@@ -1,16 +1,11 @@
 ---
 ---
 
-/* Styles carried over from Minima (no longer a theme dependency) */
-@import "legacy/vars";
-@import "legacy/base";
-@import "legacy/layout";
-@import "legacy/syntax-highlighting";
-
 @import "tokens";
 
 /* Base */
 @import "base/base";
+@import "base/tables";
 
 /* Layout */
 @import "layout/wrapper";
@@ -18,8 +13,8 @@
 @import "layout/footer";
 
 /* Components */
-@import "components/hero";
 @import "components/cards";
 @import "components/buttons";
 @import "components/balls";
 @import "components/home";
+@import "components/stats";

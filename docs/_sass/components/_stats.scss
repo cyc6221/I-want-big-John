@@ -1,0 +1,154 @@
+/* _sass/components/_stats.scss
+   Sales statistics panel (_includes/lotto/stats.html): summary cards, a Chart.js
+   time series, period/metric pills and a date-range window. */
+
+.lotto-stats{
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.lotto-stats-grid{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.lotto-stats-card,
+.lotto-stats-panel{
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.lotto-stats-card strong{
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.lotto-stats-label{
+  display: block;
+  margin-bottom: .35rem;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+.lotto-stats-head{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .9rem;
+}
+
+.lotto-stats-head h2,
+.lotto-stats-head h3,
+.lotto-stats-head h4{
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.lotto-stats-controls{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.lotto-stats-pill{
+  padding: .4rem .8rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lotto-stats-pill:hover:not(:disabled):not(.is-active){
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.lotto-stats-pill.is-active{
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.lotto-stats-pill:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.lotto-stats-chart-box{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.lotto-stats-caption{
+  margin: .75rem 0 0;
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+.lotto-stats-window{
+  display: grid;
+  gap: .45rem;
+  margin-top: .9rem;
+}
+
+.lotto-stats-window-head{
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: center;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+.lotto-stats-window input[type="range"]{
+  width: 100%;
+  accent-color: var(--ink);
+}
+
+.lotto-stats-window-toolbar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lotto-stats-window-controls,
+.lotto-stats-window-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.lotto-stats-date-range{
+  display: grid;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+
+.lotto-stats-date-fields{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 640px){
+  .lotto-stats-chart-box{
+    height: 320px;
+  }
+}

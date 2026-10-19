@@ -1,12 +1,5 @@
 {% assign latest_game = site.data.latest_draws.games | where: "key", include.key | first %}
 {% if latest_game %}
-<div class="card card--couplet">
-  <div class="home-section-head">
-    <div>
-      <h2>最新一期開獎結果</h2>
-    </div>
-  </div>
-
-  {% include latest-draw-card-body.html game=latest_game %}
-</div>
+<h2>最新一期開獎結果</h2>
+{% include latest-draw-card-body.html game=latest_game %}
 {% endif %}

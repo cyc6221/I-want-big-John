@@ -1,57 +1,21 @@
 /* _sass/components/_cards.scss */
 
-/* ===== Card components ===== */
 .card{
-  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  margin: 1rem 0;
+  padding: 1.25rem;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.1rem 1.2rem;
-  margin: 1rem 0;
 }
 
-/* hover 微浮，讓卡片更有質感 */
-.card:hover{
-  transform: translateY(-1px);
-  transition: transform .12s ease;
-}
+.card > :first-child{ margin-top: 0; }
+.card > :last-child{ margin-bottom: 0; }
 
-/* 春聯邊框感 */
-.card--couplet{
-  position: relative;
-  overflow: hidden;
-  padding-left: calc(1.2rem + 14px);
-  padding-right: calc(1.2rem + 14px);
-}
-
-.card--couplet::before,
-.card--couplet::after{
-  content: "";
-  position: absolute;
-  top: 12px;
-  bottom: 12px;
-  width: 10px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(200,30,30,.95), rgba(245,158,11,.55));
-  opacity: .85;
-  pointer-events: none;
-}
-
-.card--couplet::before{ left: 12px; }
-.card--couplet::after{ right: 12px; }
-
-/* 小螢幕邊條縮窄，避免擠壓內容 */
-@media screen and (max-width: 600px){
-  .card--couplet{
-    padding-left: calc(1.0rem + 12px);
-    padding-right: calc(1.0rem + 12px);
-  }
-  .card--couplet::before,
-  .card--couplet::after{
-    width: 8px;
-    top: 10px;
-    bottom: 10px;
-  }
-  .card--couplet::before{ left: 10px; }
-  .card--couplet::after{ right: 10px; }
+/* A table inside a card is already framed by the card. */
+.card .table-wrap{
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
 }

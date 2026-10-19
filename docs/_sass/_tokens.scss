@@ -1,35 +1,47 @@
-/* _sass/_tokens.scss */
+/* _sass/_tokens.scss
+   Design tokens. Neutral slate surfaces; red is reserved for emphasis
+   (links, primary actions, the special ball) and gold only appears on balls. */
 
-/* ===== Light (default) ===== */
 :root{
-  --brand-red: #c81e1e;
-  --brand-red-2: #e11d48;
-  --brand-gold: #f6c453;
-  --brand-gold-2: #f59e0b;
+  /* Accent */
+  --accent: #b91c1c;
+  --accent-strong: #991b1b;
+  --accent-soft: #fdeded;
+  --accent-border: #f1c4c4;
 
-  --bg: #fff7f3;
-  --bg-2: #fff1ea;
+  /* Balls */
+  --gold: #f5c04d;
+  --gold-soft: #fdf1cf;
+  --gold-border: #e6c569;
+  --gold-ink: #4a3503;
+
+  /* Neutrals */
+  --ink: #132238;            /* active pills / segmented controls */
+  --bg: #f6f7f9;
   --surface: #ffffff;
-  --surface-2: #fff5ef;
+  --surface-2: #f3f5f8;      /* table head, chips */
+  --surface-hover: #f8f9fb;
 
-  --text: #1f2937;
-  --text-muted: #6b7280;
+  --text: #1b2330;
+  --text-muted: #5b6678;
 
-  --border: rgba(200, 30, 30, 0.18);
-  --shadow: 0 14px 40px rgba(31, 41, 55, 0.08);
+  --border: #e3e7ee;
+  --border-strong: #cfd5df;
 
-  --radius: 18px;
-  --radius-sm: 12px;
-  --maxw: 980px;
+  /* Elevation, shape, layout */
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 1px 3px rgba(16, 24, 40, 0.04);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --maxw: 1040px;
+  --gutter: 24px;
 
-  --ring: 0 0 0 4px rgba(246, 196, 83, 0.25);
+  --ring: 0 0 0 3px rgba(185, 28, 28, 0.18);
 
-  --grad-hero: linear-gradient(135deg,
-      rgba(200, 30, 30, 0.95) 0%,
-      rgba(225, 29, 72, 0.92) 45%,
-      rgba(245, 158, 11, 0.35) 100%);
+  /* Type */
+  --font-sans: system-ui, -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
 
-  --grad-gold: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-2) 100%);
-
-  --code-bg: rgba(245, 158, 11, 0.10);
+@media screen and (max-width: 600px){
+  :root{ --gutter: 16px; }
 }

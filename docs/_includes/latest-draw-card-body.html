@@ -22,4 +22,11 @@
       {% endif %}
     </div>
   </div>
+
+  {% if include.actions %}
+  <div class="latest-draw-card__actions">
+    <a class="btn btn--primary" href="{{ '/recommender_' | append: include.game.key | append: '/' | relative_url }}">抽一組</a>
+    <a class="btn" href="{{ '/' | append: include.game.key | append: '/' | relative_url }}">研究方法</a>
+  </div>
+  {% endif %}
 </section>
