@@ -24,8 +24,8 @@
       <div class="wrapper">
         <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title }}</a>
 
-        {%- if site.header_pages and site.header_pages.size > 0 -%}
-          <nav class="site-nav">
+        {%- if site.data.nav and site.data.nav.size > 0 -%}
+          <nav class="site-nav" aria-label="Primary">
             <input
               type="checkbox"
               id="nav-trigger"
@@ -39,12 +39,27 @@
               <span class="menu-icon__bar" aria-hidden="true"></span>
             </label>
             <div class="trigger" id="site-menu">
-              {%- for path in site.header_pages -%}
-                {%- assign my_page = site.pages | where: "path", path | first -%}
-                {%- if my_page and my_page.title -%}
-                  {%- assign link_url = my_page.url -%}
-                  {%- assign current = page.url | slice: 0, link_url.size -%}
-                  <a class="page-link" href="{{ link_url | relative_url }}"{% if current == link_url %} aria-current="page"{% endif %}>{{ my_page.title }}</a>
+              {%- for item in site.data.nav -%}
+                {%- assign current = false -%}
+                {%- assign prefix = page.url | slice: 0, item.url.size -%}
+                {%- if prefix == item.url -%}{%- assign current = true -%}{%- endif -%}
+                {%- if item.exclude and page.url contains item.exclude -%}{%- assign current = false -%}{%- endif -%}
+                {%- for child in item.children -%}
+                  {%- if page.url == child.url -%}{%- assign current = true -%}{%- endif -%}
+                {%- endfor -%}
+                {%- if item.children -%}
+                  <div class="nav-item nav-item--dropdown">
+                    <a class="page-link page-link--parent" href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+                    <div class="nav-dropdown">
+                      <div class="nav-dropdown__panel">
+                        {%- for child in item.children -%}
+                          <a class="nav-dropdown__link" href="{{ child.url | relative_url }}"{% if page.url == child.url %} aria-current="page"{% endif %}>{{ child.title }}</a>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </div>
+                {%- else -%}
+                  <a class="page-link" href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a>
                 {%- endif -%}
               {%- endfor -%}
             </div>
