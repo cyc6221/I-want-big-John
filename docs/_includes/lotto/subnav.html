@@ -1,0 +1,8 @@
+{%- assign nav_game = site.data.nav | where: "key", include.key | first -%}
+{%- if nav_game -%}
+<nav class="subnav" aria-label="{{ nav_game.title }}">
+  {%- for child in nav_game.children -%}
+    <a class="subnav__link" href="{{ child.url | relative_url }}"{% if page.url == child.url %} aria-current="page"{% endif %}>{{ child.title }}</a>
+  {%- endfor -%}
+</nav>
+{%- endif -%}
