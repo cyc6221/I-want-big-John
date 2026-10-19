@@ -1,0 +1,60 @@
+/* _sass/base/_tables.scss
+   Tables are the main content of this site. Bare <table>s (Markdown output,
+   generated lists) are wrapped in .table-wrap by a small script in
+   _layouts/default.html so wide tables scroll sideways instead of the page. */
+
+.table-wrap{
+  margin: 0 0 1.25rem;
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .94rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* A table that has not been wrapped yet (e.g. before the script runs) */
+:not(.table-wrap) > table{
+  margin-bottom: 1.25rem;
+}
+
+th,
+td{
+  padding: .6rem .85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+th{
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: .85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border-bottom-color: var(--border-strong);
+}
+
+tbody tr:last-child td{
+  border-bottom: 0;
+}
+
+tbody tr:hover td{
+  background: var(--surface-hover);
+}
+
+/* Opt-in zebra striping (used by the instants tables) */
+.table--striped tbody tr:nth-child(even) td{
+  background: var(--surface-hover);
+}
+
+.table--striped tbody tr:hover td{
+  background: var(--surface-2);
+}

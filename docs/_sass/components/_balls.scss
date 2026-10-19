@@ -1,63 +1,74 @@
-/* _sass/components/_balls.scss */
+/* _sass/components/_balls.scss
+   Balls are flat discs: gold-tinted for normal numbers, red for the special number.
+   The picker (recommender) renders them as <button>s, results as <span>s. */
 
 /* ===== Lotto balls ===== */
 .ball-row{
   display: flex;
   flex-wrap: wrap;
-  gap: .55rem;
+  gap: .5rem;
   margin: .8rem 0;
 }
 
 .ball{
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  letter-spacing: .3px;
-  color: #111827;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0.0) 35%),
-    radial-gradient(circle at 70% 72%, rgba(0,0,0,0.10), transparent 42%),
-    linear-gradient(135deg, rgba(246,196,83,0.95), rgba(245,158,11,0.85));
-  border: 1px solid rgba(245,158,11,0.55);
-  box-shadow: 0 10px 25px rgba(31,41,55,0.12);
-  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1.5px solid var(--gold-border);
+  background: var(--gold-soft);
+  color: var(--gold-ink);
+  font: inherit;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
   user-select: none;
-  transition: transform .08s ease, filter .15s ease, opacity .15s ease;
+  transition: background .12s ease, border-color .12s ease, transform .08s ease;
 }
 
-.ball:hover{ transform: translateY(-1px); filter: brightness(1.02); }
-.ball:active{ transform: translateY(0px) scale(.98); }
+button.ball{
+  cursor: pointer;
+}
 
+button.ball:hover{
+  background: #fbe7ae;
+}
+
+button.ball:active{
+  transform: scale(.96);
+}
+
+/* Special number / excluded number */
 .ball--red{
+  border-color: var(--accent);
+  background: var(--accent);
   color: #fff;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.65), rgba(255,255,255,0.0) 35%),
-    radial-gradient(circle at 70% 72%, rgba(0,0,0,0.12), transparent 42%),
-    linear-gradient(135deg, rgba(200,30,30,0.98), rgba(225,29,72,0.90));
-  border: 1px solid rgba(255,255,255,0.20);
 }
 
+button.ball--red:hover{
+  background: var(--accent-strong);
+}
+
+/* Picked number */
 .ball--pick{
+  border-color: #1d4ed8;
+  background: #2563eb;
   color: #fff;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.70), rgba(255,255,255,0.0) 36%),
-    radial-gradient(circle at 70% 72%, rgba(0,0,0,0.18), transparent 44%),
-    linear-gradient(135deg, rgba(37,99,235,0.98), rgba(59,130,246,0.90));
-  border: 1px solid rgba(37,99,235,0.55);
-  box-shadow: 0 10px 25px rgba(37,99,235,0.18);
+}
+
+button.ball--pick:hover{
+  background: #1d4ed8;
 }
 
 .ball[aria-pressed="true"]{
-  outline: 3px solid rgba(99,102,241,.18);
+  outline: 3px solid rgba(37, 99, 235, .22);
   outline-offset: 2px;
 }
 
-// ========== 
-
+/* ===== Recommender controls ===== */
 .run-grid{
   display: grid;
   gap: .55rem;
@@ -72,68 +83,64 @@
 }
 
 .run-label{
-  font-weight: 800;
-  letter-spacing: .2px;
+  font-weight: 700;
 }
 
 .seg{
   display: inline-flex;
-  background: rgba(255,255,255,0.65);
-  border: 1px solid rgba(17,24,39,0.12);
-  border-radius: 999px;
-  padding: 4px;
-  gap: 4px;
   width: fit-content;
+  padding: 3px;
+  gap: 3px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
 }
 
 .seg-btn{
+  padding: .4rem .8rem;
   border: 0;
+  border-radius: 6px;
   background: transparent;
-  padding: .45rem .8rem;
-  border-radius: 999px;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 700;
-  color: rgba(17,24,39,0.78);
 }
 
-.seg-btn:hover{ filter: brightness(1.02); }
+.seg-btn:hover{
+  color: var(--text);
+}
 
 .seg-btn.is-active{
-  background: rgba(17,24,39,0.92);
+  background: var(--ink);
   color: #fff;
-  box-shadow: 0 10px 25px rgba(31,41,55,0.10);
 }
 
-/* 小螢幕時 label 置頂 */
 @media (max-width: 520px){
   .run-row{ grid-template-columns: 1fr; }
 }
 
-// ==========
-
 .wish{
-  padding: .35rem .7rem;
+  padding: .3rem .7rem;
   border-radius: 999px;
-  background: rgba(17,24,39,0.06);
-  border: 1px solid rgba(17,24,39,0.10);
-  font-weight: 900;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-weight: 700;
 }
 
-/* ===== Small ball base (縮小版球) ===== */
+/* ===== Small balls (purchase tables) ===== */
 .small-ball{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 999px;
-
-  font-weight: 800;
+  border: 1px solid transparent;
   font-size: .88rem;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: .02em;
-
   color: #fff;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -141,13 +148,39 @@
 
 .small-balls{
   display: inline-flex;
-  gap: .35rem;
+  gap: .3rem;
   flex-wrap: nowrap;
   white-space: nowrap;
   align-items: center;
   vertical-align: middle;
 }
 
+/* picked number */
+.small-ball--pick{
+  background: #ea580c;
+  border-color: #c2410c;
+}
+
+/* hit the special number */
+.small-ball--special{
+  background: #4f46e5;
+  border-color: #4338ca;
+}
+
+/* missed */
+.small-ball--miss{
+  background: #64748b;
+  border-color: #475569;
+}
+
+/* draw not out yet / not compared */
+.small-ball--pending{
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+/* ===== Collapsible draw result (purchase tables) ===== */
 .draw-result-toggle{
   display: inline-block;
   min-width: 6.5rem;
@@ -158,13 +191,13 @@
   align-items: center;
   justify-content: center;
   min-height: 2rem;
-  padding: .35rem .7rem;
-  border-radius: 999px;
-  border: 1px solid rgba(200,30,30,0.24);
-  background: linear-gradient(135deg, rgba(200,30,30,0.10), rgba(245,158,11,0.08));
-  color: var(--text);
+  padding: .3rem .7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
   font-size: .88rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
   cursor: pointer;
   list-style: none;
@@ -176,9 +209,9 @@
 }
 
 .draw-result-toggle[open] summary{
+  border-color: var(--accent);
+  background: var(--accent);
   color: #fff;
-  background: linear-gradient(135deg, rgba(200,30,30,0.96), rgba(225,29,72,0.90));
-  border-color: rgba(200,30,30,0.36);
 }
 
 .draw-result-toggle__body{
@@ -198,55 +231,12 @@
 .draw-result-toggle__label{
   color: var(--text-muted);
   font-size: .82rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .draw-result-status{
   color: var(--text-muted);
   font-size: .9rem;
-  font-weight: 800;
+  font-weight: 700;
   white-space: nowrap;
-}
-
-/* ===== small-ball: pick (橘紅色) ===== */
-.small-ball--pick{
-  color: #fff;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.70), rgba(255,255,255,0.0) 36%),
-    radial-gradient(circle at 70% 72%, rgba(0,0,0,0.18), transparent 44%),
-    linear-gradient(135deg, rgba(249,115,22,0.98), rgba(239,68,68,0.92));
-  border: 1px solid rgba(249,115,22,0.55);
-  box-shadow: 0 10px 25px rgba(249,115,22,0.18);
-}
-
-/* ===== small-ball: special (特別號命中) ===== */
-.small-ball--special{
-  color: #fff;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.70), rgba(255,255,255,0.0) 36%),
-    radial-gradient(circle at 70% 72%, rgba(0,0,0,0.18), transparent 44%),
-    linear-gradient(135deg, rgba(79,70,229,0.98), rgba(14,165,233,0.92));
-  border: 1px solid rgba(79,70,229,0.55);
-  box-shadow: 0 10px 25px rgba(14,165,233,0.18);
-}
-
-/* ===== small-ball: miss (灰色) ===== */
-.small-ball--miss{
-  color: rgba(255,255,255,0.92);
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.55), rgba(255,255,255,0.0) 36%),
-    radial-gradient(circle at 70% 72%, rgba(0,0,0,0.20), transparent 44%),
-    linear-gradient(135deg, rgba(148,163,184,0.95), rgba(71,85,105,0.92));
-  border: 1px solid rgba(100,116,139,0.55);
-  box-shadow: 0 10px 25px rgba(2,6,23,0.18);
-}
-
-/* ===== small-ball: pending (未開獎 / 未比對) ===== */
-.small-ball--pending{
-  color: #475569;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.86), rgba(255,255,255,0.0) 36%),
-    linear-gradient(135deg, rgba(241,245,249,0.98), rgba(203,213,225,0.92));
-  border: 1px solid rgba(148,163,184,0.75);
-  box-shadow: 0 10px 25px rgba(15,23,42,0.10);
 }

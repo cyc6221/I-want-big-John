@@ -5,8 +5,7 @@ permalink: /all-articles/
 toc: false
 ---
 
-<div class="card card--couplet">
-  <div class="post-list">
+<div class="post-list">
     {% assign items = site.articles | sort: "date" | reverse %}
     {% for post in items%}
       <article class="post-item">
@@ -27,5 +26,4 @@ toc: false
         {% endif %}
       </article>
     {% endfor %}
-  </div>
 </div>

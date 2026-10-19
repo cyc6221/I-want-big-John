@@ -42,7 +42,9 @@
               {%- for path in site.header_pages -%}
                 {%- assign my_page = site.pages | where: "path", path | first -%}
                 {%- if my_page and my_page.title -%}
-                  <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title }}</a>
+                  {%- assign link_url = my_page.url -%}
+                  {%- assign current = page.url | slice: 0, link_url.size -%}
+                  <a class="page-link" href="{{ link_url | relative_url }}"{% if current == link_url %} aria-current="page"{% endif %}>{{ my_page.title }}</a>
                 {%- endif -%}
               {%- endfor -%}
             </div>
@@ -90,6 +92,17 @@
     </footer>
 
     <!-- MathJax: 你可以全站開啟，或只在 page.math = true 時載入 -->
+    <!-- Wrap bare tables so wide ones scroll sideways instead of the whole page -->
+    <script>
+      document.querySelectorAll(".page-content table").forEach(function (table) {
+        if (table.closest(".table-wrap")) return;
+        var wrap = document.createElement("div");
+        wrap.className = "table-wrap";
+        table.parentNode.insertBefore(wrap, table);
+        wrap.appendChild(table);
+      });
+    </script>
+
     {% if page.math != false %}
       {% include mathjax.html %}
     {% endif %}

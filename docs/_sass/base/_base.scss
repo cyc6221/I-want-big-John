@@ -1,78 +1,176 @@
 /* _sass/base/_base.scss */
 
-/* ===== Global ===== */
+/* ===== Reset ===== */
 *,
 *::before,
 *::after{
   box-sizing: border-box;
 }
 
-html, body { height: 100%; }
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure{
+  margin: 0;
+  padding: 0;
+}
 
+html{
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ===== Page ===== */
 body{
-  background:
-    radial-gradient(900px 500px at 12% -10%, rgba(200,30,30,0.12), transparent 55%),
-    radial-gradient(900px 500px at 88% 0%, rgba(245,158,11,0.12), transparent 60%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--text);
-  line-height: 1.75;
+  background: var(--bg);
+  font-kerning: normal;
+  font-variant-numeric: tabular-nums;
   text-rendering: optimizeLegibility;
 }
 
-a{
-  color: var(--brand-red);
-  text-decoration-thickness: .08em;
-  text-underline-offset: .18em;
-}
-a:hover{ opacity: .92; }
-
-/* ===== Typography polish ===== */
-h1,h2,h3{
-  line-height: 1.18;
-  letter-spacing: -.02em;
-}
-h1{
-  font-size: clamp(2.0rem, 2.7vw, 2.7rem);
-  margin-top: 1.2rem;
-}
-
-h2{
-  font-size: clamp(1.35rem, 1.9vw, 1.85rem);
-  margin-top: 2.0rem;
-  position: relative;
-}
-h2::after{
-  content: "";
+main{
   display: block;
-  height: 4px;
-  width: 64px;
-  margin-top: .45rem;
-  border-radius: 999px;
-  background: var(--grad-gold);
-  opacity: .9;
 }
 
-p{
-  color: var(--text-muted); /* fallback */
-  color: color-mix(in srgb, var(--text) 90%, var(--text-muted));
+img{
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6{
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+h1{ font-size: clamp(1.6rem, 2.4vw, 2rem); }
+h2{ font-size: 1.3rem; margin: 2rem 0 .75rem; }
+h3{ font-size: 1.1rem; margin: 1.5rem 0 .5rem; }
+h4{ font-size: 1rem; margin: 1.25rem 0 .5rem; }
+
+p, ul, ol, dl, blockquote, pre, figure{
+  margin-bottom: 1rem;
+}
+
+ul, ol{
+  padding-left: 1.4rem;
+}
+
+li > ul,
+li > ol{
+  margin-bottom: 0;
+}
+
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+figcaption{
+  font-size: .875rem;
+  color: var(--text-muted);
+}
+
+/* ===== Links ===== */
+a{
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .2em;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+a:hover{
+  color: var(--accent-strong);
+  text-decoration-color: currentColor;
+}
+
+:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ===== Blockquote / callouts ===== */
 blockquote{
-  border-left: 4px solid rgba(245,158,11,0.65);
-  background: rgba(245,158,11,0.08);
-  border-radius: var(--radius-sm);
-  padding: .4rem 1rem;
+  border-left: 3px solid var(--border-strong);
+  background: var(--surface-2);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: .6rem 1rem;
+  color: var(--text-muted);
 }
 
-/* ===== Code blocks ===== */
-pre{
-  border-radius: 14px;
-  border: 1px solid rgba(245,158,11,0.28);
-  padding: 1rem;
-  overflow: auto;
-  background: var(--code-bg);
+blockquote > :last-child{
+  margin-bottom: 0;
 }
+
+/* ===== Code ===== */
+pre,
 code{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+  font-family: var(--font-mono);
+  font-size: .9em;
+}
+
+code{
+  padding: .1em .35em;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+pre{
+  padding: .85rem 1rem;
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+pre > code{
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+/* ===== Form controls ===== */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea{
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: .45rem .65rem;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus{
+  outline: 0;
+  border-color: var(--accent);
+  box-shadow: var(--ring);
+}
+
+/* ===== Utilities ===== */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

@@ -5,18 +5,33 @@
   max-width: var(--maxw);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
-.page-content .wrapper,
-.post-content .wrapper{
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+.page-content{
+  flex: 1;
+  padding: 2rem 0 3rem;
 }
 
-.page-heading,
-.post-title,
-h1{
-  margin-left: 0 !important;
+/* ===== Page header / prose ===== */
+.post-header{
+  margin-bottom: 1.25rem;
+}
+
+.post-header .post-title,
+.page-heading{
+  margin: 0;
+}
+
+/* Keep running text readable; tables, cards and charts still use the full width. */
+.post-content > p,
+.post-content > ul,
+.post-content > ol,
+.post-content > blockquote{
+  max-width: 46rem;
+}
+
+.post-content > :first-child{
+  margin-top: 0;
 }
