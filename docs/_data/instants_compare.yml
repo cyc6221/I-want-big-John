@@ -1,30 +1,4 @@
 games:
-  - id: 5142
-    name: 幸運拉霸
-    launch: 2026/04/07
-    end: 2026/10/07
-    price: 200
-    jackpot: 2M
-    jackpot_count: 4
-    win_rate: 18.1570%
-    break_even_rate: 14.8365%
-    no_loss_rate: 32.9935%
-    expected_value: "125.9248"
-    expected_loss: "74.0752"
-    roi: 62.96%
-  - id: 5143
-    name: 幸運777
-    launch: 2026/04/07
-    end: 2026/10/07
-    price: 100
-    jackpot: 700K
-    jackpot_count: 4
-    win_rate: 12.6212%
-    break_even_rate: 17.4846%
-    no_loss_rate: 30.1059%
-    expected_value: "62.9810"
-    expected_loss: "37.0190"
-    roi: 62.98%
   - id: 5144
     name: 獎金獵人
     launch: 2026/04/07
