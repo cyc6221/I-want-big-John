@@ -1,0 +1,40 @@
+# Header navigation. Items with `children` render as a hover dropdown.
+# `key` marks a game (draw game or instants): its children double as the sub-page tab strip
+# (see _includes/lotto/subnav.html). `exclude` lists URL fragments that stop
+# an item from being highlighted when the URL contains one of them.
+- title: 威力彩
+  key: "638"
+  url: /638/
+  children:
+    - { title: 總覽, url: /638/ }
+    - { title: 抽一組, url: /638/pick/ }
+    - { title: 統計資訊, url: /638/stats/ }
+    - { title: 購買紀錄, url: /list/638-purchases/ }
+- title: 大樂透
+  key: "649"
+  url: /649/
+  children:
+    - { title: 總覽, url: /649/ }
+    - { title: 抽一組, url: /649/pick/ }
+    - { title: 統計資訊, url: /649/stats/ }
+    - { title: 購買紀錄, url: /list/649-purchases/ }
+- title: 今彩539
+  key: "539"
+  url: /539/
+  children:
+    - { title: 總覽, url: /539/ }
+    - { title: 抽一組, url: /539/pick/ }
+    - { title: 統計資訊, url: /539/stats/ }
+    - { title: 購買紀錄, url: /list/539-purchases/ }
+- title: 刮刮樂
+  key: instant
+  url: /instant/
+  children:
+    - { title: 總覽, url: /instant/ }
+    - { title: 全部比較, url: /list/instant-compare/ }
+    - { title: 全紀錄, url: /list/instant-all/ }
+    - { title: 選號紀錄, url: /list/instant-chosen-number/ }
+    - { title: 每月統計, url: /list/instant-per-month/ }
+- title: 紀錄
+  url: /list/
+  exclude: ["-purchases", "/instant-"]

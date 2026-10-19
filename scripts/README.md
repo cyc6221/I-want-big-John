@@ -227,8 +227,8 @@ This script runs the currently wired instant-related build scripts in sequence.
 python scripts/validate_lotto_stats.py
 ```
 
-這支腳本會檢查樂透統計頁需要的關鍵檔案是否齊全，包括 `docs/assets/vendor/chart.umd.min.js`、`docs/assets/data/{539,638,649}-stats.json`，以及 `docs/pages/{539,638,649}.md` 內是否包含正確的 stats include。  
-This script validates the required lotto stats assets and page wiring, including `docs/assets/vendor/chart.umd.min.js`, `docs/assets/data/{539,638,649}-stats.json`, and the expected stats include inside `docs/pages/{539,638,649}.md`.
+這支腳本會檢查樂透統計頁需要的關鍵檔案是否齊全，包括 `docs/assets/vendor/chart.umd.min.js`、`docs/assets/data/{539,638,649}-stats.json`，以及 `docs/pages/{539,638,649}-stats.md` 內是否包含正確的 stats include。  
+This script validates the required lotto stats assets and page wiring, including `docs/assets/vendor/chart.umd.min.js`, `docs/assets/data/{539,638,649}-stats.json`, and the expected stats include inside `docs/pages/{539,638,649}-stats.md`.
 
 它不會重建資料，只會驗證檔案存在與 JSON / include 結構是否合理。  
 It does not rebuild data; it only validates file presence and the expected JSON / include structure.

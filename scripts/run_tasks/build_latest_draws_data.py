@@ -34,7 +34,7 @@ GAMES = (
         display_name="威力彩",
         special_label="第二區",
         details_path="/638/",
-        recommender_path="/recommender_638/",
+        recommender_path="/638/pick/",
     ),
     GameConfig(
         key="649",
@@ -42,7 +42,7 @@ GAMES = (
         display_name="大樂透",
         special_label="特別號",
         details_path="/649/",
-        recommender_path="/recommender_649/",
+        recommender_path="/649/pick/",
     ),
     GameConfig(
         key="539",
@@ -50,7 +50,7 @@ GAMES = (
         display_name="今彩539",
         special_label=None,
         details_path="/539/",
-        recommender_path="/recommender_539/",
+        recommender_path="/539/pick/",
     ),
 )
 

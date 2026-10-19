@@ -16,7 +16,7 @@
       "special_label": "第二區",
       "special_number": "06",
       "details_path": "/638/",
-      "recommender_path": "/recommender_638/"
+      "recommender_path": "/638/pick/"
     },
     {
       "key": "649",
@@ -34,7 +34,7 @@
       "special_label": "特別號",
       "special_number": "30",
       "details_path": "/649/",
-      "recommender_path": "/recommender_649/"
+      "recommender_path": "/649/pick/"
     },
     {
       "key": "539",
@@ -51,7 +51,7 @@
       "special_label": null,
       "special_number": null,
       "details_path": "/539/",
-      "recommender_path": "/recommender_539/"
+      "recommender_path": "/539/pick/"
     }
   ]
 }

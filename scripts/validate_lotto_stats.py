@@ -37,7 +37,7 @@ def validate_json(game: str):
 
 
 def validate_page(game: str):
-    page_path = PAGES_DIR / f"{game}.md"
+    page_path = PAGES_DIR / f"{game}-stats.md"
     require(page_path.exists(), f"Missing page: {page_path}")
     content = page_path.read_text(encoding="utf-8")
     include_tag = f'{{% include lotto/stats.html game="{game}" %}}'

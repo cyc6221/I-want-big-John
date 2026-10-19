@@ -7,6 +7,14 @@ layout: default
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
+  {%- for game in site.data.nav -%}
+    {%- for child in game.children -%}
+      {%- if game.key and child.url == page.url -%}
+        {%- include lotto/subnav.html key=game.key -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+
   <div class="post-content">
     {{ content }}
   </div>

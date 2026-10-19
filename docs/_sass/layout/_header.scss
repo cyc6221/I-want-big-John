@@ -99,6 +99,77 @@
   background: var(--accent-soft);
 }
 
+/* Dropdown: opens on hover or keyboard focus. The panel has no gap to the link
+   (padding instead of margin) so the pointer never leaves the hover area. */
+.site-nav .nav-item{
+  position: relative;
+}
+
+.site-nav .page-link--parent::after{
+  content: "";
+  display: inline-block;
+  width: .35em;
+  height: .35em;
+  margin-left: .4em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-.15em) rotate(45deg);
+  opacity: .6;
+}
+
+.site-nav .nav-dropdown{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 9rem;
+  padding-top: .5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity .12s ease, transform .12s ease, visibility 0s linear .12s;
+}
+
+.site-nav .nav-item--dropdown:hover .nav-dropdown,
+.site-nav .nav-item--dropdown:focus-within .nav-dropdown{
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.site-nav .nav-dropdown__panel{
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.14);
+}
+
+.site-nav .nav-dropdown__link{
+  padding: .5rem .8rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav .nav-dropdown__link:hover{
+  color: var(--text);
+  background: var(--surface-2);
+  text-decoration: none;
+}
+
+.site-nav .nav-dropdown__link[aria-current]{
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
 @media screen and (max-width: 600px){
   .site-header .wrapper{
     min-height: 56px;
@@ -148,5 +219,34 @@
 
   .site-nav .nav-trigger:checked + .menu-icon .menu-icon__bar:nth-child(4){
     transform: translateY(-4.5px) rotate(-45deg);
+  }
+
+  /* No hover on touch: show each group's links inline, indented under the parent. */
+  .site-nav .page-link--parent::after{
+    display: none;
+  }
+
+  .site-nav .nav-dropdown{
+    position: static;
+    min-width: 0;
+    padding: 0 0 .25rem .75rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  .site-nav .nav-dropdown__panel{
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .site-nav .nav-dropdown__link{
+    display: block;
+    padding: .5rem .85rem;
+    font-size: .92rem;
   }
 }
