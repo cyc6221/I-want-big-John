@@ -56,7 +56,10 @@ title: IWBJ
 
   <div class="post-list">
     {% assign items = site.articles | sort: "date" | reverse %}
-    {% for post in items limit: 6 %}
+    {% assign latest_date = items.first.date | date: "%Y-%m-%d" %}
+    {% for post in items %}
+      {% assign post_date = post.date | date: "%Y-%m-%d" %}
+      {% if post_date != latest_date %}{% break %}{% endif %}
       <article class="post-item">
         <h3 class="post-title">
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
