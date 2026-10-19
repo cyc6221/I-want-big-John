@@ -37,27 +37,6 @@ toc: false
   </div>
 </div>
 
-## 本人超無聊紀錄
-
-<div class="post-list">
-  {% assign items = site.list
-    | where: "category", "list-instant" %}
-
-  {% for post in items %}
-    <article class="post-item">
-      <h3 class="post-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h3>
-      <!-- post.description -->
-      {% if post.description %}
-        <p class="post-excerpt">{{ post.description }}</p>
-      {% else %}
-        <p class="post-excerpt">{{ post.content | strip_html | truncate: 120 }}</p>
-      {% endif %}
-    </article>
-  {% endfor %}
-</div>
-
 ## 參考資料
 
 - [台灣彩券刮刮樂玩法](https://www.taiwanlottery.com/instant/info)
