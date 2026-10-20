@@ -189,7 +189,11 @@
     position: absolute;
     top: calc(100% + .6rem);
     right: 0;
-    min-width: min(240px, calc(100vw - 2 * var(--gutter)));
+    width: min(320px, calc(100vw - 2 * var(--gutter)));
+    max-height: calc(100vh - 56px - 1.2rem);
+    max-height: calc(100dvh - 56px - 1.2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     flex-direction: column;
     align-items: stretch;
     gap: .15rem;
@@ -221,7 +225,8 @@
     transform: translateY(-4.5px) rotate(-45deg);
   }
 
-  /* No hover on touch: show each group's links inline, indented under the parent. */
+  /* No hover on touch: list each group's links under the parent as wrapping pills,
+     so four groups still fit on screen instead of one long column. */
   .site-nav .page-link--parent::after{
     display: none;
   }
@@ -229,7 +234,7 @@
   .site-nav .nav-dropdown{
     position: static;
     min-width: 0;
-    padding: 0 0 .25rem .75rem;
+    padding: 0 .4rem .5rem;
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -237,6 +242,9 @@
   }
 
   .site-nav .nav-dropdown__panel{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .3rem;
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -245,8 +253,13 @@
   }
 
   .site-nav .nav-dropdown__link{
-    display: block;
-    padding: .5rem .85rem;
-    font-size: .92rem;
+    padding: .3rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: .88rem;
+  }
+
+  .site-nav .nav-dropdown__link[aria-current]{
+    border-color: var(--accent-border);
   }
 }
