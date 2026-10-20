@@ -28,9 +28,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <th style="text-align:center;">期別</th>
       <th style="text-align:center;">選號</th>
       <th style="text-align:center;">開獎號碼</th>
-      <th style="text-align:center;">命中</th>
       <th style="text-align:center;">獎別</th>
-      <th style="text-align:center;">花費</th>
       <th style="text-align:center;">中獎</th>
       <th style="text-align:center;">備註</th>
     </tr>
@@ -42,9 +40,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000032</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 12:miss 19:miss 26:pick 47:miss 48:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="05:pick 26:pick 27:pick 35:pick 45:pick 46:pick" label="大樂透第 115000032 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="37:pick" label="大樂透第 115000032 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -54,9 +50,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000032</td>
       <td style="text-align:center;">{% include small-balls.html items="04:miss 06:miss 09:miss 14:miss 18:miss 34:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="05:pick 26:pick 27:pick 35:pick 45:pick 46:pick" label="大樂透第 115000032 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="37:pick" label="大樂透第 115000032 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -66,9 +60,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000032</td>
       <td style="text-align:center;">{% include small-balls.html items="04:miss 14:miss 17:miss 24:miss 25:miss 34:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="05:pick 26:pick 27:pick 35:pick 45:pick 46:pick" label="大樂透第 115000032 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="37:pick" label="大樂透第 115000032 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -78,9 +70,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000063</td>
       <td style="text-align:center;">{% include small-balls.html items="03:miss 12:pick 26:miss 33:miss 39:miss 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 12:pick 28:pick 29:pick 35:pick 48:pick" label="大樂透第 115000063 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="38:pick" label="大樂透第 115000063 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -90,9 +80,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000063</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 04:pick 07:miss 19:miss 23:miss 41:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 12:pick 28:pick 29:pick 35:pick 48:pick" label="大樂透第 115000063 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="38:pick" label="大樂透第 115000063 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -102,9 +90,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000064</td>
       <td style="text-align:center;">{% include small-balls.html items="03:miss 12:pick 19:miss 23:miss 26:miss 39:pick" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="12:pick 18:pick 29:pick 33:pick 34:pick 39:pick" label="大樂透第 115000064 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="30:pick" label="大樂透第 115000064 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">2 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -114,9 +100,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000064</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 14:miss 21:miss 27:miss 32:miss 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="12:pick 18:pick 29:pick 33:pick 34:pick 39:pick" label="大樂透第 115000064 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="30:pick" label="大樂透第 115000064 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -126,9 +110,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000064</td>
       <td style="text-align:center;">{% include small-balls.html items="06:miss 11:miss 18:pick 24:miss 31:miss 48:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="12:pick 18:pick 29:pick 33:pick 34:pick 39:pick" label="大樂透第 115000064 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="30:pick" label="大樂透第 115000064 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -138,9 +120,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000064</td>
       <td style="text-align:center;">{% include small-balls.html items="05:miss 16:miss 28:miss 33:pick 41:miss 49:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="12:pick 18:pick 29:pick 33:pick 34:pick 39:pick" label="大樂透第 115000064 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="30:pick" label="大樂透第 115000064 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -150,9 +130,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000066</td>
       <td style="text-align:center;">{% include small-balls.html items="03:miss 12:miss 20:miss 26:miss 36:pick 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 10:pick 16:pick 29:pick 36:pick 45:pick" label="大樂透第 115000066 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="14:pick" label="大樂透第 115000066 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -162,9 +140,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000066</td>
       <td style="text-align:center;">{% include small-balls.html items="04:pick 17:miss 19:miss 30:miss 34:miss 38:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 10:pick 16:pick 29:pick 36:pick 45:pick" label="大樂透第 115000066 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="14:pick" label="大樂透第 115000066 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -174,9 +150,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000066</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 12:miss 23:miss 26:miss 30:miss 44:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 10:pick 16:pick 29:pick 36:pick 45:pick" label="大樂透第 115000066 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="14:pick" label="大樂透第 115000066 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -186,9 +160,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000066</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 09:miss 19:miss 24:miss 36:pick 49:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 10:pick 16:pick 29:pick 36:pick 45:pick" label="大樂透第 115000066 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="14:pick" label="大樂透第 115000066 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -198,9 +170,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000068</td>
       <td style="text-align:center;">{% include small-balls.html items="03:miss 07:miss 18:pick 26:miss 34:miss 42:pick" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 13:pick 15:pick 18:pick 19:pick 42:pick" label="大樂透第 115000068 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="37:pick" label="大樂透第 115000068 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">2 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -210,9 +180,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000068</td>
       <td style="text-align:center;">{% include small-balls.html items="09:miss 12:miss 21:miss 28:miss 37:special 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 13:pick 15:pick 18:pick 19:pick 42:pick" label="大樂透第 115000068 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="37:pick" label="大樂透第 115000068 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號 + 特別號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -222,9 +190,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000068</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 07:miss 19:pick 27:miss 35:miss 43:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 13:pick 15:pick 18:pick 19:pick 42:pick" label="大樂透第 115000068 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="37:pick" label="大樂透第 115000068 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -234,9 +200,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000068</td>
       <td style="text-align:center;">{% include small-balls.html items="06:miss 14:miss 22:miss 31:miss 38:miss 49:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 13:pick 15:pick 18:pick 19:pick 42:pick" label="大樂透第 115000068 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="37:pick" label="大樂透第 115000068 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -246,9 +210,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000069</td>
       <td style="text-align:center;">{% include small-balls.html items="05:miss 12:miss 21:miss 26:miss 34:miss 43:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 04:pick 15:pick 18:pick 29:pick 49:pick" label="大樂透第 115000069 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="13:pick" label="大樂透第 115000069 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -258,9 +220,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000069</td>
       <td style="text-align:center;">{% include small-balls.html items="03:pick 19:miss 24:miss 32:miss 38:miss 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 04:pick 15:pick 18:pick 29:pick 49:pick" label="大樂透第 115000069 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="13:pick" label="大樂透第 115000069 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -270,9 +230,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000069</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 14:miss 19:miss 27:miss 36:miss 44:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 04:pick 15:pick 18:pick 29:pick 49:pick" label="大樂透第 115000069 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="13:pick" label="大樂透第 115000069 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -282,9 +240,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000069</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 10:miss 23:miss 29:pick 41:miss 42:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 04:pick 15:pick 18:pick 29:pick 49:pick" label="大樂透第 115000069 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="13:pick" label="大樂透第 115000069 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -294,9 +250,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000070</td>
       <td style="text-align:center;">{% include small-balls.html items="07:special 14:miss 26:miss 31:miss 38:miss 45:pick" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號 + 特別號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -306,9 +260,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000070</td>
       <td style="text-align:center;">{% include small-balls.html items="05:miss 19:miss 24:miss 32:miss 41:miss 48:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -318,9 +270,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000070</td>
       <td style="text-align:center;">{% include small-balls.html items="07:special 12:miss 21:miss 26:miss 39:miss 44:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號 + 特別號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -330,9 +280,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000070</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 10:pick 19:miss 24:miss 31:miss 42:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="10:pick 25:pick 34:pick 36:pick 45:pick 46:pick" label="大樂透第 115000070 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="07:pick" label="大樂透第 115000070 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -342,9 +290,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000072</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 14:miss 26:pick 32:miss 41:miss 48:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="02:pick 08:pick 15:pick 26:pick 35:pick 46:pick" label="大樂透第 115000072 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="11:pick" label="大樂透第 115000072 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -354,9 +300,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000072</td>
       <td style="text-align:center;">{% include small-balls.html items="05:miss 19:miss 24:miss 31:miss 38:miss 45:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="02:pick 08:pick 15:pick 26:pick 35:pick 46:pick" label="大樂透第 115000072 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="11:pick" label="大樂透第 115000072 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -366,9 +310,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000072</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 12:miss 21:miss 24:miss 31:miss 42:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="02:pick 08:pick 15:pick 26:pick 35:pick 46:pick" label="大樂透第 115000072 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="11:pick" label="大樂透第 115000072 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -378,9 +320,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000072</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 10:miss 19:miss 26:pick 39:miss 44:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="02:pick 08:pick 15:pick 26:pick 35:pick 46:pick" label="大樂透第 115000072 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="11:pick" label="大樂透第 115000072 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -390,9 +330,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000073</td>
       <td style="text-align:center;">{% include small-balls.html items="06:miss 12:miss 26:miss 31:miss 39:miss 47:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 15:pick 27:pick 34:pick 35:pick 44:pick" label="大樂透第 115000073 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="40:pick" label="大樂透第 115000073 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -402,9 +340,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000073</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 13:miss 19:miss 28:miss 36:miss 44:pick" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 15:pick 27:pick 34:pick 35:pick 44:pick" label="大樂透第 115000073 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="40:pick" label="大樂透第 115000073 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -414,9 +350,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000073</td>
       <td style="text-align:center;">{% include small-balls.html items="03:pick 07:miss 10:miss 24:miss 26:miss 43:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 15:pick 27:pick 34:pick 35:pick 44:pick" label="大樂透第 115000073 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="40:pick" label="大樂透第 115000073 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -426,9 +360,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000073</td>
       <td style="text-align:center;">{% include small-balls.html items="05:miss 08:miss 14:miss 23:miss 31:miss 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 15:pick 27:pick 34:pick 35:pick 44:pick" label="大樂透第 115000073 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="40:pick" label="大樂透第 115000073 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -438,9 +370,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000074</td>
       <td style="text-align:center;">{% include small-balls.html items="08:pick 13:miss 19:pick 27:miss 38:miss 46:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 19:pick 24:pick 26:pick 32:pick 43:pick" label="大樂透第 115000074 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="47:pick" label="大樂透第 115000074 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">2 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -450,9 +380,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000074</td>
       <td style="text-align:center;">{% include small-balls.html items="05:miss 11:miss 18:miss 29:miss 35:miss 47:special" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 19:pick 24:pick 26:pick 32:pick 43:pick" label="大樂透第 115000074 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="47:pick" label="大樂透第 115000074 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號 + 特別號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -462,9 +390,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000074</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 16:miss 22:miss 31:miss 39:miss 48:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 19:pick 24:pick 26:pick 32:pick 43:pick" label="大樂透第 115000074 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="47:pick" label="大樂透第 115000074 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 3 注</td>
     </tr>
@@ -474,9 +400,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000074</td>
       <td style="text-align:center;">{% include small-balls.html items="02:miss 14:miss 21:miss 33:miss 41:miss 49:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="08:pick 19:pick 24:pick 26:pick 32:pick 43:pick" label="大樂透第 115000074 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="47:pick" label="大樂透第 115000074 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 4 注</td>
     </tr>
@@ -486,9 +410,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000093</td>
       <td style="text-align:center;">{% include small-balls.html items="07:miss 16:miss 23:miss 28:miss 36:miss 45:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 14:pick 20:pick 26:pick 40:pick 47:pick" label="大樂透第 115000093 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="42:pick" label="大樂透第 115000093 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -498,9 +420,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000093</td>
       <td style="text-align:center;">{% include small-balls.html items="05:miss 14:pick 21:miss 29:miss 33:miss 48:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 14:pick 20:pick 26:pick 40:pick 47:pick" label="大樂透第 115000093 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="42:pick" label="大樂透第 115000093 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -510,9 +430,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000094</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 12:miss 19:miss 23:special 26:miss 29:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 06:pick 20:pick 32:pick 36:pick 39:pick" label="大樂透第 115000094 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="23:pick" label="大樂透第 115000094 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號 + 特別號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -522,9 +440,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000094</td>
       <td style="text-align:center;">{% include small-balls.html items="16:miss 17:miss 22:miss 25:miss 34:miss 47:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="04:pick 06:pick 20:pick 32:pick 36:pick 39:pick" label="大樂透第 115000094 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="23:pick" label="大樂透第 115000094 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
@@ -534,9 +450,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000096</td>
       <td style="text-align:center;">{% include small-balls.html items="01:miss 12:miss 19:miss 23:miss 26:miss 29:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 31:pick 35:pick 36:pick 47:pick 48:pick" label="大樂透第 115000096 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="32:pick" label="大樂透第 115000096 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">0 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 1 注</td>
     </tr>
@@ -546,9 +460,7 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
       <td style="text-align:center;">115000096</td>
       <td style="text-align:center;">{% include small-balls.html items="04:miss 08:miss 20:miss 35:pick 37:miss 44:miss" label="大樂透選號" %}</td>
       <td style="text-align:center;"><details class="draw-result-toggle"><summary>開獎號碼</summary><div class="draw-result-toggle__body"><div class="draw-result-toggle__line">{% include small-balls.html items="03:pick 31:pick 35:pick 36:pick 47:pick 48:pick" label="大樂透第 115000096 期開獎號碼" %}</div><div class="draw-result-toggle__line"><span class="draw-result-toggle__label">特別號</span>{% include small-balls.html items="32:pick" label="大樂透第 115000096 期特別號" %}</div></div></details></td>
-      <td style="text-align:center;">1 個主號</td>
       <td style="text-align:center;">未中獎</td>
-      <td style="text-align:center;">50</td>
       <td style="text-align:center;">0</td>
       <td style="text-align:center;">第 2 注</td>
     </tr>
