@@ -435,13 +435,6 @@ def table_cell(value: object) -> str:
     return escape(str(value or ""))
 
 
-def hit_summary(row: dict[str, Any]) -> str:
-    parts = [f"{row['primary_hits']} 個主號"]
-    if row["special_hit"]:
-        parts.append("特別號")
-    return " + ".join(parts)
-
-
 def known_results(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     results = {}
     for row in rows:
@@ -522,7 +515,6 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             '      <th style="text-align:center;">期別</th>',
             '      <th style="text-align:center;">選號</th>',
             '      <th style="text-align:center;">開獎號碼</th>',
-            '      <th style="text-align:center;">命中</th>',
             '      <th style="text-align:center;">獎別</th>',
             '      <th style="text-align:center;">中獎</th>',
             '      <th style="text-align:center;">備註</th>',
@@ -548,7 +540,6 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
                 f'      <td style="text-align:center;">{table_cell(row["draw_no"])}</td>',
                 f'      <td style="text-align:center;">{numbers}</td>',
                 f'      <td style="text-align:center;">{result_details}</td>',
-                f'      <td style="text-align:center;">{table_cell(hit_summary(row))}</td>',
                 f'      <td style="text-align:center;">{table_cell(row["prize_rank"])}</td>',
                 f'      <td style="text-align:center;">{format_prize_amount(row)}</td>',
                 f'      <td style="text-align:center;">{table_cell(note)}</td>',
