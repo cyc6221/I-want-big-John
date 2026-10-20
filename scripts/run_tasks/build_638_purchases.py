@@ -415,7 +415,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
     lines.extend(
         [
             (
-                f"從 {summary['date_start']} 開始記錄，總計花費 {summary['total_spent']:,} 元，"
+                f"總計花費 {summary['total_spent']:,} 元，"
                 f"已結算 {summary['settled_records']:,} 筆，已結算中獎 {summary['known_prize']:,} 元，"
                 f"已結算淨額 {summary['known_net']:,} 元。"
             ),

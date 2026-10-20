@@ -60,10 +60,8 @@ def build_markdown(rows):
     total_spent = sum(r["price"] for r in rows)
     total_prize = sum(r["prize"] for r in rows)
 
-    start_date = rows[0]["date"] if rows else ""
-
     description = f"總計花費 {total_spent} 元，中獎 {total_prize} 元。"
-    intro = f"從 {start_date} 開始記錄，總計花費 {total_spent} 元，中獎 {total_prize} 元。"
+    intro = f"總計花費 {total_spent} 元，中獎 {total_prize} 元。"
 
     # 表頭
     lines = []
