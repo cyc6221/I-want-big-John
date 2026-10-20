@@ -16,8 +16,6 @@ description: 總計 43 注，花費 2,150 元，中獎 0 元。
   <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-2,150 元</strong></div>
 </div>
 
-已比對 13 期開獎結果。
-
 ## 購買紀錄
 
 <table class="buy-table">
