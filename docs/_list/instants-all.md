@@ -8,7 +8,7 @@ description: 總計花費 25200 元，中獎 19400 元。
 
 <!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->
 
-從 2026/02/25 開始記錄，總計花費 25200 元，中獎 19400 元。
+總計花費 25200 元，中獎 19400 元。
 
 ---
 
