@@ -31,6 +31,13 @@
   max-width: 46rem;
 }
 
+/* Record/listing pages open with a long one-line summary; let it match the table width. */
+.post-content--wide > p,
+.post-content--wide > ul,
+.post-content--wide > ol{
+  max-width: none;
+}
+
 .post-content > :first-child{
   margin-top: 0;
 }
