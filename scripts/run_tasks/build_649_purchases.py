@@ -468,7 +468,7 @@ def build_result_note(rows: list[dict[str, Any]]) -> list[str]:
             "",
         ]
 
-    return [f"已比對 {len(results):,} 期開獎結果。", ""]
+    return []
 
 
 def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:

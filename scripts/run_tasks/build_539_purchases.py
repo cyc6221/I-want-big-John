@@ -444,7 +444,7 @@ def build_result_note(rows: list[dict[str, Any]]) -> list[str]:
         balls = small_balls_include(" ".join(f"{value}:pick" for value in result["numbers"]), result_label)
         return [f"第 {result['draw_no']} 期開獎號碼為 {balls}。", ""]
 
-    return [f"已比對 {len(results):,} 期開獎結果。", ""]
+    return []
 
 
 def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
