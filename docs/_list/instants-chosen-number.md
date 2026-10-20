@@ -3,7 +3,7 @@ title: 刮刮樂選號紀錄
 permalink: /list/instant-chosen-number/
 category: list-instant
 date: 2026-02-26
-description: 從 2026 年 2 月 25 日開始記錄。
+description: 依選號統計購買次數、中獎次數、花費與獎金。
 ---
 
 {% include instants/chosen-data.html %}
