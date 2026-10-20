@@ -8,7 +8,12 @@ description: 總計花費 25200 元，中獎 19400 元。
 
 <!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->
 
-總計花費 25200 元，中獎 19400 元。
+<div class="lotto-stats-grid summary-cards">
+  <div class="lotto-stats-card"><span class="lotto-stats-label">購買筆數</span><strong>105 筆</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>25,200 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">總中獎</span><strong>19,400 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-5,800 元</strong></div>
+</div>
 
 ---
 
