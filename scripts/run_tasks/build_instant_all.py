@@ -2,6 +2,13 @@ import csv
 import json
 from pathlib import Path
 from datetime import datetime
+import sys
+
+SCRIPTS_DIR = Path(__file__).resolve().parents[1]
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from _utils.summary_cards import summary_cards
 
 # ====== PATHS ======
 CSV_PATH = Path("raw-data/all-instants.csv")
@@ -61,7 +68,15 @@ def build_markdown(rows):
     total_prize = sum(r["prize"] for r in rows)
 
     description = f"總計花費 {total_spent} 元，中獎 {total_prize} 元。"
-    intro = f"總計花費 {total_spent} 元，中獎 {total_prize} 元。"
+    net = total_prize - total_spent
+    cards = summary_cards(
+        [
+            ("購買筆數", f"{len(rows):,} 筆"),
+            ("總花費", f"{total_spent:,} 元"),
+            ("總中獎", f"{total_prize:,} 元"),
+            ("淨額", f"{net:,} 元"),
+        ]
+    )
 
     # 表頭
     lines = []
@@ -75,8 +90,7 @@ def build_markdown(rows):
     lines.append("")
     lines.append("<!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->")
     lines.append("")
-    lines.append(intro)
-    lines.append("")
+    lines.extend(cards)
     lines.append("---")
     lines.append("")
     lines.append("| i | 日期 | 項目 | 花費 | 中獎 |")

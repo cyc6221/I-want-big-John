@@ -14,6 +14,7 @@ if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 from _utils.lotto_results import load_result_rows
+from _utils.summary_cards import summary_cards
 
 
 CSV_PATH = Path("raw-data/lotto-purchases/638-purchases.csv")
@@ -413,14 +414,14 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
         return "\n".join(lines)
 
     lines.extend(
-        [
-            (
-                f"總計花費 {summary['total_spent']:,} 元，"
-                f"已結算 {summary['settled_records']:,} 筆，已結算中獎 {summary['known_prize']:,} 元，"
-                f"已結算淨額 {summary['known_net']:,} 元。"
-            ),
-            "",
-        ]
+        summary_cards(
+            [
+                ("總花費", f"{summary['total_spent']:,} 元"),
+                ("已結算", f"{summary['settled_records']:,} 筆"),
+                ("已結算中獎", f"{summary['known_prize']:,} 元"),
+                ("已結算淨額", f"{summary['known_net']:,} 元"),
+            ]
+        )
     )
     if summary["pending_records"]:
         lines.extend(
