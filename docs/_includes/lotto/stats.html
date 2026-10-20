@@ -9,6 +9,7 @@
 {% endif %}
 
 <section class="lotto-stats" id="{{ stats_prefix }}-root">
+  <p class="lotto-stats-range" id="{{ stats_prefix }}-range"></p>
   <div class="lotto-stats-grid" id="{{ stats_prefix }}-summary"></div>
 
   <div class="lotto-stats-panel">
@@ -147,9 +148,13 @@
 
     const startDate = summary?.date_start || "";
     const endDate = summary?.date_end || "";
-    const dateRange = startDate && endDate ? `${startDate} 至 ${endDate}` : "無資料";
+    const rangeNote = el("range");
+    if (rangeNote) {
+      rangeNote.textContent = startDate && endDate
+        ? `資料區間：${startDate} 至 ${endDate}`
+        : "資料區間：無資料";
+    }
     const cards = [
-      { label: "資料區間", value: dateRange },
       { label: "開獎期數", value: formatNumber(getSummaryValue(summary, "total_draws")) },
       { label: "平均每期銷售總額", value: `${formatNumber(getSummaryValue(summary, "avg_sales"))} 元` },
       { label: "平均每期銷售注數", value: `${formatNumber(getSummaryValue(summary, "avg_bets"))} 注` },
