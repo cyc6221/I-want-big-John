@@ -4,31 +4,27 @@
     "records": 3,
     "spent": 150,
     "settled_spent": 150,
-    "prize": 0,
-    "pending_records": 0
+    "prize": 0
   },
   {
     "month": "2026-06",
     "records": 10,
     "spent": 500,
     "settled_spent": 500,
-    "prize": 0,
-    "pending_records": 0
+    "prize": 0
   },
   {
     "month": "2026-07",
     "records": 24,
     "spent": 1200,
     "settled_spent": 1200,
-    "prize": 0,
-    "pending_records": 0
+    "prize": 0
   },
   {
     "month": "2026-10",
     "records": 6,
     "spent": 300,
     "settled_spent": 300,
-    "prize": 0,
-    "pending_records": 0
+    "prize": 0
   }
 ]
