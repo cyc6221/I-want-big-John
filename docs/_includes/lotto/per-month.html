@@ -1,0 +1,128 @@
+{%- comment -%}
+  Monthly purchase spend / prize chart + table for a draw game.
+  Usage: {% include lotto/per-month.html game="649" %}
+  Data: assets/data/{game}-per-month.json (built by scripts/run_tasks/build_lotto_per_month_json.py)
+{%- endcomment -%}
+<div class="card" style="padding:1rem; margin-top:1rem;">
+  <h2 style="margin:.2rem 0 .8rem 0;">每月花費與中獎圖表</h2>
+
+  <div class="chart-box" style="position:relative; width:100%; height:360px;">
+    <canvas id="lottoMonthBar-{{ include.game }}"></canvas>
+  </div>
+</div>
+
+<div class="card" style="padding:1rem; margin-top:1rem;">
+  <h2 style="margin:.2rem 0 .8rem 0;">每月花費與中獎表格</h2>
+
+  <div class="table-wrap">
+    <table class="table table--striped" id="lottoMonthTable-{{ include.game }}">
+      <thead>
+        <tr>
+          <th style="text-align:center;">月份</th>
+          <th style="text-align:center;">注數</th>
+          <th style="text-align:center;">花費</th>
+          <th style="text-align:center;">中獎</th>
+          <th style="text-align:center;">淨額</th>
+          <th style="text-align:center;">中獎百分比</th>
+          <th style="text-align:center;">待開獎</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="7" style="text-align:center; opacity:.7;">載入中…</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin:.8rem 0 0 0; opacity:.7; font-size:.9em;">以購買日歸月。中獎、淨額與中獎百分比只計已結算的注數；待開獎或浮動獎金尚未填入的注數另列。</p>
+</div>
+
+<script src="{{ '/assets/vendor/chart.umd.min.js' | relative_url }}"></script>
+<script>
+(() => {
+  const DATA_URL = "{{ '/assets/data/' | append: include.game | append: '-per-month.json' | relative_url }}";
+  const fmtMonth = (m) => (m || "").replace("-", "/");
+  const fmtNum = (n) => Number(n || 0).toLocaleString("zh-TW");
+
+  function renderChart(data) {
+    const canvas = document.getElementById("lottoMonthBar-{{ include.game }}");
+    if (!canvas) return;
+
+    new Chart(canvas, {
+      type: "bar",
+      data: {
+        labels: data.map(d => fmtMonth(d.month)),
+        datasets: [
+          { label: "花費", data: data.map(d => Number(d.spent || 0)) },
+          { label: "中獎", data: data.map(d => Number(d.prize || 0)) }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { callback: (v) => fmtNum(v) }
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${fmtNum(ctx.raw)}`
+            }
+          },
+          legend: { position: "top" }
+        }
+      }
+    });
+  }
+
+  function renderTable(data, error) {
+    const tbody = document.querySelector("#lottoMonthTable-{{ include.game }} tbody");
+    tbody.innerHTML = "";
+
+    if (error) {
+      tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:#b00;">資料載入失敗</td></tr>`;
+      return;
+    }
+
+    if (data.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; opacity:.7;">沒有資料</td></tr>`;
+      return;
+    }
+
+    for (const row of data) {
+      const settledSpent = Number(row.settled_spent || 0);
+      const prize = Number(row.prize || 0);
+      const rate = settledSpent > 0 ? `${((prize / settledSpent) * 100).toFixed(1)}%` : "-";
+      const net = settledSpent > 0 || prize > 0 ? fmtNum(prize - settledSpent) : "-";
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td style="text-align:center;">${fmtMonth(row.month)}</td>
+        <td style="text-align:center;">${fmtNum(row.records)}</td>
+        <td style="text-align:center;">${fmtNum(row.spent)}</td>
+        <td style="text-align:center;">${fmtNum(prize)}</td>
+        <td style="text-align:center;">${net}</td>
+        <td style="text-align:center;">${rate}</td>
+        <td style="text-align:center;">${row.pending_records ? fmtNum(row.pending_records) : "-"}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+
+  async function load() {
+    try {
+      const res = await fetch(DATA_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const rows = Array.isArray(data) ? data : [];
+      renderChart(rows);
+      renderTable(rows, null);
+    } catch (err) {
+      console.error("lotto per-month load failed:", err);
+      renderTable([], err);
+    }
+  }
+
+  load();
+})();
+</script>
