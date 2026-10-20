@@ -10,6 +10,7 @@
     - { title: 抽一組, url: /638/pick/ }
     - { title: 統計資訊, url: /638/stats/ }
     - { title: 購買紀錄, url: /list/638-purchases/ }
+    - { title: 每月統計, url: /list/638-per-month/ }
 - title: 大樂透
   key: "649"
   url: /649/
@@ -18,6 +19,7 @@
     - { title: 抽一組, url: /649/pick/ }
     - { title: 統計資訊, url: /649/stats/ }
     - { title: 購買紀錄, url: /list/649-purchases/ }
+    - { title: 每月統計, url: /list/649-per-month/ }
 - title: 今彩539
   key: "539"
   url: /539/
@@ -26,6 +28,7 @@
     - { title: 抽一組, url: /539/pick/ }
     - { title: 統計資訊, url: /539/stats/ }
     - { title: 購買紀錄, url: /list/539-purchases/ }
+    - { title: 每月統計, url: /list/539-per-month/ }
 - title: 刮刮樂
   key: instant
   url: /instant/
@@ -39,4 +42,4 @@
   url: /bonus/
 - title: 紀錄
   url: /list/
-  exclude: ["-purchases", "/instant-"]
+  exclude: ["-purchases", "-per-month", "/instant-"]

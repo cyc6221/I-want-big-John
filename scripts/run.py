@@ -12,6 +12,7 @@ TASKS = [
     RUN_TASKS_DIR / "build_539_purchases.py",
     RUN_TASKS_DIR / "build_638_purchases.py",
     RUN_TASKS_DIR / "build_649_purchases.py",
+    RUN_TASKS_DIR / "build_lotto_per_month_json.py",
     RUN_TASKS_DIR / "build_instant_all.py",
     RUN_TASKS_DIR / "update_all_instants_articles_from_csv.py",
     RUN_TASKS_DIR / "build_instants_chosen_number_json.py",

@@ -9,6 +9,7 @@ This folder contains the scripts currently executed by `scripts/run.py`.
 - `build_539_purchases.py`
 - `build_638_purchases.py`
 - `build_649_purchases.py`
+- `build_lotto_per_month_json.py`
 - `build_instant_all.py`
 - `update_all_instants_articles_from_csv.py`
 - `build_instants_chosen_number_json.py`
