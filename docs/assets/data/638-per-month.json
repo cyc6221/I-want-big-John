@@ -4,15 +4,13 @@
     "records": 6,
     "spent": 600,
     "settled_spent": 600,
-    "prize": 800,
-    "pending_records": 0
+    "prize": 800
   },
   {
     "month": "2026-06",
     "records": 3,
     "spent": 300,
     "settled_spent": 300,
-    "prize": 200,
-    "pending_records": 0
+    "prize": 200
   }
 ]
