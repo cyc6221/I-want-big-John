@@ -19,7 +19,7 @@ def build_months(records):
         month = r["purchase_date"].replace("/", "-")[:7]
         item = agg.setdefault(
             month,
-            {"month": month, "records": 0, "spent": 0, "settled_spent": 0, "prize": 0, "pending_records": 0},
+            {"month": month, "records": 0, "spent": 0, "settled_spent": 0, "prize": 0},
         )
         price = int(r["price"] or 0)
         item["records"] += 1
@@ -27,8 +27,6 @@ def build_months(records):
         if r["settled"]:
             item["settled_spent"] += price
             item["prize"] += int(r["prize"] or 0)
-        else:
-            item["pending_records"] += 1
     return [agg[month] for month in sorted(agg)]
 
 
@@ -37,10 +35,7 @@ def build_description(title, items):
         return f"尚無{title}每月資料。"
     last = items[-1]
     year, month = last["month"].split("-")
-    description = f"{int(year)} 年 {int(month)} 月，{last['records']:,} 注，花費 {last['spent']:,} 元，中獎 {last['prize']:,} 元。"
-    if last["pending_records"]:
-        description += f" 待開獎或未填獎金 {last['pending_records']:,} 筆。"
-    return description
+    return f"{int(year)} 年 {int(month)} 月，{last['records']:,} 注，花費 {last['spent']:,} 元，中獎 {last['prize']:,} 元。"
 
 
 def build_markdown(game, title, items):
