@@ -3,7 +3,7 @@ title: 大樂透購買紀錄
 permalink: /list/649-purchases/
 category: list-649
 date: 2026-10-13
-description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
+description: 總計 43 注，花費 2,150 元，中獎 0 元。
 ---
 
 <!-- 此檔由 scripts/run_tasks/build_649_purchases.py 自動產生，請勿手改；如需修改請改 raw-data/lotto-purchases/649-purchases.csv 後執行 python scripts/run.py -->
@@ -11,9 +11,9 @@ description: 總計 43 注，花費 2,150 元，已結算中獎 0 元。
 <div class="lotto-stats-grid summary-cards">
   <div class="lotto-stats-card"><span class="lotto-stats-label">總注數</span><strong>43 注</strong></div>
   <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>2,150 元</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">已結算</span><strong>43 筆</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">已結算中獎</span><strong>0 元</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">已結算淨額</span><strong>-2,150 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">購買</span><strong>43 筆</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">中獎</span><strong>0 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-2,150 元</strong></div>
 </div>
 
 已比對 13 期開獎結果。
