@@ -356,7 +356,7 @@ def build_description(summary: dict[str, Any]) -> str:
 
     description = (
         f"總計 {summary['total_records']:,} 注，花費 {summary['total_spent']:,} 元，"
-        f"已結算中獎 {summary['known_prize']:,} 元。"
+        f"中獎 {summary['known_prize']:,} 元。"
     )
     if summary["unresolved_records"]:
         description += f" 待開獎 {summary['unresolved_records']:,} 筆。"
@@ -438,7 +438,7 @@ def build_result_note(rows: list[dict[str, Any]]) -> list[str]:
         balls = small_balls_include(" ".join(f"{value}:pick" for value in result["numbers"]), result_label)
         return [f"第 {result['draw_no']} 期開獎號碼為 {balls}。", ""]
 
-    return [f"已比對 {len(results):,} 期開獎結果。", ""]
+    return []
 
 
 def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
@@ -465,9 +465,9 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             [
                 ("總注數", f"{summary['total_records']:,} 注"),
                 ("總花費", f"{summary['total_spent']:,} 元"),
-                ("已結算", f"{summary['settled_records']:,} 筆"),
-                ("已結算中獎", f"{summary['known_prize']:,} 元"),
-                ("已結算淨額", f"{summary['known_net']:,} 元"),
+                ("購買", f"{summary['total_records']:,} 筆"),
+                ("中獎", f"{summary['known_prize']:,} 元"),
+                ("淨額", f"{summary['known_net']:,} 元"),
             ]
         )
     )

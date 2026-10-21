@@ -352,10 +352,10 @@ def build_description(summary: dict[str, Any]) -> str:
 
     description = (
         f"總計 {summary['total_records']:,} 注，花費 {summary['total_spent']:,} 元，"
-        f"已結算中獎 {summary['known_prize']:,} 元。"
+        f"中獎 {summary['known_prize']:,} 元。"
     )
     if summary["pending_records"]:
-        description += f" 待開獎或未填獎金 {summary['pending_records']:,} 筆。"
+        description += f" 未填獎金 {summary['pending_records']:,} 筆。"
     return description
 
 
@@ -461,7 +461,7 @@ def build_result_note(rows: list[dict[str, Any]]) -> list[str]:
             "",
         ]
 
-    return [f"已比對 {len(results):,} 期開獎結果。", ""]
+    return []
 
 
 def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
@@ -488,16 +488,16 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             [
                 ("總注數", f"{summary['total_records']:,} 注"),
                 ("總花費", f"{summary['total_spent']:,} 元"),
-                ("已結算", f"{summary['settled_records']:,} 筆"),
-                ("已結算中獎", f"{summary['known_prize']:,} 元"),
-                ("已結算淨額", f"{summary['known_net']:,} 元"),
+                ("購買", f"{summary['total_records']:,} 筆"),
+                ("中獎", f"{summary['known_prize']:,} 元"),
+                ("淨額", f"{summary['known_net']:,} 元"),
             ]
         )
     )
     if summary["pending_records"]:
         lines.extend(
             [
-                f"另有 {summary['pending_records']:,} 筆待開獎或尚未填入中獎金額，花費 {summary['pending_spent']:,} 元。",
+                f"另有 {summary['pending_records']:,} 筆尚未填入中獎金額，花費 {summary['pending_spent']:,} 元。",
                 "",
             ]
         )
