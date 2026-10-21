@@ -356,7 +356,7 @@ def build_description(summary: dict[str, Any]) -> str:
 
     description = (
         f"總計 {summary['total_records']:,} 注，花費 {summary['total_spent']:,} 元，"
-        f"已結算中獎 {summary['known_prize']:,} 元。"
+        f"中獎 {summary['known_prize']:,} 元。"
     )
     if summary["unresolved_records"]:
         description += f" 待開獎 {summary['unresolved_records']:,} 筆。"
@@ -418,12 +418,6 @@ def table_cell(value: object) -> str:
     return escape(str(value or ""))
 
 
-def hit_summary(row: dict[str, Any]) -> str:
-    if not row["result_known"]:
-        return "待開獎"
-    return f"{row['primary_hits']} 個號碼"
-
-
 def known_results(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     results = {}
     for row in rows:
@@ -444,7 +438,7 @@ def build_result_note(rows: list[dict[str, Any]]) -> list[str]:
         balls = small_balls_include(" ".join(f"{value}:pick" for value in result["numbers"]), result_label)
         return [f"第 {result['draw_no']} 期開獎號碼為 {balls}。", ""]
 
-    return [f"已比對 {len(results):,} 期開獎結果。", ""]
+    return []
 
 
 def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
@@ -471,9 +465,9 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             [
                 ("總注數", f"{summary['total_records']:,} 注"),
                 ("總花費", f"{summary['total_spent']:,} 元"),
-                ("已結算", f"{summary['settled_records']:,} 筆"),
-                ("已結算中獎", f"{summary['known_prize']:,} 元"),
-                ("已結算淨額", f"{summary['known_net']:,} 元"),
+                ("購買", f"{summary['total_records']:,} 筆"),
+                ("中獎", f"{summary['known_prize']:,} 元"),
+                ("淨額", f"{summary['known_net']:,} 元"),
             ]
         )
     )
@@ -506,9 +500,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
             '      <th style="text-align:center;">期別</th>',
             '      <th style="text-align:center;">選號</th>',
             '      <th style="text-align:center;">開獎號碼</th>',
-            '      <th style="text-align:center;">命中</th>',
             '      <th style="text-align:center;">獎別</th>',
-            '      <th style="text-align:center;">花費</th>',
             '      <th style="text-align:center;">中獎</th>',
             '      <th style="text-align:center;">備註</th>',
             "    </tr>",
@@ -533,9 +525,7 @@ def build_markdown(rows: list[dict[str, Any]], summary: dict[str, Any]) -> str:
                 f'      <td style="text-align:center;">{table_cell(row["draw_no"])}</td>',
                 f'      <td style="text-align:center;">{numbers}</td>',
                 f'      <td style="text-align:center;">{result_details}</td>',
-                f'      <td style="text-align:center;">{table_cell(hit_summary(row))}</td>',
                 f'      <td style="text-align:center;">{table_cell(row["prize_rank"])}</td>',
-                f'      <td style="text-align:center;">{format_amount(row["price"])}</td>',
                 f'      <td style="text-align:center;">{format_prize_amount(row)}</td>',
                 f'      <td style="text-align:center;">{table_cell(note)}</td>',
                 "    </tr>",
