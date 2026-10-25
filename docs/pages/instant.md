@@ -8,11 +8,20 @@ toc: false
 ## 最新刮刮樂
 
 <div class="post-list">
-  {% assign items = site.articles
+  <!-- 只顯示最新發行日（date）的所有刮刮樂，同日再依期號（num）由新到舊排序 -->
+  {% assign all_items = site.articles
     | where: "category", "all-instants"
     | sort: "date" | reverse %}
+  {% assign latest_date = all_items.first.date | date: "%Y-%m-%d" %}
+  {% assign latest_items = "" | split: "" %}
+  {% for post in all_items %}
+    {% assign post_date = post.date | date: "%Y-%m-%d" %}
+    {% if post_date != latest_date %}{% break %}{% endif %}
+    {% assign latest_items = latest_items | push: post %}
+  {% endfor %}
+  {% assign items = latest_items | sort: "num" | reverse %}
 
-  {% for post in items limit: 2 %}
+  {% for post in items %}
     <article class="post-item">
       <h3 class="post-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
