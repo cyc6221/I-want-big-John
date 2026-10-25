@@ -50,9 +50,8 @@
   accent-color: var(--ink);
 }
 
-.article-filter__toggle:has(input:disabled){
+.article-filter__toggle.is-empty{
   opacity: .45;
-  cursor: not-allowed;
 }
 
 .article-filter__toggle-count{
@@ -120,7 +119,7 @@
 .tag-chip[data-tag="active"]{ --tag: #15803d; --tag-soft: #e3f6e8; --tag-border: #b2e0bf; }
 .tag-chip[data-tag="archived"]{ --tag: #475569; --tag-soft: #eef1f5; --tag-border: var(--border-strong); }
 
-.tag-chip:hover:not(:disabled):not([aria-pressed="true"]){
+.tag-chip:hover:not([aria-pressed="true"]){
   border-color: var(--tag);
 }
 
@@ -130,9 +129,9 @@
   color: #fff;
 }
 
-.tag-chip:disabled{
+/* Would match no article: dimmed as a hint, but still clickable. */
+.tag-chip.is-empty:not([aria-pressed="true"]){
   opacity: .45;
-  cursor: not-allowed;
 }
 
 .tag-chip:focus-visible{
