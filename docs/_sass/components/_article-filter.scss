@@ -119,7 +119,8 @@
 .tag-chip[data-tag="active"]{ --tag: #15803d; --tag-soft: #e3f6e8; --tag-border: #b2e0bf; }
 .tag-chip[data-tag="archived"]{ --tag: #475569; --tag-soft: #eef1f5; --tag-border: var(--border-strong); }
 
-.tag-chip:hover:not([aria-pressed="true"]){
+/* Buttons only: the read-only .tag-chip--static labels must not look clickable. */
+button.tag-chip:hover:not([aria-pressed="true"]){
   border-color: var(--tag);
 }
 
