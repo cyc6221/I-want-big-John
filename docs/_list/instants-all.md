@@ -3,16 +3,16 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 25200 元，中獎 19400 元。
+description: 總計花費 25400 元，中獎 19400 元。
 ---
 
 <!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->
 
 <div class="lotto-stats-grid summary-cards">
-  <div class="lotto-stats-card"><span class="lotto-stats-label">購買筆數</span><strong>105 筆</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>25,200 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">購買筆數</span><strong>106 筆</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>25,400 元</strong></div>
   <div class="lotto-stats-card"><span class="lotto-stats-label">總中獎</span><strong>19,400 元</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-5,800 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-6,000 元</strong></div>
 </div>
 
 ---
@@ -124,3 +124,4 @@ description: 總計花費 25200 元，中獎 19400 元。
 | 103 | 2026/10/17 | <a class="btn btn--gold" href="{{ '/all-instants/5146/' | relative_url }}">麻將大賓果</a> | 300 | 300 |
 | 104 | 2026/10/17 | <a class="btn btn--gold" href="{{ '/all-instants/5146/' | relative_url }}">麻將大賓果</a> | 300 | 1000 |
 | 105 | 2026/10/17 | <a class="btn btn--gold" href="{{ '/all-instants/5159/' | relative_url }}">大麻將</a> | 1000 | 2000 |
+| 106 | 2026/10/22 | <a class="btn btn--gold" href="{{ '/all-instants/5148/' | relative_url }}">獎金倍倍樂</a> | 200 | 0 |
