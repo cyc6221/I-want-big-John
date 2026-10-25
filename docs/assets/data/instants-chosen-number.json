@@ -197,10 +197,10 @@
   },
   {
     "chosen_number": "44",
-    "times": 13,
-    "win_times": 9,
-    "spent": 3100,
-    "prize_amount": 3800
+    "times": 15,
+    "win_times": 10,
+    "spent": 3800,
+    "prize_amount": 4300
   },
   {
     "chosen_number": "45",
@@ -404,6 +404,13 @@
     "win_times": 1,
     "spent": 100,
     "prize_amount": 100
+  },
+  {
+    "chosen_number": "90",
+    "times": 1,
+    "win_times": 1,
+    "spent": 200,
+    "prize_amount": 200
   },
   {
     "chosen_number": "91",
