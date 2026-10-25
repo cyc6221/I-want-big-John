@@ -52,7 +52,7 @@ Data flows one way: `raw-data/` (sources of truth) → `scripts/run.py` → gene
 
 New instants articles start from the template `scripts/templates/all-instants-article.md.example`, named by issue number (e.g. `docs/_articles/all-instants/5156.md`).
 
-- `todo` (repo root) — the live, actionable task list. Keep it short; delete items once done rather than leaving checked-off history in it.
+- `todo` (repo root) — the live, actionable task list. Local-only: it is in `.gitignore` and not tracked, so never commit it. Keep it short; delete items once done rather than leaving checked-off history in it.
 - `notes/{date}-{topic}.md` — dated, point-in-time project snapshots (e.g. a full architecture/status summary). Frozen when written; not updated as the code changes. `todo` links back here for historical context instead of duplicating it.
 
 ## Windows / encoding gotchas
