@@ -1,7 +1,8 @@
 /* Tag filter + sort for the all-articles page.
    Each chip belongs to a group (data-filter-group) and matches an article's
    data-<group> attribute. Chips in one group are exclusive (click again to
-   clear); groups combine with AND. Chips that match no article are disabled.
+   clear); groups combine with AND. Chips that would match no article are
+   dimmed but stay clickable, so the user is never locked out of switching.
    The current filter/sort is mirrored into the URL hash.
    Archived (已下架) instants are hidden until the "顯示已下架" box is ticked.
    Without JS the filter bar stays hidden (it starts with `hidden`, revealed
@@ -56,14 +57,14 @@
       badge.textContent = n;
       var selected = active[group] === value;
       chip.setAttribute("aria-pressed", selected ? "true" : "false");
-      chip.disabled = n === 0 && !selected;
+      chip.classList.toggle("is-empty", n === 0);
     });
     // Archived articles that the other filters would let through.
     var archivedN = items.filter(function (item) {
       return isArchived(item) && matchesGroups(item);
     }).length;
     archivedCountEl.textContent = "(" + archivedN + ")";
-    archivedBox.disabled = archivedN === 0 && !archivedBox.checked;
+    archivedBox.parentNode.classList.toggle("is-empty", archivedN === 0);
   }
 
   function compareItems(a, b) {
