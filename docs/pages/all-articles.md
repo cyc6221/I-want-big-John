@@ -5,7 +5,7 @@ permalink: /all-articles/
 toc: false
 ---
 
-<div class="article-filter" data-article-filter>
+<div class="article-filter" data-article-filter hidden>
   <div class="article-filter__row">
     <span class="article-filter__label">遊戲</span>
     <div class="article-filter__chips" data-filter-group="game">
