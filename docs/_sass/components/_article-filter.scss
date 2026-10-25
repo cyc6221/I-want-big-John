@@ -31,6 +31,30 @@
   gap: .4rem;
 }
 
+.article-filter__toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--text-muted);
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.article-filter__toggle input{
+  accent-color: var(--ink);
+}
+
+.article-filter__toggle:has(input:disabled){
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.article-filter__toggle-count{
+  font-weight: 500;
+  opacity: .75;
+}
+
 .article-filter__bar{
   display: flex;
   flex-wrap: wrap;
