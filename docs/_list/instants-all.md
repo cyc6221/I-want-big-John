@@ -3,16 +3,16 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 26300 元，中獎 20100 元。
+description: 總計花費 26700 元，中獎 20300 元。
 ---
 
 <!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->
 
 <div class="lotto-stats-grid summary-cards">
-  <div class="lotto-stats-card"><span class="lotto-stats-label">購買筆數</span><strong>109 筆</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>26,300 元</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">總中獎</span><strong>20,100 元</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-6,200 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">購買筆數</span><strong>111 筆</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>26,700 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">總中獎</span><strong>20,300 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-6,400 元</strong></div>
 </div>
 
 ---
@@ -128,3 +128,5 @@ description: 總計花費 26300 元，中獎 20100 元。
 | 107 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">#5169</a> | 200 | 200 |
 | 108 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5165/' | relative_url }}">獎金大作戰</a> | 200 | 0 |
 | 109 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5167/' | relative_url }}">10來添金</a> | 500 | 500 |
+| 110 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">#5169</a> | 200 | 200 |
+| 111 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">#5169</a> | 200 | 0 |
