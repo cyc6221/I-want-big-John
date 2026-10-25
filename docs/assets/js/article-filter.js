@@ -2,6 +2,7 @@
    Each chip belongs to a group (data-filter-group) and matches an article's
    data-<group> attribute. Chips in one group are exclusive (click again to
    clear); groups combine with AND. Chips that match no article are disabled.
+   The current filter/sort is mirrored into the URL hash.
    Archived (已下架) instants are hidden until the "顯示已下架" box is ticked.
    Without JS the filter bar stays hidden (it starts with `hidden`, revealed
    below) and the full list is shown. */
@@ -91,18 +92,61 @@
     countEl.textContent = "共 " + shown.length + " 篇";
   }
 
+  // State lives in the URL hash (#game=649&kind=bonus&archived=1&sort=title) so Back
+  // from an article and shared links restore the view. Only non-default values are written.
+  function isValidChip(group, value) {
+    return chips.some(function (chip) {
+      return groupOf(chip) === group && chip.getAttribute("data-filter-value") === value;
+    });
+  }
+
+  function readHash() {
+    var params = new URLSearchParams(location.hash.slice(1));
+    active = {};
+    chips.forEach(function (chip) {
+      var group = groupOf(chip);
+      var value = params.get(group);
+      if (value && isValidChip(group, value)) active[group] = value;
+    });
+    archivedBox.checked = params.get("archived") === "1";
+    var sort = params.get("sort");
+    sortSelect.value = Array.prototype.some.call(sortSelect.options, function (o) { return o.value === sort; })
+      ? sort
+      : sortSelect.options[0].value;
+  }
+
+  function writeHash() {
+    var params = new URLSearchParams();
+    Object.keys(active).forEach(function (group) { params.set(group, active[group]); });
+    if (archivedBox.checked) params.set("archived", "1");
+    if (sortSelect.value !== sortSelect.options[0].value) params.set("sort", sortSelect.value);
+    var hash = params.toString();
+    // replaceState keeps one history entry, so Back leaves the page instead of stepping through filters.
+    history.replaceState(null, "", location.pathname + location.search + (hash ? "#" + hash : ""));
+  }
+
+  function update() {
+    render();
+    writeHash();
+  }
+
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {
       var group = groupOf(chip);
       var value = chip.getAttribute("data-filter-value");
       if (active[group] === value) delete active[group];
       else active[group] = value;
-      render();
+      update();
     });
   });
-  sortSelect.addEventListener("change", render);
-  archivedBox.addEventListener("change", render);
+  sortSelect.addEventListener("change", update);
+  archivedBox.addEventListener("change", update);
+  window.addEventListener("hashchange", function () {
+    readHash();
+    render();
+  });
 
+  readHash();
   render();
   root.hidden = false;
 })();
