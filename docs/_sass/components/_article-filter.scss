@@ -154,11 +154,8 @@ button.tag-chip:hover:not([aria-pressed="true"]){
   cursor: default;
 }
 
-/* The first visible item must not draw a top border once earlier items are hidden. */
-.post-list--filterable .post-item{
-  border-top: 1px solid var(--border);
-}
-
+/* `.post-item:first-child` already drops the top border without JS. Once filtering
+   hides earlier items, JS marks the first visible one so it does not draw a stray line. */
 .post-list--filterable .post-item.is-first{
   border-top: 0;
 }
