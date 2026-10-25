@@ -24,20 +24,6 @@
   margin: 0;
 }
 
-/* Keep running text readable; tables, cards and charts still use the full width. */
-.post-content > p,
-.post-content > ul,
-.post-content > ol{
-  max-width: 46rem;
-}
-
-/* Record/listing pages open with a long one-line summary; let it match the table width. */
-.post-content--wide > p,
-.post-content--wide > ul,
-.post-content--wide > ol{
-  max-width: none;
-}
-
 .post-content > :first-child{
   margin-top: 0;
 }
