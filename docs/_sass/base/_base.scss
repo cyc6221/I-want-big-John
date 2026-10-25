@@ -16,6 +16,8 @@ dl, dd, ol, ul, figure{
 
 html{
   -webkit-text-size-adjust: 100%;
+  /* Always reserve the scrollbar so short pages don't shift horizontally vs. long ones */
+  overflow-y: scroll;
 }
 
 /* ===== Page ===== */
