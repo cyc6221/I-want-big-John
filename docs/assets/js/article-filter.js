@@ -3,7 +3,8 @@
    data-<group> attribute. Chips in one group are exclusive (click again to
    clear); groups combine with AND. Chips that match no article are disabled.
    Archived (已下架) instants are hidden until the "顯示已下架" box is ticked.
-   Without JS the full list simply stays visible. */
+   Without JS the filter bar stays hidden (it starts with `hidden`, revealed
+   below) and the full list is shown. */
 (function () {
   var root = document.querySelector("[data-article-filter]");
   var list = document.querySelector("[data-article-list]");
@@ -103,4 +104,5 @@
   archivedBox.addEventListener("change", render);
 
   render();
+  root.hidden = false;
 })();
