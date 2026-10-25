@@ -8,7 +8,7 @@ toc: false
 ## 最新刮刮樂
 
 <div class="post-list">
-  <!-- 只顯示最新發行日（date）的所有刮刮樂，同日再依期號（num）由新到舊排序 -->
+  {% comment %}只顯示最新發行日（date）的所有刮刮樂，同日再依期號（num）由新到舊排序{% endcomment %}
   {% assign all_items = site.articles
     | where: "category", "all-instants"
     | sort: "date" | reverse %}
