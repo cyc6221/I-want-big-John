@@ -12,7 +12,7 @@ toc: false
     | where: "category", "all-instants"
     | sort: "date" | reverse %}
 
-  {% for post in items limit: 6 %}
+  {% for post in items limit: 2 %}
     <article class="post-item">
       <h3 class="post-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
