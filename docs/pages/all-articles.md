@@ -9,23 +9,23 @@ toc: false
   <div class="article-filter__row">
     <span class="article-filter__label">遊戲</span>
     <div class="article-filter__chips" data-filter-group="game">
-      <button type="button" class="tag-chip" data-filter-value="649" aria-pressed="false">大樂透</button>
-      <button type="button" class="tag-chip" data-filter-value="638" aria-pressed="false">威力彩</button>
-      <button type="button" class="tag-chip" data-filter-value="539" aria-pressed="false">今彩539</button>
-      <button type="button" class="tag-chip" data-filter-value="instants" aria-pressed="false">刮刮樂</button>
+      <button type="button" class="tag-chip" data-tag="649" data-filter-value="649" aria-pressed="false">大樂透</button>
+      <button type="button" class="tag-chip" data-tag="638" data-filter-value="638" aria-pressed="false">威力彩</button>
+      <button type="button" class="tag-chip" data-tag="539" data-filter-value="539" aria-pressed="false">今彩539</button>
+      <button type="button" class="tag-chip" data-tag="instants" data-filter-value="instants" aria-pressed="false">刮刮樂</button>
     </div>
   </div>
   <div class="article-filter__row">
     <span class="article-filter__label">類型</span>
     <div class="article-filter__chips" data-filter-group="kind">
-      <button type="button" class="tag-chip" data-filter-value="bonus" aria-pressed="false">加碼</button>
+      <button type="button" class="tag-chip" data-tag="bonus" data-filter-value="bonus" aria-pressed="false">加碼</button>
     </div>
   </div>
   <div class="article-filter__row">
     <span class="article-filter__label">刮刮樂</span>
     <div class="article-filter__chips" data-filter-group="status">
-      <button type="button" class="tag-chip" data-filter-value="active" aria-pressed="false">上架中</button>
-      <button type="button" class="tag-chip" data-filter-value="archived" aria-pressed="false">已下架</button>
+      <button type="button" class="tag-chip" data-tag="active" data-filter-value="active" aria-pressed="false">上架中</button>
+      <button type="button" class="tag-chip" data-tag="archived" data-filter-value="archived" aria-pressed="false">已下架</button>
     </div>
   </div>
   <div class="article-filter__bar">
@@ -68,9 +68,9 @@ toc: false
         </h3>
         <div class="post-meta">
           {% if post.date %}{{ post.date | date: "%Y-%m-%d" }}{% endif %}
-          {% if game_label != "" %}<span class="tag-chip tag-chip--static">{{ game_label }}</span>{% endif %}
-          {% if kind == "bonus" %}<span class="tag-chip tag-chip--static">加碼</span>{% endif %}
-          {% if status == "active" %}<span class="tag-chip tag-chip--static">上架中</span>{% elsif status == "archived" %}<span class="tag-chip tag-chip--static">已下架</span>{% endif %}
+          {% if game_label != "" %}<span class="tag-chip tag-chip--static" data-tag="{{ game }}">{{ game_label }}</span>{% endif %}
+          {% if kind == "bonus" %}<span class="tag-chip tag-chip--static" data-tag="bonus">加碼</span>{% endif %}
+          {% if status != "" %}<span class="tag-chip tag-chip--static" data-tag="{{ status }}">{% if status == "active" %}上架中{% else %}已下架{% endif %}</span>{% endif %}
         </div>
         {% if post.description %}
           <p class="post-excerpt">{{ post.description }}</p>
