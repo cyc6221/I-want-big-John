@@ -12,6 +12,11 @@
   box-shadow: var(--shadow);
 }
 
+/* `display: grid` above would otherwise override the hidden attribute. */
+.article-filter[hidden]{
+  display: none;
+}
+
 .article-filter__row{
   display: flex;
   align-items: baseline;
