@@ -125,8 +125,8 @@ description: 總計花費 26700 元，中獎 20300 元。
 | 104 | 2026/10/17 | <a class="btn btn--gold" href="{{ '/all-instants/5146/' | relative_url }}">麻將大賓果</a> | 300 | 1000 |
 | 105 | 2026/10/17 | <a class="btn btn--gold" href="{{ '/all-instants/5159/' | relative_url }}">大麻將</a> | 1000 | 2000 |
 | 106 | 2026/10/22 | <a class="btn btn--gold" href="{{ '/all-instants/5148/' | relative_url }}">獎金倍倍樂</a> | 200 | 0 |
-| 107 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">#5169</a> | 200 | 200 |
+| 107 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">好運強強滾</a> | 200 | 200 |
 | 108 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5165/' | relative_url }}">獎金大作戰</a> | 200 | 0 |
 | 109 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5167/' | relative_url }}">10來添金</a> | 500 | 500 |
-| 110 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">#5169</a> | 200 | 200 |
-| 111 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">#5169</a> | 200 | 0 |
+| 110 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">好運強強滾</a> | 200 | 200 |
+| 111 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">好運強強滾</a> | 200 | 0 |
