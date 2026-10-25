@@ -1,0 +1,173 @@
+/* _sass/components/_article-filter.scss
+   Tag chips + sort control on the all-articles page. */
+
+.article-filter{
+  display: grid;
+  gap: .6rem;
+  margin: 0 0 1rem;
+  padding: .9rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* `display: grid` above would otherwise override the hidden attribute. */
+.article-filter[hidden]{
+  display: none;
+}
+
+.article-filter__row{
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+}
+
+.article-filter__label{
+  flex: 0 0 3.5rem;
+  color: var(--text-muted);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.article-filter__chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.article-filter__toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--text-muted);
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.article-filter__toggle input{
+  accent-color: var(--ink);
+}
+
+.article-filter__toggle.is-empty{
+  opacity: .45;
+}
+
+.article-filter__toggle-count{
+  font-weight: 500;
+  opacity: .75;
+}
+
+.article-filter__bar{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding-top: .6rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+.article-filter__sort{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 600;
+}
+
+.article-filter__sort select{
+  padding: .3rem .6rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: .9rem;
+}
+
+/* ===== Tag chip ===== */
+/* Each tag sets --tag (solid / text), --tag-soft (tinted fill) and --tag-border;
+   anything without a data-tag falls back to neutral slate. */
+.tag-chip{
+  --tag: var(--text-muted);
+  --tag-soft: var(--surface-2);
+  --tag-border: var(--border-strong);
+
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .25rem .7rem;
+  border: 1px solid var(--tag-border);
+  border-radius: 999px;
+  background: var(--tag-soft);
+  color: var(--tag);
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.tag-chip[data-tag="649"]{ --tag: #1d4ed8; --tag-soft: #e8efff; --tag-border: #b9ccf7; }
+.tag-chip[data-tag="638"]{ --tag: #6d28d9; --tag-soft: #f0e9fd; --tag-border: #d3c0f5; }
+.tag-chip[data-tag="539"]{ --tag: #0f766e; --tag-soft: #dff5f2; --tag-border: #a8dcd5; }
+.tag-chip[data-tag="instants"]{ --tag: #b45309; --tag-soft: #fdf0dc; --tag-border: #f0cf9a; }
+.tag-chip[data-tag="bonus"]{ --tag: var(--accent); --tag-soft: var(--accent-soft); --tag-border: var(--accent-border); }
+.tag-chip[data-tag="active"]{ --tag: #15803d; --tag-soft: #e3f6e8; --tag-border: #b2e0bf; }
+.tag-chip[data-tag="archived"]{ --tag: #475569; --tag-soft: #eef1f5; --tag-border: var(--border-strong); }
+
+/* Buttons only: the read-only .tag-chip--static labels must not look clickable. */
+button.tag-chip:hover:not([aria-pressed="true"]){
+  border-color: var(--tag);
+}
+
+.tag-chip[aria-pressed="true"]{
+  background: var(--tag);
+  border-color: var(--tag);
+  color: #fff;
+}
+
+/* Would match no article: dimmed as a hint, but still clickable. */
+.tag-chip.is-empty:not([aria-pressed="true"]){
+  opacity: .45;
+}
+
+.tag-chip:focus-visible{
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+.tag-chip__count{
+  font-size: .78rem;
+  font-weight: 500;
+  opacity: .75;
+}
+
+/* Read-only tag shown next to an article's date. */
+.tag-chip--static{
+  margin-left: .35rem;
+  padding: .05rem .5rem;
+  font-size: .78rem;
+  cursor: default;
+}
+
+/* `.post-item:first-child` already drops the top border without JS. Once filtering
+   hides earlier items, JS marks the first visible one so it does not draw a stray line. */
+.post-list--filterable .post-item.is-first{
+  border-top: 0;
+}
+
+.post-empty{
+  margin: 0;
+  padding: 1.5rem 1.15rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media screen and (max-width: 600px){
+  .article-filter__row{ flex-direction: column; gap: .35rem; }
+  .article-filter__label{ flex-basis: auto; }
+}
