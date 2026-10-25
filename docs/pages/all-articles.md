@@ -22,11 +22,11 @@ toc: false
     </div>
   </div>
   <div class="article-filter__row">
-    <span class="article-filter__label">刮刮樂</span>
-    <div class="article-filter__chips" data-filter-group="status">
-      <button type="button" class="tag-chip" data-tag="active" data-filter-value="active" aria-pressed="false">上架中</button>
-      <button type="button" class="tag-chip" data-tag="archived" data-filter-value="archived" aria-pressed="false">已下架</button>
-    </div>
+    <span class="article-filter__label">存檔</span>
+    <label class="article-filter__toggle">
+      <input type="checkbox" data-filter-archived>
+      顯示已下架刮刮樂 <span class="article-filter__toggle-count" data-filter-archived-count></span>
+    </label>
   </div>
   <div class="article-filter__bar">
     <span class="article-filter__count" data-filter-count aria-live="polite"></span>
