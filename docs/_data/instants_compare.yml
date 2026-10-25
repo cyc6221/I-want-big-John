@@ -1,30 +1,4 @@
 games:
-  - id: 5144
-    name: 獎金獵人
-    launch: 2026/04/07
-    end: 2026/10/21
-    price: 200
-    jackpot: 2M
-    jackpot_count: 6
-    win_rate: 18.0991%
-    break_even_rate: 11.9994%
-    no_loss_rate: 30.0985%
-    expected_value: "130.0548"
-    expected_loss: "69.9452"
-    roi: 65.03%
-  - id: 5145
-    name: 一觸即發
-    launch: 2026/04/07
-    end: 2026/10/21
-    price: 200
-    jackpot: 2M
-    jackpot_count: 3
-    win_rate: 14.9930%
-    break_even_rate: 19.0068%
-    no_loss_rate: 33.9998%
-    expected_value: "123.9677"
-    expected_loss: "76.0323"
-    roi: 61.98%
   - id: 5146
     name: 麻將大賓果
     launch: 2026/05/05
