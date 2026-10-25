@@ -61,15 +61,21 @@
 }
 
 /* ===== Tag chip ===== */
+/* Each tag sets --tag (solid / text), --tag-soft (tinted fill) and --tag-border;
+   anything without a data-tag falls back to neutral slate. */
 .tag-chip{
+  --tag: var(--text-muted);
+  --tag-soft: var(--surface-2);
+  --tag-border: var(--border-strong);
+
   display: inline-flex;
   align-items: center;
   gap: .35rem;
   padding: .25rem .7rem;
-  border: 1px solid var(--border-strong);
+  border: 1px solid var(--tag-border);
   border-radius: 999px;
-  background: var(--surface);
-  color: var(--text-muted);
+  background: var(--tag-soft);
+  color: var(--tag);
   font: inherit;
   font-size: .88rem;
   font-weight: 600;
@@ -77,14 +83,21 @@
   cursor: pointer;
 }
 
+.tag-chip[data-tag="649"]{ --tag: #1d4ed8; --tag-soft: #e8efff; --tag-border: #b9ccf7; }
+.tag-chip[data-tag="638"]{ --tag: #6d28d9; --tag-soft: #f0e9fd; --tag-border: #d3c0f5; }
+.tag-chip[data-tag="539"]{ --tag: #0f766e; --tag-soft: #dff5f2; --tag-border: #a8dcd5; }
+.tag-chip[data-tag="instants"]{ --tag: #b45309; --tag-soft: #fdf0dc; --tag-border: #f0cf9a; }
+.tag-chip[data-tag="bonus"]{ --tag: var(--accent); --tag-soft: var(--accent-soft); --tag-border: var(--accent-border); }
+.tag-chip[data-tag="active"]{ --tag: #15803d; --tag-soft: #e3f6e8; --tag-border: #b2e0bf; }
+.tag-chip[data-tag="archived"]{ --tag: #475569; --tag-soft: #eef1f5; --tag-border: var(--border-strong); }
+
 .tag-chip:hover:not(:disabled):not([aria-pressed="true"]){
-  background: var(--surface-2);
-  color: var(--text);
+  border-color: var(--tag);
 }
 
 .tag-chip[aria-pressed="true"]{
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--tag);
+  border-color: var(--tag);
   color: #fff;
 }
 
@@ -108,7 +121,6 @@
 .tag-chip--static{
   margin-left: .35rem;
   padding: .05rem .5rem;
-  background: var(--surface-2);
   font-size: .78rem;
   cursor: default;
 }
