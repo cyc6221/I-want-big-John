@@ -10,7 +10,7 @@ toc: false
 <div class="post-list">
   {% assign items = site.articles
     | where: "category", "all-instants"
-    | sort: "published" | reverse %}
+    | sort: "date" | reverse %}
 
   {% for post in items limit: 6 %}
     <article class="post-item">
