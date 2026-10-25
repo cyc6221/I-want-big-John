@@ -1,0 +1,73 @@
+{
+  "issue": 5170,
+  "name": "金骰子",
+  "price": 100,
+  "tickets_per_book": 100,
+  "total_tickets": 6120000,
+  "dates": {
+    "launch": {
+      "iso": "2026-10-20",
+      "roc": "115年10月20日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2027-04-20",
+      "roc": "116年4月20日",
+      "weekday": "星期二"
+    },
+    "claim_deadline": {
+      "iso": "2027-07-20",
+      "roc": "116年7月20日",
+      "weekday": "星期二"
+    }
+  },
+  "announced_win_rate_percent": "34.02",
+  "prize_tiers": [
+    {
+      "prize": 500000,
+      "count": 5
+    },
+    {
+      "prize": 50000,
+      "count": 22
+    },
+    {
+      "prize": 10000,
+      "count": 28
+    },
+    {
+      "prize": 5000,
+      "count": 29
+    },
+    {
+      "prize": 2000,
+      "count": 156
+    },
+    {
+      "prize": 1000,
+      "count": 618
+    },
+    {
+      "prize": 800,
+      "count": 1123
+    },
+    {
+      "prize": 500,
+      "count": 195786
+    },
+    {
+      "prize": 200,
+      "count": 872120
+    },
+    {
+      "prize": 100,
+      "count": 1012210
+    }
+  ],
+  "source": {
+    "news_id": "3eacf62d670d47eab22bb0c39e9bd9cb",
+    "official_url": "https://www.taiwanlottery.com/news/news/3eacf62d670d47eab22bb0c39e9bd9cb",
+    "scratch_id": "9eace25a8f3d40b082f87700be223722",
+    "fetched_at": "2026-10-25T23:46:44+08:00"
+  }
+}

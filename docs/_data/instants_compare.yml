@@ -285,3 +285,29 @@ games:
     expected_value: "123.9655"
     expected_loss: "76.0345"
     roi: 61.98%
+  - id: 5169
+    name: 好運強強滾
+    launch: 2026/10/20
+    end: 2027/04/20
+    price: 200
+    jackpot: 2M
+    jackpot_count: 5
+    win_rate: 18.0035%
+    break_even_rate: 17.0007%
+    no_loss_rate: 35.0042%
+    expected_value: "123.9639"
+    expected_loss: "76.0361"
+    roi: 61.98%
+  - id: 5170
+    name: 金骰子
+    launch: 2026/10/20
+    end: 2027/04/20
+    price: 100
+    jackpot: 500K
+    jackpot_count: 5
+    win_rate: 17.4818%
+    break_even_rate: 16.5394%
+    no_loss_rate: 34.0212%
+    expected_value: "61.9921"
+    expected_loss: "38.0079"
+    roi: 61.99%
