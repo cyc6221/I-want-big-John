@@ -1,581 +1,581 @@
 {
-  "as_of_draw_no": "115065569",
+  "as_of_draw_no": "115065577",
   "big_small": {
-    "和": 7698,
-    "大": 904,
-    "小": 939
+    "和": 7704,
+    "大": 905,
+    "小": 940
   },
   "disclaimer": "僅描述歷史開獎結果，不代表對下一期的預測。",
-  "generated_at": "2026-11-20T01:36:45+08:00",
+  "generated_at": "2026-11-20T07:46:39+08:00",
   "numbers": {
     "1": {
-      "draws_since_last": 2,
+      "draws_since_last": 0,
       "last_10": 3,
       "last_100": 27,
-      "last_50": 14,
-      "total": 2361
+      "last_50": 13,
+      "total": 2364
     },
     "10": {
-      "draws_since_last": 11,
-      "last_10": 0,
-      "last_100": 18,
-      "last_50": 9,
-      "total": 2390
+      "draws_since_last": 1,
+      "last_10": 2,
+      "last_100": 19,
+      "last_50": 10,
+      "total": 2392
     },
     "11": {
-      "draws_since_last": 4,
-      "last_10": 3,
-      "last_100": 24,
+      "draws_since_last": 0,
+      "last_10": 1,
+      "last_100": 22,
       "last_50": 12,
-      "total": 2371
+      "total": 2372
     },
     "12": {
-      "draws_since_last": 1,
-      "last_10": 1,
-      "last_100": 21,
-      "last_50": 13,
-      "total": 2390
+      "draws_since_last": 0,
+      "last_10": 3,
+      "last_100": 22,
+      "last_50": 12,
+      "total": 2392
     },
     "13": {
-      "draws_since_last": 1,
+      "draws_since_last": 0,
       "last_10": 3,
-      "last_100": 25,
-      "last_50": 16,
-      "total": 2362
+      "last_100": 26,
+      "last_50": 15,
+      "total": 2364
     },
     "14": {
-      "draws_since_last": 1,
+      "draws_since_last": 3,
       "last_10": 3,
-      "last_100": 30,
+      "last_100": 32,
       "last_50": 19,
-      "total": 2421
+      "total": 2423
     },
     "15": {
-      "draws_since_last": 7,
+      "draws_since_last": 0,
       "last_10": 2,
-      "last_100": 20,
+      "last_100": 18,
       "last_50": 9,
-      "total": 2374
+      "total": 2376
     },
     "16": {
-      "draws_since_last": 3,
-      "last_10": 2,
-      "last_100": 22,
-      "last_50": 14,
+      "draws_since_last": 11,
+      "last_10": 0,
+      "last_100": 21,
+      "last_50": 11,
       "total": 2444
     },
     "17": {
-      "draws_since_last": 1,
-      "last_10": 4,
-      "last_100": 25,
-      "last_50": 11,
-      "total": 2393
+      "draws_since_last": 3,
+      "last_10": 3,
+      "last_100": 26,
+      "last_50": 12,
+      "total": 2395
     },
     "18": {
-      "draws_since_last": 0,
+      "draws_since_last": 3,
       "last_10": 2,
-      "last_100": 20,
-      "last_50": 11,
-      "total": 2361
+      "last_100": 18,
+      "last_50": 10,
+      "total": 2362
     },
     "19": {
-      "draws_since_last": 0,
-      "last_10": 5,
+      "draws_since_last": 2,
+      "last_10": 4,
       "last_100": 31,
-      "last_50": 22,
-      "total": 2305
+      "last_50": 21,
+      "total": 2307
     },
     "2": {
-      "draws_since_last": 2,
-      "last_10": 1,
-      "last_100": 16,
-      "last_50": 8,
-      "total": 2373
+      "draws_since_last": 6,
+      "last_10": 2,
+      "last_100": 17,
+      "last_50": 10,
+      "total": 2375
     },
     "20": {
-      "draws_since_last": 4,
-      "last_10": 3,
-      "last_100": 24,
-      "last_50": 12,
-      "total": 2361
-    },
-    "21": {
-      "draws_since_last": 8,
-      "last_10": 1,
-      "last_100": 22,
-      "last_50": 8,
-      "total": 2346
-    },
-    "22": {
       "draws_since_last": 0,
-      "last_10": 4,
-      "last_100": 28,
-      "last_50": 16,
-      "total": 2435
-    },
-    "23": {
-      "draws_since_last": 1,
-      "last_10": 2,
-      "last_100": 25,
+      "last_10": 3,
+      "last_100": 23,
       "last_50": 14,
-      "total": 2402
-    },
-    "24": {
-      "draws_since_last": 2,
-      "last_10": 2,
-      "last_100": 15,
-      "last_50": 7,
       "total": 2364
     },
-    "25": {
+    "21": {
+      "draws_since_last": 3,
+      "last_10": 2,
+      "last_100": 22,
+      "last_50": 8,
+      "total": 2348
+    },
+    "22": {
+      "draws_since_last": 7,
+      "last_10": 3,
+      "last_100": 28,
+      "last_50": 15,
+      "total": 2436
+    },
+    "23": {
+      "draws_since_last": 0,
+      "last_10": 4,
+      "last_100": 27,
+      "last_50": 14,
+      "total": 2405
+    },
+    "24": {
       "draws_since_last": 0,
       "last_10": 2,
-      "last_100": 30,
-      "last_50": 13,
-      "total": 2372
+      "last_100": 17,
+      "last_50": 7,
+      "total": 2366
+    },
+    "25": {
+      "draws_since_last": 3,
+      "last_10": 5,
+      "last_100": 34,
+      "last_50": 16,
+      "total": 2376
     },
     "26": {
-      "draws_since_last": 2,
+      "draws_since_last": 0,
       "last_10": 1,
-      "last_100": 20,
-      "last_50": 11,
-      "total": 2447
-    },
-    "27": {
-      "draws_since_last": 1,
-      "last_10": 5,
-      "last_100": 26,
-      "last_50": 13,
-      "total": 2416
-    },
-    "28": {
-      "draws_since_last": 2,
-      "last_10": 5,
-      "last_100": 29,
-      "last_50": 18,
-      "total": 2373
-    },
-    "29": {
-      "draws_since_last": 0,
-      "last_10": 4,
-      "last_100": 24,
-      "last_50": 16,
-      "total": 2372
-    },
-    "3": {
-      "draws_since_last": 0,
-      "last_10": 2,
-      "last_100": 29,
-      "last_50": 16,
-      "total": 2450
-    },
-    "30": {
-      "draws_since_last": 1,
-      "last_10": 2,
-      "last_100": 29,
-      "last_50": 16,
-      "total": 2353
-    },
-    "31": {
-      "draws_since_last": 4,
-      "last_10": 4,
       "last_100": 21,
       "last_50": 9,
-      "total": 2327
+      "total": 2448
+    },
+    "27": {
+      "draws_since_last": 2,
+      "last_10": 4,
+      "last_100": 26,
+      "last_50": 12,
+      "total": 2419
+    },
+    "28": {
+      "draws_since_last": 7,
+      "last_10": 1,
+      "last_100": 30,
+      "last_50": 16,
+      "total": 2374
+    },
+    "29": {
+      "draws_since_last": 1,
+      "last_10": 3,
+      "last_100": 23,
+      "last_50": 15,
+      "total": 2374
+    },
+    "3": {
+      "draws_since_last": 5,
+      "last_10": 2,
+      "last_100": 25,
+      "last_50": 15,
+      "total": 2451
+    },
+    "30": {
+      "draws_since_last": 0,
+      "last_10": 2,
+      "last_100": 27,
+      "last_50": 17,
+      "total": 2354
+    },
+    "31": {
+      "draws_since_last": 1,
+      "last_10": 4,
+      "last_100": 24,
+      "last_50": 11,
+      "total": 2331
     },
     "32": {
-      "draws_since_last": 5,
-      "last_10": 1,
-      "last_100": 18,
-      "last_50": 6,
-      "total": 2484
+      "draws_since_last": 1,
+      "last_10": 3,
+      "last_100": 19,
+      "last_50": 8,
+      "total": 2487
     },
     "33": {
-      "draws_since_last": 2,
-      "last_10": 3,
+      "draws_since_last": 1,
+      "last_10": 2,
       "last_100": 16,
-      "last_50": 7,
-      "total": 2370
+      "last_50": 9,
+      "total": 2372
     },
     "34": {
       "draws_since_last": 0,
       "last_10": 4,
-      "last_100": 25,
-      "last_50": 15,
-      "total": 2395
+      "last_100": 26,
+      "last_50": 14,
+      "total": 2398
     },
     "35": {
-      "draws_since_last": 0,
+      "draws_since_last": 4,
       "last_10": 2,
-      "last_100": 25,
-      "last_50": 10,
-      "total": 2406
+      "last_100": 24,
+      "last_50": 11,
+      "total": 2407
     },
     "36": {
-      "draws_since_last": 12,
-      "last_10": 0,
-      "last_100": 23,
-      "last_50": 10,
-      "total": 2336
+      "draws_since_last": 6,
+      "last_10": 1,
+      "last_100": 21,
+      "last_50": 9,
+      "total": 2337
     },
     "37": {
       "draws_since_last": 1,
-      "last_10": 3,
+      "last_10": 4,
       "last_100": 23,
-      "last_50": 9,
-      "total": 2342
+      "last_50": 10,
+      "total": 2345
     },
     "38": {
-      "draws_since_last": 4,
-      "last_10": 2,
-      "last_100": 25,
-      "last_50": 9,
+      "draws_since_last": 12,
+      "last_10": 0,
+      "last_100": 22,
+      "last_50": 7,
       "total": 2441
     },
     "39": {
       "draws_since_last": 0,
-      "last_10": 2,
-      "last_100": 25,
-      "last_50": 14,
-      "total": 2387
+      "last_10": 5,
+      "last_100": 26,
+      "last_50": 15,
+      "total": 2391
     },
     "4": {
-      "draws_since_last": 2,
-      "last_10": 4,
-      "last_100": 29,
-      "last_50": 15,
-      "total": 2364
-    },
-    "40": {
-      "draws_since_last": 5,
-      "last_10": 3,
-      "last_100": 23,
-      "last_50": 10,
-      "total": 2330
-    },
-    "41": {
-      "draws_since_last": 8,
-      "last_10": 1,
-      "last_100": 23,
-      "last_50": 11,
-      "total": 2354
-    },
-    "42": {
       "draws_since_last": 1,
       "last_10": 3,
-      "last_100": 30,
-      "last_50": 15,
+      "last_100": 28,
+      "last_50": 14,
+      "total": 2367
+    },
+    "40": {
+      "draws_since_last": 1,
+      "last_10": 2,
+      "last_100": 23,
+      "last_50": 12,
+      "total": 2332
+    },
+    "41": {
+      "draws_since_last": 2,
+      "last_10": 2,
+      "last_100": 24,
+      "last_50": 10,
+      "total": 2356
+    },
+    "42": {
+      "draws_since_last": 9,
+      "last_10": 1,
+      "last_100": 28,
+      "last_50": 12,
       "total": 2435
     },
     "43": {
-      "draws_since_last": 5,
+      "draws_since_last": 2,
       "last_10": 1,
-      "last_100": 27,
+      "last_100": 24,
       "last_50": 11,
-      "total": 2371
+      "total": 2372
     },
     "44": {
-      "draws_since_last": 4,
-      "last_10": 1,
-      "last_100": 17,
-      "last_50": 11,
-      "total": 2366
-    },
-    "45": {
-      "draws_since_last": 1,
-      "last_10": 4,
-      "last_100": 30,
-      "last_50": 17,
-      "total": 2411
-    },
-    "46": {
-      "draws_since_last": 13,
-      "last_10": 0,
-      "last_100": 22,
-      "last_50": 10,
-      "total": 2344
-    },
-    "47": {
-      "draws_since_last": 0,
-      "last_10": 3,
-      "last_100": 22,
-      "last_50": 13,
-      "total": 2404
-    },
-    "48": {
-      "draws_since_last": 4,
-      "last_10": 3,
-      "last_100": 17,
-      "last_50": 8,
-      "total": 2442
-    },
-    "49": {
-      "draws_since_last": 8,
+      "draws_since_last": 3,
       "last_10": 2,
       "last_100": 18,
+      "last_50": 12,
+      "total": 2368
+    },
+    "45": {
+      "draws_since_last": 3,
+      "last_10": 3,
+      "last_100": 30,
+      "last_50": 18,
+      "total": 2413
+    },
+    "46": {
+      "draws_since_last": 2,
+      "last_10": 1,
+      "last_100": 19,
+      "last_50": 10,
+      "total": 2345
+    },
+    "47": {
+      "draws_since_last": 2,
+      "last_10": 3,
+      "last_100": 23,
+      "last_50": 13,
+      "total": 2406
+    },
+    "48": {
+      "draws_since_last": 1,
+      "last_10": 1,
+      "last_100": 18,
+      "last_50": 9,
+      "total": 2443
+    },
+    "49": {
+      "draws_since_last": 5,
+      "last_10": 1,
+      "last_100": 16,
       "last_50": 6,
-      "total": 2412
+      "total": 2413
     },
     "5": {
-      "draws_since_last": 1,
-      "last_10": 3,
-      "last_100": 33,
-      "last_50": 19,
+      "draws_since_last": 9,
+      "last_10": 1,
+      "last_100": 30,
+      "last_50": 18,
       "total": 2358
     },
     "50": {
-      "draws_since_last": 0,
+      "draws_since_last": 5,
       "last_10": 4,
-      "last_100": 36,
-      "last_50": 18,
-      "total": 2380
+      "last_100": 35,
+      "last_50": 19,
+      "total": 2383
     },
     "51": {
-      "draws_since_last": 3,
-      "last_10": 2,
-      "last_100": 34,
-      "last_50": 19,
+      "draws_since_last": 11,
+      "last_10": 0,
+      "last_100": 31,
+      "last_50": 14,
       "total": 2414
     },
     "52": {
-      "draws_since_last": 6,
-      "last_10": 1,
+      "draws_since_last": 2,
+      "last_10": 3,
       "last_100": 29,
-      "last_50": 13,
-      "total": 2493
+      "last_50": 14,
+      "total": 2496
     },
     "53": {
-      "draws_since_last": 4,
-      "last_10": 2,
-      "last_100": 23,
-      "last_50": 13,
-      "total": 2311
+      "draws_since_last": 2,
+      "last_10": 1,
+      "last_100": 22,
+      "last_50": 12,
+      "total": 2312
     },
     "54": {
-      "draws_since_last": 5,
-      "last_10": 1,
-      "last_100": 26,
-      "last_50": 10,
-      "total": 2442
-    },
-    "55": {
       "draws_since_last": 2,
       "last_10": 2,
-      "last_100": 23,
-      "last_50": 13,
-      "total": 2368
+      "last_100": 26,
+      "last_50": 12,
+      "total": 2444
+    },
+    "55": {
+      "draws_since_last": 0,
+      "last_10": 3,
+      "last_100": 25,
+      "last_50": 14,
+      "total": 2371
     },
     "56": {
-      "draws_since_last": 3,
-      "last_10": 2,
-      "last_100": 28,
-      "last_50": 15,
-      "total": 2471
+      "draws_since_last": 0,
+      "last_10": 1,
+      "last_100": 29,
+      "last_50": 11,
+      "total": 2472
     },
     "57": {
-      "draws_since_last": 0,
-      "last_10": 4,
-      "last_100": 28,
-      "last_50": 15,
-      "total": 2310
+      "draws_since_last": 1,
+      "last_10": 5,
+      "last_100": 30,
+      "last_50": 17,
+      "total": 2314
     },
     "58": {
       "draws_since_last": 0,
-      "last_10": 4,
-      "last_100": 21,
-      "last_50": 10,
-      "total": 2443
+      "last_10": 5,
+      "last_100": 24,
+      "last_50": 12,
+      "total": 2447
     },
     "59": {
-      "draws_since_last": 0,
+      "draws_since_last": 2,
       "last_10": 4,
       "last_100": 22,
       "last_50": 10,
-      "total": 2359
+      "total": 2361
     },
     "6": {
-      "draws_since_last": 0,
-      "last_10": 3,
-      "last_100": 22,
-      "last_50": 14,
-      "total": 2356
+      "draws_since_last": 1,
+      "last_10": 4,
+      "last_100": 24,
+      "last_50": 15,
+      "total": 2359
     },
     "60": {
-      "draws_since_last": 0,
+      "draws_since_last": 1,
       "last_10": 4,
-      "last_100": 35,
-      "last_50": 18,
-      "total": 2489
+      "last_100": 37,
+      "last_50": 19,
+      "total": 2492
     },
     "61": {
-      "draws_since_last": 2,
-      "last_10": 4,
-      "last_100": 33,
-      "last_50": 15,
-      "total": 2441
+      "draws_since_last": 3,
+      "last_10": 1,
+      "last_100": 31,
+      "last_50": 13,
+      "total": 2442
     },
     "62": {
-      "draws_since_last": 4,
-      "last_10": 2,
-      "last_100": 22,
-      "last_50": 14,
-      "total": 2402
+      "draws_since_last": 2,
+      "last_10": 5,
+      "last_100": 26,
+      "last_50": 17,
+      "total": 2407
     },
     "63": {
-      "draws_since_last": 5,
-      "last_10": 1,
-      "last_100": 32,
-      "last_50": 11,
+      "draws_since_last": 13,
+      "last_10": 0,
+      "last_100": 28,
+      "last_50": 9,
       "total": 2404
     },
     "64": {
-      "draws_since_last": 2,
-      "last_10": 3,
-      "last_100": 23,
-      "last_50": 13,
-      "total": 2323
+      "draws_since_last": 0,
+      "last_10": 4,
+      "last_100": 27,
+      "last_50": 16,
+      "total": 2327
     },
     "65": {
       "draws_since_last": 2,
-      "last_10": 2,
-      "last_100": 26,
+      "last_10": 1,
+      "last_100": 23,
       "last_50": 10,
-      "total": 2368
+      "total": 2369
     },
     "66": {
-      "draws_since_last": 20,
-      "last_10": 0,
-      "last_100": 22,
+      "draws_since_last": 2,
+      "last_10": 1,
+      "last_100": 23,
       "last_50": 7,
-      "total": 2348
+      "total": 2349
     },
     "67": {
-      "draws_since_last": 14,
-      "last_10": 0,
-      "last_100": 24,
-      "last_50": 10,
-      "total": 2380
+      "draws_since_last": 0,
+      "last_10": 5,
+      "last_100": 26,
+      "last_50": 14,
+      "total": 2385
     },
     "68": {
-      "draws_since_last": 3,
-      "last_10": 3,
-      "last_100": 33,
-      "last_50": 13,
-      "total": 2391
+      "draws_since_last": 0,
+      "last_10": 4,
+      "last_100": 34,
+      "last_50": 14,
+      "total": 2395
     },
     "69": {
-      "draws_since_last": 6,
+      "draws_since_last": 4,
       "last_10": 1,
-      "last_100": 19,
+      "last_100": 20,
       "last_50": 6,
-      "total": 2347
+      "total": 2348
     },
     "7": {
-      "draws_since_last": 1,
-      "last_10": 4,
+      "draws_since_last": 6,
+      "last_10": 3,
       "last_100": 31,
-      "last_50": 16,
-      "total": 2323
+      "last_50": 15,
+      "total": 2325
     },
     "70": {
-      "draws_since_last": 1,
-      "last_10": 5,
-      "last_100": 23,
+      "draws_since_last": 3,
+      "last_10": 3,
+      "last_100": 25,
       "last_50": 14,
-      "total": 2374
+      "total": 2376
     },
     "71": {
       "draws_since_last": 1,
       "last_10": 2,
       "last_100": 20,
-      "last_50": 8,
-      "total": 2389
+      "last_50": 9,
+      "total": 2390
     },
     "72": {
-      "draws_since_last": 0,
-      "last_10": 3,
-      "last_100": 21,
-      "last_50": 13,
-      "total": 2488
+      "draws_since_last": 1,
+      "last_10": 6,
+      "last_100": 22,
+      "last_50": 12,
+      "total": 2492
     },
     "73": {
-      "draws_since_last": 4,
-      "last_10": 3,
+      "draws_since_last": 0,
+      "last_10": 1,
       "last_100": 25,
-      "last_50": 13,
-      "total": 2386
+      "last_50": 12,
+      "total": 2387
     },
     "74": {
-      "draws_since_last": 11,
-      "last_10": 0,
+      "draws_since_last": 5,
+      "last_10": 2,
       "last_100": 18,
-      "last_50": 8,
-      "total": 2412
+      "last_50": 9,
+      "total": 2414
     },
     "75": {
-      "draws_since_last": 7,
+      "draws_since_last": 4,
       "last_10": 1,
-      "last_100": 26,
-      "last_50": 13,
-      "total": 2331
+      "last_100": 25,
+      "last_50": 10,
+      "total": 2332
     },
     "76": {
-      "draws_since_last": 3,
-      "last_10": 4,
+      "draws_since_last": 2,
+      "last_10": 2,
       "last_100": 25,
-      "last_50": 14,
-      "total": 2354
+      "last_50": 15,
+      "total": 2356
     },
     "77": {
-      "draws_since_last": 7,
-      "last_10": 2,
+      "draws_since_last": 5,
+      "last_10": 1,
       "last_100": 23,
-      "last_50": 11,
-      "total": 2316
+      "last_50": 9,
+      "total": 2317
     },
     "78": {
-      "draws_since_last": 0,
+      "draws_since_last": 7,
       "last_10": 3,
-      "last_100": 34,
-      "last_50": 19,
-      "total": 2315
+      "last_100": 33,
+      "last_50": 16,
+      "total": 2316
     },
     "79": {
-      "draws_since_last": 12,
-      "last_10": 0,
-      "last_100": 26,
-      "last_50": 9,
-      "total": 2354
+      "draws_since_last": 0,
+      "last_10": 5,
+      "last_100": 28,
+      "last_50": 13,
+      "total": 2359
     },
     "8": {
-      "draws_since_last": 0,
-      "last_10": 8,
-      "last_100": 45,
-      "last_50": 19,
+      "draws_since_last": 8,
+      "last_10": 2,
+      "last_100": 40,
+      "last_50": 17,
       "total": 2414
     },
     "80": {
-      "draws_since_last": 0,
+      "draws_since_last": 2,
       "last_10": 4,
-      "last_100": 26,
-      "last_50": 12,
-      "total": 2397
+      "last_100": 27,
+      "last_50": 14,
+      "total": 2400
     },
     "9": {
-      "draws_since_last": 8,
+      "draws_since_last": 4,
       "last_10": 1,
-      "last_100": 24,
-      "last_50": 11,
-      "total": 2412
+      "last_100": 22,
+      "last_50": 9,
+      "total": 2413
     }
   },
   "odd_even": {
-    "和": 7624,
-    "單": 915,
-    "雙": 1002
+    "和": 7630,
+    "單": 916,
+    "雙": 1003
   },
   "repeat_with_previous": 6,
-  "total_draws": 9541,
+  "total_draws": 9549,
   "window_sizes": [
     10,
     50,
