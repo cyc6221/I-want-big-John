@@ -1,0 +1,81 @@
+{
+  "issue": 5171,
+  "name": "獎金射手",
+  "price": 200,
+  "tickets_per_book": 100,
+  "total_tickets": 5942300,
+  "dates": {
+    "launch": {
+      "iso": "2026-11-03",
+      "roc": "115年11月3日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2027-05-03",
+      "roc": "116年5月3日",
+      "weekday": "星期一"
+    },
+    "claim_deadline": {
+      "iso": "2027-08-03",
+      "roc": "116年8月3日",
+      "weekday": "星期二"
+    }
+  },
+  "announced_win_rate_percent": "34.00",
+  "prize_tiers": [
+    {
+      "prize": 2000000,
+      "count": 5
+    },
+    {
+      "prize": 50000,
+      "count": 24
+    },
+    {
+      "prize": 10000,
+      "count": 189
+    },
+    {
+      "prize": 5000,
+      "count": 706
+    },
+    {
+      "prize": 2000,
+      "count": 37759
+    },
+    {
+      "prize": 1500,
+      "count": 21425
+    },
+    {
+      "prize": 1200,
+      "count": 23791
+    },
+    {
+      "prize": 1000,
+      "count": 95063
+    },
+    {
+      "prize": 800,
+      "count": 47509
+    },
+    {
+      "prize": 600,
+      "count": 122469
+    },
+    {
+      "prize": 300,
+      "count": 431847
+    },
+    {
+      "prize": 200,
+      "count": 1239819
+    }
+  ],
+  "source": {
+    "news_id": "72abdf0f63334ae58d4d59b80f9b84eb",
+    "official_url": "https://www.taiwanlottery.com/news/news/72abdf0f63334ae58d4d59b80f9b84eb",
+    "scratch_id": "61dab1ef7ea14de0a6eba5aec0e7bb32",
+    "fetched_at": "2026-11-21T22:31:18+08:00"
+  }
+}
