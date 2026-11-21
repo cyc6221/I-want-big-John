@@ -32,7 +32,6 @@ raw-data/                      人工維護的資料源頭
 scripts/                       Python 資料管線
 docs/                          Jekyll 網站（自帶 layout 與 SCSS，不依賴 theme gem）
 research/                      官方開獎整理資料與離線研究（不進網站建置）
-notes/                         某個時間點的專案快照
 ```
 
 開獎結果多一道中繼：`lotto-result-downloads/` → `sync_lotto_research_data.py` → `research/derived/{game}_all_years.csv`，`run.py` 實際讀的是這裡。
@@ -80,7 +79,6 @@ python scripts/sync_lotto_research_data.py
 
 - [`CLAUDE.md`](CLAUDE.md) / [`AGENTS.md`](AGENTS.md)：分支、PR、commit 慣例與各類資料更新的步驟。
 - [`scripts/README.md`](scripts/README.md)：各腳本用途與判獎規則。
-- [`notes/`](notes/)：專案現況快照。
 
 ## 資料來源
 
