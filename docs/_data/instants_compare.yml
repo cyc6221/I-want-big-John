@@ -259,3 +259,16 @@ games:
     expected_value: "61.9921"
     expected_loss: "38.0079"
     roi: 61.99%
+  - id: 5173
+    name: 金鑽派對
+    launch: 2026/11/17
+    end: 2027/05/17
+    price: 200
+    jackpot: 2M
+    jackpot_count: 6
+    win_rate: 18.5664%
+    break_even_rate: 14.4290%
+    no_loss_rate: 32.9954%
+    expected_value: "124.0095"
+    expected_loss: "75.9905"
+    roi: 62.00%
