@@ -3,16 +3,16 @@ title: 刮刮樂全紀錄
 permalink: /list/instant-all/
 category: list-instant
 date: 2026-02-25
-description: 總計花費 26700 元，中獎 20300 元。
+description: 總計花費 29100 元，中獎 21400 元。
 ---
 
 <!-- 此檔由 scripts/run_tasks/build_instant_all.py 從 raw-data/all-instants.csv 自動產生，請勿手改；如需修改請改 raw-data/all-instants.csv 後執行 python scripts/run.py -->
 
 <div class="lotto-stats-grid summary-cards">
-  <div class="lotto-stats-card"><span class="lotto-stats-label">購買筆數</span><strong>111 筆</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>26,700 元</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">總中獎</span><strong>20,300 元</strong></div>
-  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-6,400 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">購買筆數</span><strong>123 筆</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">總花費</span><strong>29,100 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">總中獎</span><strong>21,400 元</strong></div>
+  <div class="lotto-stats-card"><span class="lotto-stats-label">淨額</span><strong>-7,700 元</strong></div>
 </div>
 
 ---
@@ -130,3 +130,15 @@ description: 總計花費 26700 元，中獎 20300 元。
 | 109 | 2026/10/24 | <a class="btn btn--gold" href="{{ '/all-instants/5167/' | relative_url }}">10來添金</a> | 500 | 500 |
 | 110 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">好運強強滾</a> | 200 | 200 |
 | 111 | 2026/10/25 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">好運強強滾</a> | 200 | 0 |
+| 112 | 2026/11/07 | <a class="btn btn--gold" href="{{ '/all-instants/5157/' | relative_url }}">刮刮金樂透</a> | 200 | 200 |
+| 113 | 2026/11/07 | <a class="btn btn--gold" href="{{ '/all-instants/5153/' | relative_url }}">財運高升</a> | 200 | 0 |
+| 114 | 2026/11/07 | <a class="btn btn--gold" href="{{ '/all-instants/5171/' | relative_url }}">獎金射手</a> | 200 | 0 |
+| 115 | 2026/11/07 | <a class="btn btn--gold" href="{{ '/all-instants/5171/' | relative_url }}">獎金射手</a> | 200 | 0 |
+| 116 | 2026/11/07 | <a class="btn btn--gold" href="{{ '/all-instants/5166/' | relative_url }}">金磚疊疊樂</a> | 200 | 200 |
+| 117 | 2026/11/07 | <a class="btn btn--gold" href="{{ '/all-instants/5169/' | relative_url }}">好運強強滾</a> | 200 | 0 |
+| 118 | 2026/11/09 | <a class="btn btn--gold" href="{{ '/all-instants/5153/' | relative_url }}">財運高升</a> | 200 | 0 |
+| 119 | 2026/11/09 | <a class="btn btn--gold" href="{{ '/all-instants/5153/' | relative_url }}">財運高升</a> | 200 | 300 |
+| 120 | 2026/11/21 | <a class="btn btn--gold" href="{{ '/all-instants/5153/' | relative_url }}">財運高升</a> | 200 | 0 |
+| 121 | 2026/11/21 | <a class="btn btn--gold" href="{{ '/all-instants/5173/' | relative_url }}">金鑽派對</a> | 200 | 200 |
+| 122 | 2026/11/21 | <a class="btn btn--gold" href="{{ '/all-instants/5157/' | relative_url }}">刮刮金樂透</a> | 200 | 0 |
+| 123 | 2026/11/21 | <a class="btn btn--gold" href="{{ '/all-instants/5157/' | relative_url }}">刮刮金樂透</a> | 200 | 200 |
