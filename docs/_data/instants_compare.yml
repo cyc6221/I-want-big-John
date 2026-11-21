@@ -259,3 +259,29 @@ games:
     expected_value: "61.9921"
     expected_loss: "38.0079"
     roi: 61.99%
+  - id: 5171
+    name: 獎金射手
+    launch: 2026/11/03
+    end: 2027/05/03
+    price: 200
+    jackpot: 2M
+    jackpot_count: 5
+    win_rate: 13.1395%
+    break_even_rate: 20.8643%
+    no_loss_rate: 34.0038%
+    expected_value: "124.0082"
+    expected_loss: "75.9918"
+    roi: 62.00%
+  - id: 5172
+    name: 猜拳高手
+    launch: 2026/11/03
+    end: 2027/05/03
+    price: 200
+    jackpot: 2M
+    jackpot_count: 6
+    win_rate: 16.5582%
+    break_even_rate: 14.4435%
+    no_loss_rate: 31.0017%
+    expected_value: "124.0105"
+    expected_loss: "75.9895"
+    roi: 62.01%
