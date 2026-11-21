@@ -1,0 +1,81 @@
+{
+  "issue": 5173,
+  "name": "金鑽派對",
+  "price": 200,
+  "tickets_per_book": 100,
+  "total_tickets": 5952300,
+  "dates": {
+    "launch": {
+      "iso": "2026-11-17",
+      "roc": "115年11月17日",
+      "weekday": "星期二"
+    },
+    "off_sale": {
+      "iso": "2027-05-17",
+      "roc": "116年5月17日",
+      "weekday": "星期一"
+    },
+    "claim_deadline": {
+      "iso": "2027-08-17",
+      "roc": "116年8月17日",
+      "weekday": "星期二"
+    }
+  },
+  "announced_win_rate_percent": "33.00",
+  "prize_tiers": [
+    {
+      "prize": 2000000,
+      "count": 6
+    },
+    {
+      "prize": 30000,
+      "count": 50
+    },
+    {
+      "prize": 10000,
+      "count": 196
+    },
+    {
+      "prize": 5000,
+      "count": 983
+    },
+    {
+      "prize": 3000,
+      "count": 7141
+    },
+    {
+      "prize": 1500,
+      "count": 23778
+    },
+    {
+      "prize": 1000,
+      "count": 154832
+    },
+    {
+      "prize": 800,
+      "count": 35685
+    },
+    {
+      "prize": 600,
+      "count": 71402
+    },
+    {
+      "prize": 500,
+      "count": 96840
+    },
+    {
+      "prize": 300,
+      "count": 714214
+    },
+    {
+      "prize": 200,
+      "count": 858857
+    }
+  ],
+  "source": {
+    "news_id": "fecc4fb9b4904c65a09c0e819c38194b",
+    "official_url": "https://www.taiwanlottery.com/news/news/fecc4fb9b4904c65a09c0e819c38194b",
+    "scratch_id": "04829469e2554e71b2f9e3951d221925",
+    "fetched_at": "2026-11-21T22:32:51+08:00"
+  }
+}
